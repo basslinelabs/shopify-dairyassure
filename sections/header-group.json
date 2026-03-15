@@ -8,16 +8,34 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Free Shipping on Orders Over $50 | Doctor Recommended",
-            "text_alignment": "center",
-            "color_scheme": "scheme-1",
+            "text": "Free Shipping on $50+ | Doctor Recommended, Dessert Approved",
+            "link": ""
+          }
+        },
+        "announcement-bar-1": {
+          "type": "announcement",
+          "settings": {
+            "text": "One Ingredient. Zero Fillers. Pure Lactase Enzyme Powder.",
+            "link": ""
+          }
+        },
+        "announcement-bar-2": {
+          "type": "announcement",
+          "settings": {
+            "text": "New to DairyAssure? Try It Risk-Free with Our Money-Back Guarantee.",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
-      ]
+        "announcement-bar-0",
+        "announcement-bar-1",
+        "announcement-bar-2"
+      ],
+      "settings": {
+        "auto_rotate": true,
+        "change_slides_speed": 5
+      }
     },
     "header": {
       "type": "header",

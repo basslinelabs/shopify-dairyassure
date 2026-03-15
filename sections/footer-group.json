@@ -8,22 +8,22 @@
         "footer-0": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
-            "menu": "footer"
+            "heading": "Shop",
+            "menu": "main-menu"
           }
         },
         "footer-1": {
           "type": "link_list",
           "settings": {
-            "heading": "Info",
+            "heading": "Support",
             "menu": "footer"
           }
         },
         "footer-2": {
           "type": "text",
           "settings": {
-            "heading": "Our mission",
-            "subtext": "<p>To restore the joy of eating without limits, empowering people to trust their gut and live life fully.<\/p>"
+            "heading": "Our Mission",
+            "subtext": "<p>Restoring the joy of eating without limits — one stick pack at a time.<\/p>"
           }
         }
       },
@@ -35,12 +35,12 @@
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our emails",
+        "newsletter_heading": "Get 10% Off Your First Order",
         "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false,
         "payment_enable": true,
-        "show_policy": false,
+        "show_policy": true,
         "margin_top": 48,
         "padding_top": 36,
         "padding_bottom": 36

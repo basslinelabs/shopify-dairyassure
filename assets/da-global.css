@@ -25,14 +25,15 @@
 
 :root {
   /* DairyAssure color palette — packaging-matched, high-contrast model */
-  --da-color-primary-bg: #E8E0F0;          /* Light lavender — page bg (light, like Supervibe's warm sand) */
-  --da-color-secondary-bg: #D0C6E0;        /* Mid lavender — marquee, cards, panels */
+  --da-color-primary-bg: #E8E0F0;          /* Light lavender — alternating section bg */
+  --da-color-secondary-bg: #D0C6E0;        /* Mid lavender — cards, panels, accents */
+  --da-color-cream: #FAF7F2;              /* Warm cream — from packaging base, hero bg, alternating sections */
   --da-color-card-bg: #FFFFFF;             /* White — card fills, product intro container */
   --da-color-text: #2B2A8C;               /* Blue-indigo — headings, body, icons (from packaging wordmark) */
   --da-color-accent: #5FC0D4;             /* Teal — CTA buttons, active states, highlights */
   --da-color-subtle: #A8A0C2;             /* Mid lavender — borders, dividers, muted elements */
   --da-color-dark-bg: #2B2A8C;            /* Blue-indigo — guarantee bg, footer bg, announcement bar */
-  --da-color-muted-text: #7A7494;         /* Muted indigo — source citations, disclaimers */
+  --da-color-muted-text: #5E586E;         /* Muted indigo — source citations, disclaimers (darkened for WCAG AA 4.5:1) */
   --da-color-white: #FFFFFF;
   --da-color-star: #FFD321;
 
@@ -113,6 +114,16 @@
 .da-btn-secondary:active {
   transform: translate(3px, 3px);
   box-shadow: 0px 0px 0px 0px var(--da-color-text);
+}
+
+.da-btn:focus-visible {
+  outline: 3px solid var(--da-color-text);
+  outline-offset: 3px;
+}
+
+.da-btn-secondary:focus-visible {
+  outline: 3px solid var(--da-color-accent);
+  outline-offset: 3px;
 }
 
 .da-btn--full {
@@ -277,6 +288,14 @@
   transform: translateY(0);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .da-animate-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* --------------------------------------------------------------------------
    10. Cow Print Pattern (from packaging)
    -------------------------------------------------------------------------- */
@@ -354,7 +373,7 @@
    -------------------------------------------------------------------------- */
 
 .shopify-section-group-header-group .header-wrapper {
-  background-color: var(--da-color-primary-bg);
+  background-color: var(--da-color-cream);
   border-bottom: 1px solid var(--da-color-subtle);
 }
 

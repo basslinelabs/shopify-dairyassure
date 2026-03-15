@@ -80,7 +80,19 @@
                   alt: block.settings.alt | default: 'Lifestyle photo'
               }}
             {%- else -%}
-              {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              {%- assign photo_index = forloop.index -%}
+              {%- case photo_index -%}
+                {%- when 1 -%}
+                  <img src="{{ 'da-trust-photo-1.jpg' | asset_url }}" loading="lazy" width="800" height="800" alt="Gelato in Italy — travel without limits">
+                {%- when 2 -%}
+                  <img src="{{ 'da-trust-photo-2.jpg' | asset_url }}" loading="lazy" width="800" height="800" alt="Saying yes to tiramisu at a dinner party">
+                {%- when 3 -%}
+                  <img src="{{ 'da-trust-photo-3.jpg' | asset_url }}" loading="lazy" width="800" height="800" alt="Kids enjoying ice cream at a birthday party">
+                {%- when 4 -%}
+                  <img src="{{ 'da-trust-photo-4.jpg' | asset_url }}" loading="lazy" width="800" height="800" alt="Pizza night is back — couple sharing real pizza">
+                {%- else -%}
+                  {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              {%- endcase -%}
             {%- endif -%}
           </div>
         {%- endfor -%}

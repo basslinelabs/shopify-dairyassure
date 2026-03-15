@@ -3,25 +3,48 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
-          "type": "title"
-        },
-        "caption": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.metafields.descriptors.subtitle.value }}",
-            "text_style": "subtitle"
-          }
+          "type": "title",
+          "settings": {}
         },
         "price": {
-          "type": "price"
+          "type": "price",
+          "settings": {}
+        },
+        "desc": {
+          "type": "text",
+          "settings": {
+            "text": "Pure, single-ingredient lactase enzyme powder. Sprinkle on any dairy food or drink — no pills, no planning, no compromise.",
+            "text_style": "body"
+          }
+        },
+        "trust_1": {
+          "type": "text",
+          "settings": {
+            "text": "✔ Single ingredient — just lactase enzyme",
+            "text_style": "body"
+          }
+        },
+        "trust_2": {
+          "type": "text",
+          "settings": {
+            "text": "✔ Free shipping on orders over $50",
+            "text_style": "body"
+          }
+        },
+        "trust_3": {
+          "type": "text",
+          "settings": {
+            "text": "✔ Money-back guarantee",
+            "text_style": "body"
+          }
+        },
+        "trust_4": {
+          "type": "text",
+          "settings": {
+            "text": "✔ No preservatives, no fillers, no additives",
+            "text_style": "body"
+          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -30,51 +53,58 @@
           }
         },
         "quantity_selector": {
-          "type": "quantity_selector"
+          "type": "quantity_selector",
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "show_gift_card_recipient": false
           }
         },
-        "description": {
-          "type": "description"
-        },
-        "collapsible-row-0": {
+        "faq_1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Materials",
-            "icon": "leather",
-            "content": "",
+            "heading": "What exactly is DairyAssure?",
+            "icon": "question_mark",
+            "content": "<p>A pure lactase enzyme powder that helps your body digest dairy. One ingredient, no fillers, no preservatives. Sprinkle it on food or mix into drinks.</p>",
             "page": ""
           }
         },
-        "collapsible-row-1": {
+        "faq_2": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Shipping & Returns",
-            "icon": "truck",
-            "content": "",
+            "heading": "How is it different from pills?",
+            "icon": "question_mark",
+            "content": "<p>Pills contain fillers and preservatives that can cause their own stomach issues. DairyAssure is just the enzyme in powder form — you add it directly to food with no planning ahead.</p>",
             "page": ""
           }
         },
-        "collapsible-row-2": {
+        "faq_3": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Dimensions",
-            "icon": "ruler",
-            "content": "",
+            "heading": "How long does it last?",
+            "icon": "question_mark",
+            "content": "<p>DairyAssure provides 90+ minutes of effectiveness — enough to last through your entire meal and beyond.</p>",
             "page": ""
           }
         },
-        "collapsible-row-3": {
+        "faq_4": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Care Instructions",
-            "icon": "heart",
-            "content": "",
+            "heading": "Can I use it with any dairy?",
+            "icon": "question_mark",
+            "content": "<p>Yes. Coffee, pizza, ice cream, cheese, yogurt, protein shakes — it works with all dairy and is completely flavorless.</p>",
+            "page": ""
+          }
+        },
+        "faq_5": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Ingredients & Nutrition",
+            "icon": "clipboard",
+            "content": "<p><strong>Ingredient:</strong> Lactase enzyme<br><br>That's it. Nothing else. No preservatives, no fillers, no additives, no artificial flavors.<br><br>Kosher certified. Non-GMO. Made in USA.</p>",
             "page": ""
           }
         },
@@ -86,131 +116,48 @@
         }
       },
       "block_order": [
-        "vendor",
         "title",
-        "caption",
         "price",
+        "desc",
+        "trust_1",
+        "trust_2",
+        "trust_3",
+        "trust_4",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "description",
-        "collapsible-row-0",
-        "collapsible-row-1",
-        "collapsible-row-2",
-        "collapsible-row-3",
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
         "share"
       ],
       "settings": {
         "enable_sticky_info": true,
         "gallery_layout": "stacked",
-        "media_size": "large",
+        "media_size": "medium",
         "constrain_to_viewport": true,
-        "mobile_thumbnails": "hide",
-        "hide_variants": true,
+        "mobile_thumbnails": "show",
+        "hide_variants": false,
         "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 12
+        "padding_top": 48,
+        "padding_bottom": 24
       }
     },
-    "image-with-text": {
-      "type": "image-with-text",
-      "blocks": {
-        "image-with-text-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
-          }
-        },
-        "image-with-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "image-with-text-0",
-        "image-with-text-1"
-      ],
+    "guarantee": {
+      "type": "section-guarantee",
       "settings": {
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "scheme-2",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column-0": {
-          "type": "column",
-          "settings": {
-            "title": "Free Shipping",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column-1": {
-          "type": "column",
-          "settings": {
-            "title": "Hassle-Free Exchanges",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column-0",
-        "column-1"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 2,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 28
+        "heading": "The DairyAssure Promise",
+        "body_text": "Try DairyAssure with your next meal. If you don't feel the difference, we'll refund every penny. No questions.",
+        "subtext": "Your comfort or your money back. That's how confident we are.",
+        "padding_top": 64,
+        "padding_bottom": 0
       }
     }
   },
   "order": [
     "main",
-    "image-with-text",
-    "multicolumn",
-    "related-products"
+    "guarantee"
   ]
 }

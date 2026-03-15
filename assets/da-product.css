@@ -1,0 +1,293 @@
+/* ==========================================================================
+   DairyAssure Product Page Overrides
+   Styles the main-product section to match the Supervibe-inspired design
+   ========================================================================== */
+
+/* Page background */
+.product-template {
+  background-color: var(--da-color-cream);
+}
+
+/* --------------------------------------------------------------------------
+   Product Info Wrapper
+   -------------------------------------------------------------------------- */
+
+.product__info-wrapper {
+  padding-top: 0 !important;
+}
+
+/* Product title */
+.product__title h1 {
+  font-family: "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 110%;
+  letter-spacing: -0.02em;
+  color: var(--da-color-text);
+  text-transform: none;
+  margin-bottom: 8px;
+}
+
+@media screen and (min-width: 750px) {
+  .product__title h1 {
+    font-size: 36px;
+  }
+}
+
+/* Star rating area (if present) */
+.product .rating-wrapper {
+  margin-bottom: 12px;
+}
+
+/* Price */
+.product .price__regular .price-item--regular,
+.product .price__sale .price-item--sale {
+  font-family: "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--da-color-text);
+}
+
+.product .price__sale .price-item--regular {
+  text-decoration: line-through;
+  color: var(--da-color-muted-text);
+  font-size: 18px;
+}
+
+/* Description text */
+.product__description {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--da-color-text);
+}
+
+/* --------------------------------------------------------------------------
+   Trust Bullets (custom text blocks styled as checkmarks)
+   -------------------------------------------------------------------------- */
+
+.product__text .icon-with-text {
+  color: var(--da-color-text);
+}
+
+/* --------------------------------------------------------------------------
+   Variant Picker
+   -------------------------------------------------------------------------- */
+
+.product-form__input input[type="radio"] + label {
+  border: 2px solid var(--da-color-text) !important;
+  border-radius: 8px !important;
+  color: var(--da-color-text);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 20px;
+  min-width: auto;
+  transition: all 200ms ease;
+}
+
+.product-form__input input[type="radio"]:checked + label {
+  background-color: var(--da-color-text) !important;
+  border-color: var(--da-color-text) !important;
+  color: var(--da-color-white) !important;
+}
+
+.product-form__input input[type="radio"] + label:hover {
+  border-color: var(--da-color-accent) !important;
+}
+
+/* Variant group label */
+.product-form__group-label,
+.product-form__input .form__label {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--da-color-text);
+  margin-bottom: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   Quantity Selector
+   -------------------------------------------------------------------------- */
+
+.product quantity-input {
+  border: 2px solid var(--da-color-text);
+  border-radius: 8px;
+}
+
+.product quantity-input .quantity__button {
+  color: var(--da-color-text);
+}
+
+.product quantity-input .quantity__input {
+  color: var(--da-color-text);
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   Add to Cart / Buy Button
+   -------------------------------------------------------------------------- */
+
+.product-form__submit {
+  background-color: var(--da-color-text) !important;
+  color: var(--da-color-white) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  box-shadow: -3px 5px 0px 0px rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 16px 32px !important;
+  min-height: 56px;
+  transition: all 200ms ease;
+}
+
+.product-form__submit:hover {
+  background-color: var(--da-color-text) !important;
+  box-shadow: 0 0 0 transparent;
+  transform: translate(-3px, 5px);
+}
+
+.product-form__submit[disabled] {
+  background-color: var(--da-color-subtle) !important;
+  box-shadow: none;
+}
+
+/* Dynamic checkout button */
+.shopify-payment-button__button {
+  border-radius: 8px !important;
+  min-height: 56px;
+}
+
+/* --------------------------------------------------------------------------
+   Collapsible Tabs (Product FAQ)
+   -------------------------------------------------------------------------- */
+
+.product .accordion {
+  border-color: var(--da-color-text);
+}
+
+.product .accordion details {
+  border-bottom: 2px solid var(--da-color-text);
+}
+
+.product .accordion details:first-child {
+  border-top: 2px solid var(--da-color-text);
+}
+
+.product .accordion .accordion__title {
+  font-family: "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--da-color-text);
+  padding: 16px 0;
+}
+
+.product .accordion .accordion__content {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--da-color-text);
+  padding-bottom: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   Product Media / Gallery
+   -------------------------------------------------------------------------- */
+
+.product__media-wrapper {
+  position: sticky;
+  top: 100px;
+}
+
+.product__media-item .media {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Thumbnails */
+.thumbnail-list .thumbnail {
+  border: 2px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 200ms ease;
+}
+
+.thumbnail-list .thumbnail.is-active,
+.thumbnail-list .thumbnail:hover {
+  border-color: var(--da-color-text);
+}
+
+/* --------------------------------------------------------------------------
+   Guarantee Text (below ATC)
+   -------------------------------------------------------------------------- */
+
+.da-product-guarantee {
+  text-align: center;
+  margin-top: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--da-color-muted-text);
+}
+
+.da-product-guarantee strong {
+  font-weight: 700;
+  color: var(--da-color-text);
+}
+
+/* --------------------------------------------------------------------------
+   Shipping / Trust badges below buy button
+   -------------------------------------------------------------------------- */
+
+.da-product-badges {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--da-color-subtle);
+}
+
+.da-product-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--da-color-text);
+}
+
+.da-product-badge__icon {
+  font-size: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile adjustments
+   -------------------------------------------------------------------------- */
+
+@media screen and (max-width: 749px) {
+  .product__title h1 {
+    font-size: 28px;
+  }
+
+  .product .price__regular .price-item--regular,
+  .product .price__sale .price-item--sale {
+    font-size: 22px;
+  }
+
+  .da-product-badges {
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+}

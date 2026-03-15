@@ -79,7 +79,7 @@
    -------------------------------------------------------------------------- */
 
 .section--featured-product {
-  background-color: var(--da-color-primary-bg, #E8E0F0);
+  background-color: var(--da-color-cream, #FAF7F2);
 }
 
 /* Variant picker pills */

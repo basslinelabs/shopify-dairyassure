@@ -55,14 +55,14 @@
     </div>
 
     {%- comment -%} Filter tabs {%- endcomment -%}
-    <div class="da-reviews__tabs">
-      <button type="button" class="da-reviews__tab da-reviews__tab--active" data-variant="all">All</button>
-      <button type="button" class="da-reviews__tab" data-variant="single">{{ section.settings.tab_1_label }}</button>
-      <button type="button" class="da-reviews__tab" data-variant="extra">{{ section.settings.tab_2_label }}</button>
+    <div class="da-reviews__tabs" role="tablist" aria-label="Filter reviews by product strength">
+      <button type="button" class="da-reviews__tab da-reviews__tab--active" data-variant="all" role="tab" aria-selected="true" aria-controls="da-reviews-list">All</button>
+      <button type="button" class="da-reviews__tab" data-variant="single" role="tab" aria-selected="false" aria-controls="da-reviews-list">{{ section.settings.tab_1_label }}</button>
+      <button type="button" class="da-reviews__tab" data-variant="extra" role="tab" aria-selected="false" aria-controls="da-reviews-list">{{ section.settings.tab_2_label }}</button>
     </div>
 
     {%- comment -%} Review cards {%- endcomment -%}
-    <div class="da-reviews__list">
+    <div class="da-reviews__list" id="da-reviews-list" role="tabpanel">
       {%- for block in section.blocks -%}
         <div
           class="da-reviews__card{% if forloop.index > 3 %} da-reviews__card--hidden{% endif %}"

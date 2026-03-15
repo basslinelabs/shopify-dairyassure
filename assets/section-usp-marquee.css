@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .da-marquee {
-  background-color: var(--da-color-secondary-bg);
+  background-color: var(--da-color-dark-bg);
   min-height: 64px;
   display: flex;
   align-items: center;
@@ -40,7 +40,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--da-color-text);
+  color: var(--da-color-white);
 }
 
 .da-marquee__emoji {

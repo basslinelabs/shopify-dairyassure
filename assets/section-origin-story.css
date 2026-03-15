@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .da-origin {
-  background-color: var(--da-color-primary-bg);
+  background-color: var(--da-color-cream);
 }
 
 .da-origin__container {
@@ -32,7 +32,7 @@
   border-radius: 16px;
   overflow: hidden;
   aspect-ratio: 3 / 4;
-  background-color: var(--da-color-secondary-bg);
+  background-color: var(--da-color-primary-bg);
 }
 
 .da-origin__photo img {

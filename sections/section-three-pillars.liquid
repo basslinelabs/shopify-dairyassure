@@ -42,6 +42,15 @@
                   loading: 'lazy',
                   alt: block.settings.title
               }}
+            {%- else -%}
+              {%- case forloop.index -%}
+                {%- when 1 -%}
+                  <img class="da-pillars__icon" src="{{ 'da-icon-sprinkle.png' | asset_url }}" loading="lazy" width="96" height="96" alt="{{ block.settings.title }}">
+                {%- when 2 -%}
+                  <img class="da-pillars__icon" src="{{ 'da-icon-eat.png' | asset_url }}" loading="lazy" width="96" height="96" alt="{{ block.settings.title }}">
+                {%- when 3 -%}
+                  <img class="da-pillars__icon" src="{{ 'da-icon-enjoy.png' | asset_url }}" loading="lazy" width="96" height="96" alt="{{ block.settings.title }}">
+              {%- endcase -%}
             {%- endif -%}
             <p class="da-pillars__number">{{ block.settings.number }}</p>
             <h3 class="da-pillars__title">{{ block.settings.title }}</h3>

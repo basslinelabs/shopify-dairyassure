@@ -1,4 +1,11 @@
-# Shopify DairyAssure
+# Shopify DairyAssure (Dawn fork)
 node_modules/
 .DS_Store
 .env
+.shopify/
+
+# Local-only folders
+brand/
+implementation/
+.firecrawl/
+.shopify-token

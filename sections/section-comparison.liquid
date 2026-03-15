@@ -34,6 +34,11 @@
             <div
               class="da-comp__bar-track{% if block.settings.is_hero %} da-comp__bar-track--hero{% else %} da-comp__bar-track--default{% endif %}"
               style="--score: {{ block.settings.score }};"
+              role="meter"
+              aria-valuenow="{{ block.settings.score }}"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-label="{{ block.settings.label }} relief convenience score"
             >
               <p class="da-comp__bar-score">{{ block.settings.score }}</p>
             </div>

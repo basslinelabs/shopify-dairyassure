@@ -1,0 +1,13 @@
+VISUAL DNA ANCHOR v2 (REVISED — soft pastel, not warm film):
+"Soft diffused natural daylight, even and gentle — no harsh directional light, no golden hour amber. Color temperature 5200-5600K neutral daylight. Surfaces and backgrounds in the lavender-cream-white family. Soft pastel color palette matching the site: lavender #E8E0F0, cream, soft white, with pops of teal #5FC0D4 and blue-indigo #2B2A8C. Shadows are LIFTED and SOFT — never deep, never dramatic, never amber-tinted. The overall feeling is AIRY, LIGHT, and SOFT — like looking through a clean window on a bright overcast day. Photography is clean and modern with slight softness — NOT film grain, NOT golden hour, NOT vintage. Think: Glossier meets Curology meets modern DTC wellness. No text, no logos, no watermarks."
+
+VISUAL FAMILY CONSTRAINT v2:
+"This image is part of a cohesive visual family for the DairyAssure brand. It MUST share these exact properties with all other images in the set:
+1. COLOR GRADE: Clean, slightly desaturated, pastel. Whites are true white (not yellow). Shadows are lifted and cool-neutral (NOT amber, NOT warm, NOT golden). Overall palette skews lavender-cream-white.
+2. LIGHTING: Soft, diffused, even daylight. 5200-5600K neutral. Think: bright overcast day or large north-facing window. NO golden hour. NO warm tungsten. NO candlelight. NO dramatic directional light.
+3. SURFACES: Clean white, soft cream, light natural wood (bleached/whitewashed, NOT honey-toned), natural linen (white/cream, NOT warm). The environment should feel like it belongs on the same page as a lavender #E8E0F0 background.
+4. SATURATION: Slightly pulled back. Colors are present but soft — not punchy, not vivid, not film-saturated. Pastels over primaries.
+5. FEEL: Every image should feel like it could be a still from a quiet, joyful moment. Soft, approachable, light. NOT dramatic, NOT moody, NOT vintage. The feeling is modern ease — clean and confident."
+
+PRODUCT CAMEO RULE (unchanged):
+"A single DairyAssure stick pack sits on the table/surface — NOT as the subject, but as casually present as a sugar packet at a café table. It's just THERE, part of the setting, noticed by no one. Do not center it. Do not light it differently. It is background furniture."

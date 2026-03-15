@@ -10,11 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
     tab.addEventListener('click', function () {
       var variant = this.getAttribute('data-variant');
 
-      // Update active tab
+      // Update active tab + ARIA
       tabs.forEach(function (t) {
         t.classList.remove('da-reviews__tab--active');
+        t.setAttribute('aria-selected', 'false');
       });
       this.classList.add('da-reviews__tab--active');
+      this.setAttribute('aria-selected', 'true');
 
       // Filter cards
       cards.forEach(function (card) {

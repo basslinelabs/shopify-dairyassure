@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .da-hero {
-  background-color: var(--da-color-primary-bg);
+  background-color: var(--da-color-cream);
 }
 
 /* Dark text on light bg — high contrast model */
@@ -78,7 +78,7 @@
 /* Image column */
 .da-hero__media {
   flex: 1;
-  background-color: #D8D0E8;
+  background-color: var(--da-color-primary-bg);
   border-radius: 24px;
   overflow: hidden;
   width: 100%;
@@ -123,5 +123,13 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .da-hero.scroll-trigger.animate--slide-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }

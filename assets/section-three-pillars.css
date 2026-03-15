@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .da-pillars {
-  background-color: var(--da-color-primary-bg);
+  background-color: var(--da-color-cream);
 }
 
 .da-pillars__header {
@@ -71,7 +71,7 @@
 }
 
 .da-pillars__card {
-  background-color: var(--da-color-secondary-bg);
+  background-color: var(--da-color-white);
   border: 2px solid var(--da-color-text);
   border-radius: 16px;
   padding: 32px 24px;

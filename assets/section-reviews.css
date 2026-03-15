@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .da-reviews {
-  background-color: var(--da-color-primary-bg);
+  background-color: var(--da-color-white);
 }
 
 .da-reviews__header {
@@ -127,6 +127,11 @@
   transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
 }
 
+.da-reviews__tab:focus-visible {
+  outline: 3px solid var(--da-color-accent);
+  outline-offset: 3px;
+}
+
 .da-reviews__tab--active {
   background-color: var(--da-color-text);
   border-color: var(--da-color-text);
@@ -222,6 +227,11 @@
 .da-reviews__show-more-btn:hover {
   background-color: var(--da-color-text);
   color: var(--da-color-white);
+}
+
+.da-reviews__show-more-btn:focus-visible {
+  outline: 3px solid var(--da-color-accent);
+  outline-offset: 3px;
 }
 
 .da-reviews__list--expanded + .da-reviews__show-more {

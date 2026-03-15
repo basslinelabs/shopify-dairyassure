@@ -61,12 +61,12 @@
   border: 2px solid var(--da-color-text);
   border-radius: 8px;
   overflow: hidden;
-  background-color: #EDE6F5;
-  transition: background-color 200ms ease;
+  background-color: var(--da-color-white);
+  transition: background-color 200ms ease-out;
 }
 
 .da-faq__item[open] {
-  background-color: #D8D0F0;
+  background-color: var(--da-color-cream);
 }
 
 /* Summary (question) */

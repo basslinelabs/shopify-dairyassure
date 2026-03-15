@@ -1,0 +1,875 @@
+{
+  "generated_at": "2026-03-15",
+  "source_page": "templates/index.json (DairyAssure homepage)",
+  "visual_dna_anchor": "Back-lit soft diffused lighting at warm 3200K golden hour. Sun-warmed wood and natural linen surfaces with matte natural finish. Lifestyle candid documentary photography with Kodak Gold 200 warmth. Color temperature matching lavender #E8E0F0 and blue-indigo #2B2A8C with teal #5FC0D4 accents. Mood: joyful, nostalgic, warm, approachable, playful. AVOID: clinical, sterile, stock_photo_aesthetic, cold, corporate. No text, no logos, no watermarks.",
+  "total_images": 13,
+  "estimated_cost": "$0.73",
+  "genesis_image": "hero-image",
+  "brand_anchors": {
+    "core_essence": "Taste Joy",
+    "personality": "Your Best Backup — the trusted friend who always has what you need in their bag",
+    "vision": "As essential and recognizable as the sugar packet, present at every table",
+    "brand_story_scenes": [
+      "A first date over coffee and tiramisu",
+      "A childhood birthday party with pizza and ice cream",
+      "A family gathering where someone's famous mac and cheese takes center stage",
+      "Gelato in Rome"
+    ],
+    "emotional_ladder": "Single Ingredient → Can Ingest Dairy → Less Stress → Empowerment → Joy",
+    "key_tension": "You shouldn't have to choose between comfort and enjoyment"
+  },
+  "visual_family_constraint": {
+    "description": "Every prompt includes this block verbatim to enforce consistency across independent API calls",
+    "color_grade": "Warm golden highlights (Kodak Gold 200 warmth). Shadows tinted with subtle lavender (#D0C6E0) — NOT neutral grey shadows. Overall warm but not orange. The lavender shadow tone is the signature that makes every image feel 'DairyAssure'.",
+    "film_stock": "Kodak Gold 200 for all lifestyle images. Fujifilm Pro 400H only for the morning product-intro shot.",
+    "surfaces_locked": ["sun-warmed butcher block (honey-toned wood)", "natural off-white linen", "outdoor natural warmth (no specific surface)"],
+    "surfaces_banned": ["marble", "concrete", "white laminate", "grey surfaces", "black surfaces", "glass tables"],
+    "lighting_rig": "Back-lit primary with soft fill from camera-left. Color temperature 3200K. Slight sun flare permitted. NO harsh directional shadows. NO overhead fluorescent. NO flash.",
+    "product_cameo_rule": "In every lifestyle scene (not product-hero shots), a single DairyAssure stick pack sits on the table/surface — NOT as the subject, but as casually present as a sugar packet would be. It's just THERE, part of the table setting. Do not call attention to it. Do not center it. It's background furniture.",
+    "people_casting": "Diverse, 25-40, real people energy. Not models. If hands appear across multiple shots, they should suggest the same warmth — no manicured editorial hands, no rough worker hands. Natural, cared-for, lived-in hands. Mixed skin tones across the set.",
+    "emotional_through_line": "Every image answers one question: 'What does it look like when you can say YES to dairy again?' The feeling is relief-becoming-joy. Not the moment of anxiety. Not the moment of taking medicine. The moment AFTER — when you're just... enjoying it."
+  },
+  "reference_images": {
+    "pouch": "brand/creatives/Stick Pack_Pouch.png",
+    "stick_flat": "brand/creatives/Single Stick_Flat.png",
+    "stick_sample": "brand/creatives/Single Stick_Sample.png"
+  },
+  "prompts": [
+    {
+      "id": "hero-image",
+      "slot_selector": "section-hero.liquid → section.settings.image",
+      "page": "homepage",
+      "section_type": "Hero split",
+      "purpose": "Hero product showcase — the product as 'your best backup', casual and confident on a warm surface",
+      "genesis": true,
+      "consistency_group": "hero",
+      "aspect_ratio": "1:1",
+      "resolution": "4K",
+      "dimensions_target": "2048x2048",
+      "prompt": {
+        "scene": {
+          "description": "A warm, sun-drenched kitchen counter moment. The product from the reference image sits confidently on a honey-toned butcher block surface. Two individual stick packs are casually scattered beside the pouch — one slightly overlapping the other, the way you'd toss them down after pulling them from your bag. Behind: a ceramic bowl of fresh strawberries and a half-full glass of milk catch the golden light. A folded natural linen napkin adds texture. The scene feels like someone just set down their morning essentials — keys, coffee, DairyAssure. It belongs here.",
+          "location": "warm kitchen counter near a window",
+          "time": "golden_hour morning",
+          "background_elements": ["soft lavender-tinted wall (#D8D0E8) behind the scene", "gentle sun flare from window at camera-right", "warm golden light washing across the butcher block"]
+        },
+        "subject": {
+          "description": "The product from the reference image. MUST match the reference image exactly. DO NOT regenerate the product — PRESERVE all packaging details including the cow logo, the DairyAssure wordmark, the lavender color, and 'Preservative-free Lactase' text. The product is the confident anchor of the scene but not overly staged — it looks like it LIVES here, like a sugar packet on a café table.",
+          "position": "center, slightly left of center",
+          "pose": "pouch standing upright naturally (not perfectly straight — slight casual lean), stick packs tossed casually beside"
+        },
+        "style": {
+          "medium": "photography",
+          "aesthetic": "lifestyle_product_documentary",
+          "mood": "quiet confidence, Sunday morning ease, 'your best backup just sitting on the counter' energy. This is what Taste Joy looks like before the meal even starts."
+        },
+        "technical": {
+          "camera_model": "Sony A7R IV",
+          "lens": "85mm",
+          "aperture": "f/2.8",
+          "film_stock": "Kodak Gold 200",
+          "depth_of_field": "medium — product sharp, background softly out of focus"
+        },
+        "composition": {
+          "framing": "medium_shot",
+          "angle": "eye_level, slightly above",
+          "focus_point": "product pouch center",
+          "negative_space": "product occupies center 60% of frame, breathing room on all sides, no text overlay needed"
+        },
+        "materials": {
+          "primary_surface": "sun-warmed honey-toned butcher block countertop",
+          "secondary": "white ceramic bowl, glass of milk, natural linen napkin",
+          "texture": "warm natural wood grain, matte ceramic, soft linen folds"
+        },
+        "lighting": {
+          "type": "natural_sunlight through window",
+          "direction": "back_lit from camera-right with soft fill from camera-left",
+          "color_temperature": "3200K warm golden hour",
+          "shadow_color": "shadows tinted with subtle lavender (#D0C6E0), NOT neutral grey"
+        },
+        "quality": {
+          "resolution": "4K",
+          "sharpness": "crisp on product, progressively softer toward edges",
+          "film_grain": "slight — visible but not gritty, Kodak Gold 200 character",
+          "post_processing": "warm golden color grade, lavender-tinted shadows, natural skin of light on surfaces",
+          "imperfections": "slight lens warmth at edges, one strawberry slightly turned, nothing perfectly arranged"
+        }
+      },
+      "negative_prompt": [
+        "text", "logos", "watermarks", "blur", "low_quality", "distortion",
+        "stock_photo_aesthetic", "oversaturated", "CGI_render_look", "perfect_symmetry",
+        "clinical", "cold_lighting", "sterile", "posed_unnatural",
+        "harsh_shadows", "grey_shadows", "neutral_shadows",
+        "marble_surface", "white_laminate", "glass_table",
+        "studio_softbox", "flash_photography", "fluorescent_lighting",
+        "perfectly_arranged", "too_clean", "pharmaceutical"
+      ],
+      "reference_images": ["brand/creatives/Stick Pack_Pouch.png", "brand/creatives/Single Stick_Flat.png"],
+      "text_overlay": {
+        "position": "none",
+        "content_preview": "N/A — text in separate left column",
+        "text_color": "N/A"
+      },
+      "output_filename": "hero-image.jpg"
+    },
+    {
+      "id": "hero-image-mobile",
+      "slot_selector": "section-hero.liquid → section.settings.image_mobile",
+      "page": "homepage",
+      "section_type": "Hero split (mobile)",
+      "purpose": "Mobile hero — tighter portrait crop of product, same warm butcher block world",
+      "genesis": false,
+      "consistency_group": "hero",
+      "aspect_ratio": "3:4",
+      "resolution": "2K",
+      "dimensions_target": "900x1200",
+      "prompt": {
+        "scene": {
+          "description": "Tighter version of the hero product scene. The product from the reference image on the SAME honey-toned butcher block surface as the desktop hero. One stick pack leaning casually against the pouch. The glass of milk is partially visible at the edge of frame. A folded natural linen napkin in the lower corner. Warm golden light from a window. This MUST feel like a tighter crop of the exact same photo session as the desktop hero — same surface, same light, same color grade, same world.",
+          "location": "same warm kitchen counter as desktop hero",
+          "time": "golden_hour morning",
+          "background_elements": ["soft lavender wall #D8D0E8", "golden window light", "glass of milk partially visible at edge"]
+        },
+        "subject": {
+          "description": "The product from the reference image. MUST match the reference image exactly. PRESERVE all packaging details. Tighter framing — product fills more of the frame than desktop version.",
+          "position": "center",
+          "pose": "pouch upright with slight casual lean, one stick pack leaning against it"
+        },
+        "style": {
+          "medium": "photography",
+          "aesthetic": "lifestyle_product_documentary",
+          "mood": "quiet confidence, the 'best backup' just sitting there ready. Taste Joy energy."
+        },
+        "technical": {
+          "camera_model": "Sony A7R IV",
+          "lens": "85mm",
+          "aperture": "f/2.8",
+          "film_stock": "Kodak Gold 200",
+          "depth_of_field": "medium"
+        },
+        "composition": {
+          "framing": "medium_close",
+          "angle": "slightly_above_eye_level",
+          "focus_point": "product pouch",
+          "negative_space": "product fills center 70% of frame, portrait orientation"
+        },
+        "materials": {
+          "primary_surface": "sun-warmed honey-toned butcher block — SAME as desktop hero",
+          "secondary": "natural linen napkin, glass of milk at edge",
+          "texture": "warm natural wood grain, matte"
+        },
+        "lighting": {
+          "type": "natural_sunlight through window",
+          "direction": "back_lit from camera-right with soft fill",
+          "color_temperature": "3200K warm golden hour",
+          "shadow_color": "shadows tinted with subtle lavender (#D0C6E0)"
+        },
+        "quality": {
+          "resolution": "2K",
+          "sharpness": "crisp on product",
+          "film_grain": "slight Kodak Gold 200",
+          "post_processing": "warm golden color grade, lavender-tinted shadows"
+        }
+      },
+      "negative_prompt": [
+        "text", "logos", "watermarks", "blur", "low_quality", "distortion",
+        "stock_photo_aesthetic", "oversaturated", "CGI_render_look", "perfect_symmetry",
+        "clinical", "cold_lighting", "sterile", "posed_unnatural",
+        "harsh_shadows", "grey_shadows", "marble_surface",
+        "studio_softbox", "flash_photography", "different_surface_than_desktop"
+      ],
+      "reference_images": ["brand/creatives/Stick Pack_Pouch.png", "USE_GENESIS_IMAGE"],
+      "text_overlay": {
+        "position": "none",
+        "content_preview": "N/A",
+        "text_color": "N/A"
+      },
+      "output_filename": "hero-image-mobile.jpg"
+    },
+    {
+      "id": "product-intro-image",
+      "slot_selector": "section-product-intro.liquid → section.settings.product_image",
+      "page": "homepage",
+      "section_type": "Image-with-text (product showcase)",
+      "purpose": "Product intro — the 'simple solutions only' moment: hand casually sprinkling powder onto morning cereal",
+      "genesis": false,
+      "consistency_group": null,
+      "aspect_ratio": "1:1",
+      "resolution": "2K",
+      "dimensions_target": "1600x1600",
+      "prompt": {
+        "scene": {
+          "description": "A real morning moment. A person's hand tears open a DairyAssure stick pack over a bowl of cereal with milk. The pouch sits on the same honey-toned butcher block surface nearby. A coffee mug steams gently. A morning newspaper or phone is pushed to the side. This is the brand's 'Simple Solutions Only' pillar made visual — no planning required, just tear and sprinkle. The scene answers: 'what if relief was as simple as the dairy itself?' The stick pack is being used as casually as adding sugar to coffee. It BELONGS in this morning routine.",
+          "location": "warm kitchen counter, morning sunlight",
+          "time": "early_morning",
+          "background_elements": ["morning sun streaming through window, slightly cooler than hero but still warm", "kitchen warmth", "steam from coffee"]
+        },
+        "subject": {
+          "description": "The product from the reference image. MUST match the reference image exactly. DO NOT regenerate the product. PRESERVE all packaging details. A natural hand (diverse, un-manicured, real) tearing open a stick pack, with powder just beginning to sprinkle down toward the cereal bowl. The pouch sits nearby on the counter.",
+          "position": "center-left",
+          "pose": "hand tearing stick pack naturally, powder beginning to fall, pouch standing nearby"
+        },
+        "style": {
+          "medium": "photography",
+          "aesthetic": "lifestyle_candid_morning",
+          "mood": "effortless morning routine energy. This is what 'designed for spontaneity' looks like. No planning, no pill case, no water needed — just tear, sprinkle, eat. The ease IS the message."
+        },
+        "technical": {
+          "camera_model": "Sony A7R IV",
+          "lens": "50mm",
+          "aperture": "f/2.0",
+          "film_stock": "Fujifilm Pro 400H",
+          "depth_of_field": "shallow — sharp on the stick pack and falling powder, soft background"
+        },
+        "composition": {
+          "framing": "medium_shot",
+          "angle": "slightly_overhead, 30 degrees",
+          "focus_point": "the stick pack being torn and the powder sprinkling — this is the magic moment",
+          "negative_space": "none needed — fills frame naturally"
+        },
+        "materials": {
+          "primary_surface": "sun-warmed honey-toned butcher block — SAME surface as hero",
+          "secondary": "white ceramic bowl with cereal, ceramic coffee mug, natural linen",
+          "texture": "warm natural wood grain, matte ceramic"
+        },
+        "lighting": {
+          "type": "natural_morning_sunlight",
+          "direction": "side_lit from window at camera-left",
+          "color_temperature": "4000K warm morning — slightly cooler than hero golden hour but still warm",
+          "shadow_color": "shadows tinted with subtle lavender (#D0C6E0)"
+        },
+        "quality": {
+          "resolution": "2K",
+          "sharpness": "crisp on stick pack and powder, soft bokeh on background",
+          "film_grain": "slight — Fujifilm Pro 400H character, slightly cooler grain than Kodak Gold",
+          "post_processing": "warm but clean morning color grade, lavender-tinted shadows, natural"
+        }
+      },
+      "negative_prompt": [
+        "text", "logos", "watermarks", "blur", "low_quality", "distortion",
+        "stock_photo_aesthetic", "oversaturated", "CGI_render_look", "perfect_symmetry",
+        "clinical", "cold_lighting", "sterile", "posed_unnatural",
+        "harsh_shadows", "grey_shadows", "marble_surface", "white_laminate",
+        "studio_softbox", "flash_photography",
+        "pharmaceutical", "medicine", "pill_bottle", "supplement_aesthetic",
+        "manicured_hands", "editorial_hands"
+      ],
+      "reference_images": ["brand/creatives/Stick Pack_Pouch.png", "brand/creatives/Single Stick_Flat.png"],
+      "text_overlay": {
+        "position": "none",
+        "content_preview": "N/A — text in right column",
+        "text_color": "N/A"
+      },
+      "output_filename": "product-intro-image.jpg"
+    },
+    {
+      "id": "origin-story-image-1",
+      "slot_selector": "section-origin-story.liquid → section.settings.image_1",
+      "page": "homepage",
+      "section_type": "About/story (editorial portrait)",
+      "purpose": "Brand story scene 1 — 'A first date over coffee and tiramisu' (directly from brand story)",
+      "genesis": false,
+      "consistency_group": "origin-story",
+      "aspect_ratio": "3:4",
+      "resolution": "2K",
+      "dimensions_target": "900x1200",
+      "prompt": {
+        "scene": {
+          "description": "A first date at a cozy Italian café. Two people sitting across from each other at a small round table. Between them: two espresso cups and a shared plate of tiramisu with two forks. One person is mid-laugh, the other is smiling while reaching for the tiramisu. A DairyAssure stick pack sits on the table beside the espresso cups — as unremarkable as a sugar packet. It's just THERE, part of the table, noticed by no one. The magic of this image is the total absence of anxiety — this is the 'after' moment. The moment where you said YES to the date, YES to the tiramisu, and didn't think twice.",
+          "location": "cozy Italian café, small round table by a window",
+          "time": "late_afternoon golden",
+          "background_elements": ["warm café interior in soft bokeh", "other patrons blurred", "warm pendant light", "window light mixing with interior warmth"]
+        },
+        "subject": {
+          "description": "Two people (diverse, 28-35, NOT models — real date energy) sharing tiramisu and espresso. One is mid-laugh. Focus on the CONNECTION between them, with the food as the facilitator. A single DairyAssure stick pack rests on the table beside the espresso cups — casual, unremarkable, like a sugar packet. Do NOT make the stick pack prominent. It's background furniture.",
+          "position": "center — the table and the two people across from each other",
+          "pose": "candid mid-conversation, one reaching for tiramisu, genuine laughter"
+        },
+        "style": {
+          "medium": "photography",
+          "aesthetic": "documentary_candid_romantic",
+          "mood": "first-date butterflies mixed with total comfort. The anxiety of 'can I eat this?' is completely absent. This is what 'you shouldn't have to choose between comfort and enjoyment' LOOKS like."
+        },
+        "technical": {
+          "camera_model": "Canon EOS R5",
+          "lens": "50mm",
+          "aperture": "f/1.8",
+          "film_stock": "Kodak Gold 200",
+          "depth_of_field": "shallow — faces and food sharp, background creamy bokeh"
+        },
+        "composition": {
+          "framing": "medium_shot, portrait orientation 3:4",
+          "angle": "eye_level, slightly to the side — voyeuristic candid, like you're at the next table",
+          "focus_point": "the shared tiramisu and the laughing face",
+          "negative_space": "warm café bokeh fills background"
+        },
+        "materials": {
+          "primary_surface": "small round café table — wood or marble bistro style",
+          "secondary": "espresso cups, tiramisu plate, forks, napkins",
+          "texture": "warm, lived-in café patina"
+        },
+        "lighting": {
+          "type": "mixed — natural window light and warm pendant",
+          "direction": "side_lit from window, warm fill from pendant above",
+          "color_temperature": "3200K warm golden",
+          "shadow_color": "shadows tinted with subtle lavender (#D0C6E0)"
+        },
+        "quality": {
+          "resolution": "2K",
+          "sharpness": "crisp on faces and food, dreamy background",
+          "film_grain": "slight — Kodak Gold 200, adds the romance",
+          "post_processing": "warm golden highlights, lavender-tinted shadows, slight vignette",
+          "imperfections": "natural laugh lines, slightly messy hair, tiramisu already partly eaten — real"
+        }
+      },
+      "negative_prompt": [
+        "text", "logos", "watermarks", "blur", "low_quality", "distortion",
+        "stock_photo_aesthetic", "oversaturated", "CGI_render_look", "perfect_symmetry",
+        "clinical", "cold_lighting", "sterile", "posed_unnatural",
+        "models", "perfect_hair", "professional_lighting_setup",
+        "grey_shadows", "neutral_shadows",
+        "product_as_hero", "product_prominently_displayed",
+        "anxiety", "discomfort", "medicine_aesthetic"
+      ],
+      "reference_images": ["brand/creatives/Single Stick_Flat.png", "USE_GENESIS_IMAGE"],
+      "text_overlay": {
+        "position": "none",
+        "content_preview": "N/A",
+        "text_color": "N/A"
+      },
+      "output_filename": "origin-story-image-1.jpg"
+    },
+    {
+      "id": "origin-story-image-2",
+      "slot_selector": "section-origin-story.liquid → section.settings.image_2",
+      "page": "homepage",
+      "section_type": "About/story (editorial portrait)",
+      "purpose": "Brand story scene 2 — 'A family gathering where someone's famous mac and cheese takes center stage' (directly from brand story)",
+      "genesis": false,
+      "consistency_group": "origin-story",
+      "aspect_ratio": "3:4",
+      "resolution": "2K",
+      "dimensions_target": "900x1200",
+      "prompt": {
+        "scene": {
+          "description": "A multigenerational family gathering around a dining table. The centerpiece: a big steaming dish of homemade mac and cheese — golden, bubbly, fresh from the oven. Hands are reaching in with a serving spoon. A grandmother is smiling at a grandchild. A parent is serving a plate. The table has the beautiful chaos of a real family dinner — mismatched glasses, a basket of bread, cloth napkins half-unfolded. A single DairyAssure stick pack sits on the table near one person's plate — as unremarkable as a salt shaker. The emotional core: EVERYONE is at the table. No one had to sit this one out. This is 'Connection' — one of the brand's core values — made visible.",
+          "location": "family dining room, evening",
+          "time": "evening, warm indoor lighting",
+          "background_elements": ["warm dining room", "family photos on wall in soft blur", "warm chandelier or pendant light above"]
+        },
+        "subject": {
+          "description": "Multigenerational family (3 generations visible, diverse, 3-5 people) gathered around mac and cheese. Genuine interaction — not everyone looking at camera. Grandmother, parent, child at minimum. A DairyAssure stick pack on the table near one person's plate — barely visible, just THERE. NOT the subject.",
+          "position": "center — the mac and cheese dish as the anchor, people around it",
+          "pose": "serving, reaching, laughing, natural family dinner chaos"
+        },
+        "style": {
+          "medium": "photography",
+          "aesthetic": "documentary_candid_family",
+          "mood": "the warm chaos of a family dinner where everyone said yes and no one is missing. This is what 'celebrating life's moments — big and small — where dairy plays a role' LOOKS like. The mac and cheese IS the center stage. Connection, inclusivity, accessibility — all visible in one frame."
+        },
+        "technical": {
+          "camera_model": "Canon EOS R5",
+          "lens": "35mm",
+          "aperture": "f/2.8",
+          "film_stock": "Kodak Gold 200",
+          "depth_of_field": "medium — enough to see multiple people"
+        },
+        "composition": {
+          "framing": "medium_wide_shot, portrait orientation 3:4",
+          "angle": "slightly_above_table_level — you can see the mac and cheese and the people",
+          "focus_point": "the mac and cheese dish and the hands serving it",
+          "negative_space": "none — filled with family and food and warmth"
+        },
+        "materials": {
+          "primary_surface": "wooden dining table with natural linen table runner",
+          "secondary": "ceramic baking dish, mismatched glasses, cloth napkins, bread basket",
+          "texture": "warm wood, soft linen, ceramic"
+        },
+        "lighting": {
+          "type": "warm indoor evening — chandelier/pendant mixed with candles on table",
+          "direction": "overhead warm with candle fill on faces",
+          "color_temperature": "2800K warm evening — deepest warmth in the page's emotional gradient",
+          "shadow_color": "shadows tinted with lavender (#D0C6E0) — deeper and richer than hero"
+        },
+        "quality": {
+          "resolution": "2K",
+          "sharpness": "crisp on food and nearest faces, progressive softness",
+          "film_grain": "slight-to-moderate — Kodak Gold 200 in evening light gets grainier, and that's perfect",
+          "post_processing": "deep warm golden, lavender shadows, rich and intimate color grade",
+          "imperfections": "motion blur on reaching hands, slightly crooked napkins, real family dinner energy"
+        }
+      },
+      "negative_prompt": [
+        "text", "logos", "watermarks", "blur", "low_quality", "distortion",
+        "stock_photo_aesthetic", "oversaturated", "CGI_render_look", "perfect_symmetry",
+        "clinical", "cold_lighting", "sterile", "posed_unnatural",
+        "models", "catalog_photography", "perfectly_set_table",
+        "grey_shadows", "harsh_flash", "fluorescent",
+        "product_as_hero", "medicine", "supplement_branding",
+        "everyone_looking_at_camera"
+      ],
+      "reference_images": ["brand/creatives/Single Stick_Flat.png", "USE_GENESIS_IMAGE"],
+      "text_overlay": {
+        "position": "none",
+        "content_preview": "N/A",
+        "text_color": "N/A"
+      },
+      "output_filename": "origin-story-image-2.jpg"
+    },
+    {
+      "id": "trust-chorus-photo-1",
+      "slot_selector": "section-trust-chorus.liquid → block.settings.image (photo block 1)",
+      "page": "homepage",
+      "section_type": "Testimonial lifestyle grid",
+      "purpose": "Brand story scene — 'gelato in Rome' (directly from brand story, matches Maria L. testimonial)",
+      "genesis": false,
+      "consistency_group": "trust-chorus",
+      "aspect_ratio": "1:1",
+      "resolution": "2K",
+      "dimensions_target": "800x800",
+      "prompt": {
+        "scene": {
+          "description": "A hand holding a gelato cone against a warm Roman street. Cobblestone, ochre-colored buildings, a trattoria awning. Late afternoon sun. The gelato has two scoops — pistachio (green) and stracciatella (cream with chocolate flecks). A DairyAssure stick pack is tucked into the person's other hand alongside their phone — the way you'd casually hold a sugar packet you grabbed from the counter. NOT prominent. Just there. This is 'Travel Without Limits' made real. The visual says: you took DairyAssure to Italy. You had gelato every day. Zero issues.",
+          "location": "Roman street, near a gelateria",
+          "time": "golden_hour late afternoon",
+          "background_elements": ["warm ochre Roman buildings", "cobblestone street", "trattoria awning", "soft pedestrian blur"]
+        },
+        "subject": {
+          "description": "A hand (natural, diverse skin, 25-35) holding a gelato cone proudly. The other hand loosely holds a phone and a DairyAssure stick pack — barely noticeable, like holding a receipt. The gelato is the hero, NOT the product.",
+          "position": "center — gelato cone as the hero",
+          "pose": "hand raised slightly showing off the gelato, casual pride"
+        },
+        "style": {
+          "medium": "photography",
+          "aesthetic": "travel_candid_documentary",
+          "mood": "la dolce vita, vacation freedom, the moment you realize you can eat ANYTHING on this trip. This is what 'Travel Without Limits' looks like."
+        },
+        "technical": {
+          "camera_model": "iPhone 15 Pro",
+          "lens": "24mm equivalent",
+          "aperture": "f/1.8",
+          "film_stock": "Kodak Gold 200",
+          "depth_of_field": "shallow — gelato sharp, Rome is warm bokeh"
+        },
+        "composition": {
+          "framing": "close_up, square 1:1",
+          "angle": "eye_level",
+          "focus_point": "gelato scoops",
+          "negative_space": "Roman street bokeh fills background"
+        },
+        "materials": {
+          "primary_surface": "N/A — handheld outdoor",
+          "secondary": "waffle cone, cobblestone texture in background",
+          "texture": "natural, sun-warmed stone and stucco"
+        },
+        "lighting": {
+          "type": "natural_sunlight golden hour",
+          "direction": "back_lit with warm rim light on gelato and hand",
+          "color_temperature": "3200K golden hour Italian light",
+          "shadow_color": "shadows tinted with subtle lavender (#D0C6E0)"
+        },
+        "quality": {
+          "resolution": "2K",
+          "sharpness": "crisp on gelato",
+          "film_grain": "slight — Kodak Gold 200 travel snap energy",
+          "post_processing": "warm golden, lavender shadows, slight lens flare from sun, travel memory feel"
+        }
+      },
+      "negative_prompt": [
+        "text", "logos", "watermarks", "blur", "low_quality", "distortion",
+        "stock_photo_aesthetic", "oversaturated", "CGI_render_look", "perfect_symmetry",
+        "clinical", "cold_lighting", "sterile", "posed_unnatural",
+        "grey_shadows", "product_as_hero", "product_prominently_displayed"
+      ],
+      "reference_images": ["brand/creatives/Single Stick_Flat.png", "USE_GENESIS_IMAGE"],
+      "text_overlay": {
+        "position": "none",
+        "content_preview": "N/A",
+        "text_color": "N/A"
+      },
+      "output_filename": "trust-chorus-photo-1.jpg"
+    },
+    {
+      "id": "trust-chorus-photo-2",
+      "slot_selector": "section-trust-chorus.liquid → block.settings.image (photo block 2)",
+      "page": "homepage",
+      "section_type": "Testimonial lifestyle grid",
+      "purpose": "Brand story scene — 'first date tiramisu' reimagined as dinner party dessert (matches James T. testimonial: 'no more declining dessert')",
+      "genesis": false,
+      "consistency_group": "trust-chorus",
+      "aspect_ratio": "1:1",
+      "resolution": "2K",
+      "dimensions_target": "800x800",
+      "prompt": {
+        "scene": {
+          "description": "A dinner party table from slightly above. The moment of dessert: a beautiful tiramisu is being served. Multiple hands with forks reaching toward slices on plates. Wine glasses with red wine, candles burning low, cloth napkins. A DairyAssure stick pack sits on the table beside someone's wine glass — unremarkable as a matchbook. The emotional core: 'no more declining dessert at dinner parties.' Everyone said yes. The confidence to just... eat the dessert. That's freedom.",
+          "location": "dinner party table, indoor evening",
+          "time": "evening, candlelight",
+          "background_elements": ["candles burning low", "wine glasses", "warm ambient glow", "friends in soft focus at edges"]
+        },
+        "subject": {
+          "description": "Tiramisu being served at a dinner party. Multiple hands reaching for plates. Diverse group (seen only as hands and arms). One DairyAssure stick pack on the table — NOT centered, NOT the subject. Just part of the table like a sugar packet.",
+          "position": "center — the tiramisu as the hero",
+          "pose": "hands reaching, serving, the communal moment of dessert"
+        },
+        "style": {
+          "medium": "photography",
+          "aesthetic": "editorial_food_documentary",
+          "mood": "the confidence to say YES to dessert. Freedom. 'When your gut feels good, you feel good.' This is the empowerment rung of the brand ladder."
+        },
+        "technical": {
+          "camera_model": "Sony A7R IV",
+          "lens": "50mm",
+          "aperture": "f/2.0",
+          "film_stock": "Kodak Gold 200",
+          "depth_of_field": "shallow"
+        },
+        "composition": {
+          "framing": "slightly_overhead close_up, square 1:1",
+          "angle": "30 degrees overhead — tabletop perspective",
+          "focus_point": "tiramisu and the reaching hands",
+          "negative_space": "table setting fills frame"
+        },
+        "materials": {
+          "primary_surface": "natural linen tablecloth — off-white, textured",
+          "secondary": "ceramic plates, wine glasses, candles, silver forks",
+          "texture": "soft linen, warm candlelit surfaces"
+        },
+        "lighting": {
+          "type": "candlelight primary, warm pendant fill",
+          "direction": "overhead warm with candle side fill",
+          "color_temperature": "2800K warm candlelight",
+          "shadow_color": "shadows tinted with lavender (#D0C6E0) — deep and intimate"
+        },
+        "quality": {
+          "resolution": "2K",
+          "sharpness": "crisp on tiramisu and nearest hands",
+          "film_grain": "slight-to-moderate — Kodak Gold 200 in low light",
+          "post_processing": "warm golden candlelight, lavender shadows, intimate"
+        }
+      },
+      "negative_prompt": [
+        "text", "logos", "watermarks", "blur", "low_quality", "distortion",
+        "stock_photo_aesthetic", "oversaturated", "CGI_render_look", "perfect_symmetry",
+        "clinical", "cold_lighting", "sterile", "posed_unnatural",
+        "grey_shadows", "flash_photography", "bright_overhead_light",
+        "product_as_hero", "product_prominently_displayed"
+      ],
+      "reference_images": ["brand/creatives/Single Stick_Flat.png", "USE_GENESIS_IMAGE"],
+      "text_overlay": {
+        "position": "none",
+        "content_preview": "N/A",
+        "text_color": "N/A"
+      },
+      "output_filename": "trust-chorus-photo-2.jpg"
+    },
+    {
+      "id": "trust-chorus-photo-3",
+      "slot_selector": "section-trust-chorus.liquid → block.settings.image (photo block 3)",
+      "page": "homepage",
+      "section_type": "Testimonial lifestyle grid",
+      "purpose": "Brand story scene — 'A childhood birthday party with pizza and ice cream' (directly from brand story, matches Rachel S. testimonial)",
+      "genesis": false,
+      "consistency_group": "trust-chorus",
+      "aspect_ratio": "1:1",
+      "resolution": "2K",
+      "dimensions_target": "800x800",
+      "prompt": {
+        "scene": {
+          "description": "A child's birthday party moment. A kid (7-9 years old) holding an ice cream cone with both hands, face lit up with pure joy, maybe a smear of ice cream on their cheek. Birthday party context: streamers, a half-eaten cake visible behind, other kids in soft focus. Outdoor backyard party, golden afternoon sun. The emotional core from the brand story: 'A childhood birthday party with pizza and ice cream.' From the testimonial: 'My kids can have ice cream at birthday parties again. As a parent, that means everything.' No product visible in this one — the JOY is the product. This image is the top of the brand ladder: Joy.",
+          "location": "backyard birthday party, suburban yard",
+          "time": "golden_hour afternoon",
+          "background_elements": ["colorful birthday streamers", "half-eaten cake on a table behind", "other kids playing in soft focus", "green grass"]
+        },
+        "subject": {
+          "description": "One child (7-9, any ethnicity) holding an ice cream cone with both hands. Genuine smile, possibly ice cream on cheek/chin. The universal image of childhood joy reclaimed.",
+          "position": "center",
+          "pose": "holding ice cream with two hands, mid-lick or just smiling at it, pure kid joy"
+        },
+        "style": {
+          "medium": "photography",
+          "aesthetic": "documentary_candid_family",
+          "mood": "childhood birthday party magic. The moment a parent sees their kid just being a normal kid at a party, eating ice cream like everyone else. This is the TOP of the brand ladder: JOY. Not relief. Not management. JOY."
+        },
+        "technical": {
+          "camera_model": "Canon EOS R5",
+          "lens": "85mm",
+          "aperture": "f/2.0",
+          "film_stock": "Kodak Gold 200",
+          "depth_of_field": "shallow — child sharp, party is warm bokeh"
+        },
+        "composition": {
+          "framing": "medium_close_up, square 1:1",
+          "angle": "child's eye level — shoot from their height",
+          "focus_point": "child's face and ice cream",
+          "negative_space": "birthday party bokeh fills background"
+        },
+        "materials": {
+          "primary_surface": "N/A — outdoor, handheld",
+          "secondary": "ice cream cone, birthday decorations",
+          "texture": "natural outdoor, grass, streamers"
+        },
+        "lighting": {
+          "type": "natural_golden_hour sunlight",
+          "direction": "back_lit with sun creating rim light around child's hair",
+          "color_temperature": "3200K golden hour — warmest and most nostalgic",
+          "shadow_color": "shadows tinted with subtle lavender (#D0C6E0)"
+        },
+        "quality": {
+          "resolution": "2K",
+          "sharpness": "crisp on child's face",
+          "film_grain": "slight — Kodak Gold 200, summer Polaroid energy",
+          "post_processing": "warm golden, lavender shadows, nostalgic summer memory color grade",
+          "imperfections": "slight sun flare, ice cream dripping, messy face — REAL kid moment"
+        }
+      },
+      "negative_prompt": [
+        "text", "logos", "watermarks", "blur", "low_quality", "distortion",
+        "stock_photo_aesthetic", "oversaturated", "CGI_render_look", "perfect_symmetry",
+        "clinical", "cold_lighting", "sterile", "posed_unnatural",
+        "grey_shadows", "studio_lighting", "indoor",
+        "sad_child", "sick_child", "medicine", "product_visible",
+        "perfectly_clean_face", "catalog_kid_model"
+      ],
+      "reference_images": ["USE_GENESIS_IMAGE"],
+      "text_overlay": {
+        "position": "none",
+        "content_preview": "N/A",
+        "text_color": "N/A"
+      },
+      "output_filename": "trust-chorus-photo-3.jpg"
+    },
+    {
+      "id": "trust-chorus-photo-4",
+      "slot_selector": "section-trust-chorus.liquid → block.settings.image (photo block 4)",
+      "page": "homepage",
+      "section_type": "Testimonial lifestyle grid",
+      "purpose": "The 'pizza night is back' moment — couple sharing real pizza (matches Chris P. testimonial)",
+      "genesis": false,
+      "consistency_group": "trust-chorus",
+      "aspect_ratio": "1:1",
+      "resolution": "2K",
+      "dimensions_target": "800x800",
+      "prompt": {
+        "scene": {
+          "description": "Overhead view of a pizza box open on a coffee table. Real pepperoni pizza with melting mozzarella, a slice being pulled with that gorgeous cheese stretch. Two people visible by their hands — one pulling the slice, the other reaching for a napkin. Two drinks beside the box. A cozy blanket edge visible. A DairyAssure stick pack on the table near the napkins — unremarkable, part of the furniture, like a TV remote. The testimonial: 'Pizza night is back on the menu. My wife and I can finally share a real pizza again.' This is the reclaiming. Not a replacement pizza. Not dairy-free cheese. REAL pizza. REAL mozzarella. That's the 'no compromise' pillar.",
+          "location": "cozy living room coffee table, evening",
+          "time": "evening, warm indoor",
+          "background_elements": ["cozy blanket at edge of frame", "drinks (beer or sparkling water)", "warm lamp glow", "hints of couch cushions"]
+        },
+        "subject": {
+          "description": "Open pizza box with pepperoni pizza (real mozzarella cheese pull moment). Two pairs of hands — one pulling a slice with cheese stretching, one reaching for napkin. A DairyAssure stick pack near the napkins — NOT prominent, just part of the coffee table landscape.",
+          "position": "center — pizza box fills most of the square frame",
+          "pose": "cheese pull moment, hands reaching, casual Saturday night"
+        },
+        "style": {
+          "medium": "photography",
+          "aesthetic": "lifestyle_overhead_candid",
+          "mood": "pizza night is BACK. The feeling of getting something back you thought you'd lost. Casual, cozy, 'we can finally do this again' energy. No compromise."
+        },
+        "technical": {
+          "camera_model": "iPhone 15 Pro",
+          "lens": "24mm equivalent",
+          "aperture": "f/1.8",
+          "film_stock": "Kodak Gold 200",
+          "depth_of_field": "medium — most of table in focus"
+        },
+        "composition": {
+          "framing": "overhead flat lay, square 1:1",
+          "angle": "top_down, directly overhead",
+          "focus_point": "the cheese pull and the pizza",
+          "negative_space": "coffee table fills entire frame"
+        },
+        "materials": {
+          "primary_surface": "wooden coffee table — warm tone, same family as butcher block",
+          "secondary": "pizza box, napkins, glasses, blanket edge",
+          "texture": "warm wood, cardboard, cozy fabrics"
+        },
+        "lighting": {
+          "type": "warm lamp light, evening indoor",
+          "direction": "overhead warm ambient, slight side fill from table lamp",
+          "color_temperature": "3000K warm indoor evening",
+          "shadow_color": "shadows tinted with lavender (#D0C6E0)"
+        },
+        "quality": {
+          "resolution": "2K",
+          "sharpness": "crisp on pizza and cheese pull",
+          "film_grain": "slight — Kodak Gold 200 indoor evening grain",
+          "post_processing": "warm golden, lavender shadows, cozy Saturday night grade"
+        }
+      },
+      "negative_prompt": [
+        "text", "logos", "watermarks", "blur", "low_quality", "distortion",
+        "stock_photo_aesthetic", "oversaturated", "CGI_render_look", "perfect_symmetry",
+        "clinical", "cold_lighting", "sterile", "posed_unnatural",
+        "grey_shadows", "flash_photography", "bright_overhead",
+        "product_as_hero", "dairy_free", "alternative_cheese",
+        "marble_surface", "fancy_restaurant"
+      ],
+      "reference_images": ["brand/creatives/Single Stick_Flat.png", "USE_GENESIS_IMAGE"],
+      "text_overlay": {
+        "position": "none",
+        "content_preview": "N/A",
+        "text_color": "N/A"
+      },
+      "output_filename": "trust-chorus-photo-4.jpg"
+    },
+    {
+      "id": "three-pillars-icon-1",
+      "slot_selector": "section-three-pillars.liquid → block.settings.icon (step 1)",
+      "page": "homepage",
+      "section_type": "Icon/badge",
+      "purpose": "Step 1 icon — 'Sprinkle' — a stick pack with powder arc, friendly illustration",
+      "genesis": false,
+      "consistency_group": "three-pillars",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "dimensions_target": "192x192",
+      "prompt": {
+        "scene": {
+          "description": "A simple, warm, friendly illustration of a stick pack being torn open with a gentle arc of powder sprinkling down onto a plate of food below. Flat illustration style — NOT realistic, NOT 3D, NOT clinical. Think: the kind of illustration you'd see on a friendly food blog, drawn with warmth and personality. Color palette LOCKED: blue-indigo (#2B2A8C) for the main line art, teal (#5FC0D4) for the powder arc accent, soft lavender (#E8E0F0) background. The stick pack should suggest the DairyAssure packaging shape without trying to render text or logos. Approachable, playful, simple — like the brand itself."
+        },
+        "subject": {
+          "description": "A stick pack being torn open, powder sprinkling down in a gentle arc onto a simple plate below. The 'Simple Solutions Only' pillar as an icon.",
+          "position": "center"
+        },
+        "style": {
+          "medium": "illustration",
+          "aesthetic": "flat_friendly_minimal_warm",
+          "mood": "simple, approachable, playful — 'designed for spontaneity' energy"
+        },
+        "composition": {
+          "framing": "icon_centered, square 1:1",
+          "angle": "straight_on",
+          "focus_point": "stick pack and powder arc",
+          "negative_space": "generous — icon occupies center 60%, clean background"
+        },
+        "quality": {
+          "resolution": "1K",
+          "sharpness": "crisp, clean edges",
+          "film_grain": "none",
+          "post_processing": "clean flat illustration"
+        }
+      },
+      "negative_prompt": [
+        "text", "logos", "watermarks", "blur", "low_quality", "distortion",
+        "realistic_photography", "3D_render", "complex_background", "busy",
+        "medical", "clinical", "pharmaceutical", "dark_colors",
+        "gradient_shading", "drop_shadows", "glossy", "metallic",
+        "red", "orange", "green_dominant", "off_palette_colors"
+      ],
+      "reference_images": [],
+      "text_overlay": {
+        "position": "none",
+        "content_preview": "N/A",
+        "text_color": "N/A"
+      },
+      "output_filename": "three-pillars-icon-1.png"
+    },
+    {
+      "id": "three-pillars-icon-2",
+      "slot_selector": "section-three-pillars.liquid → block.settings.icon (step 2)",
+      "page": "homepage",
+      "section_type": "Icon/badge",
+      "purpose": "Step 2 icon — 'Eat' — plate with food and fork, same illustration style",
+      "genesis": false,
+      "consistency_group": "three-pillars",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "dimensions_target": "192x192",
+      "prompt": {
+        "scene": {
+          "description": "A simple, warm, friendly illustration of a plate with a slice of pizza on it and a fork beside it. SAME flat illustration style as the Sprinkle icon — MUST be visually identical in style, line weight, color palette, and level of detail. Color palette LOCKED: blue-indigo (#2B2A8C) for main line art, teal (#5FC0D4) for accent elements (fork handle, plate rim detail), soft lavender (#E8E0F0) background. The pizza slice should be simple and appetizing — a happy food illustration, not a technical drawing."
+        },
+        "subject": {
+          "description": "A plate with a pizza slice and a fork. Simple, friendly, appetizing. The 'Eat' step — no planning required, just eat.",
+          "position": "center"
+        },
+        "style": {
+          "medium": "illustration",
+          "aesthetic": "flat_friendly_minimal_warm — IDENTICAL style to Sprinkle icon",
+          "mood": "simple, approachable, YUM — 'eat your meal as you normally would'"
+        },
+        "composition": {
+          "framing": "icon_centered, square 1:1",
+          "angle": "slightly_overhead",
+          "focus_point": "plate and food",
+          "negative_space": "generous — same proportions as Sprinkle icon"
+        },
+        "quality": {
+          "resolution": "1K",
+          "sharpness": "crisp, clean edges — same line weight as Sprinkle icon",
+          "film_grain": "none",
+          "post_processing": "clean flat illustration"
+        }
+      },
+      "negative_prompt": [
+        "text", "logos", "watermarks", "blur", "low_quality", "distortion",
+        "realistic_photography", "3D_render", "complex_background", "busy",
+        "medical", "clinical", "pharmaceutical", "dark_colors",
+        "gradient_shading", "drop_shadows", "glossy",
+        "different_style_than_other_icons", "different_line_weight"
+      ],
+      "reference_images": [],
+      "text_overlay": {
+        "position": "none",
+        "content_preview": "N/A",
+        "text_color": "N/A"
+      },
+      "output_filename": "three-pillars-icon-2.png"
+    },
+    {
+      "id": "three-pillars-icon-3",
+      "slot_selector": "section-three-pillars.liquid → block.settings.icon (step 3)",
+      "page": "homepage",
+      "section_type": "Icon/badge",
+      "purpose": "Step 3 icon — 'Enjoy' — celebration moment with sparkles, same illustration style",
+      "genesis": false,
+      "consistency_group": "three-pillars",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "dimensions_target": "192x192",
+      "prompt": {
+        "scene": {
+          "description": "A simple, warm, friendly illustration of a happy smiling face with small sparkles or stars around it — the moment of joy AFTER eating. SAME flat illustration style as the Sprinkle and Eat icons — MUST be visually identical in style, line weight, color palette, and level of detail. Color palette LOCKED: blue-indigo (#2B2A8C) for the face line art, teal (#5FC0D4) for sparkle accents, soft lavender (#E8E0F0) background. The smile should be genuine and warm, not cartoonish or emoji-like. This is the top of the brand ladder: Joy."
+        },
+        "subject": {
+          "description": "A simple happy smiling face with sparkle/star accents around it. Pure satisfaction. The 'Enjoy' step — no discomfort, no drama, just joy.",
+          "position": "center"
+        },
+        "style": {
+          "medium": "illustration",
+          "aesthetic": "flat_friendly_minimal_warm — IDENTICAL style to Sprinkle and Eat icons",
+          "mood": "pure joy, celebration, freedom — 'No discomfort. No drama. Just the meal you wanted.' This is Taste Joy as an icon."
+        },
+        "composition": {
+          "framing": "icon_centered, square 1:1",
+          "angle": "straight_on",
+          "focus_point": "smiling face and sparkles",
+          "negative_space": "generous — same proportions as other icons"
+        },
+        "quality": {
+          "resolution": "1K",
+          "sharpness": "crisp, clean edges — same line weight as other icons",
+          "film_grain": "none",
+          "post_processing": "clean flat illustration"
+        }
+      },
+      "negative_prompt": [
+        "text", "logos", "watermarks", "blur", "low_quality", "distortion",
+        "realistic_photography", "3D_render", "complex_background", "busy",
+        "medical", "clinical", "pharmaceutical", "dark_colors",
+        "gradient_shading", "drop_shadows", "glossy",
+        "emoji", "cartoonish", "childish",
+        "different_style_than_other_icons"
+      ],
+      "reference_images": [],
+      "text_overlay": {
+        "position": "none",
+        "content_preview": "N/A",
+        "text_color": "N/A"
+      },
+      "output_filename": "three-pillars-icon-3.png"
+    }
+  ]
+}
