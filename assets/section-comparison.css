@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Section: DA Comparison — The Honest Comparison
+   ========================================================================== */
+
+.da-comp {
+  background-color: var(--da-color-primary-bg);
+}
+
+.da-comp__container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media screen and (min-width: 750px) {
+  .da-comp__container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+/* Heading column */
+.da-comp__text {
+  flex: 0 0 35%;
+}
+
+.da-comp__heading {
+  font-family: "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 115%;
+  letter-spacing: -0.24px;
+  color: var(--da-color-text);
+  margin: 0 0 16px;
+}
+
+@media screen and (min-width: 750px) {
+  .da-comp__heading {
+    font-size: 28px;
+    letter-spacing: -0.28px;
+    position: sticky;
+    top: 120px;
+  }
+}
+
+/* Chart column */
+.da-comp__chart {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.da-comp__chart-label {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--da-color-text);
+  margin: 0 0 8px;
+}
+
+/* Bar row */
+.da-comp__bar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.da-comp__bar-label {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--da-color-text);
+  margin: 0;
+}
+
+.da-comp__bar-track {
+  position: relative;
+  height: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+  width: calc(var(--score) * 1%);
+  min-width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 16px;
+  transition: width 800ms cubic-bezier(0, 0, 0.3, 1);
+}
+
+.da-comp__bar-track--hero {
+  background-color: var(--da-color-accent);
+}
+
+.da-comp__bar-track--default {
+  background-color: #C8C0D8;
+}
+
+.da-comp__bar-score {
+  font-family: "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .da-comp__bar-score {
+    font-size: 32px;
+  }
+}
+
+.da-comp__bar-track--hero .da-comp__bar-score {
+  color: var(--da-color-white);
+}
+
+.da-comp__bar-track--default .da-comp__bar-score {
+  color: var(--da-color-text);
+}
+
+.da-comp__bar-subtitle {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--da-color-muted-text);
+  margin: 2px 0 0;
+}
+
+.da-comp__disclaimer {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--da-color-muted-text);
+  margin: 8px 0 0;
+}

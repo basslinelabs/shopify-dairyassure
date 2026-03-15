@@ -1,0 +1,136 @@
+{{ 'section-product-intro.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div
+  class="da-pi section-{{ section.id }}-padding{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+>
+  <div class="page-width">
+    <div class="da-pi__card">
+      <div class="da-pi__grid">
+        {%- comment -%} Image column {%- endcomment -%}
+        <div class="da-pi__image-col">
+          <div class="da-pi__image-wrapper">
+            {%- if section.settings.product_image != blank -%}
+              {{
+                section.settings.product_image
+                | image_url: width: 800
+                | image_tag:
+                  loading: 'lazy',
+                  sizes: '(min-width: 750px) 40vw, 100vw',
+                  widths: '375, 550, 750, 800',
+                  alt: section.settings.product_image.alt | default: section.settings.heading
+              }}
+            {%- else -%}
+              {{ 'product-2' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </div>
+        </div>
+
+        {%- comment -%} Info column {%- endcomment -%}
+        <div class="da-pi__info-col">
+          <h2 class="da-pi__heading">{{ section.settings.heading }}</h2>
+          <p class="da-pi__body">{{ section.settings.body_text }}</p>
+
+          {%- comment -%} Experience / Relief split card {%- endcomment -%}
+          <div class="da-pi__split-card">
+            <div class="da-pi__split-col">
+              <p class="da-pi__split-label">{{ section.settings.experience_heading }}</p>
+              <p class="da-pi__split-quote">"{{ section.settings.experience_quote }}"</p>
+              <p class="da-pi__split-author">{{ section.settings.experience_author }}</p>
+            </div>
+            <div class="da-pi__split-col">
+              <p class="da-pi__split-label">{{ section.settings.relief_heading }}</p>
+              <p class="da-pi__split-quote">"{{ section.settings.relief_quote }}"</p>
+              <p class="da-pi__split-author">{{ section.settings.relief_author }}</p>
+            </div>
+          </div>
+
+          {%- comment -%} Pill badges {%- endcomment -%}
+          {%- if section.blocks.size > 0 -%}
+            <div class="da-pi__badges">
+              {%- for block in section.blocks -%}
+                {%- render 'da-pill-badge', emoji: block.settings.emoji, text: block.settings.text -%}
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+
+          {%- comment -%} CTA buttons {%- endcomment -%}
+          <div class="da-pi__cta-row">
+            {%- if section.settings.button_label != blank -%}
+              {%- render 'da-button', label: section.settings.button_label, url: section.settings.button_link -%}
+            {%- endif -%}
+            {%- if section.settings.secondary_label != blank -%}
+              {%- render 'da-button-secondary', label: section.settings.secondary_label, url: section.settings.secondary_link -%}
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "DA Product Intro",
+  "tag": "section",
+  "class": "section section--product-intro",
+  "settings": [
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Meet the Simplest Lactose Relief Ever Made." },
+    { "type": "textarea", "id": "body_text", "label": "Body text", "default": "The lactase powder that works with your food, not before it." },
+    { "type": "header", "content": "Image" },
+    { "type": "image_picker", "id": "product_image", "label": "Product image" },
+    { "type": "header", "content": "Experience / Relief Card" },
+    { "type": "text", "id": "experience_heading", "label": "Left column heading", "default": "EXPERIENCE" },
+    { "type": "text", "id": "experience_quote", "label": "Experience quote", "default": "I can finally enjoy pizza night again" },
+    { "type": "text", "id": "experience_author", "label": "Experience author", "default": "— Sarah K." },
+    { "type": "text", "id": "relief_heading", "label": "Right column heading", "default": "RELIEF" },
+    { "type": "text", "id": "relief_quote", "label": "Relief quote", "default": "The peace of mind alone is worth it" },
+    { "type": "text", "id": "relief_author", "label": "Relief author", "default": "— Mike R." },
+    { "type": "header", "content": "CTA" },
+    { "type": "text", "id": "button_label", "label": "Primary button label", "default": "TRY DAIRYASSURE →" },
+    { "type": "url", "id": "button_link", "label": "Primary button link" },
+    { "type": "text", "id": "secondary_label", "label": "Secondary link label", "default": "VIEW DETAILS" },
+    { "type": "url", "id": "secondary_link", "label": "Secondary link" },
+    { "type": "header", "content": "Section padding" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding top", "default": 64 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding bottom", "default": 64 }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Benefit Badge",
+      "limit": 8,
+      "settings": [
+        { "type": "text", "id": "emoji", "label": "Emoji", "default": "🧬" },
+        { "type": "text", "id": "text", "label": "Badge text", "default": "Single Ingredient" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "DA Product Intro",
+      "blocks": [
+        { "type": "badge", "settings": { "emoji": "🧬", "text": "Single Ingredient" } },
+        { "type": "badge", "settings": { "emoji": "🍽️", "text": "Flavorless" } },
+        { "type": "badge", "settings": { "emoji": "⏱️", "text": "No Planning Required" } },
+        { "type": "badge", "settings": { "emoji": "🎒", "text": "Portable Stick Packs" } },
+        { "type": "badge", "settings": { "emoji": "🚫", "text": "No Fillers or Preservatives" } }
+      ]
+    }
+  ],
+  "enabled_on": { "templates": ["index"] }
+}
+{% endschema %}

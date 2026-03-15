@@ -1,0 +1,132 @@
+/* ==========================================================================
+   Section: DA FAQ — The Calm Answers
+   ========================================================================== */
+
+.da-faq {
+  background-color: var(--da-color-primary-bg);
+  position: relative;
+  overflow: visible;
+}
+
+.da-faq__decorative {
+  position: absolute;
+  top: -20px;
+  right: 5%;
+  width: 80px;
+  height: auto;
+  transform: rotate(15deg);
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media screen and (max-width: 749px) {
+  .da-faq__decorative {
+    display: none;
+  }
+}
+
+.da-faq__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.da-faq__heading {
+  font-family: "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 115%;
+  letter-spacing: -0.24px;
+  color: var(--da-color-text);
+  margin: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .da-faq__heading {
+    font-size: 28px;
+    letter-spacing: -0.28px;
+  }
+}
+
+.da-faq__list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Accordion item */
+.da-faq__item {
+  border: 2px solid var(--da-color-text);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #EDE6F5;
+  transition: background-color 200ms ease;
+}
+
+.da-faq__item[open] {
+  background-color: #D8D0F0;
+}
+
+/* Summary (question) */
+.da-faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  cursor: pointer;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 140%;
+  color: var(--da-color-text);
+  list-style: none;
+}
+
+@media screen and (min-width: 750px) {
+  .da-faq__question {
+    font-size: 18px;
+  }
+}
+
+.da-faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.da-faq__question::marker {
+  display: none;
+  content: '';
+}
+
+/* Chevron */
+.da-faq__chevron {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--da-color-text);
+  transition: transform 300ms ease-out;
+}
+
+.da-faq__item[open] .da-faq__chevron {
+  transform: rotate(180deg);
+}
+
+/* Answer */
+.da-faq__answer {
+  padding: 0 24px 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--da-color-text);
+}
+
+.da-faq__answer p {
+  margin: 0;
+}
+
+.da-faq__answer p + p {
+  margin-top: 12px;
+}

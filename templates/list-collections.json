@@ -1,28 +1,11 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
-      "type": "section-collection-list",
+      "type": "main-list-collections",
       "settings": {
-        "title": "Our favorites",
-        "header_tag": "h2",
-        "all_collections": true,
-        "columns_desktop": 4,
-        "show_top_divider": false,
-        "divider_color_scheme": "",
-        "color_scheme": "default",
-        "accent_horizontal_anchor": 0,
-        "accent_vertical_anchor": 0,
-        "accent_size": 30,
-        "hide_accent_on_mobile": true
+        "title": "Collections",
+        "sort": "alphabetical",
+        "image_ratio": "square"
       }
     }
   },

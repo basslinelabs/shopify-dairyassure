@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Section: DA Product Intro — The Gentle Introduction
+   ========================================================================== */
+
+.da-pi {
+  background-color: var(--da-color-primary-bg);
+}
+
+.da-pi__card {
+  background-color: var(--da-color-white);
+  border-radius: 24px;
+  padding: 24px;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 750px) {
+  .da-pi__card {
+    padding: 48px;
+  }
+}
+
+.da-pi__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media screen and (min-width: 750px) {
+  .da-pi__grid {
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+
+/* Image column */
+.da-pi__image-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.da-pi__image-wrapper {
+  background-color: #D8D0E8;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.da-pi__image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Strength tabs */
+.da-pi__tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.da-pi__tab {
+  flex: 1;
+  padding: 10px 16px;
+  border: 2px solid var(--da-color-text);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--da-color-text);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+
+.da-pi__tab--active,
+.da-pi__tab:hover {
+  background-color: var(--da-color-accent);
+  border-color: var(--da-color-accent);
+  color: var(--da-color-white);
+}
+
+/* Info column */
+.da-pi__info-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.da-pi__heading {
+  font-family: "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.24px;
+  color: var(--da-color-text);
+  margin: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .da-pi__heading {
+    font-size: 28px;
+    letter-spacing: -0.28px;
+  }
+}
+
+.da-pi__body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--da-color-text);
+  margin: 0;
+}
+
+/* Experience / Relief split card */
+.da-pi__split-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 2px solid var(--da-color-text);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 750px) {
+  .da-pi__split-card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.da-pi__split-col {
+  padding: 20px;
+}
+
+.da-pi__split-col:first-child {
+  border-bottom: 2px solid var(--da-color-text);
+}
+
+@media screen and (min-width: 750px) {
+  .da-pi__split-col:first-child {
+    border-bottom: none;
+    border-right: 2px solid var(--da-color-text);
+  }
+}
+
+.da-pi__split-label {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--da-color-subtle);
+  margin: 0 0 8px;
+}
+
+.da-pi__split-quote {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 140%;
+  color: var(--da-color-text);
+  margin: 0 0 8px;
+}
+
+.da-pi__split-author {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--da-color-text);
+  margin: 0;
+}
+
+/* Pill badges */
+.da-pi__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* CTA row */
+.da-pi__cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}

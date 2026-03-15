@@ -1,0 +1,127 @@
+/* ==========================================================================
+   Section: DA Hero — The Quiet Confidence
+   ========================================================================== */
+
+.da-hero {
+  background-color: var(--da-color-primary-bg);
+}
+
+/* Dark text on light bg — high contrast model */
+
+.da-hero__container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+@media screen and (min-width: 750px) {
+  .da-hero__container {
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+
+/* Text column */
+.da-hero__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.da-hero__star-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.da-hero__star-text {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--da-color-text);
+  margin: 0;
+}
+
+.da-hero__heading {
+  font-family: "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 110%;
+  letter-spacing: -0.4px;
+  color: var(--da-color-text);
+  margin: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .da-hero__heading {
+    font-size: 40px;
+  }
+}
+
+.da-hero__subheading {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--da-color-text);
+  margin: 0;
+}
+
+.da-hero__cta {
+  margin-top: 8px;
+}
+
+/* Image column */
+.da-hero__media {
+  flex: 1;
+  background-color: #D8D0E8;
+  border-radius: 24px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.da-hero__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Mobile image swap */
+.da-hero__media-mobile {
+  display: block;
+}
+
+.da-hero__media-desktop {
+  display: none;
+}
+
+@media screen and (min-width: 750px) {
+  .da-hero__media-mobile {
+    display: none;
+  }
+
+  .da-hero__media-desktop {
+    display: block;
+  }
+}
+
+/* Entrance animation */
+.da-hero.scroll-trigger.animate--slide-in {
+  animation: da-hero-entrance 600ms cubic-bezier(0, 0, 0.3, 1) forwards;
+}
+
+@keyframes da-hero-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

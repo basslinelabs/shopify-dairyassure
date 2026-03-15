@@ -1,0 +1,72 @@
+{{ 'section-usp-marquee.css' | asset_url | stylesheet_tag }}
+
+<div
+  class="da-marquee"
+  role="marquee"
+  aria-label="Product benefits"
+  style="--da-marquee-speed: {{ section.settings.speed }}s;"
+>
+  <div class="da-marquee__inner">
+    {%- comment -%} Track 1 (original) {%- endcomment -%}
+    <div class="da-marquee__track">
+      {%- for block in section.blocks -%}
+        <span class="da-marquee__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.emoji != blank -%}
+            <span class="da-marquee__emoji" aria-hidden="true">{{ block.settings.emoji }}</span>
+          {%- endif -%}
+          {{ block.settings.text }}
+        </span>
+      {%- endfor -%}
+    </div>
+    {%- comment -%} Track 2 (duplicate for seamless loop) {%- endcomment -%}
+    <div class="da-marquee__track" aria-hidden="true">
+      {%- for block in section.blocks -%}
+        <span class="da-marquee__item">
+          {%- if block.settings.emoji != blank -%}
+            <span class="da-marquee__emoji" aria-hidden="true">{{ block.settings.emoji }}</span>
+          {%- endif -%}
+          {{ block.settings.text }}
+        </span>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "DA USP Marquee",
+  "tag": "section",
+  "class": "section section--usp-marquee",
+  "settings": [
+    { "type": "range", "id": "speed", "min": 10, "max": 60, "step": 5, "unit": "s", "label": "Scroll speed", "default": 25 }
+  ],
+  "blocks": [
+    {
+      "type": "usp_item",
+      "name": "USP Item",
+      "limit": 12,
+      "settings": [
+        { "type": "text", "id": "emoji", "label": "Emoji", "default": "✨" },
+        { "type": "text", "id": "text", "label": "USP text", "default": "Single Ingredient" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "DA USP Marquee",
+      "blocks": [
+        { "type": "usp_item", "settings": { "emoji": "✨", "text": "Single Ingredient" } },
+        { "type": "usp_item", "settings": { "emoji": "🍽️", "text": "Flavorless" } },
+        { "type": "usp_item", "settings": { "emoji": "🚫", "text": "No Preservatives" } },
+        { "type": "usp_item", "settings": { "emoji": "⚡", "text": "Fast Relief" } },
+        { "type": "usp_item", "settings": { "emoji": "⏱️", "text": "90+ Minutes" } },
+        { "type": "usp_item", "settings": { "emoji": "🎒", "text": "Grab & Go" } },
+        { "type": "usp_item", "settings": { "emoji": "✡️", "text": "Kosher" } },
+        { "type": "usp_item", "settings": { "emoji": "🌱", "text": "Non-GMO" } },
+        { "type": "usp_item", "settings": { "emoji": "🇺🇸", "text": "Made in USA" } }
+      ]
+    }
+  ],
+  "enabled_on": { "templates": ["index"] }
+}
+{% endschema %}

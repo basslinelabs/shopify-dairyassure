@@ -1,0 +1,17 @@
+{%- comment -%}
+  Renders a pill-shaped badge with optional emoji.
+
+  Usage:
+    {% render 'da-pill-badge', emoji: '🧬', text: 'Single Ingredient' %}
+
+  Parameters:
+    - emoji {String} Optional. Emoji prefix.
+    - text {String} Required. Badge label text.
+{%- endcomment -%}
+
+<span class="da-pill">
+  {%- if emoji != blank -%}
+    <span class="da-pill__emoji" aria-hidden="true">{{ emoji }}</span>
+  {%- endif -%}
+  <span class="da-pill__text">{{ text | escape }}</span>
+</span>

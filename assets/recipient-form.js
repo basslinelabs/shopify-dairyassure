@@ -30,19 +30,19 @@ if (!customElements.get('recipient-form')) {
       cartErrorUnsubscriber = undefined;
 
       connectedCallback() {
-        this.cartUpdateUnsubscriber = subscribe('cart-update', (event) => {
+        this.cartUpdateUnsubscriber = subscribe(PUB_SUB_EVENTS.cartUpdate, (event) => {
           if (event.source === 'product-form' && event.productVariantId.toString() === this.currentProductVariantId) {
             this.resetRecipientForm();
           }
         });
 
-        this.variantChangeUnsubscriber = subscribe('variant-change', (event) => {
+        this.variantChangeUnsubscriber = subscribe(PUB_SUB_EVENTS.variantChange, (event) => {
           if (event.data.sectionId === this.dataset.sectionId) {
             this.currentProductVariantId = event.data.variant.id.toString();
           }
         });
 
-        this.cartUpdateUnsubscriber = subscribe('cart-error', (event) => {
+        this.cartUpdateUnsubscriber = subscribe(PUB_SUB_EVENTS.cartError, (event) => {
           if (event.source === 'product-form' && event.productVariantId.toString() === this.currentProductVariantId) {
             this.displayErrorMessage(event.message, event.errors);
           }
@@ -88,12 +88,10 @@ if (!customElements.get('recipient-form')) {
       }
 
       enableInputFields() {
-        this.querySelector(".recipient-fields").style.display = "block";
         this.disableableFields().forEach((field) => (field.disabled = false));
       }
 
       disableInputFields() {
-        this.querySelector(".recipient-fields").style.display = "none";
         this.disableableFields().forEach((field) => (field.disabled = true));
       }
 

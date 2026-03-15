@@ -3,23 +3,24 @@ class DetailsDisclosure extends HTMLElement {
     super();
     this.mainDetailsToggle = this.querySelector('details');
     this.content = this.mainDetailsToggle.querySelector('summary').nextElementSibling;
-    this.mainDetailsToggle.onFocusOut = this.onFocusOut.bind(this);
-    this.mainDetailsToggle.onToggle = this.onToggle.bind(this);
+
+    this.mainDetailsToggle.addEventListener('focusout', this.onFocusOut.bind(this));
+    this.mainDetailsToggle.addEventListener('toggle', this.onToggle.bind(this));
   }
 
   onFocusOut() {
     setTimeout(() => {
       if (!this.contains(document.activeElement)) this.close();
-    })
+    });
   }
 
   onToggle() {
     if (!this.animations) this.animations = this.content.getAnimations();
 
     if (this.mainDetailsToggle.hasAttribute('open')) {
-      this.animations.forEach(animation => animation.play());
+      this.animations.forEach((animation) => animation.play());
     } else {
-      this.animations.forEach(animation => animation.cancel());
+      this.animations.forEach((animation) => animation.cancel());
     }
   }
 
@@ -34,27 +35,18 @@ customElements.define('details-disclosure', DetailsDisclosure);
 class HeaderMenu extends DetailsDisclosure {
   constructor() {
     super();
-    this.header = document.querySelector('header');
-    this.headerItem = this.querySelector('details');
-    
-    // this.content = this.querySelector('summary').nextElementSibling;
-    
-    this.headerItem.addEventListener("mouseenter", this.onMouseenter);
-    this.headerItem.addEventListener("mouseleave", this.onMouseleave);
-    this.onFocusOut = null;
-    this.onToggle = null;
+    this.header = document.querySelector('.header-wrapper');
   }
 
-  onMouseenter() {
-    this.setAttribute("open", "");
-    if (!this.animations) this.animations = this.querySelector('summary').nextElementSibling.getAnimations();
-    this.animations.forEach(animation => animation.play());
-  }
+  onToggle() {
+    if (!this.header) return;
+    this.header.preventHide = this.mainDetailsToggle.open;
 
-  onMouseleave() {
-    this.removeAttribute("open");
-    if (!this.animations) this.animations = this.querySelector('summary').nextElementSibling.getAnimations();
-    this.animations.forEach(animation => animation.cancel());
+    if (document.documentElement.style.getPropertyValue('--header-bottom-position-desktop') !== '') return;
+    document.documentElement.style.setProperty(
+      '--header-bottom-position-desktop',
+      `${Math.floor(this.header.getBoundingClientRect().bottom)}px`
+    );
   }
 }
 

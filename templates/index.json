@@ -1,754 +1,255 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "section_banner_and_wave_yapQta": {
-      "type": "section-banner-and-wave",
-      "blocks": {
-        "custom_liquid_6N7b4k": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<style>\n  .da-hero-wrap {\n    display: flex;\n    justify-content: flex-start;     /* anchor left */\n    align-items: center;\n    padding: 60px 40px 140px;        /* bottom padding clears ribbon */\n    position: relative;\n    z-index: 2;\n  }\n\n  .da-hero {\n    width: 50%;                      /* half page width */\n    max-width: 720px;\n    min-width: 480px;\n    margin-left: 12%;                /* shift inward for left-third placement */\n    padding: 40px;\n    background: #fffaf1;\n    border-radius: 16px;\n    box-shadow: 0 4px 12px rgba(0,0,0,.06);\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    gap: 16px;\n    text-align: center;\n  }\n\n  .da-eyebrow {\n    font-size: 14px;\n    color: #5c5247;\n  }\n\n  .da-h1 {\n    font-size: clamp(28px, 4vw, 46px);\n    font-weight: 700;\n    line-height: 1.15;\n    color: #171a1f;\n    margin: 0;\n  }\n\n  .da-sub {\n    font-size: 16px;\n    line-height: 1.45;\n    color: #2d261d;\n    margin: 0;\n  }\n\n  .da-benefits {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    gap: 12px;\n    margin: 8px 0;\n  }\n\n  .da-pill {\n    display: flex;\n    align-items: center;\n    gap: 6px;\n    font-size: 14px;\n    font-weight: 500;\n    color: #171a1f;\n    background: #ffffff;\n    padding: 8px 14px;\n    border-radius: 999px;\n    box-shadow: 0 1px 3px rgba(0,0,0,.08);\n    white-space: nowrap;\n  }\n\n  .da-pill-icon {\n    font-size: 16px;\n  }\n\n  .da-cta {\n    background: #171a1f;\n    color: #ffffff;\n    font-size: 16px;\n    font-weight: 600;\n    padding: 14px 26px;\n    border-radius: 12px;\n    text-decoration: none;\n    box-shadow: 0 4px 0 rgba(0,0,0,.12);\n    transition: transform .15s ease;\n    width: fit-content;\n    margin: 12px auto 0;\n    display: block;\n  }\n  .da-cta:hover { transform: translateY(-2px); }\n\n  /* Mobile adjustments */\n  @media (max-width: 768px) {\n    .da-hero-wrap {\n      padding: 24px 16px 100px;\n      justify-content: center;      /* recenter for mobile */\n    }\n\n    .da-hero {\n      width: 100%;\n      max-width: 100%;\n      min-width: auto;\n      margin-left: 0;               /* reset left offset */\n      padding: 22px 16px;\n      border-radius: 14px;\n      gap: 12px;\n    }\n\n    .da-h1 {\n      font-size: 22px;\n      line-height: 1.25;\n    }\n\n    .da-sub {\n      font-size: 14px;\n      line-height: 1.45;\n    }\n\n    .da-benefits {\n      flex-wrap: wrap;\n      justify-content: center;\n      gap: 8px;\n      margin: 6px 0;\n    }\n\n    .da-pill {\n      padding: 6px 10px;\n      font-size: 12.5px;\n    }\n\n    .da-cta {\n      width: auto;\n      text-align: center;\n      padding: 13px 20px;\n      font-size: 15px;\n      border-radius: 9px;\n    }\n  }\n</style>\n\n<div class=\"da-hero-wrap\">\n  <div class=\"da-hero\">\n    <div class=\"da-eyebrow\"> ⭐⭐⭐⭐⭐ <br><b>Doctor recommended, dessert approved</b></div>\n    <h1 class=\"da-h1\">Enjoy Dairy <br>Without the Drama</h1>\n    <div class=\"da-benefits\">\n      <div class=\"da-pill\"><span class=\"da-pill-icon\">⏱</span> Fast Relief</div>\n      <div class=\"da-pill\"><span class=\"da-pill-icon\">🥛</span> 90+ Mins </div>\n      <div class=\"da-pill\"><span class=\"da-pill-icon\">🌱</span> Grab & Go</div>\n    </div>\n    <a href=\"/products/dairyassure-lactase-powder-sticks\" class=\"da-cta\">Try It &amp; Feel the Difference</a>\n  </div>\n</div>"
-          }
-        },
-        "button_Mdn73t": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_text": "Shop Now",
-            "button_link": "shopify://products/dairyassure-lactase-powder-sticks",
-            "button_style": "solid",
-            "link_image": false,
-            "button_two_text": "",
-            "button_two_link": "",
-            "button_two_style": "outline"
-          }
-        },
-        "wave_text_jNFnWf": {
-          "type": "wave_text",
-          "settings": {
-            "text": "Works in Seconds",
-            "link": ""
-          }
-        },
-        "wave_text_giA9Vk": {
-          "type": "wave_text",
-          "settings": {
-            "text": "Less Bloat",
-            "link": ""
-          }
-        },
-        "wave_text_YpKgK4": {
-          "type": "wave_text",
-          "settings": {
-            "text": "More Ice Cream Floats",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "custom_liquid_6N7b4k",
-        "button_Mdn73t",
-        "wave_text_jNFnWf",
-        "wave_text_giA9Vk",
-        "wave_text_YpKgK4"
-      ],
-      "custom_css": [
-        "/* Wavy banner fix */.banner-with-content-and-wave {padding-bottom: 80px; /* gives extra space so wave isn’t cut off */ position: relative;}",
-        ".banner-with-content-and-wave .wavy-banner {position: absolute; bottom: 0; width: 100%; height: auto;}"
-      ],
-      "name": "t:sections.banner-and-wave.presets.name",
+    "hero": {
+      "type": "section-hero",
       "settings": {
-        "show_top_divider": false,
-        "divider_color_scheme": "scheme-2",
-        "color_scheme": "scheme-3",
-        "image_dt": "shopify://shop_images/Untitled_design_27.png",
-        "overlay_dt": "",
-        "height_dt": 60,
-        "horizontal_alignment_dt": "left",
-        "content_width_dt": 40,
-        "image_mob": "shopify://shop_images/2.png",
-        "overlay_mob": "",
-        "height_mob": 40,
-        "horizontal_alignment_mob": "center",
-        "scroll_direction": "normal",
-        "scroll_speed": "medium",
-        "wave_animation_style": "constant",
-        "wave_text_separator": "vertical_line",
-        "wave_custom_text_separator": "☼",
-        "wave_position": "bottom",
-        "font_style": "body",
-        "font_size": 120,
-        "color": "accent"
+        "star_text": "5.0 Stars from 127 Reviews",
+        "heading": "Enjoy Dairy Without the Drama.",
+        "subheading": "A single-ingredient lactase powder you sprinkle on any food or drink. No pills. No planning. No compromise.",
+        "button_label": "TRY DAIRYASSURE TODAY",
+        "button_link": "",
+        "trust_text": "✔ Money-Back Guarantee | Free Shipping on $50+",
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
-    "section_content_tcEjFQ": {
-      "type": "section-content",
+    "usp_marquee": {
+      "type": "section-usp-marquee",
       "blocks": {
-        "heading_YE9HjC": {
-          "type": "heading",
-          "settings": {
-            "heading": "Portable sticks that fit right into your routine, from breakfast to dessert.",
-            "header_tag": "h3",
-            "contain_width": true,
-            "show_in_front_of_accent_image": true,
-            "override_default_styles": false,
-            "override_font_size": 0
-          }
-        }
+        "usp_1": { "type": "usp_item", "settings": { "emoji": "✨", "text": "Single Ingredient" } },
+        "usp_2": { "type": "usp_item", "settings": { "emoji": "🍽️", "text": "Flavorless" } },
+        "usp_3": { "type": "usp_item", "settings": { "emoji": "🚫", "text": "No Preservatives" } },
+        "usp_4": { "type": "usp_item", "settings": { "emoji": "⚡", "text": "Fast Relief" } },
+        "usp_5": { "type": "usp_item", "settings": { "emoji": "⏱️", "text": "90+ Minutes" } },
+        "usp_6": { "type": "usp_item", "settings": { "emoji": "🎒", "text": "Grab & Go" } },
+        "usp_7": { "type": "usp_item", "settings": { "emoji": "✡️", "text": "Kosher" } },
+        "usp_8": { "type": "usp_item", "settings": { "emoji": "🌱", "text": "Non-GMO" } },
+        "usp_9": { "type": "usp_item", "settings": { "emoji": "🇺🇸", "text": "Made in USA" } }
       },
-      "block_order": [
-        "heading_YE9HjC"
-      ],
-      "name": "t:sections.content.presets.name",
+      "block_order": ["usp_1", "usp_2", "usp_3", "usp_4", "usp_5", "usp_6", "usp_7", "usp_8", "usp_9"],
       "settings": {
-        "show_top_divider": false,
-        "divider_color_scheme": "",
-        "color_scheme": "scheme-3",
-        "button_style": "link",
-        "show_accent_image": false,
-        "accent_vertical_anchor": 0,
-        "accent_horizontal_anchor": 0,
-        "accent_size": 30,
-        "hide_accent_on_mobile": true,
-        "accent_cover": false
+        "speed": 25
       }
     },
-    "section_featured_product_zDCEbA": {
-      "type": "section-featured-product",
+    "empathy_anchor": {
+      "type": "section-empathy-anchor",
       "blocks": {
-        "title_anLCpQ": {
+        "stat_1": { "type": "stat", "settings": { "number": "30-50M", "description": "Americans affected by lactose sensitivity" } },
+        "stat_2": { "type": "stat", "settings": { "number": "68%", "description": "have skipped meals they wanted to enjoy" } },
+        "stat_3": { "type": "stat", "settings": { "number": "79%", "description": "say current solutions are too inconvenient" } }
+      },
+      "block_order": ["stat_1", "stat_2", "stat_3"],
+      "settings": {
+        "heading": "Life's Best Moments Happen Around Dairy.",
+        "subheading": "But for millions of Americans, those moments come with anxiety about what happens next.",
+        "source_text": "¹NIH  ²Survey data",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "product_intro": {
+      "type": "section-product-intro",
+      "blocks": {
+        "badge_1": { "type": "badge", "settings": { "emoji": "🧬", "text": "Single Ingredient" } },
+        "badge_2": { "type": "badge", "settings": { "emoji": "🍽️", "text": "Flavorless" } },
+        "badge_3": { "type": "badge", "settings": { "emoji": "⏱️", "text": "No Planning Required" } },
+        "badge_4": { "type": "badge", "settings": { "emoji": "🎒", "text": "Portable Stick Packs" } },
+        "badge_5": { "type": "badge", "settings": { "emoji": "🚫", "text": "No Fillers or Preservatives" } }
+      },
+      "block_order": ["badge_1", "badge_2", "badge_3", "badge_4", "badge_5"],
+      "settings": {
+        "heading": "Meet the Simplest Lactose Relief Ever Made.",
+        "body_text": "The lactase powder that works with your food, not before it.",
+        "experience_heading": "EXPERIENCE",
+        "experience_quote": "I can finally enjoy pizza night again",
+        "experience_author": "— Sarah K.",
+        "relief_heading": "RELIEF",
+        "relief_quote": "The peace of mind alone is worth it",
+        "relief_author": "— Mike R.",
+        "button_label": "TRY DAIRYASSURE →",
+        "button_link": "",
+        "secondary_label": "VIEW DETAILS",
+        "secondary_link": "",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "three_pillars": {
+      "type": "section-three-pillars",
+      "blocks": {
+        "step_1": { "type": "step", "settings": { "number": "1", "title": "Sprinkle", "description": "Add to any dairy food or drink." } },
+        "step_2": { "type": "step", "settings": { "number": "2", "title": "Eat", "description": "Eat your meal as you normally would." } },
+        "step_3": { "type": "step", "settings": { "number": "3", "title": "Enjoy", "description": "No discomfort. No drama. Just joy." } }
+      },
+      "block_order": ["step_1", "step_2", "step_3"],
+      "settings": {
+        "heading": "How It Works",
+        "subheading": "Three steps. Zero effort.",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "comparison": {
+      "type": "section-comparison",
+      "blocks": {
+        "bar_1": { "type": "bar", "settings": { "label": "DairyAssure", "score": 95, "subtitle": "PURE · SIMPLE · EFFORTLESS", "is_hero": true } },
+        "bar_2": { "type": "bar", "settings": { "label": "Lactase Pills", "score": 52, "subtitle": "FILLERS · PLAN AHEAD", "is_hero": false } },
+        "bar_3": { "type": "bar", "settings": { "label": "Dairy Alternatives", "score": 38, "subtitle": "TASTE CHANGE · EXPENSIVE", "is_hero": false } },
+        "bar_4": { "type": "bar", "settings": { "label": "Lactase Drops", "score": 45, "subtitle": "MESSY · INCONVENIENT", "is_hero": false } },
+        "bar_5": { "type": "bar", "settings": { "label": "Just Avoiding Dairy", "score": 15, "subtitle": "MISSING OUT · NO JOY", "is_hero": false } }
+      },
+      "block_order": ["bar_1", "bar_2", "bar_3", "bar_4", "bar_5"],
+      "settings": {
+        "heading": "One Ingredient. Zero Compromise.",
+        "chart_label": "RELIEF CONVENIENCE SCORE",
+        "chart_max": "/ 100",
+        "disclaimer": "Based on convenience, purity, and user experience factors.",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "trust_chorus": {
+      "type": "section-trust-chorus",
+      "blocks": {
+        "quote_1": { "type": "quote", "settings": { "quote": "I brought DairyAssure to Italy. Gelato every day. Zero issues.", "author": "Maria L.", "verified": true } },
+        "quote_2": { "type": "quote", "settings": { "quote": "No more declining dessert at dinner parties. Freedom.", "author": "James T.", "verified": true } },
+        "quote_3": { "type": "quote", "settings": { "quote": "My kids can have ice cream at birthday parties again.", "author": "Rachel S.", "verified": true } }
+      },
+      "block_order": ["quote_1", "quote_2", "quote_3"],
+      "settings": {
+        "heading": "Trusted by Thousands.",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "buy_box": {
+      "type": "featured-product",
+      "blocks": {
+        "bb_title": {
           "type": "title",
           "settings": {
-            "header_tag": "h3"
+            "heading_size": "h1"
           }
         },
-        "divider_KD4UTj": {
-          "type": "divider",
-          "settings": {
-            "color": "contrast",
-            "contain_width": false
-          }
-        },
-        "price_BRQKhR": {
+        "bb_price": {
           "type": "price",
           "settings": {}
         },
-        "divider_WCUxp4": {
-          "type": "divider",
-          "settings": {
-            "color": "contrast",
-            "contain_width": false
-          }
-        },
-        "variant_picker_qHBzLW": {
+        "bb_variant": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button",
-            "option_names": "color, colour",
-            "swatch_style": "color_swatch"
+            "picker_type": "button"
           }
         },
-        "buy_buttons_gqbfWE": {
+        "bb_quantity": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "bb_buy": {
           "type": "buy_buttons",
           "settings": {
-            "show_quantity_selector": true,
             "show_dynamic_checkout": true
           }
         },
-        "description_nTzy7J": {
-          "type": "description",
+        "bb_desc": {
+          "type": "text",
+          "settings": {
+            "text": "Pure, single-ingredient lactase enzyme powder. Sprinkle on any dairy food or drink. No pills. No planning. No compromise.",
+            "text_style": "body"
+          }
+        },
+        "bb_share": {
+          "type": "share",
           "settings": {}
         }
       },
-      "block_order": [
-        "title_anLCpQ",
-        "divider_KD4UTj",
-        "price_BRQKhR",
-        "divider_WCUxp4",
-        "variant_picker_qHBzLW",
-        "buy_buttons_gqbfWE",
-        "description_nTzy7J"
-      ],
-      "name": "t:sections.featured-product.presets.name",
+      "block_order": ["bb_title", "bb_price", "bb_variant", "bb_quantity", "bb_buy", "bb_desc", "bb_share"],
       "settings": {
         "product": "dairyassure-lactase-powder-sticks",
-        "media_size": "small",
-        "desktop_media_layout": "slider",
-        "mobile_show_arrows": true,
-        "mobile_pagination": "thumbnails",
-        "show_top_divider": false,
-        "divider_color_scheme": "",
-        "color_scheme": "scheme-2",
-        "section_alignment": "center",
-        "show_accent_image": false,
-        "accent_image": "shopify://shop_images/Gemini_Generated_Image_rbm52nrbm52nrbm5.png",
-        "accent_horizontal_anchor": 0,
-        "accent_vertical_anchor": 30,
-        "accent_size": 20,
-        "hide_accent_on_mobile": true,
-        "accent_cover": false
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
-    "section_image_WmTWeB": {
-      "type": "section-image",
-      "disabled": true,
-      "name": "t:sections.all.image.label",
+    "guarantee": {
+      "type": "section-guarantee",
       "settings": {
-        "title": "",
-        "header_tag": "h2",
-        "text": "",
-        "full_width_layout": true,
-        "show_top_divider": false,
-        "divider_color_scheme": "",
-        "color_scheme": "",
-        "show_accent_image": false,
-        "accent_horizontal_anchor": 0,
-        "accent_vertical_anchor": 0,
-        "accent_size": 30,
-        "hide_accent_on_mobile": true,
-        "accent_cover": false,
-        "override_default_styles": false,
-        "override_header_font_size": 0,
-        "override_text_font_size": 0,
-        "override_space_above": 0,
-        "override_space_below": 0
+        "heading": "The DairyAssure Promise",
+        "body_text": "Try DairyAssure with your next meal. If you don't feel the difference, we'll refund every penny. No questions.",
+        "subtext": "Your comfort or your money back. That's how confident we are.",
+        "padding_top": 64,
+        "padding_bottom": 0
       }
     },
-    "section_product_features_G4wjqr": {
-      "type": "section-product-features",
+    "origin_story": {
+      "type": "section-origin-story",
+      "settings": {
+        "label": "OUR STORY",
+        "heading": "Welcome Back to Dairy.",
+        "body_text": "<p>Life's best moments often happen around food. A first date over coffee and tiramisu. A childhood birthday party with pizza and ice cream. A family gathering where someone's famous mac and cheese takes center stage.</p><p>But for millions of Americans dealing with lactose sensitivity, these moments come with anxiety about what comes next. We started DairyAssure with a simple belief: you shouldn't have to choose between comfort and enjoyment.</p><p>Our answer is radically simple. Pure, single-ingredient lactase powder. No preservatives. No fillers. No compromise. Just the enzyme your body needs, working quietly in the background so you can focus on what matters.</p>",
+        "closing": "Welcome to DairyAssure.",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "faq": {
+      "type": "section-faq",
       "blocks": {
-        "product_feature_PUYVXR": {
-          "type": "product_feature",
-          "settings": {
-            "header": "Fast Relief",
-            "text": "<p>Starts working right away and keeps you covered for up to 90 minutes.</p>",
-            "show_in_front_of_accent_image": true
-          }
-        },
-        "product_feature_Kf9tVt": {
-          "type": "product_feature",
-          "settings": {
-            "header": "On-the-Go Convenience",
-            "text": "<p>Pocket-sized sticks you can take<br/>anywhere you go.</p>",
-            "show_in_front_of_accent_image": true
-          }
-        },
-        "product_feature_aN6JxE": {
-          "type": "product_feature",
-          "settings": {
-            "header": "Flavorless Freedom",
-            "text": "<p>Dissolves instantly without changing the taste of your pizza or ice cream.</p>",
-            "show_in_front_of_accent_image": true
-          }
-        },
-        "product_feature_nABRzJ": {
-          "type": "product_feature",
-          "settings": {
-            "header": "Made for Everyone",
-            "text": "<p>Kosher, Non-GMO, and made in the USA.</p>",
-            "show_in_front_of_accent_image": true
-          }
-        }
+        "faq_1": { "type": "faq_item", "settings": { "question": "What exactly is DairyAssure?", "answer": "<p>A pure lactase enzyme powder that helps your body digest dairy. One ingredient, no fillers, no preservatives. Just sprinkle it on your food or mix it into your drink.</p>" } },
+        "faq_2": { "type": "faq_item", "settings": { "question": "How do I use it?", "answer": "<p>Sprinkle it on your food or mix it into your drink right before you eat. That's it. No pills to swallow, no timing to worry about.</p>" } },
+        "faq_3": { "type": "faq_item", "settings": { "question": "Is DairyAssure safe for children?", "answer": "<p>Yes. DairyAssure is a single-ingredient powder suitable for children, adults, and seniors. It simply supplements the lactase enzyme your body doesn't produce enough of.</p>" } },
+        "faq_4": { "type": "faq_item", "settings": { "question": "What makes it different from pills?", "answer": "<p>Pills are loaded with fillers and preservatives — stuff your body doesn't need (and that can cause its own stomach issues). DairyAssure is just the enzyme, in powder form, so you can add it directly to food without planning ahead.</p>" } },
+        "faq_5": { "type": "faq_item", "settings": { "question": "How long does it last?", "answer": "<p>DairyAssure provides 90+ minutes of effectiveness — enough to last through your entire meal and beyond.</p>" } },
+        "faq_6": { "type": "faq_item", "settings": { "question": "Can I use it with any dairy product?", "answer": "<p>Yes. Coffee, pizza, ice cream, cheese, yogurt, protein shakes — DairyAssure works with all dairy. It's completely flavorless, so it won't change the taste of your food.</p>" } },
+        "faq_7": { "type": "faq_item", "settings": { "question": "Is it really just one ingredient?", "answer": "<p>Yes. DairyAssure contains only lactase — the enzyme your body needs to digest dairy. Nothing else. No preservatives, no fillers, no additives, no artificial flavors.</p>" } }
       },
-      "block_order": [
-        "product_feature_PUYVXR",
-        "product_feature_Kf9tVt",
-        "product_feature_aN6JxE",
-        "product_feature_nABRzJ"
-      ],
-      "name": "t:sections.product-features.presets.name",
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5", "faq_6", "faq_7"],
       "settings": {
-        "heading": "All the Cheese, None of the Chaos.",
-        "header_tag": "h2",
-        "text": "",
-        "image": "shopify://shop_images/upscalemedia-transformed.png",
-        "show_background_shape": false,
-        "background_shape_color": "contrast",
-        "background_shape_style": "solid",
-        "background_shape_top": 30,
-        "background_shape_right": 50,
-        "background_shape_bottom": 60,
-        "background_shape_left": 60,
-        "show_top_divider": false,
-        "divider_color_scheme": "",
-        "color_scheme": "",
-        "show_accent_image": false,
-        "accent_horizontal_anchor": 0,
-        "accent_vertical_anchor": 0,
-        "accent_size": 30,
-        "hide_accent_on_mobile": true,
-        "accent_cover": false,
-        "override_default_styles": false,
-        "override_space_above": 0,
-        "override_space_below": 0,
-        "override_header_font_size": 0,
-        "override_text_font_size": 0,
-        "override_heading_font_size": 0,
-        "override_feature_text_font_size": 0
+        "heading": "Questions? We've Got Answers.",
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
-    "section_horizontally_scrolling_content_Up4cdG": {
-      "type": "section-horizontally-scrolling-content",
-      "blocks": {
-        "text_aPy3W3": {
-          "type": "text",
-          "settings": {
-            "text": "Non-GMO",
-            "link": ""
-          }
-        },
-        "image_XUNg8Q": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "text_D9wxqp": {
-          "type": "text",
-          "settings": {
-            "text": "Made in the USA",
-            "link": ""
-          }
-        },
-        "text_8W49cc": {
-          "type": "text",
-          "settings": {
-            "text": "Kosher",
-            "link": ""
-          }
-        },
-        "text_r8dWU6": {
-          "type": "text",
-          "settings": {
-            "text": "No Fillers",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "text_aPy3W3",
-        "image_XUNg8Q",
-        "text_D9wxqp",
-        "text_8W49cc",
-        "text_r8dWU6"
-      ],
-      "disabled": true,
-      "custom_css": [],
-      "settings": {
-        "color_scheme": "scheme-3",
-        "gap": 1,
-        "scroll_direction": "reverse",
-        "scroll_speed": "slow",
-        "animation_style": "play_on_scroll",
-        "font_style": "body",
-        "font_size": 100
-      }
-    },
-    "section_comparison_table_iPG73G": {
-      "type": "section-comparison-table",
-      "blocks": {
-        "table_row_GVW9DA": {
-          "type": "table-row",
-          "settings": {
-            "header": "",
-            "text": "<p>Fast Acting Relief</p>",
-            "hide_text_on_mobile": false,
-            "column_1_state": "tick",
-            "column_2_state": "tick",
-            "column_3_state": "tick"
-          }
-        },
-        "table_row_TDM8pz": {
-          "type": "table-row",
-          "settings": {
-            "header": "",
-            "text": "<p>Mix-In Friendly</p>",
-            "hide_text_on_mobile": false,
-            "column_1_state": "tick",
-            "column_2_state": "cross",
-            "column_3_state": "cross"
-          }
-        },
-        "table_row_gCgVL9": {
-          "type": "table-row",
-          "settings": {
-            "header": "",
-            "text": "<p>Portable Servings</p>",
-            "hide_text_on_mobile": false,
-            "column_1_state": "tick",
-            "column_2_state": "tick",
-            "column_3_state": "tick"
-          }
-        },
-        "table_row_aCN8zp": {
-          "type": "table-row",
-          "settings": {
-            "header": "",
-            "text": "<p>Single Ingredient</p>",
-            "hide_text_on_mobile": false,
-            "column_1_state": "tick",
-            "column_2_state": "cross",
-            "column_3_state": "cross"
-          }
-        },
-        "table_row_V78CGx": {
-          "type": "table-row",
-          "disabled": true,
-          "settings": {
-            "header": "",
-            "text": "<p>Lactase Enzyme</p>",
-            "hide_text_on_mobile": false,
-            "column_1_state": "tick",
-            "column_2_state": "cross",
-            "column_3_state": "tick"
-          }
-        },
-        "table_row_AEmAfj": {
-          "type": "table-row",
-          "disabled": true,
-          "settings": {
-            "header": "",
-            "text": "<p>No white cast</p>",
-            "hide_text_on_mobile": false,
-            "column_1_state": "tick",
-            "column_2_state": "tick",
-            "column_3_state": "tick"
-          }
-        },
-        "table_row_YTgP9m": {
-          "type": "table-row",
-          "disabled": true,
-          "settings": {
-            "header": "",
-            "text": "<p>Reef-safe ingredients</p>",
-            "hide_text_on_mobile": false,
-            "column_1_state": "tick",
-            "column_2_state": "tick",
-            "column_3_state": "tick"
-          }
-        }
-      },
-      "block_order": [
-        "table_row_GVW9DA",
-        "table_row_TDM8pz",
-        "table_row_gCgVL9",
-        "table_row_aCN8zp",
-        "table_row_V78CGx",
-        "table_row_AEmAfj",
-        "table_row_YTgP9m"
-      ],
-      "custom_css": [],
-      "name": "t:sections.comparison-table.presets.name",
-      "settings": {
-        "header": "Not All Lactose Relief Is Created Equal",
-        "header_tag": "h2",
-        "text": "<p>We designed DairyAssure to be simple, pure, and convenient. </p>",
-        "column_1_header": "DairyAssure",
-        "column_2_header": "LACTAID Caplets",
-        "column_3_header": "",
-        "highlight_column": "1",
-        "highlight_column_color": "accent",
-        "show_top_divider": true,
-        "divider_color_scheme": "scheme-1",
-        "color_scheme": "scheme-2",
-        "show_accent_image": false,
-        "accent_horizontal_anchor": 0,
-        "accent_vertical_anchor": 0,
-        "accent_size": 30,
-        "hide_accent_on_mobile": true,
-        "accent_cover": false,
-        "override_default_styles": false,
-        "override_space_above": 0,
-        "override_space_below": 0,
-        "override_header_font_size": 0,
-        "override_text_font_size": 0
-      }
-    },
-    "bd8cd58a-2797-483b-bd1e-fecaa7270ce7": {
-      "type": "section-media-with-content",
-      "blocks": {
-        "template--15551676481715__bd8cd58a-2797-483b-bd1e-fecaa7270ce7-1678136035025cb481-0": {
-          "type": "header",
-          "settings": {
-            "header": "Why Choose Daily Defence",
-            "header_tag": "h2",
-            "show_in_front_of_accent_image": true,
-            "override_default_styles": false,
-            "override_font_size": 0
-          }
-        },
-        "collapsible_row_KcrJTx": {
-          "type": "collapsible-row",
-          "settings": {
-            "heading": "Australian Heritage",
-            "row_content": "<p>Born from Australia's harsh sun and uncompromising standards. We understand what real protection means because we've lived it.</p>",
-            "page": "",
-            "open_tab": true,
-            "show_in_front_of_accent_image": true,
-            "override_default_styles": false,
-            "override_header_font_size": 0,
-            "override_content_font_size": 0
-          }
-        },
-        "collapsible_row_X4wE6b": {
-          "type": "collapsible-row",
-          "settings": {
-            "heading": "Science-Backed Formula",
-            "row_content": "<p>SPF50+ broad-spectrum protection with advanced UV filters. Water-resistant for 4 hours. Suitable for all skin types, including sensitive skin.</p>",
-            "page": "",
-            "open_tab": false,
-            "show_in_front_of_accent_image": true,
-            "override_default_styles": false,
-            "override_header_font_size": 0,
-            "override_content_font_size": 0
-          }
-        },
-        "collapsible_row_WzJ9eP": {
-          "type": "collapsible-row",
-          "settings": {
-            "heading": "Effortless Application",
-            "row_content": "<p>Lightweight texture that absorbs quickly without white residue or sticky feeling. Perfect for daily wear, alone or under makeup.</p>",
-            "page": "",
-            "open_tab": false,
-            "show_in_front_of_accent_image": true,
-            "override_default_styles": false,
-            "override_header_font_size": 0,
-            "override_content_font_size": 0
-          }
-        },
-        "template--15551676481715__bd8cd58a-2797-483b-bd1e-fecaa7270ce7-1678136035025cb481-2": {
-          "type": "button",
-          "settings": {
-            "button_text": "Shop now",
-            "button_link": "shopify://products/daily-defence-spf50",
-            "button_style": "solid",
-            "button_two_text": "",
-            "button_two_link": "",
-            "button_two_style": "outline"
-          }
-        }
-      },
-      "block_order": [
-        "template--15551676481715__bd8cd58a-2797-483b-bd1e-fecaa7270ce7-1678136035025cb481-0",
-        "collapsible_row_KcrJTx",
-        "collapsible_row_X4wE6b",
-        "collapsible_row_WzJ9eP",
-        "template--15551676481715__bd8cd58a-2797-483b-bd1e-fecaa7270ce7-1678136035025cb481-2"
-      ],
-      "disabled": true,
-      "settings": {
-        "autoplay_video": true,
-        "image_position": "right",
-        "image_width": "50%",
-        "show_background_shape": false,
-        "background_shape_color": "accent",
-        "background_shape_style": "solid",
-        "background_shape_top": 100,
-        "background_shape_right": 50,
-        "background_shape_bottom": 60,
-        "background_shape_left": 60,
-        "full_width_layout": false,
-        "show_top_divider": false,
-        "divider_color_scheme": "scheme-1",
-        "color_scheme": "scheme-1",
-        "show_accent_image": false,
-        "accent_horizontal_anchor": 0,
-        "accent_vertical_anchor": 0,
-        "accent_size": 30,
-        "hide_accent_on_mobile": true,
-        "accent_cover": false
-      }
-    },
-    "section_image_CbPAzn": {
-      "type": "section-image",
-      "disabled": true,
-      "name": "t:sections.all.image.label",
-      "settings": {
-        "title": "",
-        "header_tag": "h2",
-        "text": "",
-        "full_width_layout": true,
-        "show_top_divider": false,
-        "divider_color_scheme": "",
-        "color_scheme": "",
-        "show_accent_image": false,
-        "accent_horizontal_anchor": 0,
-        "accent_vertical_anchor": 0,
-        "accent_size": 30,
-        "hide_accent_on_mobile": true,
-        "accent_cover": false,
-        "override_default_styles": false,
-        "override_header_font_size": 0,
-        "override_text_font_size": 0,
-        "override_space_above": 0,
-        "override_space_below": 0
-      }
-    },
-    "e888c031-5adb-4ec1-a682-604672a8da7c": {
+    "reviews": {
       "type": "section-reviews",
       "blocks": {
-        "template--15551676481715__e888c031-5adb-4ec1-a682-604672a8da7c-16781417510a66e548-0": {
-          "type": "review",
-          "settings": {
-            "stars": 5,
-            "quote": "<p>\"Finally found something that actually works! My digestion feels smoother and lighter every day.\"</p>",
-            "reviewer_name": "- Daniel S. from Irvine, CA",
-            "show_in_front_of_accent_image": true
-          }
-        },
-        "template--15551676481715__e888c031-5adb-4ec1-a682-604672a8da7c-16781417510a66e548-2": {
-          "type": "review",
-          "settings": {
-            "stars": 5,
-            "quote": "<p>\"Let's just say my stomach stopped throwing tantrums. Five stars for peace and quiet!\"</p>",
-            "reviewer_name": "- Priya K. from Chicago, IL",
-            "show_in_front_of_accent_image": true
-          }
-        },
-        "a432354b-7a5e-4853-ab52-0af736d4d4d1": {
-          "type": "review",
-          "settings": {
-            "stars": 5,
-            "quote": "<p>\"My jeans actually button without a fight now. Worth every penny.\"</p>",
-            "reviewer_name": "- Marco G. from Atlanta, GA",
-            "show_in_front_of_accent_image": true
-          }
-        },
-        "review_gKfjVR": {
-          "type": "review",
-          "settings": {
-            "stars": 5,
-            "quote": "<p><em>\"</em>My significant other can really tell the difference when I use it on date night….so can my cleaning lady.<em>\"</em></p>",
-            "reviewer_name": "- Adam A. from Austin, TX",
-            "show_in_front_of_accent_image": true
-          }
-        },
-        "review_dVfLzA": {
-          "type": "review",
-          "disabled": true,
-          "settings": {
-            "stars": 5,
-            "quote": "<p><em>\"As someone who burns in 10 minutes, this has been a lifesaver. Wore it all day at the pool and came home with zero redness.\"</em></p>",
-            "reviewer_name": "~ Jessica L., Gold Coast",
-            "show_in_front_of_accent_image": true
-          }
-        }
+        "review_1": { "type": "review", "settings": { "stars": 5, "text": "I brought DairyAssure to Italy. Gelato every day. Zero issues. This is hands-down the best lactose solution I've tried.", "author": "Maria L.", "verified": true, "variant": "extra" } },
+        "review_2": { "type": "review", "settings": { "stars": 5, "text": "No more declining dessert at dinner parties. I just sprinkle it on and enjoy. Total freedom.", "author": "James T.", "verified": true, "variant": "single" } },
+        "review_3": { "type": "review", "settings": { "stars": 5, "text": "My kids can have ice cream at birthday parties again. As a parent, that means everything.", "author": "Rachel S.", "verified": true, "variant": "single" } },
+        "review_4": { "type": "review", "settings": { "stars": 5, "text": "I've tried every pill on the market. DairyAssure is the first thing that actually works without side effects.", "author": "David M.", "verified": true, "variant": "extra" } },
+        "review_5": { "type": "review", "settings": { "stars": 5, "text": "Pizza night is back on the menu. My wife and I can finally share a real pizza again.", "author": "Chris P.", "verified": true, "variant": "extra" } }
       },
-      "block_order": [
-        "template--15551676481715__e888c031-5adb-4ec1-a682-604672a8da7c-16781417510a66e548-0",
-        "template--15551676481715__e888c031-5adb-4ec1-a682-604672a8da7c-16781417510a66e548-2",
-        "a432354b-7a5e-4853-ab52-0af736d4d4d1",
-        "review_gKfjVR",
-        "review_dVfLzA"
-      ],
+      "block_order": ["review_1", "review_2", "review_3", "review_4", "review_5"],
       "settings": {
-        "title": "The Scoop from Dairy Lovers Like You",
-        "header_tag": "h2",
-        "text": "",
-        "star_color": "#d6a468",
-        "columns_desktop": 3,
-        "layout_desktop": "slider",
-        "columns_mobile": "default",
-        "layout_mobile": "grid",
-        "show_top_divider": false,
-        "divider_color_scheme": "scheme-6",
-        "color_scheme": "scheme-1",
-        "show_accent_image": false,
-        "accent_horizontal_anchor": 0,
-        "accent_vertical_anchor": 0,
-        "accent_size": 30,
-        "hide_accent_on_mobile": true,
-        "accent_cover": false,
-        "override_default_styles": false,
-        "override_space_above": 0,
-        "override_space_below": 0,
-        "override_header_font_size": 0,
-        "override_text_font_size": 0,
-        "override_quote_font_size": 0,
-        "override_name_font_size": 0
-      }
-    },
-    "section_content_tHmjXb": {
-      "type": "section-content",
-      "blocks": {
-        "sticker_BzkzMy": {
-          "type": "sticker",
-          "settings": {
-            "size": 100,
-            "image": "shopify://shop_images/IMG_0680.png",
-            "animation_style": "rotate_clockwise",
-            "animation_speed": "slow"
-          }
-        },
-        "heading_JjApYD": {
-          "type": "heading",
-          "settings": {
-            "heading": "About DairyAssure",
-            "header_tag": "h2",
-            "contain_width": true,
-            "show_in_front_of_accent_image": true,
-            "override_default_styles": false,
-            "override_font_size": 0
-          }
-        },
-        "text_AxRxUP": {
-          "type": "text",
-          "settings": {
-            "text": "<p>We created this for people who love dairy but hate the bloating, gas, or discomfort that comes with it. </p><p>Each lightweight stick contains only one ingredient: pure lactase. No fillers, additives, or preservatives. <br/></p>",
-            "contain_width": true,
-            "show_in_front_of_accent_image": true,
-            "override_default_styles": false,
-            "override_font_size": 0
-          }
-        },
-        "button_MENACj": {
-          "type": "button",
-          "settings": {
-            "button_text": "Shop Now",
-            "button_link": "shopify://products/dairyassure-lactase-powder-sticks",
-            "show_in_front_of_accent_image": true
-          }
-        }
-      },
-      "block_order": [
-        "sticker_BzkzMy",
-        "heading_JjApYD",
-        "text_AxRxUP",
-        "button_MENACj"
-      ],
-      "settings": {
-        "show_top_divider": false,
-        "divider_color_scheme": "scheme-1",
-        "color_scheme": "scheme-3",
-        "button_style": "solid",
-        "show_accent_image": false,
-        "accent_vertical_anchor": 0,
-        "accent_horizontal_anchor": 0,
-        "accent_size": 30,
-        "hide_accent_on_mobile": true,
-        "accent_cover": false
+        "heading": "What Real Customers Are Saying.",
+        "average_rating": "5.00",
+        "total_reviews": "127",
+        "tab_1_label": "Single Strength",
+        "tab_2_label": "Extra Strength",
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     }
   },
   "order": [
-    "section_banner_and_wave_yapQta",
-    "section_content_tcEjFQ",
-    "section_featured_product_zDCEbA",
-    "section_image_WmTWeB",
-    "section_product_features_G4wjqr",
-    "section_horizontally_scrolling_content_Up4cdG",
-    "section_comparison_table_iPG73G",
-    "bd8cd58a-2797-483b-bd1e-fecaa7270ce7",
-    "section_image_CbPAzn",
-    "e888c031-5adb-4ec1-a682-604672a8da7c",
-    "section_content_tHmjXb"
+    "hero",
+    "usp_marquee",
+    "empathy_anchor",
+    "product_intro",
+    "three_pillars",
+    "comparison",
+    "trust_chorus",
+    "buy_box",
+    "guarantee",
+    "origin_story",
+    "faq",
+    "reviews"
   ]
 }

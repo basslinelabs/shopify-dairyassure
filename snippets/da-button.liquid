@@ -1,0 +1,28 @@
+{%- comment -%}
+  Renders a DairyAssure primary or secondary CTA button.
+
+  Usage:
+    {% render 'da-button', label: 'TRY DAIRYASSURE TODAY', url: '/products/dairyassure', style: 'primary' %}
+
+  Parameters:
+    - label {String} Required. Button text.
+    - url {String} Required. Link URL.
+    - style {String} Optional. 'primary' or 'secondary'. Default: 'primary'.
+    - full_width {Boolean} Optional. Full-width button. Default: false.
+{%- endcomment -%}
+
+{%- liquid
+  assign btn_style = style | default: 'primary'
+  if btn_style == 'secondary'
+    assign btn_class = 'da-btn-secondary'
+  else
+    assign btn_class = 'da-btn'
+  endif
+  if full_width
+    assign btn_class = btn_class | append: ' da-btn--full'
+  endif
+-%}
+
+<a href="{{ url }}" class="{{ btn_class }}">
+  {{- label | escape -}}
+</a>

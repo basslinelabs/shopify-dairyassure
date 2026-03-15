@@ -1,105 +1,53 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
+  "name": "t:sections.footer.name",
   "type": "footer",
-  "name": "Footer Group",
   "sections": {
-    "footer-icons": {
-      "type": "footer-icons",
-      "blocks": {
-        "4a50cc04-de1b-4b0d-8051-22d0927b0290": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify://shop_images/shipping.png",
-            "text": "Free Shipping on Orders $50+",
-            "link": ""
-          }
-        },
-        "45d2e98a-95c0-4ce8-b6d4-79d681a62d43": {
-          "type": "icon",
-          "settings": {
-            "text": "Fast Acting Relief",
-            "link": ""
-          }
-        },
-        "9e5984e3-7e32-4718-853b-595f113126b2": {
-          "type": "icon",
-          "settings": {
-            "text": "Shelf Stable for 12 Months",
-            "link": ""
-          }
-        },
-        "77988f10-88b1-42e8-8752-ab9ca7df03da": {
-          "type": "icon",
-          "settings": {
-            "text": "Convenient Packaging",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "4a50cc04-de1b-4b0d-8051-22d0927b0290",
-        "45d2e98a-95c0-4ce8-b6d4-79d681a62d43",
-        "9e5984e3-7e32-4718-853b-595f113126b2",
-        "77988f10-88b1-42e8-8752-ab9ca7df03da"
-      ],
-      "disabled": true,
-      "settings": {
-        "image_size": 50,
-        "color_scheme": "scheme-1"
-      }
-    },
     "footer": {
       "type": "footer",
       "blocks": {
-        "57c43578-6521-4b43-a4b9-e07fd48a5d55": {
-          "type": "text",
+        "footer-0": {
+          "type": "link_list",
           "settings": {
-            "header": "About Us",
-            "subtext": "<p>Born from the need to enjoy dairy without discomfort, DairyAssure keeps it simple: one pure ingredient, no fillers, and no fuss.</p>"
+            "heading": "Quick links",
+            "menu": "footer"
           }
         },
-        "f40a072b-3d3e-4dba-8152-ab3293c93b62": {
-          "type": "newsletter",
+        "footer-1": {
+          "type": "link_list",
           "settings": {
-            "header": "Stay in the Loop",
-            "subtext": "<p><em>Sign up today and get 10% off your first order.</em></p>",
-            "show_name_field": false
+            "heading": "Info",
+            "menu": "footer"
+          }
+        },
+        "footer-2": {
+          "type": "text",
+          "settings": {
+            "heading": "Our mission",
+            "subtext": "<p>To restore the joy of eating without limits, empowering people to trust their gut and live life fully.<\/p>"
           }
         }
       },
       "block_order": [
-        "57c43578-6521-4b43-a4b9-e07fd48a5d55",
-        "f40a072b-3d3e-4dba-8152-ab3293c93b62"
+        "footer-0",
+        "footer-1",
+        "footer-2"
       ],
       "settings": {
-        "bottom_bar_menu": "",
-        "show_policy_links": true,
-        "show_dividers": true,
-        "enable_payment_icons": true,
-        "show_social": false,
-        "show_follow_on_shop": true,
-        "show_top_divider": false,
-        "divider_color_scheme": "scheme-5",
-        "color_scheme": "scheme-2",
-        "show_accent_image": false,
-        "accent_horizontal_anchor": 0,
-        "accent_vertical_anchor": 0,
-        "accent_size": 30,
-        "hide_accent_on_mobile": true,
-        "accent_cover": false
+        "color_scheme": "scheme-1",
+        "newsletter_enable": true,
+        "newsletter_heading": "Subscribe to our emails",
+        "show_social": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 48,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
-    "footer-icons",
     "footer"
   ]
 }

@@ -17,33 +17,15 @@
     data-section-id="{{ section.id }}"
     data-product-variant-id="{{ product.selected_or_first_available_variant.id }}"
   >
+    <input
+      id="Recipient-checkbox-{{ section.id }}"
+      type="checkbox"
+      name="{{ gift_card_recipient_control_flag }}"
+      disabled
+    >
     <label class="recipient-checkbox" for="Recipient-checkbox-{{ section.id }}">
-      <input
-        id="Recipient-checkbox-{{ section.id }}"
-        type="checkbox"
-        name="{{ gift_card_recipient_control_flag }}"
-        disabled
-      >
-      <svg
-        width="2rem"
-        height="2rem"
-        viewBox="0 0 16 16"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <rect width="16" height="16" stroke="none" fill="none" stroke-width="1"></rect>
-      </svg>
-      <svg
-        aria-hidden="true"
-        class="icon icon-tick"
-        width="1.4rem"
-        height="1rem"
-        viewBox="0 0 11 7"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
+      {{ 'square.svg' | inline_asset_content }}
+      {{- 'icon-checkmark.svg' | inline_asset_content -}}
       <span>{{ 'recipient.form.checkbox' | t }}</span>
     </label>
     <div
@@ -54,7 +36,7 @@
       {% endunless %}
     >
       <h2 class="form__message" tabindex="-1" autofocus>
-        {% render 'icons-main', icon: 'cross' %}
+        {{- 'icon-error.svg' | inline_asset_content -}}
         <span class="error-message">{{ 'templates.contact.form.error_heading' | t }}</span>
       </h2>
 
@@ -80,6 +62,7 @@
       role="status"
     ></p>
     <div class="recipient-fields">
+      <hr>
       <div class="recipient-fields__field">
         <div class="field">
           <input
@@ -96,6 +79,9 @@
           >
           <label class="field__label" for="Recipient-email-{{ section.id }}">
             <span class="recipient-email-label required">{{ 'recipient.form.email_label' | t }}</span>
+            <span class="recipient-email-label optional">
+              {{- 'recipient.form.email_label_optional_for_no_js_behavior' | t -}}
+            </span>
           </label>
         </div>
 
@@ -103,7 +89,7 @@
           id="RecipientForm-email-error-{{ section.id }}"
           class="form__message{% unless form.errors contains 'email' %} hidden{% endunless %}"
         >
-          {% render 'icons-main', icon: 'cross' %}
+          {{- 'icon-error.svg' | inline_asset_content -}}
           <span class="error-message">
             {%- if form.errors contains 'email' -%}
               {{ form.errors.messages.email }}.
@@ -136,7 +122,7 @@
           id="RecipientForm-name-error-{{ section.id }}"
           class="form__message{% unless form.errors contains 'name' %} hidden{% endunless %}"
         >
-          {% render 'icons-main', icon: 'cross' %}
+          {{- 'icon-error.svg' | inline_asset_content -}}
           <span class="error-message">
             {%- if form.errors contains 'name' -%}
               {{ form.errors.messages.name }}.
@@ -176,7 +162,7 @@
           id="RecipientForm-message-error-{{ section.id }}"
           class="form__message{% unless form.errors contains 'message' %} hidden{% endunless %}"
         >
-          {% render 'icons-main', icon: 'cross' %}
+          {{- 'icon-error.svg' | inline_asset_content -}}
           <span class="error-message">
             {%- if form.errors contains 'message' -%}
               {{ form.errors.messages.message }}.
@@ -210,7 +196,7 @@
           id="RecipientForm-send_on-error-{{ section.id }}"
           class="form__message{% unless form.errors contains 'send_on' %} hidden{% endunless %}"
         >
-          {% render 'icons-main', icon: 'cross' %}
+          {{- 'icon-error.svg' | inline_asset_content -}}
           <span class="error-message">
             {%- if form.errors contains 'send_on' -%}
               {{ form.errors.messages.send_on }}.

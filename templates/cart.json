@@ -1,16 +1,14 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "main-cart": {
-      "type": "main-cart",
+    "cart-items": {
+      "type": "main-cart-items",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "cart-footer": {
+      "type": "main-cart-footer",
       "blocks": {
         "subtotal": {
           "type": "subtotal",
@@ -21,46 +19,37 @@
           "type": "buttons",
           "settings": {
           }
-        },
-        "cart_notes": {
-          "type": "cart_notes",
-          "settings": {
-          }
         }
       },
       "block_order": [
         "subtotal",
-        "buttons",
-        "cart_notes"
-      ],
-      "settings": {
-        "show_top_divider": false,
-        "divider_color_scheme": "",
-        "color_scheme": ""
-      }
+        "buttons"
+      ]
     },
-    "section-featured-collection": {
-      "type": "section-featured-collection",
+    "featured-collection": {
+      "type": "featured-collection",
       "settings": {
-        "title": "Our favorites",
-        "header_tag": "h2",
-        "collection": "frontpage",
+        "title": "Featured collection",
+        "heading_size": "h2",
+        "collection": "all",
         "products_to_show": 4,
         "columns_desktop": 4,
+        "color_scheme": "scheme-1",
         "show_view_all": true,
-        "show_top_divider": true,
-        "divider_color_scheme": "scheme-1",
-        "color_scheme": "scheme-4",
-        "accent_horizontal_anchor": 0,
-        "accent_vertical_anchor": 0,
-        "accent_size": 30,
-        "hide_accent_on_mobile": true,
-        "button_style": "outline"
+        "swipe_on_mobile": false,
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
-    "main-cart",
-    "section-featured-collection"
+    "cart-items",
+    "cart-footer",
+    "featured-collection"
   ]
 }

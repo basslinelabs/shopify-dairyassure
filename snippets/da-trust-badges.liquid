@@ -1,0 +1,18 @@
+{%- comment -%}
+  Renders a trust line with checkmark icon.
+
+  Usage:
+    {% render 'da-trust-badges', text: '✔ Money-Back Guarantee | Free Shipping on $50+', style: 'inline' %}
+
+  Parameters:
+    - text {String} Required. Trust line text.
+    - style {String} Optional. 'inline' (horizontal) or 'stacked' (vertical). Default: 'inline'.
+{%- endcomment -%}
+
+{%- liquid
+  assign badge_style = style | default: 'inline'
+-%}
+
+<div class="da-trust{% if badge_style == 'stacked' %} da-trust--stacked{% endif %}">
+  <span>{{ text | escape }}</span>
+</div>

@@ -1,0 +1,96 @@
+{{ 'section-origin-story.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div
+  class="da-origin section-{{ section.id }}-padding{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+>
+  <div class="page-width">
+    <div class="da-origin__container">
+      <div class="da-origin__photos">
+        <div class="da-origin__photo">
+          {%- if section.settings.image_1 != blank -%}
+            {{
+              section.settings.image_1
+              | image_url: width: 600
+              | image_tag:
+                loading: 'lazy',
+                sizes: '(min-width: 750px) 22vw, 45vw',
+                widths: '200, 300, 400, 600',
+                alt: section.settings.image_1.alt | default: 'Our story'
+            }}
+          {%- else -%}
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </div>
+        <div class="da-origin__photo">
+          {%- if section.settings.image_2 != blank -%}
+            {{
+              section.settings.image_2
+              | image_url: width: 600
+              | image_tag:
+                loading: 'lazy',
+                sizes: '(min-width: 750px) 22vw, 45vw',
+                widths: '200, 300, 400, 600',
+                alt: section.settings.image_2.alt | default: 'Our story'
+            }}
+          {%- else -%}
+            {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </div>
+      </div>
+
+      <div class="da-origin__text">
+        {%- if section.settings.label != blank -%}
+          <p class="da-origin__label">{{ section.settings.label }}</p>
+        {%- endif -%}
+
+        <h2 class="da-origin__heading">{{ section.settings.heading }}</h2>
+
+        {%- if section.settings.body_text != blank -%}
+          <div class="da-origin__body rte">
+            {{ section.settings.body_text }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.closing != blank -%}
+          <p class="da-origin__closing">{{ section.settings.closing }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "DA Origin Story",
+  "tag": "section",
+  "class": "section section--origin-story",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Section label", "default": "OUR STORY" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Welcome Back to Dairy." },
+    { "type": "richtext", "id": "body_text", "label": "Story text" },
+    { "type": "text", "id": "closing", "label": "Closing line", "default": "Welcome to DairyAssure." },
+    { "type": "image_picker", "id": "image_1", "label": "Photo 1" },
+    { "type": "image_picker", "id": "image_2", "label": "Photo 2" },
+    { "type": "header", "content": "Section padding" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding top", "default": 64 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding bottom", "default": 64 }
+  ],
+  "presets": [
+    { "name": "DA Origin Story" }
+  ],
+  "enabled_on": { "templates": ["index"] }
+}
+{% endschema %}

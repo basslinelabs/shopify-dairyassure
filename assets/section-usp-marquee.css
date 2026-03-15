@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Section: DA USP Marquee — The Quiet Ticker
+   ========================================================================== */
+
+.da-marquee {
+  background-color: var(--da-color-secondary-bg);
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.da-marquee__inner {
+  display: inline-flex;
+  animation: da-marquee var(--da-marquee-speed, 25s) linear infinite;
+}
+
+@keyframes da-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.da-marquee__track {
+  display: inline-flex;
+  align-items: center;
+}
+
+.da-marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 32px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--da-color-text);
+}
+
+.da-marquee__emoji {
+  font-style: normal;
+  font-size: 18px;
+}
+
+.da-marquee__separator {
+  color: var(--da-color-subtle);
+  font-size: 8px;
+}
+
+/* Reduced motion: stop animation */
+@media (prefers-reduced-motion: reduce) {
+  .da-marquee__inner {
+    animation: none;
+  }
+}

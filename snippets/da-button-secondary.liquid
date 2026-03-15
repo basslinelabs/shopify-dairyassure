@@ -1,0 +1,22 @@
+{%- comment -%}
+  Renders a DairyAssure secondary (outline) CTA button.
+
+  Usage:
+    {% render 'da-button-secondary', label: 'VIEW DETAILS', url: '/products/dairyassure' %}
+
+  Parameters:
+    - label {String} Required. Button text.
+    - url {String} Required. Link URL.
+    - full_width {Boolean} Optional. Full-width button. Default: false.
+{%- endcomment -%}
+
+{%- liquid
+  assign btn_class = 'da-btn-secondary'
+  if full_width
+    assign btn_class = btn_class | append: ' da-btn--full'
+  endif
+-%}
+
+<a href="{{ url }}" class="{{ btn_class }}">
+  {{- label | escape -}}
+</a>

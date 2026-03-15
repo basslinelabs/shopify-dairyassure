@@ -1,0 +1,107 @@
+/* ==========================================================================
+   Section: DA Trust Chorus — Social Proof
+   ========================================================================== */
+
+.da-trust-section {
+  background-color: var(--da-color-primary-bg);
+}
+
+.da-trust-section__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.da-trust-section__stars {
+  margin-bottom: 12px;
+}
+
+.da-trust-section__heading {
+  font-family: "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 115%;
+  letter-spacing: -0.24px;
+  color: var(--da-color-text);
+  margin: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .da-trust-section__heading {
+    font-size: 28px;
+    letter-spacing: -0.28px;
+  }
+}
+
+/* Quote grid — desktop */
+.da-trust-section__quotes {
+  display: none;
+}
+
+@media screen and (min-width: 750px) {
+  .da-trust-section__quotes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+}
+
+/* Quote carousel — mobile */
+.da-trust-section__quotes-mobile {
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 750px) {
+  .da-trust-section__quotes-mobile {
+    display: none;
+  }
+}
+
+.da-trust-section__quotes-mobile .swiper-slide {
+  height: auto;
+}
+
+.da-trust-section__quotes-mobile .da-quote-card {
+  height: 100%;
+}
+
+.da-trust-section__quotes-mobile .swiper-pagination {
+  position: relative;
+  margin-top: 16px;
+}
+
+.da-trust-section__quotes-mobile .swiper-pagination-bullet {
+  background-color: var(--da-color-text);
+  opacity: 0.3;
+}
+
+.da-trust-section__quotes-mobile .swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: var(--da-color-accent);
+}
+
+/* Photo grid */
+.da-trust-section__photos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media screen and (min-width: 750px) {
+  .da-trust-section__photos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.da-trust-section__photo {
+  aspect-ratio: 1;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--da-color-secondary-bg);
+}
+
+.da-trust-section__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

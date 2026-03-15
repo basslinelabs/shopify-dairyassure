@@ -1,0 +1,117 @@
+/* ==========================================================================
+   Section: DA Three Pillars — How It Works
+   ========================================================================== */
+
+.da-pillars {
+  background-color: var(--da-color-primary-bg);
+}
+
+.da-pillars__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.da-pillars__heading {
+  font-family: "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 115%;
+  letter-spacing: -0.24px;
+  color: var(--da-color-text);
+  margin: 0 0 8px;
+}
+
+@media screen and (min-width: 750px) {
+  .da-pillars__heading {
+    font-size: 28px;
+    letter-spacing: -0.28px;
+  }
+}
+
+.da-pillars__subheading {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--da-color-text);
+  margin: 0;
+}
+
+.da-pillars__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media screen and (min-width: 750px) {
+  .da-pillars__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    align-items: stretch;
+  }
+}
+
+.da-pillars__card-wrapper {
+  position: relative;
+}
+
+/* Arrow between cards (desktop only) */
+@media screen and (min-width: 750px) {
+  .da-pillars__card-wrapper:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--da-color-text);
+    z-index: 1;
+  }
+}
+
+.da-pillars__card {
+  background-color: var(--da-color-secondary-bg);
+  border: 2px solid var(--da-color-text);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.da-pillars__icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.da-pillars__number {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--da-color-accent);
+  margin: 0;
+  line-height: 100%;
+}
+
+.da-pillars__title {
+  font-family: "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 120%;
+  color: var(--da-color-text);
+  margin: 0;
+}
+
+.da-pillars__description {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--da-color-text);
+  margin: 0;
+}

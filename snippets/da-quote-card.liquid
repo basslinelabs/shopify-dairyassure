@@ -1,0 +1,37 @@
+{%- comment -%}
+  Renders a testimonial quote card with stars, quote text, author, and verified badge.
+
+  Usage:
+    {% render 'da-quote-card', quote: 'Amazing product!', author: 'Sarah K.', verified: true, stars: 5 %}
+
+  Parameters:
+    - quote {String} Required. Quote text.
+    - author {String} Required. Author name.
+    - verified {Boolean} Optional. Show "Verified Customer" badge. Default: true.
+    - stars {Number} Optional. Star rating to display. Default: 5.
+{%- endcomment -%}
+
+{%- liquid
+  assign card_stars = stars | default: 5
+  assign card_verified = verified | default: true
+-%}
+
+<div class="da-quote-card">
+  <div class="da-quote-card__stars">
+    {%- render 'da-star-rating', rating: card_stars, size: 'small' -%}
+  </div>
+  <blockquote class="da-quote-card__text">
+    {{ quote | escape }}
+  </blockquote>
+  <div class="da-quote-card__footer">
+    <span class="da-quote-card__author">{{ author | escape }}</span>
+    {%- if card_verified -%}
+      <span class="da-quote-card__verified">
+        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M8 0a8 8 0 110 16A8 8 0 018 0zm3.41 5.29a1 1 0 00-1.41 0L7 8.29 6 7.29a1 1 0 00-1.41 1.42l1.7 1.7a1 1 0 001.42 0l3.7-3.7a1 1 0 000-1.42z"/>
+        </svg>
+        Verified Customer
+      </span>
+    {%- endif -%}
+  </div>
+</div>

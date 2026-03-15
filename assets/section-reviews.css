@@ -1,0 +1,229 @@
+/* ==========================================================================
+   Section: DA Reviews — The Voices
+   ========================================================================== */
+
+.da-reviews {
+  background-color: var(--da-color-primary-bg);
+}
+
+.da-reviews__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.da-reviews__heading {
+  font-family: "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 115%;
+  letter-spacing: -0.24px;
+  color: var(--da-color-text);
+  margin: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .da-reviews__heading {
+    font-size: 28px;
+    letter-spacing: -0.28px;
+  }
+}
+
+/* Rating summary */
+.da-reviews__summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 750px) {
+  .da-reviews__summary {
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+  }
+}
+
+.da-reviews__score {
+  text-align: center;
+}
+
+.da-reviews__score-number {
+  font-family: "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--da-color-text);
+  margin: 0;
+  line-height: 100%;
+}
+
+.da-reviews__score-label {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--da-color-muted-text);
+  margin: 4px 0 0;
+}
+
+/* Star distribution bars */
+.da-reviews__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 200px;
+}
+
+.da-reviews__bar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.da-reviews__bar-label {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--da-color-text);
+  width: 12px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.da-reviews__bar-track {
+  flex: 1;
+  height: 8px;
+  background-color: var(--da-color-secondary-bg);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.da-reviews__bar-fill {
+  height: 100%;
+  background-color: var(--da-color-accent);
+  border-radius: 4px;
+  transition: width 600ms ease-out;
+}
+
+/* Filter tabs */
+.da-reviews__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.da-reviews__tab {
+  padding: 10px 20px;
+  border: 2px solid var(--da-color-text);
+  border-radius: 8px;
+  background: var(--da-color-white);
+  color: var(--da-color-text);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+
+.da-reviews__tab--active {
+  background-color: var(--da-color-text);
+  border-color: var(--da-color-text);
+  color: var(--da-color-white);
+}
+
+/* Review cards */
+.da-reviews__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.da-reviews__card {
+  background: var(--da-color-white);
+  border: 2px solid var(--da-color-text);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.da-reviews__card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.da-reviews__card-author {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--da-color-text);
+}
+
+.da-reviews__card-verified {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--da-color-subtle);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.da-reviews__card-verified svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--da-color-accent);
+}
+
+.da-reviews__card-text {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--da-color-text);
+  margin: 0;
+}
+
+/* Hidden reviews (show more toggle) */
+.da-reviews__card--hidden {
+  display: none;
+}
+
+.da-reviews__list--expanded .da-reviews__card--hidden {
+  display: block;
+}
+
+/* Show more button */
+.da-reviews__show-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.da-reviews__show-more-btn {
+  padding: 12px 24px;
+  background: var(--da-color-white);
+  border: 2px solid var(--da-color-text);
+  border-radius: 8px;
+  color: var(--da-color-text);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.da-reviews__show-more-btn:hover {
+  background-color: var(--da-color-text);
+  color: var(--da-color-white);
+}
+
+.da-reviews__list--expanded + .da-reviews__show-more {
+  display: none;
+}

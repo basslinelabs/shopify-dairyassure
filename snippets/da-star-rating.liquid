@@ -1,0 +1,33 @@
+{%- comment -%}
+  Renders a star rating display.
+
+  Usage:
+    {% render 'da-star-rating', rating: 5, max: 5, size: 'small', color: '#FFD321' %}
+
+  Parameters:
+    - rating {Number} Required. Number of filled stars (1-5).
+    - max {Number} Optional. Total stars to show. Default: 5.
+    - size {String} Optional. 'small' (13px) or 'large' (20px). Default: 'small'.
+    - color {String} Optional. Star fill color. Default: '#FFD321' (Honey).
+{%- endcomment -%}
+
+{%- liquid
+  assign star_max = max | default: 5
+  assign star_size = size | default: 'small'
+  assign star_color = color | default: '#FFD321'
+  assign star_rating = rating | default: 5
+-%}
+
+<span class="da-stars da-stars--{{ star_size }}" role="img" aria-label="{{ star_rating }} out of {{ star_max }} stars">
+  {%- for i in (1..star_max) -%}
+    {%- if i <= star_rating -%}
+      <svg class="da-stars__icon" viewBox="0 0 20 20" fill="{{ star_color }}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 13.88l-4.94 2.82.94-5.49-4-3.9 5.53-.8L10 1.5z"/>
+      </svg>
+    {%- else -%}
+      <svg class="da-stars__icon" viewBox="0 0 20 20" fill="none" stroke="{{ star_color }}" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 13.88l-4.94 2.82.94-5.49-4-3.9 5.53-.8L10 1.5z"/>
+      </svg>
+    {%- endif -%}
+  {%- endfor -%}
+</span>

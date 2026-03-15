@@ -1,0 +1,393 @@
+/* ==========================================================================
+   DairyAssure Global Styles
+   Design tokens, shared components, global chrome overrides
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Font Face
+   -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Mechta';
+  src: url('Mechta.otf') format('opentype'),
+       url('Mechta.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Display heading font — loaded via theme.liquid Google Fonts link */
+/* Plus Jakarta Sans: bold geometric display for section headings */
+
+/* --------------------------------------------------------------------------
+   2. Design Tokens
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* DairyAssure color palette — packaging-matched, high-contrast model */
+  --da-color-primary-bg: #E8E0F0;          /* Light lavender — page bg (light, like Supervibe's warm sand) */
+  --da-color-secondary-bg: #D0C6E0;        /* Mid lavender — marquee, cards, panels */
+  --da-color-card-bg: #FFFFFF;             /* White — card fills, product intro container */
+  --da-color-text: #2B2A8C;               /* Blue-indigo — headings, body, icons (from packaging wordmark) */
+  --da-color-accent: #5FC0D4;             /* Teal — CTA buttons, active states, highlights */
+  --da-color-subtle: #A8A0C2;             /* Mid lavender — borders, dividers, muted elements */
+  --da-color-dark-bg: #2B2A8C;            /* Blue-indigo — guarantee bg, footer bg, announcement bar */
+  --da-color-muted-text: #7A7494;         /* Muted indigo — source citations, disclaimers */
+  --da-color-white: #FFFFFF;
+  --da-color-star: #FFD321;
+
+  /* Dawn variable overrides */
+  --page-width: 130rem !important;
+  --buttons-radius: 8px !important;
+  --inputs-radius: 8px !important;
+  --media-radius: 16px !important;
+  --color-button: 95, 192, 212 !important;
+  --color-button-text: 255, 255, 255 !important;
+
+  /* Font family overrides */
+  --font-body-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  --font-heading-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  --font-body-weight: 400 !important;
+  --font-heading-weight: 700 !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. Shared Button Styles
+   -------------------------------------------------------------------------- */
+
+.da-btn {
+  display: inline-block;
+  padding: 16px 32px;
+  background-color: var(--da-color-accent);
+  color: var(--da-color-white);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 125%;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  box-shadow: -3px 5px 0px 0px var(--da-color-text);
+  cursor: pointer;
+  transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+}
+
+.da-btn:hover {
+  transform: translate(-3px, 5px);
+  box-shadow: 0px 0px 0px 0px var(--da-color-text);
+}
+
+.da-btn:active {
+  transform: translate(-3px, 5px);
+  box-shadow: 0px 0px 0px 0px var(--da-color-text);
+}
+
+.da-btn-secondary {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: transparent;
+  color: var(--da-color-text);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 125%;
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid var(--da-color-text);
+  border-radius: 8px;
+  box-shadow: 3px 3px 0px 0px var(--da-color-text);
+  cursor: pointer;
+  transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+}
+
+.da-btn-secondary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px 0px var(--da-color-text);
+}
+
+.da-btn-secondary:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px 0px 0px var(--da-color-text);
+}
+
+.da-btn--full {
+  display: block;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   4. Star Rating
+   -------------------------------------------------------------------------- */
+
+.da-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.da-stars--small .da-stars__icon {
+  width: 13px;
+  height: 13px;
+}
+
+.da-stars--large .da-stars__icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   5. Pill Badge
+   -------------------------------------------------------------------------- */
+
+.da-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border: 1px solid var(--da-color-text);
+  border-radius: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--da-color-text);
+  white-space: nowrap;
+}
+
+.da-pill__emoji {
+  font-style: normal;
+}
+
+/* --------------------------------------------------------------------------
+   6. Quote Card
+   -------------------------------------------------------------------------- */
+
+.da-quote-card {
+  background: var(--da-color-white);
+  border: 2px solid var(--da-color-text);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.da-quote-card__stars {
+  margin-bottom: 12px;
+}
+
+.da-quote-card__text {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--da-color-text);
+  margin: 0 0 16px;
+}
+
+.da-quote-card__footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.da-quote-card__author {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--da-color-text);
+}
+
+.da-quote-card__verified {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--da-color-subtle);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.da-quote-card__verified svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--da-color-accent);
+}
+
+/* --------------------------------------------------------------------------
+   7. Trust Badges
+   -------------------------------------------------------------------------- */
+
+.da-trust {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--da-color-text);
+}
+
+.da-trust--stacked {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* --------------------------------------------------------------------------
+   8. Section Padding Utility
+   -------------------------------------------------------------------------- */
+
+.da-section-padding {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+@media screen and (min-width: 750px) {
+  .da-section-padding {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .da-section-padding {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. Animation Utilities
+   -------------------------------------------------------------------------- */
+
+.da-animate-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 600ms cubic-bezier(0, 0, 0.3, 1),
+              transform 600ms cubic-bezier(0, 0, 0.3, 1);
+}
+
+.da-animate-in.da-animate-in--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   10. Cow Print Pattern (from packaging)
+   -------------------------------------------------------------------------- */
+
+.da-cow-print {
+  position: relative;
+  overflow: hidden;
+}
+
+.da-cow-print::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  pointer-events: none;
+  background-image:
+    radial-gradient(ellipse 120px 90px at 15% 20%, var(--da-color-text) 0%, transparent 100%),
+    radial-gradient(ellipse 80px 110px at 75% 15%, var(--da-color-text) 0%, transparent 100%),
+    radial-gradient(ellipse 100px 70px at 50% 80%, var(--da-color-text) 0%, transparent 100%),
+    radial-gradient(ellipse 60px 90px at 90% 60%, var(--da-color-text) 0%, transparent 100%),
+    radial-gradient(ellipse 90px 60px at 25% 70%, var(--da-color-text) 0%, transparent 100%),
+    radial-gradient(ellipse 70px 100px at 60% 45%, var(--da-color-text) 0%, transparent 100%),
+    radial-gradient(ellipse 110px 80px at 85% 85%, var(--da-color-text) 0%, transparent 100%),
+    radial-gradient(ellipse 50px 70px at 40% 30%, var(--da-color-text) 0%, transparent 100%);
+  z-index: 0;
+}
+
+.da-cow-print > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Inverted cow print for dark backgrounds */
+.da-cow-print--light::before {
+  opacity: 0.08;
+  background-image:
+    radial-gradient(ellipse 120px 90px at 15% 20%, var(--da-color-white) 0%, transparent 100%),
+    radial-gradient(ellipse 80px 110px at 75% 15%, var(--da-color-white) 0%, transparent 100%),
+    radial-gradient(ellipse 100px 70px at 50% 80%, var(--da-color-white) 0%, transparent 100%),
+    radial-gradient(ellipse 60px 90px at 90% 60%, var(--da-color-white) 0%, transparent 100%),
+    radial-gradient(ellipse 90px 60px at 25% 70%, var(--da-color-white) 0%, transparent 100%),
+    radial-gradient(ellipse 70px 100px at 60% 45%, var(--da-color-white) 0%, transparent 100%),
+    radial-gradient(ellipse 110px 80px at 85% 85%, var(--da-color-white) 0%, transparent 100%),
+    radial-gradient(ellipse 50px 70px at 40% 30%, var(--da-color-white) 0%, transparent 100%);
+}
+
+/* --------------------------------------------------------------------------
+   11. Global Chrome Overrides — Announcement Bar
+   -------------------------------------------------------------------------- */
+
+.shopify-section-group-header-group .announcement-bar {
+  background-color: var(--da-color-dark-bg);
+  min-height: 43px;
+}
+
+.shopify-section-group-header-group .announcement-bar__message {
+  color: var(--da-color-white);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.shopify-section-group-header-group .announcement-bar__link {
+  color: var(--da-color-white);
+}
+
+.shopify-section-group-header-group .utility-bar {
+  background-color: var(--da-color-dark-bg);
+}
+
+/* --------------------------------------------------------------------------
+   11. Global Chrome Overrides — Header
+   -------------------------------------------------------------------------- */
+
+.shopify-section-group-header-group .header-wrapper {
+  background-color: var(--da-color-primary-bg);
+  border-bottom: 1px solid var(--da-color-subtle);
+}
+
+.shopify-section-group-header-group .header {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.shopify-section-group-header-group .header__heading-link {
+  font-family: 'Mechta', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--da-color-text);
+  text-decoration: none;
+}
+
+.shopify-section-group-header-group .header__heading-logo {
+  font-family: 'Mechta', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.shopify-section-group-header-group .header__icon,
+.shopify-section-group-header-group .header__icon .icon {
+  color: var(--da-color-text);
+}
+
+.shopify-section-group-header-group .header__menu-item {
+  color: var(--da-color-text);
+  font-weight: 700;
+}
+
+.shopify-section-group-header-group .header__active-menu-item {
+  color: var(--da-color-text);
+}
+
+/* Header line separator override */
+.shopify-section-group-header-group .header-wrapper--border-bottom {
+  border-bottom-color: var(--da-color-subtle);
+}
