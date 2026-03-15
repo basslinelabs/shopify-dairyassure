@@ -1,0 +1,692 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "header_font": "fredoka_n4",
+    "header_scale": 115,
+    "header_line_height": 100,
+    "header_letter_spacing": 0,
+    "header_capitalize": false,
+    "body_font": "figtree_n4",
+    "body_scale": 115,
+    "body_line_height": 125,
+    "body_letter_spacing": 0,
+    "button_font": "figtree_n4",
+    "button_scale": 85,
+    "button_letter_spacing": 1,
+    "button_capitalize": true,
+    "default_color_scheme": "scheme-1",
+    "divider_style": "waves",
+    "uniform_divider": false,
+    "divider_height": 6,
+    "apply_divider_to_buttons": false,
+    "field_style": "solid",
+    "icon_style": "solid",
+    "button_corner_radius": 10,
+    "field_corner_radius": 10,
+    "image_corner_radius": 10,
+    "divider_width": 1,
+    "button_outline_width": 2,
+    "field_outline_width": 2,
+    "background_shape_width": 1,
+    "icon_width": 4,
+    "columns_mobile": "1",
+    "image_ratio": "portrait",
+    "show_bottom_divider": true,
+    "enable_quick_add_to_cart": true,
+    "quick_add_style": "button",
+    "show_secondary_image": true,
+    "show_vendor": false,
+    "badge_color": "contrast",
+    "blog_image_ratio": "square",
+    "show_author": false,
+    "social_x_link": "http://x.com/dairyassure",
+    "social_facebook_link": "http://facebook.com/dairyassure",
+    "social_instagram_link": "http://instagram.com/dairyassure",
+    "social_tiktok_link": "http://tiktok.com/@dairyassure",
+    "social_linkedin_link": "https://www.linedin.com/company/dairyassure",
+    "social_youtube_link": "https://www.linedin.com/dairyassure",
+    "share_facebook": true,
+    "share_x": true,
+    "share_pinterest": true,
+    "share_linkedin": false,
+    "share_image": "shopify://shop_images/DairyAssure_Share_Image.png",
+    "favicon": "shopify://shop_images/IMG_0681.png",
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "header-0": {
+            "type": "announcement-bar",
+            "settings": {
+              "text": "FREE SHIPPING ON ORDERS $50+",
+              "link": "shopify://products/dairyassure-lactase-powder-sticks",
+              "background_color": "#000000",
+              "text_color": "#ffffff"
+            }
+          },
+          "header-2": {
+            "type": "header",
+            "settings": {
+              "logo": "shopify://shop_images/Group_1_5efa8fcf-5213-4dc1-8cf9-a19071983eca.png",
+              "menu": "main-menu",
+              "show_search": false,
+              "enable_sticky_header": true,
+              "show_divider": true,
+              "cart_icon_style": "cart",
+              "logo_width": 120,
+              "logo_position": "middle-left"
+            }
+          }
+        },
+        "block_order": [
+          "header-0",
+          "header-2"
+        ],
+        "settings": {
+          "color_scheme": "scheme-1"
+        }
+      },
+      "cart-notification": {
+        "type": "cart-notification",
+        "settings": {
+          "show_preview": false,
+          "cart_style": "minimal",
+          "color_scheme": "",
+          "secondary_button": "continue_shopping",
+          "primary_button": "checkout"
+        }
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "13768625480086291342": {
+        "type": "shopify://apps/forms/blocks/forms/8744a304-fcb1-4347-b211-bb6b4759a76a",
+        "disabled": false,
+        "settings": {}
+      }
+    },
+    "color_schemes": {
+      "scheme-1": {
+        "settings": {
+          "background": "#fff7ed",
+          "text": "#2d2d2d",
+          "accent": "#f8bf74",
+          "accent_text": "#ffffff",
+          "contrast": "#f1f1f1",
+          "contrast_text": "#2d2d2d"
+        }
+      },
+      "scheme-2": {
+        "settings": {
+          "background": "#ffffff",
+          "text": "#2d2d2d",
+          "accent": "#f8bf74",
+          "accent_text": "#ffffff",
+          "contrast": "#f1f1f1",
+          "contrast_text": "#2d2d2d"
+        }
+      },
+      "scheme-3": {
+        "settings": {
+          "background": "#f8bf74",
+          "text": "#2d2d2d",
+          "accent": "#2d2d2d",
+          "accent_text": "#ffffff",
+          "contrast": "#ffffff",
+          "contrast_text": "#2d2d2d"
+        }
+      },
+      "scheme-4": {
+        "settings": {
+          "background": "#fff2fd",
+          "text": "#2f000d",
+          "accent": "#2462f6",
+          "accent_text": "#fff2fd",
+          "contrast": "#2f000d",
+          "contrast_text": "#fff2fd"
+        }
+      },
+      "scheme-5": {
+        "settings": {
+          "background": "#ffbdf6",
+          "text": "#2f000d",
+          "accent": "#4a3728",
+          "accent_text": "#fff2fd",
+          "contrast": "#2462f6",
+          "contrast_text": "#fff2fd"
+        }
+      },
+      "scheme-6": {
+        "settings": {
+          "background": "#ffffff",
+          "text": "#4a3728",
+          "accent": "#4a3728",
+          "accent_text": "#ffffff",
+          "contrast": "#ffffff",
+          "contrast_text": "#4a3728"
+        }
+      }
+    }
+  },
+  "installed_preset_name": "Explore",
+  "presets": {
+    "Divide": {
+      "header_font": "grandstander_n5",
+      "header_scale": 90,
+      "header_line_height": 100,
+      "header_letter_spacing": 2,
+      "header_capitalize": false,
+      "body_font": "jost_n4",
+      "body_scale": 115,
+      "body_line_height": 125,
+      "body_letter_spacing": 1,
+      "button_font": "jost_n5",
+      "button_scale": 80,
+      "button_letter_spacing": 3,
+      "color_schemes": {
+        "scheme-1": {
+          "settings": {
+            "background": "#ffffff",
+            "text": "#333333",
+            "accent": "#1a9562",
+            "accent_text": "#ffffff",
+            "contrast": "#c7e6d9",
+            "contrast_text": "#333333"
+          }
+        },
+        "scheme-2": {
+          "settings": {
+            "background": "#e9c3e6",
+            "text": "#333333",
+            "accent": "#ffffff",
+            "accent_text": "#333333",
+            "contrast": "#f9eef8",
+            "contrast_text": "#333333"
+          }
+        },
+        "scheme-3": {
+          "settings": {
+            "background": "#ec6340",
+            "text": "#222222",
+            "accent": "#ffffff",
+            "accent_text": "#222222",
+            "contrast": "#f5b9aa",
+            "contrast_text": "#222222"
+          }
+        },
+        "scheme-4": {
+          "settings": {
+            "background": "#9dcae9",
+            "text": "#333333",
+            "accent": "#ffffff",
+            "accent_text": "#333333",
+            "contrast": "#e4f0f9",
+            "contrast_text": "#333333"
+          }
+        },
+        "scheme-5": {
+          "settings": {
+            "background": "#d6a568",
+            "text": "#333333",
+            "accent": "#ffffff",
+            "accent_text": "#333333",
+            "contrast": "#f1dabe",
+            "contrast_text": "#333333"
+          }
+        },
+        "scheme-6": {
+          "settings": {
+            "background": "#1a9562",
+            "text": "#ffffff",
+            "accent": "#c7e6d9",
+            "accent_text": "#333333",
+            "contrast": "#ffffff",
+            "contrast_text": "#333333"
+          }
+        }
+      },
+      "uniform_divider": false,
+      "divider_height": 4,
+      "apply_divider_to_buttons": false,
+      "field_style": "solid",
+      "icon_style": "drawn",
+      "image_corner_radius": 0,
+      "divider_width": 2,
+      "button_outline_width": 2,
+      "field_outline_width": 1.5,
+      "background_shape_width": 3,
+      "icon_width": 2,
+      "columns_mobile": "2",
+      "image_ratio": "adapt",
+      "show_bottom_divider": false,
+      "enable_quick_add_to_cart": false,
+      "show_secondary_image": true,
+      "show_vendor": false,
+      "badge_color": "contrast",
+      "blog_image_ratio": "square",
+      "show_author": false,
+      "share_facebook": true,
+      "share_x": true,
+      "share_pinterest": true,
+      "share_linkedin": false
+    },
+    "Explore": {
+      "header_font": "ebgaramond_n5",
+      "header_scale": 115,
+      "header_line_height": 100,
+      "header_letter_spacing": 0,
+      "header_capitalize": false,
+      "body_font": "figtree_n4",
+      "body_scale": 115,
+      "body_line_height": 125,
+      "body_letter_spacing": 0,
+      "button_font": "figtree_n4",
+      "button_scale": 85,
+      "button_letter_spacing": 1,
+      "button_capitalize": true,
+      "divider_style": "waves",
+      "uniform_divider": false,
+      "divider_height": 4,
+      "apply_divider_to_buttons": false,
+      "field_style": "outline",
+      "icon_style": "outline",
+      "button_corner_radius": 0,
+      "field_corner_radius": 0,
+      "image_corner_radius": 0,
+      "divider_width": 1,
+      "button_outline_width": 2,
+      "field_outline_width": 2,
+      "background_shape_width": 1,
+      "icon_width": 4,
+      "columns_mobile": "1",
+      "image_ratio": "adapt",
+      "show_bottom_divider": false,
+      "enable_quick_add_to_cart": false,
+      "show_secondary_image": true,
+      "blog_image_ratio": "square",
+      "show_author": false,
+      "share_facebook": true,
+      "share_x": true,
+      "share_pinterest": true,
+      "share_linkedin": false,
+      "color_schemes": {
+        "scheme-1": {
+          "settings": {
+            "background": "#ffffff",
+            "text": "#2f000d",
+            "accent": "#2462f6",
+            "accent_text": "#fff2fd",
+            "contrast": "#ffbdf6",
+            "contrast_text": "#2f000d"
+          }
+        },
+        "scheme-2": {
+          "settings": {
+            "background": "#ffffff",
+            "text": "#2f000d",
+            "accent": "#ffbdf6",
+            "accent_text": "#2f000d",
+            "contrast": "#2f000d",
+            "contrast_text": "#fff2fd"
+          }
+        },
+        "scheme-3": {
+          "settings": {
+            "background": "#2462f6",
+            "text": "#ffffff",
+            "accent": "#ffbdf6",
+            "accent_text": "#2f000d",
+            "contrast": "#fff2fd",
+            "contrast_text": "#2f000d"
+          }
+        },
+        "scheme-4": {
+          "settings": {
+            "background": "#fff2fd",
+            "text": "#2f000d",
+            "accent": "#2462f6",
+            "accent_text": "#fff2fd",
+            "contrast": "#2f000d",
+            "contrast_text": "#fff2fd"
+          }
+        },
+        "scheme-5": {
+          "settings": {
+            "background": "#ffbdf6",
+            "text": "#2f000d",
+            "accent": "#4a3728",
+            "accent_text": "#fff2fd",
+            "contrast": "#2462f6",
+            "contrast_text": "#fff2fd"
+          }
+        },
+        "scheme-6": {
+          "settings": {
+            "background": "#ffffff",
+            "text": "#4a3728",
+            "accent": "#4a3728",
+            "accent_text": "#ffffff",
+            "contrast": "#ffffff",
+            "contrast_text": "#4a3728"
+          }
+        }
+      }
+    },
+    "Leap": {
+      "header_font": "libre_bodoni_n7",
+      "header_scale": 130,
+      "header_line_height": 100,
+      "header_letter_spacing": 1,
+      "header_capitalize": true,
+      "body_font": "figtree_n4",
+      "body_scale": 115,
+      "body_line_height": 125,
+      "body_letter_spacing": 1,
+      "button_font": "jost_n5",
+      "button_scale": 80,
+      "button_letter_spacing": 3,
+      "divider_style": "waves",
+      "uniform_divider": false,
+      "divider_height": 4,
+      "apply_divider_to_buttons": false,
+      "field_style": "outline",
+      "icon_style": "drawn",
+      "button_corner_radius": 0,
+      "field_corner_radius": 0,
+      "image_corner_radius": 0,
+      "divider_width": 2,
+      "button_outline_width": 1.5,
+      "field_outline_width": 1.5,
+      "background_shape_width": 2,
+      "icon_width": 1,
+      "columns_mobile": "1",
+      "image_ratio": "adapt",
+      "show_bottom_divider": false,
+      "enable_quick_add_to_cart": false,
+      "show_secondary_image": true,
+      "blog_image_ratio": "square",
+      "show_author": false,
+      "social_pinterest_link": "https://pinterest.com/shopify",
+      "social_instagram_link": "https://instagram.com/shopify",
+      "social_tiktok_link": "https://tiktok.com/@shopify",
+      "share_facebook": true,
+      "share_x": true,
+      "share_pinterest": true,
+      "share_linkedin": false,
+      "color_schemes": {
+        "scheme-1": {
+          "settings": {
+            "background": "#fff4f6",
+            "text": "#181f1c",
+            "accent": "#873661",
+            "accent_text": "#fff4f6",
+            "contrast": "#9ea93f",
+            "contrast_text": "#181f1c"
+          }
+        },
+        "scheme-2": {
+          "settings": {
+            "background": "#ffffff",
+            "text": "#181f1c",
+            "accent": "#9ea93f",
+            "accent_text": "#181f1c",
+            "contrast": "#fff4f6",
+            "contrast_text": "#181f1c"
+          }
+        },
+        "scheme-3": {
+          "settings": {
+            "background": "#fff4f6",
+            "text": "#181f1c",
+            "accent": "#9ea93f",
+            "accent_text": "#181f1c",
+            "contrast": "#ffffff",
+            "contrast_text": "#181f1c"
+          }
+        },
+        "scheme-4": {
+          "settings": {
+            "background": "#9ea93f",
+            "text": "#181f1c",
+            "accent": "#ffffff",
+            "accent_text": "#181f1c",
+            "contrast": "#fff4f6",
+            "contrast_text": "#181f1c"
+          }
+        },
+        "scheme-5": {
+          "settings": {
+            "background": "#873661",
+            "text": "#ffffff",
+            "accent": "#ffffff",
+            "accent_text": "#181f1c",
+            "contrast": "#fff4f6",
+            "contrast_text": "#181f1c"
+          }
+        },
+        "scheme-6": {
+          "settings": {
+            "background": "#181f1c",
+            "text": "#ffffff",
+            "accent": "#fff4f6",
+            "accent_text": "#181f1c",
+            "contrast": "#9ea93f",
+            "contrast_text": "#181f1c"
+          }
+        }
+      }
+    },
+    "Move": {
+      "header_font": "playpen_sans_n5",
+      "header_scale": 95,
+      "header_line_height": 125,
+      "header_letter_spacing": 1,
+      "header_capitalize": false,
+      "body_font": "nunito_n4",
+      "body_scale": 100,
+      "body_line_height": 150,
+      "body_letter_spacing": 1,
+      "button_font": "nunito_n7",
+      "button_scale": 100,
+      "button_letter_spacing": 2,
+      "color_schemes": {
+        "scheme-1": {
+          "settings": {
+            "background": "#ffffff",
+            "text": "#333333",
+            "accent": "#d6a568",
+            "accent_text": "#333333",
+            "contrast": "#f1dabe",
+            "contrast_text": "#333333"
+          }
+        },
+        "scheme-2": {
+          "settings": {
+            "background": "#fbc8b2",
+            "text": "#333333",
+            "accent": "#d89681",
+            "accent_text": "#333333",
+            "contrast": "#ffeae4",
+            "contrast_text": "#333333"
+          }
+        },
+        "scheme-3": {
+          "settings": {
+            "background": "#a8c9d0",
+            "text": "#333333",
+            "accent": "#314653",
+            "accent_text": "#ffffff",
+            "contrast": "#e3f4f7",
+            "contrast_text": "#333333"
+          }
+        },
+        "scheme-4": {
+          "settings": {
+            "background": "#d6a568",
+            "text": "#333333",
+            "accent": "#ffffff",
+            "accent_text": "#333333",
+            "contrast": "#f1dabe",
+            "contrast_text": "#333333"
+          }
+        },
+        "scheme-5": {
+          "settings": {
+            "background": "#ffffff",
+            "text": "#333333",
+            "accent": "#d89681",
+            "accent_text": "#333333",
+            "contrast": "#fbc8b2",
+            "contrast_text": "#333333"
+          }
+        },
+        "scheme-6": {
+          "settings": {
+            "background": "#ffffff",
+            "text": "#333333",
+            "accent": "#314653",
+            "accent_text": "#ffffff",
+            "contrast": "#e3f4f7",
+            "contrast_text": "#333333"
+          }
+        }
+      },
+      "divider_style": "blocks",
+      "uniform_divider": false,
+      "divider_height": 6,
+      "field_style": "solid",
+      "icon_style": "solid",
+      "image_corner_radius": 0,
+      "divider_width": 2,
+      "button_outline_width": 2,
+      "field_outline_width": 2,
+      "background_shape_width": 3,
+      "icon_width": 3,
+      "columns_mobile": "1",
+      "image_ratio": "square",
+      "show_bottom_divider": true,
+      "enable_quick_add_to_cart": true,
+      "show_secondary_image": true,
+      "blog_image_ratio": "square",
+      "show_author": false,
+      "share_facebook": true,
+      "share_x": true,
+      "share_pinterest": true,
+      "share_linkedin": false
+    },
+    "Treat": {
+      "header_font": "oswald_n4",
+      "header_scale": 175,
+      "header_line_height": 100,
+      "header_letter_spacing": 0,
+      "header_capitalize": false,
+      "body_font": "lato_n4",
+      "body_scale": 115,
+      "body_line_height": 125,
+      "body_letter_spacing": 0,
+      "button_font": "lato_n6",
+      "button_scale": 85,
+      "button_letter_spacing": 0,
+      "divider_style": "waves",
+      "uniform_divider": false,
+      "divider_height": 2,
+      "apply_divider_to_buttons": false,
+      "field_style": "solid",
+      "icon_style": "drawn",
+      "button_corner_radius": 12,
+      "field_corner_radius": 12,
+      "image_corner_radius": 0,
+      "divider_width": 3,
+      "button_outline_width": 2.5,
+      "field_outline_width": 2,
+      "background_shape_width": 3,
+      "icon_width": 2,
+      "columns_mobile": "1",
+      "image_ratio": "adapt",
+      "show_bottom_divider": false,
+      "enable_quick_add_to_cart": false,
+      "show_secondary_image": true,
+      "blog_image_ratio": "square",
+      "show_author": false,
+      "social_instagram_link": "https://instagram.com/shopify",
+      "social_tiktok_link": "https://tiktok.com/@shopify",
+      "share_facebook": true,
+      "share_x": true,
+      "share_pinterest": true,
+      "share_linkedin": false,
+      "color_schemes": {
+        "scheme-1": {
+          "settings": {
+            "background": "#f9f7f3",
+            "text": "#1d3c45",
+            "accent": "#e27d60",
+            "accent_text": "#f9f7f3",
+            "contrast": "#85a392",
+            "contrast_text": "#f9f7f3"
+          }
+        },
+        "scheme-2": {
+          "settings": {
+            "background": "#f9f7f3",
+            "text": "#1d3c45",
+            "accent": "#9590a8",
+            "accent_text": "#f9f7f3",
+            "contrast": "#85a392",
+            "contrast_text": "#f9f7f3"
+          }
+        },
+        "scheme-3": {
+          "settings": {
+            "background": "#9590a8",
+            "text": "#f9f7f3",
+            "accent": "#1d3c45",
+            "accent_text": "#f9f7f3",
+            "contrast": "#e8b87d",
+            "contrast_text": "#1d3c45"
+          }
+        },
+        "scheme-4": {
+          "settings": {
+            "background": "#85a392",
+            "text": "#f9f7f3",
+            "accent": "#e8b87d",
+            "accent_text": "#1d3c45",
+            "contrast": "#1d3c45",
+            "contrast_text": "#f9f7f3"
+          }
+        },
+        "scheme-5": {
+          "settings": {
+            "background": "#e27d60",
+            "text": "#f9f7f3",
+            "accent": "#ffffff",
+            "accent_text": "#1d3c45",
+            "contrast": "#1d3c45",
+            "contrast_text": "#f9f7f3"
+          }
+        },
+        "scheme-6": {
+          "settings": {
+            "background": "#e8b87d",
+            "text": "#1d3c45",
+            "accent": "#1d3c45",
+            "accent_text": "#f9f7f3",
+            "contrast": "#f9f7f3",
+            "contrast_text": "#1d3c45"
+          }
+        }
+      }
+    }
+  },
+  "platform_customizations": {
+    "custom_css": []
+  }
+}

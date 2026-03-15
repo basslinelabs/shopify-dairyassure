@@ -1,0 +1,1082 @@
+{%- liquid
+  assign background_color = section.settings.color_scheme
+
+  for block in section.blocks
+    case block.type
+      when 'announcement-bar'
+        assign announement_bar_background_color = block.settings.background_color
+        assign announement_bar_text_color = block.settings.text_color
+      when 'top-bar'
+        assign has_top_bar = true
+        assign top_bar_menu = block.settings.menu
+        assign top_bar_color = block.settings.color
+        assign enable_country_selector = block.settings.enable_country_selector
+        assign enable_language_selector = block.settings.enable_language_selector
+      when 'header'
+        assign show_search = block.settings.show_search
+        assign logo = block.settings.logo
+        assign position = block.settings.logo_position
+        assign logo_width = block.settings.logo_width
+      when 'mega-menu'
+        if mega_menu_items
+          assign mega_menu_items = mega_menu_items | append: "," | append: block.settings.menu_item | downcase
+        else
+          assign mega_menu_items = block.settings.menu_item | downcase
+        endif
+        if block.settings.show_second_level_links != true
+          if mega_menu_hidden_items
+            assign mega_menu_hidden_items = mega_menu_hidden_items | append: "," | append: block.settings.menu_item | downcase
+          else
+            assign mega_menu_hidden_items = block.settings.menu_item | downcase
+          endif
+        endif
+    endcase
+  endfor
+  assign mega_menu_items = mega_menu_items | split: ","
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} .disclosure__list-wrapper {
+    border: 1px solid var(--color-{{ top_bar_color }});
+  }
+  .header__heading-link img {
+    width: {{ logo_width }}px;
+    height: auto;
+  }
+  {% if announement_bar_background_color %}
+    .announcement-bar {
+      background-color: {{ announement_bar_background_color }};
+      color: {{ announement_bar_text_color }};
+    }
+    .announcement-bar a {
+      color: {{ announement_bar_text_color }};
+    }
+  {% endif %}
+{%- endstyle -%}
+
+<div class="section-header color-{{ section.settings.color_scheme }}">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'announcement-bar' %}
+        <div class="announcement-bar" {{ block.shopify_attributes }}>
+          {%- if block.settings.link != blank -%}
+            <a href="{{ block.settings.link }}" class="announcement-bar__link">
+          {%- endif -%}
+              <p class="announcement-bar__message">
+                {{ block.settings.text | escape }}
+              </p>
+          {%- if block.settings.link != blank -%}
+            </a>
+          {%- endif -%}
+        </div>
+      {% when 'top-bar' %}
+        <div class="top-bar bg-{{ block.settings.color }}" {{ block.shopify_attributes }}>
+        {%- if block.settings.menu != blank -%}
+          <ul class="top-bar__menu list-unstyled">
+            {%- for link in block.settings.menu.links -%}
+              <li>
+                <a href="{{ link.url }}" class="link-reduce list-menu__item list-menu__item--link">
+                  {{ link.title }}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+        
+        <div class="top-bar__localization">
+          {% if block.settings.enable_country_selector and localization.available_countries.size > 1 %}
+            <noscript>
+              {%- form 'localization', id: 'HeaderCountryFormNoScript', class: 'localization-form' -%}
+                <div class="localization-form__select">
+                  <h2 class="visually-hidden" id="HeaderCountryLabelNoScript">{{ 'localization.country_label' | t }}</h2>
+                  <select class="localization-selector link" name="country_code" aria-labelledby="HeaderCountryLabelNoScript">
+                    {%- for country in localization.available_countries -%}
+                      <option value="{{ country.iso_code }}" {%- if country.iso_code == localization.country.iso_code %} selected{% endif %}>
+                        {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+                      </option>
+                    {%- endfor -%}
+                  </select>
+                  {% render 'icons-main', icon: 'caret' %}
+                </div>
+                <button class="link">{{ 'localization.update_country' | t }}</button>
+              {%- endform -%} 
+            </noscript>
+            <localization-form>
+              {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
+                <div class="no-js-hidden">
+                  <h2 class="caption-large text-body visually-hidden" id="HeaderCountryLabel">{{ 'localization.country_label' | t }}</h2>
+                  <div class="disclosure">
+                    <button type="button" class="disclosure__button localization-form__select localization-selector link-reduce" aria-expanded="false" aria-controls="HeaderCountryList" aria-describedby="HeaderCountryLabel">
+                      {{ localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})
+                      {% render 'icons-main', icon: 'caret' %}
+                    </button>
+                    <div class="disclosure__list-wrapper bg-{{ top_bar_color }}" hidden>
+                      <ul id="HeaderCountryList" role="list" class="disclosure__list list-unstyled">
+                        {%- for country in localization.available_countries -%}
+                          <li class="disclosure__item" tabindex="-1">
+                            <a class="link-reduce disclosure__link" href="#"{% if country.iso_code == localization.country.iso_code %} aria-current="true"{% endif %} data-value="{{ country.iso_code }}">
+                              {{ country.name }} <span class="localization-form__currency">({{ country.currency.iso_code }} {{ country.currency.symbol }})</span>
+                            </a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    </div>
+                  </div>
+                  <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+                </div>
+              {%- endform -%}
+            </localization-form>
+          {% endif %}
+          {%- if block.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+            <noscript>
+              {%- form 'localization', id: 'HeaderLanguageFormNoScript', class: 'localization-form' -%}
+                <div class="localization-form__select">
+                  <h2 class="visually-hidden" id="HeaderLanguageLabelNoScript">{{ 'localization.language_label' | t }}</h2>
+                  <select class="localization-selector link" name="locale_code" aria-labelledby="HeaderLanguageLabelNoScript">
+                    {%- for language in localization.available_languages -%}
+                      <option value="{{ language.iso_code }}" lang="{{ language.iso_code }}" {%- if language.iso_code == localization.language.iso_code %} selected{% endif %}>
+                        {{ language.endonym_name | capitalize }}
+                      </option>
+                    {%- endfor -%}
+                  </select>
+                  {% render 'icons-main', icon: 'caret' %}
+                </div>
+                <button class="link">{{ 'localization.update_language' | t }}</button>
+              {%- endform -%}
+            </noscript>
+            <localization-form>
+              {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
+                <div class="no-js-hidden">
+                  <h2 class="visually-hidden" id="HeaderLanguageLabel">{{ 'localization.language_label' | t }}</h2>
+                  <div class="disclosure">
+                    <button type="button" class="disclosure__button localization-form__select localization-selector link-reduce" aria-expanded="false" aria-controls="HeaderLanguageList" aria-describedby="HeaderLanguageLabel">
+                      {{ localization.language.endonym_name | capitalize }}
+                      {% render 'icons-main', icon: 'caret' %}
+                    </button>
+                    <div class="disclosure__list-wrapper bg-{{ top_bar_color }}" hidden>
+                      <ul id="HeaderLanguageList" role="list" class="disclosure__list list-unstyled">
+                        {%- for language in localization.available_languages -%}
+                          <li class="disclosure__item" tabindex="-1">
+                            <a class="link-reduce disclosure__link" href="#" hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}"{% if language.iso_code == localization.language.iso_code %} aria-current="true"{% endif %} data-value="{{ language.iso_code }}">
+                              {{ language.endonym_name | capitalize }} 
+                            </a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    </div>
+                  </div>
+                  <input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}">
+                </div>
+              {%- endform -%}
+            </localization-form>
+          {%- endif -%}
+        </div>
+      </div>
+      {% when 'header' %}
+        <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+          {% case settings.icon_style %}
+            {% when 'outline' %}
+              <symbol id="icon-search" viewBox="-2 -2 58 58" fill="none">
+                <path d="M8 23C8 19.0218 9.58035 15.2064 12.3934 12.3934C15.2064 9.58035 19.0218 8 23 8" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="square"/>
+                <path d="M40.855 35.855L55 50L50 55L35.855 40.855" stroke="currentColor" stroke-miterlimit="10"/>
+                <path d="M23 45C35.1503 45 45 35.1503 45 23C45 10.8497 35.1503 1 23 1C10.8497 1 1 10.8497 1 23C1 35.1503 10.8497 45 23 45Z" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="square"/>
+              </symbol>
+            {% when 'solid' %}
+              <symbol id="icon-search" viewBox="-1 -1 49 49" fill="none">
+                <g fill="currentColor">
+                  <path d="M45.268,41.732,32.639,29.1A17.066,17.066,0,1,0,29.1,32.639L41.732,45.268a2.5,2.5,0,0,0,3.536-3.536ZM4,19A15,15,0,1,1,19,34,15.017,15.017,0,0,1,4,19Z" stroke="currentColor" fill="currentColor"/>
+                </g>
+              </symbol>
+            {% when 'drawn' %}
+              <symbol id="icon-search" viewBox="0 0 48 48" fill="none">
+                <path d="M12.074 30.6218C15.0542 31.1414 18.0264 30.9073 21.1611 29.9056C22.9892 29.3353 24.7327 28.5166 26.344 27.4722C26.6471 27.8134 26.9472 28.1528 27.2442 28.4906C27.9735 29.3185 28.6638 30.1006 29.3856 30.8853C32.913 34.7209 36.7399 38.368 40.4407 41.895C41.1134 42.5364 41.7858 43.1781 42.4578 43.8202C42.9846 44.3072 43.5632 44.7332 44.1831 45.0902C44.336 45.1728 44.5079 45.2135 44.6811 45.2085C44.8624 45.2112 45.042 45.173 45.2071 45.0965C45.2964 45.0511 45.3757 44.9878 45.4404 44.9107C45.5052 44.8336 45.5541 44.744 45.5841 44.6473C45.6195 44.5323 45.6324 44.4114 45.6215 44.2912C45.6108 44.1711 45.5769 44.0545 45.5215 43.9476C45.2288 43.327 44.8709 42.7401 44.4543 42.197C43.7829 41.39 43.0686 40.6205 42.3146 39.8921C40.5585 38.1701 38.7658 36.4274 37.0319 34.742C35.8297 33.5736 34.6282 32.4043 33.4278 31.2339C32.1886 30.0246 30.9819 28.8365 29.7045 27.5769C29.1842 27.0643 28.6606 26.5487 28.1337 26.0303L28.202 25.9544C28.3013 25.8445 28.3783 25.759 28.4603 25.6785C30.457 23.7191 31.5518 21.2678 31.7142 18.3933C31.9963 13.4017 30.3359 9.16434 26.7798 5.79737C25.0376 4.10851 22.7774 3.07514 20.3751 2.86916C18.0387 2.64141 15.6812 2.91281 13.4548 3.66587C10.0415 4.84222 7.14408 7.09898 4.84336 10.3737C2.86103 13.195 2.06647 16.3255 2.4818 19.6782C2.75269 21.8659 3.62638 23.939 5.31435 26.4006C6.90947 28.7257 9.12019 30.1064 12.074 30.6218ZM15.6038 6.24043C16.3978 6.17212 17.2189 6.10166 18.0251 6.07462C18.1617 6.07029 18.297 6.06806 18.431 6.06793C22.1061 6.06793 24.9301 7.75745 26.8292 11.0941C28.5289 14.0799 29.0097 16.9413 28.2995 19.8415C28.056 20.9291 27.5699 21.9457 26.8783 22.8131C26.0201 23.8707 24.9771 24.7588 23.8012 25.4331C21.1167 26.9775 18.0971 27.8264 15.011 27.9042C14.715 27.8711 14.4183 27.8417 14.1217 27.8123C13.4678 27.7478 12.7916 27.6807 12.1365 27.5724C10.5081 27.3236 9.02853 26.4721 7.98326 25.1826C6.70935 23.6767 5.78965 21.8973 5.29354 19.9785C4.72458 17.7545 4.93194 15.3995 5.88051 13.3127C6.93953 10.9292 8.34611 9.17065 10.1808 7.93663C11.6489 6.94937 12.9874 6.44162 14.3925 6.33923C14.7965 6.30985 15.2004 6.27504 15.6038 6.24043Z" stroke="currentColor" fill="currentColor"/>
+              </symbol>
+            {% endcase %}
+        </svg>
+  
+        <{% if block.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %} class="header-wrapper bg-default{% if block.settings.show_divider %} bottom-border-contrast{% endif %}">
+          <header class="header header--{{ block.settings.logo_position }} {% if block.settings.menu != blank %} header--has-menu{% endif %}">
+            {%- if block.settings.menu != blank -%}
+              <header-drawer data-breakpoint="tablet">
+                <details id="Details-menu-drawer-container" class="menu-drawer-container">
+                  <summary class="header__icon header__icon--menu header__icon--summary link-reduce " aria-label="{{ 'sections.header.menu' | t }}">
+                    <span>
+                      {% render 'icons-main', icon: 'hamburger' %}
+                      {% render 'icons-main', icon: 'cross' %}
+                    </span>
+                  </summary>
+                  <div id="menu-drawer" class="menu-drawer motion-reduce bg-default" tabindex="-1">
+                    <div class="menu-drawer__inner-container">
+                      <div class="menu-drawer__navigation-container">
+                        <nav class="menu-drawer__navigation">
+                          <ul class="menu-drawer__menu list-menu" role="list">
+                            {%- for link in block.settings.menu.links -%}
+                              <li>
+                                {%- if link.links != blank -%}
+                                  {% assign lower_case_link = link.title | downcase %}
+
+                                  <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
+                                    <summary class="menu-drawer__menu-item list-menu__item link no-transform bottom-border-contrast{% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
+                                      {{ link.title | escape }}
+                                      {% render 'icons-main', icon: 'caret' %}
+                                    </summary>
+                                  <div id="link-{{ link.title | escape }}" class="menu-drawer__submenu motion-reduce" tabindex="-1">
+                                    <div class="menu-drawer__inner-submenu bg-default">
+                                      <button class="menu-drawer__close-button link-reduce bottom-border-contrast" aria-expanded="true">
+                                        {% render 'icons-main', icon: 'minus' %}
+                                        {{ link.title | escape }}
+                                      </button>
+                                      <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                        {%- for childlink in link.links -%}
+                                          <li>
+                                            {%- if childlink.links == blank -%}
+                                              <a href="{{ childlink.url }}" class="menu-drawer__menu-item link-reduce list-menu__item bottom-border-contrast"{% if childlink.current %} aria-current="page"{% endif %}>
+                                                {{ childlink.title | escape }}
+                                              </a>
+                                            {%- else -%}
+                                              {% if mega_menu_hidden_items contains lower_case_link %}
+                                                <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                                  {%- for grandchildlink in childlink.links -%}
+                                                    <li>
+                                                      <a href="{{ grandchildlink.url }}" class="menu-drawer__menu-item list-menu__item link-reduce bottom-border-contrast"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                                        {{ grandchildlink.title | escape }}
+                                                      </a>
+                                                    </li>
+                                                  {%- endfor -%}
+                                                </ul>
+                                              {% else %}
+                                                <details id="Details-menu-drawer-submenu-{{ forloop.index }}">
+                                                  <summary class="menu-drawer__menu-item link-reduce list-menu__item no-transform bottom-border-contrast">
+                                                    {{ childlink.title | escape }}
+                                                    {% render 'icons-main', icon: 'caret' %}
+                                                  </summary>
+                                                  <div id="childlink-{{ childlink.title | escape }}" class="menu-drawer__submenu bg-default motion-reduce">
+                                                    <button class="menu-drawer__close-button link-reduce bottom-border-contrast" aria-expanded="true">
+                                                      {% render 'icons-main', icon: 'minus' %}
+                                                      {{ childlink.title | escape }}
+                                                    </button>
+                                                    <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                                      {%- for grandchildlink in childlink.links -%}
+                                                        <li>
+                                                          <a href="{{ grandchildlink.url }}" class="menu-drawer__menu-item list-menu__item link-reduce bottom-border-contrast"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                                            {{ grandchildlink.title | escape }}
+                                                          </a>
+                                                        </li>
+                                                      {%- endfor -%}
+                                                    </ul>
+                                                  </div>
+                                                </details>
+                                              {% endif %}
+                                              
+                                            {%- endif -%}
+                                          </li>
+                                        {%- endfor -%}
+                                      </ul>
+                                    </div>
+                                  </div>
+                              </details>
+                                {%- else -%}
+                                  <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link bottom-border-contrast"{% if link.current %} aria-current="page"{% endif %}>
+                                    {{ link.title | escape }}
+                                  </a>
+                                {%- endif -%}
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        </nav>
+                        <div class="menu-drawer__utility-links">
+                          <ul>
+                            {%- if shop.customer_accounts_enabled -%}
+                              <hr>
+                              <li>
+                                <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="menu-drawer__account link-reduce">
+                                  {%- liquid
+                                    if customer
+                                      echo 'customer.account_fallback' | t
+                                    else
+                                      echo 'customer.log_in' | t
+                                    endif
+                                  -%}
+                                </a>
+                              </li>
+                            {%- endif -%}
+                            {%- if has_top_bar -%}
+                              {%- for link in top_bar_menu.links -%}
+                                <hr>
+                                <li>
+                                  <a href="{{ link.url }}" class="link-reduce">
+                                    {{ link.title }}
+                                  </a>
+                                </li>
+                              {%- endfor -%}
+                            {%- endif -%} 
+                          </ul>
+                          {% if enable_country_selector or enable_language_selector %} 
+                            <hr>
+                          {% endif %}
+                          {% if enable_country_selector and localization.available_countries.size > 1 %}
+                            <noscript>
+                              {%- form 'localization', id: 'HeaderCountryFormNoScriptMobile', class: 'localization-form' -%}
+                                <div class="localization-form__select">
+                                  <h2 class="visually-hidden" id="HeaderCountryLabelNoScriptMobile">{{ 'localization.country_label' | t }}</h2>
+                                  <select class="localization-selector link" name="country_code" aria-labelledby="HeaderCountryLabelNoScriptMobile">
+                                    {%- for country in localization.available_countries -%}
+                                      <option value="{{ country.iso_code }}" {%- if country.iso_code == localization.country.iso_code %} selected{% endif %}>
+                                        {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+                                      </option>
+                                    {%- endfor -%}
+                                  </select>
+                                  {% render 'icons-main', icon: 'caret' %}
+                                </div>
+                                <button class="button">{{ 'localization.update_country' | t }}</button>
+                              {%- endform -%} 
+                            </noscript>
+                            <localization-form>
+                              {%- form 'localization', id: 'HeaderCountryFormMobile', class: 'localization-form' -%}
+                                <div class="no-js-hidden">
+                                  <h2 class="caption-large text-body visually-hidden" id="HeaderCountryLabelMobile">{{ 'localization.country_label' | t }}</h2>
+                                  <div class="disclosure">
+                                    <button type="button" class="disclosure__button localization-form__select localization-selector link-reduce" aria-expanded="false" aria-controls="HeaderCountryListMobile" aria-describedby="HeaderCountryLabelMobile">
+                                      {{ localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})
+                                      {% render 'icons-main', icon: 'caret' %}
+                                    </button>
+                                    <div class="disclosure__list-wrapper bg-default" hidden>
+                                      <ul id="HeaderCountryListMobile" role="list" class="disclosure__list list-unstyled">
+                                        {%- for country in localization.available_countries -%}
+                                          <li class="disclosure__item" tabindex="-1">
+                                            <a class="link-reduce disclosure__link" href="#"{% if country.iso_code == localization.country.iso_code %} aria-current="true"{% endif %} data-value="{{ country.iso_code }}">
+                                              {{ country.name }} <span class="localization-form__currency">({{ country.currency.iso_code }} {{ country.currency.symbol }})</span>
+                                            </a>
+                                          </li>
+                                        {%- endfor -%}
+                                      </ul>
+                                    </div>
+                                  </div>
+                                  <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+                                </div>
+                              {%- endform -%}
+                            </localization-form>
+                          {% endif %}
+                          {%- if enable_language_selector and localization.available_languages.size > 1 -%}
+                            <noscript>
+                              {%- form 'localization', id: 'HeaderLanguageFormNoScriptMobile', class: 'localization-form' -%}
+                                <div class="localization-form__select">
+                                  <h2 class="visually-hidden" id="HeaderLanguageLabelNoScriptMobile">{{ 'localization.language_label' | t }}</h2>
+                                  <select class="localization-selector link" name="locale_code" aria-labelledby="HeaderLanguageLabelNoScriptMobile">
+                                    {%- for language in localization.available_languages -%}
+                                      <option value="{{ language.iso_code }}" lang="{{ language.iso_code }}" {%- if language.iso_code == localization.language.iso_code %} selected{% endif %}>
+                                        {{ language.endonym_name | capitalize }}
+                                      </option>
+                                    {%- endfor -%}
+                                  </select>
+                                  {% render 'icons-main', icon: 'caret' %}
+                                </div>
+                                <button class="button">{{ 'localization.update_language' | t }}</button>
+                              {%- endform -%}
+                            </noscript>
+                            <localization-form>
+                              {%- form 'localization', id: 'HeaderLanguageFormMobile', class: 'localization-form' -%}
+                                <div class="no-js-hidden">
+                                  <h2 class="visually-hidden" id="HeaderLanguageLabelMobile">{{ 'localization.language_label' | t }}</h2>
+                                  <div class="disclosure">
+                                    <button type="button" class="disclosure__button localization-form__select localization-selector" aria-expanded="false" aria-controls="HeaderLanguageListMobile" aria-describedby="HeaderLanguageLabelMobile">
+                                      {{ localization.language.endonym_name | capitalize }}
+                                      {% render 'icons-main', icon: 'caret' %}
+                                    </button>
+                                    <div class="disclosure__list-wrapper bg-default" hidden>
+                                      <ul id="HeaderLanguageListMobile" role="list" class="disclosure__list list-unstyled">
+                                        {%- for language in localization.available_languages -%}
+                                          <li class="disclosure__item" tabindex="-1">
+                                            <a class="link-reduce disclosure__link" href="#" hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}"{% if language.iso_code == localization.language.iso_code %} aria-current="true"{% endif %} data-value="{{ language.iso_code }}">
+                                              {{ language.endonym_name | capitalize }} 
+                                            </a>
+                                          </li>
+                                        {%- endfor -%}
+                                      </ul>
+                                    </div>
+                                  </div>
+                                  <input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}">
+                                </div>
+                              {%- endform -%}
+                            </localization-form>
+                          {%- endif -%}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+              </header-drawer>
+            {%- endif -%}
+
+            {%- if position == 'top-center' and block.settings.show_search == true -%}
+              <a href="{{ routes.search_url }}" class="header__heading-search header__icon small-hide medium-hide" aria-label="{{ 'general.search.search' | t }}">
+                <svg class="icon icon-search" aria-hidden="true">
+                  <use href="#icon-search">
+                </svg>
+              </a>
+            {%- endif -%}
+
+            {%- if request.page_type == 'index' -%}
+              <h1 class="header__heading">
+            {%- endif -%}
+                <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+                  {%- if block.settings.logo != blank -%}
+                    {%- assign logo_alt = block.settings.logo.alt | default: block.shop.name | escape -%}
+                    {% capture widths %}{{ block.settings.logo_width }}, {{ block.settings.logo_width | times: 1.5 | round }}, {{ block.settings.logo_width | times: 2 }}{% endcapture %}
+                    {%- assign logo_height = block.settings.logo_width | divided_by: block.settings.logo.aspect_ratio -%}
+                    {% capture sizes %}(max-width: {{ block.settings.logo_width | times: 2 }}px) 50vw, {{ block.settings.logo_width }}px{% endcapture %}
+                    {% assign test = block.settings.logo_width | times: 2 %}
+                    {{ block.settings.logo | image_url: width: test | image_tag:
+                      widths: widths, sizes: sizes, height: logo_height,
+                      preload: true, alt: logo_alt, class: "no-border-radius"
+                    }}
+                  {%- else -%}
+                    <span class="h2">{{ shop.name }}</span>
+                  {%- endif -%}
+                </a>
+            {%- if request.page_type == 'index' -%}
+              </h1>
+            {%- endif -%}
+            {%- if block.settings.menu != blank -%}
+              {%- if mega_menu_items -%}
+                <nav class="header__inline-menu">
+                  <ul class="list-menu list-menu--inline" role="list">
+                    {%- for link in block.settings.menu.links -%}
+                      <li>
+                        {%- if link.links != blank -%}
+                          <header-menu>
+                          {% liquid
+                            assign formatted_link = link.title | downcase 
+                            assign mega_menu = false 
+                            if mega_menu_items contains formatted_link
+                              assign mega_menu = true
+                            endif 
+
+                            for block in section.blocks
+                              if block.type == "mega-menu"
+                                assign menu_item_name = block.settings.menu_item | downcase
+                                if menu_item_name == formatted_link
+                                  assign current_menu_item = block.settings
+                                endif
+                              endif
+                            endfor
+                          %}
+                            <details id="Details-HeaderMenu-{{ forloop.index }}"{% if mega_menu %} class="mega-menu"{% endif %}>
+                              <summary class="header__menu-item link-reduce">
+                                <a href="{{ link.url }}">{{ link.title | escape }}</a>
+                                {% render 'icons-main', icon: 'caret' %}
+                              </summary>
+                              {% if mega_menu %}
+                                <div id="MegaMenu-Content-{{ forloop.index }}" class="mega-menu__content motion-reduce global-settings-popup" tabindex="-1">
+                                  <div class="contained-section mega-menu__dropdown">
+                                    <div class="mega-menu__links">
+                                      <ul class="mega-menu__list" role="list">
+                                        {%- for childlink in link.links -%}
+                                          {%- if current_menu_item.show_second_level_links -%}
+                                            <li>
+                                              <h4><a href="{{ childlink.url }}" class="mega-menu__link link-reduce"{% if childlink.current %} aria-current="page"{% endif %}>
+                                                {{ childlink.title | escape }}
+                                              </a></h4>
+                                          {%- endif -%}
+                                            {%- if childlink.links != blank -%}
+                                              <ul class="list-unstyled" role="list">
+                                                {%- for grandchildlink in childlink.links -%}
+                                                  <li>
+                                                    <a href="{{ grandchildlink.url }}" class="mega-menu__link link-reduce"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                                      {{ grandchildlink.title | escape }}
+                                                    </a>
+                                                  </li>
+                                                {%- endfor -%}
+                                              </ul>
+                                            {%- endif -%}
+                                          {%- if current_menu_item.show_second_level_links -%}
+                                            </li>
+                                          {%- endif -%}
+                                        {%- endfor -%}
+                                      </ul>
+                                    </div>
+                                    {%- if current_menu_item.image_one or current_menu_item.image_two -%}
+                                      <div class="mega-menu__images">
+                                        {%- if current_menu_item.image_one -%}
+                                          {%- if current_menu_item.link_one -%}
+                                            <a href="{{ current_menu_item.link_one }}" class="link-reduce">
+                                          {%- endif -%}
+                                          <div class="mega-menu__images-one">
+                                            {{ current_menu_item.image_one | image_url: width: '500' | image_tag:
+                                              loading: 'lazy',
+                                              alt: current_menu_item.image_one.alt
+                                            }}
+                                            <h4 class="mega-menu__text-one">
+                                              {{ current_menu_item.text_one }}
+                                            </h4>
+                                          </div>
+                                          {%- if current_menu_item.link_one -%}
+                                            </a>
+                                          {%- endif -%}
+                                        {%- endif -%}
+                                        {%- if current_menu_item.image_two -%}
+                                          {%- if current_menu_item.link_two -%}
+                                            <a href="{{ current_menu_item.link_two }}" class="link-reduce">
+                                          {%- endif -%}
+                                          <div class="mega-menu__images-two">
+                                            {{ current_menu_item.image_two | image_url: width: '500' | image_tag:
+                                              loading: 'lazy',
+                                              alt: current_menu_item.image_two.image.alt
+                                            }}
+                                            <h4 class="mega-menu__text-two">
+                                              {{ current_menu_item.text_two }}
+                                            </h4>
+                                          </div>
+                                          {%- if current_menu_item.link_two -%}
+                                            </a>
+                                          {%- endif -%}
+                                        {%- endif -%}
+                                      </div>
+                                    {%- endif -%}
+                                  </div>
+                                </div>
+                              {% else %}
+                                <ul id="HeaderMenu-MenuList-{{ forloop.index }}" class="header__submenu list-menu list-menu--disclosure motion-reduce global-settings-popup bg-default" role="list" tabindex="-1">
+                                  {%- for childlink in link.links -%}
+                                    <li>
+                                      {%- if childlink.links == blank -%}
+                                        <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link-reduce"{% if childlink.current %} aria-current="page"{% endif %}>
+                                          {{ childlink.title | escape }}
+                                        </a>
+                                      {%- else -%}
+                                          <details id="Details-HeaderSubMenu-{{ forloop.index }}">
+                                            <summary class="header__menu-item link-reduce">
+                                              <span>{{ childlink.title | escape }}</span>
+                                              {% render 'icons-main', icon: 'caret' %}
+                                            </summary>
+                                            <ul id="HeaderMenu-SubMenuList-{{ forloop.index }}" class="header__submenu list-menu motion-reduce bg-default">
+                                              {%- for grandchildlink in childlink.links -%}
+                                                <li>
+                                                  <a href="{{ grandchildlink.url }}" class="header__menu-item list-menu__item link-reduce"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                                    {{ grandchildlink.title | escape }}
+                                                  </a>
+                                                </li>
+                                              {%- endfor -%}
+                                            </ul>
+                                          </details>
+                                      {%- endif -%}
+                                    </li>
+                                  {%- endfor -%}
+                                </ul>
+                              {% endif %}
+                            </details>
+                          </header-menu>
+                        {%- else -%}
+                          <a href="{{ link.url }}" class="header__menu-item link-reduce"{% if link.current %} aria-current="page"{% endif %}>
+                            <span>{{ link.title | escape }}</span>
+                          </a>
+                        {%- endif -%}
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </nav>
+              {%- else -%}
+                <nav class="header__inline-menu">
+                  <ul class="list-menu list-menu--inline" role="list">
+                    {%- for link in block.settings.menu.links -%}
+                      <li>
+                        {%- if link.links != blank -%}
+                          <header-menu>
+                            <details id="Details-HeaderMenu-{{ forloop.index }}"{% if mega_menu %} class="mega-menu"{% endif %}>
+                              <summary class="header__menu-item">
+                                <a href="{{ link.url }}" class="link-reduce">{{ link.title | escape }}
+                                </a>
+                              </summary>
+                              <ul id="HeaderMenu-MenuList-{{ forloop.index }}" class="header__submenu list-menu list-menu--disclosure motion-reduce global-settings-popup bg-default" role="list" tabindex="-1">
+                                {%- for childlink in link.links -%}
+                                  <li>
+                                    {%- if childlink.links == blank -%}
+                                      <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link-reduce"{% if childlink.current %} aria-current="page"{% endif %}>
+                                        {{ childlink.title | escape }}
+                                      </a>
+                                    {%- else -%}
+                                        <details id="Details-HeaderSubMenu-{{ forloop.index }}">
+                                          <summary class="header__menu-item link-reduce">
+                                            <span>{{ childlink.title | escape }}</span>
+                                            {% render 'icons-main', icon: 'caret' %}
+                                          </summary>
+                                          <ul id="HeaderMenu-SubMenuList-{{ forloop.index }}" class="header__submenu list-menu motion-reduce bg-default">
+                                            {%- for grandchildlink in childlink.links -%}
+                                              <li>
+                                                <a href="{{ grandchildlink.url }}" class="header__menu-item list-menu__item link-reduce"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                                  {{ grandchildlink.title | escape }}
+                                                </a>
+                                              </li>
+                                            {%- endfor -%}
+                                          </ul>
+                                        </details>
+                                    {%- endif -%}
+                                  </li>
+                                {%- endfor -%}
+                              </ul>
+                            </details>
+                          </header-menu>
+                        {%- else -%}
+                          <a href="{{ link.url }}" class="header__menu-item list-menu__item link-reduce"{% if link.current %} aria-current="page"{% endif %}>
+                            <span>{{ link.title | escape }}</span>
+                          </a>
+                        {%- endif -%}
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </nav>                
+              {%- endif -%}
+            {%- endif -%}
+
+            <div class="header__icons">
+              {%- if show_search == true -%}
+                <a href="{{ routes.search_url }}" class="header__heading-search header__icon{% if position == "top-center" %} large-up-hide{% endif %}" aria-label="{{ 'general.search.search' | t }}">
+                  <svg class="icon icon-search" aria-hidden="true">
+                    <use href="#icon-search">
+                  </svg>
+                </a>
+              {%- endif -%}
+              {%- if shop.customer_accounts_enabled -%}
+                <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account{% if section.settings.menu != blank %} small-hide{% endif %}">
+                  {% render 'icons-main', icon: 'account' %}
+                  <span class="visually-hidden">
+                    {%- liquid
+                      if customer
+                        echo 'customer.account_fallback' | t
+                      else
+                        echo 'customer.log_in' | t
+                      endif
+                    -%}
+                  </span>
+                </a>
+              {%- endif -%}
+
+              <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart{% if cart != empty %} cart--has-items{% endif %}">
+                <div id="cart-icon-bubble" class="cart-count-bubble cart-count-bubble--{{ block.settings.cart_icon_style }} cart-count-bubble--{{ settings.icon_style }}">
+                  {%- if cart.item_count > 0 and cart.item_count < 100  -%}
+                    <span aria-hidden="true" data-cart-item-count="{{ cart.item_count }}">{{ cart.item_count }}</span>
+                  {%- endif -%}
+                  <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+                </div>
+                {% render 'icons-main', icon: block.settings.cart_icon_style %}
+                <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+              </a>
+            </div>
+          </header>
+        </{% if block.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %}>
+    {% endcase %}
+  {% endfor %}
+</div>
+
+<script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
+
+
+{% javascript %}
+class StickyHeader extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.headerGroupContainer = document.getElementById('header-group');
+    this.headerBounds = {};
+    this.currentScrollTop = 0;
+    this.preventReveal = false;
+
+    this.onScrollHandler = this.onScroll.bind(this);
+    window.addEventListener('scroll', this.onScrollHandler, false);
+
+    this.createObserver();
+  }
+
+  disconnectedCallback() {
+    this.removeEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
+    window.removeEventListener('scroll', this.onScrollHandler);
+  }
+
+  createObserver() {
+    let observer = new IntersectionObserver((entries, observer) => {
+      this.headerBounds = entries[0].intersectionRect;
+      observer.disconnect();
+    });
+
+    observer.observe(this.headerGroupContainer);
+  }
+
+  onScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
+      requestAnimationFrame(this.hide.bind(this));
+    } else if (scrollTop < this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
+      if (!this.preventReveal) {
+        requestAnimationFrame(this.reveal.bind(this));
+      } else {
+        window.clearTimeout(this.isScrolling);
+
+        this.isScrolling = setTimeout(() => {
+          this.preventReveal = false;
+        }, 66);
+
+        requestAnimationFrame(this.hide.bind(this));
+      }
+    } else if (scrollTop <= this.headerBounds.top) {
+      requestAnimationFrame(this.reset.bind(this));
+    }
+
+
+    this.currentScrollTop = scrollTop;
+  }
+
+  hide() {
+    this.headerGroupContainer.classList.add('shopify-section-header-sticky');
+    this.closeMenuDisclosure();
+  }
+
+  reveal() {
+    this.headerGroupContainer.classList.add('shopify-section-header-sticky', 'animate');
+  }
+
+  reset() {
+    this.headerGroupContainer.classList.remove('shopify-section-header-hidden', 'shopify-section-header-sticky', 'animate');
+  }
+
+  closeMenuDisclosure() {
+    this.disclosures = this.disclosures || this.headerGroupContainer.querySelectorAll('header-menu');
+    this.disclosures.forEach(disclosure => disclosure.close());
+  }
+}
+
+customElements.define('sticky-header', StickyHeader);
+
+class LocalizationForm extends HTMLElement {
+  constructor() {
+    super();
+    this.elements = {
+      input: this.querySelector('input[name="locale_code"], input[name="country_code"]'),
+      button: this.querySelector('button'),
+      panel: this.querySelector('.disclosure__list-wrapper'),
+    };
+    this.elements.button.addEventListener('click', this.openSelector.bind(this));
+    this.elements.button.addEventListener('focusout', this.closeSelector.bind(this));
+    this.addEventListener('keyup', this.onContainerKeyUp.bind(this));
+
+    this.querySelectorAll('a').forEach(item => item.addEventListener('click', this.onItemClick.bind(this)));
+  }
+
+  hidePanel() {
+    this.elements.button.setAttribute('aria-expanded', 'false');
+    this.elements.panel.setAttribute('hidden', true);
+  }
+
+  onContainerKeyUp(event) {
+    if (event.code.toUpperCase() !== 'ESCAPE') return;
+
+    this.hidePanel();
+    this.elements.button.focus();
+  }
+
+  onItemClick(event) {
+    event.preventDefault();
+    const form = this.querySelector('form');
+    this.elements.input.value = event.currentTarget.dataset.value;
+    if (form) form.submit();
+  }
+
+  openSelector() {
+    this.elements.button.focus();
+    this.elements.panel.toggleAttribute('hidden');
+    this.elements.button.setAttribute('aria-expanded', (this.elements.button.getAttribute('aria-expanded') === 'false').toString());
+  }
+
+  closeSelector(event) {
+    const shouldClose = event.relatedTarget && event.relatedTarget.nodeName === 'BUTTON';
+    if (event.relatedTarget === null || shouldClose) {
+      this.hidePanel();
+    }
+  }
+}
+
+customElements.define('localization-form', LocalizationForm);
+
+{% endjavascript %}
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": {{ shop.name | json }},
+  {% if logo %}
+    {% assign image_size = logo.width | append: 'x' %}
+    "logo": {{ logo | image_url: width: image_size | prepend: "https:" | json }},
+  {% endif %}
+  "sameAs": [
+    {{ settings.social_x_link | json }},
+    {{ settings.social_facebook_link | json }},
+    {{ settings.social_pinterest_link | json }},
+    {{ settings.social_instagram_link | json }},
+    {{ settings.social_tiktok_link | json }},
+    {{ settings.social_linkedin_link | json }},
+    {{ settings.social_youtube_link | json }}
+  ],
+  "url": {{ request.origin | append: page.url | json }}
+}
+</script>
+
+
+{% schema %}
+{
+  "name": "t:sections.header.name",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme_1",
+      "label": "t:sections.all.color_scheme.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement-bar",
+      "limit": 1,
+      "name": "t:sections.header.blocks.announcement-bar.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Summer sale on now - up to 50% off",
+          "label": "t:sections.all.header.label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "default": "/collections",
+          "label": "t:sections.all.link_optional.label"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "default": "#000",
+          "label": "t:sections.header.blocks.announcement-bar.settings.background_color.label"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "default": "#fff",
+          "label": "t:sections.header.blocks.announcement-bar.settings.text_color.label"
+        }
+      ]
+    },
+    {
+      "type": "top-bar",
+      "limit": 1,
+      "name": "t:sections.header.blocks.top-bar.name",
+      "settings": [
+        {
+          "type": "select",
+          "id": "color",
+          "label": "t:sections.all.colors.color.label",
+          "options": [
+            {
+              "value": "accent",
+              "label": "t:sections.all.colors.accent.label"
+            },
+            {
+              "value": "contrast",
+              "label": "t:sections.all.colors.contrast.label"
+            }
+          ],
+          "default": "contrast"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "main-menu",
+          "label": "t:sections.header.blocks.top-bar.settings.menu.label",
+          "info": "t:sections.header.blocks.top-bar.settings.menu.info"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_country_selector",
+          "default": true,
+          "label": "t:sections.header.blocks.top-bar.settings.enable_country_selector.label",
+          "info": "t:sections.header.blocks.top-bar.settings.enable_country_selector.info"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_language_selector",
+          "default": true,
+          "label": "t:sections.header.blocks.top-bar.settings.enable_language_selector.label",
+          "info": "t:sections.header.blocks.top-bar.settings.enable_language_selector.info"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "limit": 1,
+      "name": "t:sections.header.blocks.header.name",
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:sections.all.section_content"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "t:sections.header.blocks.header.settings.logo.label"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "main-menu",
+          "label": "t:sections.header.blocks.header.settings.menu.label",
+          "info": "t:sections.header.blocks.header.settings.menu.info"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_search",
+          "default": true,
+          "label": "t:sections.header.blocks.header.settings.show_search.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_sticky_header",
+          "default": true,
+          "label": "t:sections.header.blocks.header.settings.enable_sticky_header.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_divider",
+          "label": "t:sections.header.blocks.header.settings.show_divider.label",
+          "default": true
+        },
+        {
+          "type": "select",
+          "id": "cart_icon_style",
+          "label": "t:sections.header.blocks.header.settings.cart_icon_style.label",
+          "options": [
+            {
+              "value": "bag",
+              "label": "t:sections.header.blocks.header.settings.cart_icon_style.options__1.label"
+            },
+            {
+              "value": "cart",
+              "label": "t:sections.header.blocks.header.settings.cart_icon_style.options__2.label"
+            },
+            {
+              "value": "basket",
+              "label": "t:sections.header.blocks.header.settings.cart_icon_style.options__3.label"
+            }
+          ],
+          "default": "bag"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.all.section_styling"
+        },
+        {
+          "type": "range",
+          "id": "logo_width",
+          "min": 100,
+          "max": 250,
+          "step": 10,
+          "default": 120,
+          "unit": "t:sections.header.blocks.header.settings.logo_width.unit",
+          "label": "t:sections.header.blocks.header.settings.logo_width.label"
+        },
+        {
+          "type": "select",
+          "id": "logo_position",
+          "options": [
+            {
+              "value": "middle-left",
+              "label": "t:sections.header.blocks.header.settings.logo_position.options__1.label"
+            },
+            {
+              "value": "top-center",
+              "label": "t:sections.header.blocks.header.settings.logo_position.options__3.label"
+            }
+          ],
+          "default": "middle-left",
+          "label": "t:sections.header.blocks.header.settings.logo_position.label",
+          "info": "t:sections.header.blocks.header.settings.logo_position.info"
+        }
+      ]
+    },
+    {
+      "type": "mega-menu",
+      "limit": 5,
+      "name": "t:sections.header.blocks.mega_menu.name",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.header.blocks.mega_menu.settings.paragraph.content"
+        },
+        {
+          "type": "text",
+          "id": "menu_item",
+          "label": "t:sections.header.blocks.mega_menu.settings.menu_item.label",
+          "info": "t:sections.header.blocks.mega_menu.settings.menu_item.info"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_second_level_links",
+          "label": "t:sections.header.blocks.mega_menu.settings.show_second_level_links.label",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "t:sections.header.blocks.mega_menu.settings.header_one"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_one",
+          "label": "t:sections.header.blocks.mega_menu.settings.image_one.label"
+        },
+        {
+          "type": "text",
+          "id": "text_one",
+          "label": "t:sections.header.blocks.mega_menu.settings.text_one.label"
+        },
+        {
+          "type": "url",
+          "id": "link_one",
+          "label": "t:sections.header.blocks.mega_menu.settings.link_one.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.header.blocks.mega_menu.settings.header_two"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_two",
+          "label": "t:sections.header.blocks.mega_menu.settings.image_two.label"
+        },
+        {
+          "type": "text",
+          "id": "text_two",
+          "label": "t:sections.header.blocks.mega_menu.settings.text_two.label"
+        },
+        {
+          "type": "url",
+          "id": "link_two",
+          "label": "t:sections.header.blocks.mega_menu.settings.link_two.label"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "announcement-bar"
+      },
+      {
+        "type": "top-bar"
+      },
+      {
+        "type": "header"
+      }
+    ]
+  }
+}
+{% endschema %}

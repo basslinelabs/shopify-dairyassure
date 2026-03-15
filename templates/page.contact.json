@@ -1,0 +1,175 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_top_divider": false,
+        "divider_color_scheme": "",
+        "color_scheme": "default"
+      }
+    },
+    "881a1bb3-1acd-4f2e-a952-24564887914f": {
+      "type": "section-form",
+      "blocks": {
+        "template--16236984729779__881a1bb3-1acd-4f2e-a952-24564887914f-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "Name",
+            "required": true,
+            "half_width": true
+          }
+        },
+        "template--16236984729779__881a1bb3-1acd-4f2e-a952-24564887914f-email-1": {
+          "type": "email",
+          "settings": {
+            "half_width": true
+          }
+        },
+        "phone_etaqXB": {
+          "type": "phone",
+          "settings": {
+            "required": true,
+            "half_width": true
+          }
+        },
+        "text_Pam8e4": {
+          "type": "text",
+          "settings": {
+            "text": "Website",
+            "required": false,
+            "half_width": true
+          }
+        },
+        "text_fcEr9H": {
+          "type": "text",
+          "settings": {
+            "text": "Company Name",
+            "required": true,
+            "half_width": false
+          }
+        },
+        "text_hLcppw": {
+          "type": "text",
+          "settings": {
+            "text": "Company Street Address",
+            "required": true,
+            "half_width": false
+          }
+        },
+        "text_3rFTQX": {
+          "type": "text",
+          "settings": {
+            "text": "Company Address Line 2",
+            "required": true,
+            "half_width": false
+          }
+        },
+        "text_b6KVAY": {
+          "type": "text",
+          "settings": {
+            "text": "Company City",
+            "required": true,
+            "half_width": true
+          }
+        },
+        "text_Dx3HGK": {
+          "type": "text",
+          "settings": {
+            "text": "Company State",
+            "required": true,
+            "half_width": true
+          }
+        },
+        "text_iHp4Pj": {
+          "type": "text",
+          "settings": {
+            "text": "Company Zip",
+            "required": true,
+            "half_width": true
+          }
+        },
+        "select_tMgN7h": {
+          "type": "select",
+          "settings": {
+            "text": "Business Type",
+            "required": false,
+            "option_one": "Retail Store / Grocery",
+            "option_two": "Cafe / Restaurant",
+            "option_three": "Hospitality",
+            "option_four": "Distributor",
+            "option_five": "Other",
+            "half_width": false
+          }
+        },
+        "template--16236984729779__881a1bb3-1acd-4f2e-a952-24564887914f-textarea-1": {
+          "type": "textarea",
+          "settings": {
+            "required": false,
+            "text": "Message"
+          }
+        },
+        "select_NGJjRn": {
+          "type": "select",
+          "settings": {
+            "text": "Where did you hear about us",
+            "required": false,
+            "option_one": "A friend",
+            "option_two": "Social media",
+            "option_three": "Google search",
+            "option_four": "Event",
+            "option_five": "Other",
+            "half_width": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16236984729779__881a1bb3-1acd-4f2e-a952-24564887914f-text-1",
+        "template--16236984729779__881a1bb3-1acd-4f2e-a952-24564887914f-email-1",
+        "phone_etaqXB",
+        "text_Pam8e4",
+        "text_fcEr9H",
+        "text_hLcppw",
+        "text_3rFTQX",
+        "text_b6KVAY",
+        "text_Dx3HGK",
+        "text_iHp4Pj",
+        "select_tMgN7h",
+        "template--16236984729779__881a1bb3-1acd-4f2e-a952-24564887914f-textarea-1",
+        "select_NGJjRn"
+      ],
+      "settings": {
+        "title": "Wholesale with DairyAssure",
+        "header_tag": "h2",
+        "text": "<p>Bring DairyAssure to your shelves, shop, or community. Available in wholesale packs with flexible volume discounts.</p>",
+        "show_top_divider": true,
+        "divider_color_scheme": "scheme-1",
+        "color_scheme": "scheme-3",
+        "show_accent_image": false,
+        "accent_horizontal_anchor": 0,
+        "accent_vertical_anchor": 0,
+        "accent_size": 30,
+        "hide_accent_on_mobile": true,
+        "accent_cover": false,
+        "override_default_styles": false,
+        "override_space_above": 0,
+        "override_space_below": 0,
+        "override_header_font_size": 0,
+        "override_text_font_size": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "881a1bb3-1acd-4f2e-a952-24564887914f"
+  ]
+}

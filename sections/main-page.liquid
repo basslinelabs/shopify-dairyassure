@@ -1,0 +1,64 @@
+{%- liquid
+  assign show_top_divider = section.settings.show_top_divider
+-%}
+
+{%- if show_top_divider -%}
+  <div class="top-divider color-{{ section.settings.divider_color_scheme }}"></div>
+{%- endif -%}
+
+<div class="section-outer{% if show_top_divider %} has-divider{% endif %}">
+  <div class="section-standard main--page section-content bg-default color-{{ section.settings.color_scheme }}">
+    <div class="contained-section{% if show_top_divider %} has-divider{% endif %}">
+      <h2 class="alignment">
+        {%- if page.title != blank -%}
+          {{ page.title | escape }}
+        {%- else -%}
+          {{ 'sections.page.title' | t }}
+        {%- endif -%}
+      </h2>
+      <div class="rte contained-section--narrow">
+        {%- if page.content != blank -%}
+          {{ page.content }}
+        {%- else -%}
+          <div class='page-placeholder-wrapper placeholder'>
+            {{ 'page' | placeholder_svg_tag: 'page-placeholder' }}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.page.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.section_styling"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_top_divider",
+      "label": "t:sections.all.show_top_divider.label",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "divider_color_scheme",
+      "default": "scheme_1",
+      "label": "t:sections.all.top_divider_color_scheme.label",
+      "info": "t:sections.all.top_divider_color_scheme.info",
+      "visible_if": "{{ section.settings.show_top_divider }}"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme_1",
+      "label": "t:sections.all.color_scheme.label"
+    }
+  ]
+}
+{% endschema %}

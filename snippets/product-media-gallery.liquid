@@ -1,0 +1,156 @@
+{% comment %}
+  Renders product media
+
+  Accepts:
+  - media: {Object} Product Media object
+  - section_id: {String} Unique section string
+
+  Usage:
+  {% render 'product-media',
+    media: product.media,
+    section_id: section.id,
+    desktop_layout: desktop_media_layout
+    mobile_show_arrows: true,
+    mobile_pagination: "dots"
+  %}
+{% endcomment %}
+
+{% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
+<product-media class="main-product__content-sticky">
+  <div
+    class="swiper swiper-product-media main-product--media-container"
+    id="swiper-{{ section_id }}"
+    data-desktop-layout="{{ desktop_layout }}"
+  >
+    <div class="main-product--media-wrapper swiper-wrapper">
+      {% for media in product.media %}
+        <div class="swiper-slide">
+          <div
+            class="swiper-zoom-container{% if variant_images contains media.src %} product__media-item--variant{% endif %}"
+            data-media-id="{{ section.id }}-{{ media.id }}"
+            data-slide-index="{{ forloop.index }}"
+          >
+            {%- if media.media_type == 'image' -%}
+              {{ media.preview_image | image_url: width: 1200 | image_tag: loading: 'lazy' }}
+            {%- else -%}
+              {%- if media.media_type == 'model' -%}
+                <div class="product-media-modal__model" data-media-id="{{ media.id }}">
+                  <product-model
+                    class="deferred-media media media--transparent global-media-settings global-media-settings--no-shadow"
+                    style="padding-top: min(calc(100vh - 12rem), 100%)"
+                  >
+              {%- else -%}
+                <deferred-media
+                  class="deferred-media media global-media-settings global-media-settings--no-shadow"
+                  style="padding-top: min(calc(100vh - 12rem), {{ 1 | divided_by: media.aspect_ratio | times: 100 }}%)"
+                  data-media-id="{{ media.id }}"
+                >
+              {%- endif -%}
+
+              <button id="Deferred-Poster-Modal-{{ media.id }}" class="deferred-media__poster" type="button">
+                <span class="deferred-media__poster-button motion-reduce">
+                  {%- if media.media_type == 'model' -%}
+                    {% render 'icons-main', icon: 'cross' %}
+                  {%- else -%}
+                    {% render 'icons-main', icon: 'play' %}
+                  {%- endif -%}
+                </span>
+
+                {{ media.preview_image | image_url: width: 1200 | image_tag: loading: 'lazy' }}
+              </button>
+              <template>
+                {%- case media.media_type -%}
+                  {%- when 'external_video' -%}
+                    {%- assign video_class = 'js-' | append: media.host -%}
+                    {%- if media.host == 'youtube' -%}
+                      {{
+                        media
+                        | external_video_url: autoplay: true, loop: loop, playlist: media.external_id
+                        | external_video_tag: class: video_class, loading: 'lazy'
+                      }}
+                    {%- else -%}
+                      {{
+                        media
+                        | external_video_url: autoplay: true, loop: loop
+                        | external_video_tag: class: video_class, loading: 'lazy'
+                      }}
+                    {%- endif -%}
+                  {%- when 'video' -%}
+                    {{
+                      media
+                      | media_tag: image_size: '2048x', autoplay: true, loop: loop, controls: true, preload: 'none'
+                    }}
+                  {%- when 'model' -%}
+                    {{ media | media_tag: image_size: '2048x', toggleable: true }}
+                {%- endcase -%}
+              </template>
+
+              {%- if media.media_type == 'model' -%}
+                </product-model>
+                <button
+                  class="button button--full-width product__xr-button"
+                  type="button"
+                  aria-label="{{ 'products.product.xr_button_label' | t }}"
+                  data-shopify-xr
+                  data-shopify-model3d-id="{{ media.id }}"
+                  data-shopify-title="title"
+                  data-shopify-xr-hidden
+                >
+                  {% render 'icons-main', icon: '3d-model' %}
+                  {{ 'products.product.xr_button' | t }}
+                </button>
+                </div>
+              {%- else -%}
+                </deferred-media>
+              {%- endif -%}
+            {%- endif -%}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    {% assign number_of_images = product.images | size %}
+    {% if number_of_images > 1 %}
+      <div class="product-media__pagination">
+        {% if mobile_pagination == "dots" %}
+          <div class="swiper-pagination"></div>
+        {% endif %}
+        {% if desktop_layout == "slider" or mobile_show_arrows %}
+          <div class="swiper-button-prev swiper-button-prev--media">{% render 'icons-main', icon: 'caret' %}</div>
+          <div class="swiper-button-next swiper-button-next--media">{% render 'icons-main', icon: 'caret' %}</div>
+        {% endif %}
+        {% if desktop_layout == "slider" or mobile_pagination == "thumbnails" %}
+          <div id="swiper-{{ section.id }}--thumbs" class="swiper swiper-product-thumbnails">
+            <div class="swiper-wrapper">
+              {% for media in product.media %}
+                <div class="swiper-slide">
+                  {{ media.preview_image | image_url: crop: "center", width: 150, height: 150 | image_tag: loading: 'lazy' }}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</product-media>
+
+{% comment %} Used to display non-image media in a modal on mobile {% endcomment %}
+<product-modal tabindex="2" class="product-popup-modal">
+  <div
+    role="dialog"
+    aria-label="{{ block.settings.text }}"
+    aria-modal="true"
+    class="product-popup-modal__content"
+    tabindex="-1"
+  >
+    <button
+      id="ModalClose-{{ section.id }}"
+      type="button"
+      class="product-popup-modal__toggle"
+      aria-label="{{ 'accessibility.close' | t }}"
+    >
+      {% render 'icons-main', icon: 'cross' %}
+    </button>
+    <div class="product-popup-modal__content-info"></div>
+  </div>
+</product-modal>

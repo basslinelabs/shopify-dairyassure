@@ -1,0 +1,99 @@
+{%- liquid
+  assign show_top_divider = section.settings.show_top_divider
+  assign title = blog.title
+  assign grid_class = "grid--" | append: section.settings.columns_desktop  
+-%}
+
+{%- if show_top_divider -%}
+  <div class="top-divider color-{{ section.settings.divider_color_scheme }}"></div>
+{%- endif -%}
+
+<div class="section-outer{% if show_top_divider %} has-divider{% endif %}">
+  <div class="section-standard main--page section-content bg-default color-{{ section.settings.color_scheme }}">
+    <div class="contained-section alignment{% if show_top_divider %} has-divider{% endif %}">
+      <h2>{{ title }}</h2>
+      {%- paginate blog.articles by section.settings.post_limit -%}
+        <div class="featured-blog-content grid {{ grid_class }}">
+          {%- for article in blog.articles -%}
+            <div class="featured-blog__article">
+              {% render 'card-article',
+                blog: blog, 
+                article: article,
+                show_excerpt: true
+              %}
+            </div>
+          {%- else -%}
+            {%- for i in (1..4) -%}
+              <div class="featured-blog__article">
+                {% render 'card-article',
+                  blog: blog, 
+                  article: article,
+                  show_excerpt: true
+                %}
+              </div>
+            {%- endfor -%}
+          {%- endfor -%}
+        </div>
+        {%- if paginate.pages > 1 -%}
+          {%- render 'pagination', paginate: paginate -%}
+        {%- endif -%}
+      {%- endpaginate -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-blog.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.section_content"
+    },
+    {
+      "type": "range",
+      "id": "post_limit",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4,
+      "label": "t:sections.main-blog.settings.post_limit.label"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "label": "t:sections.all.columns_desktop.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.section_styling"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_top_divider",
+      "label": "t:sections.all.show_top_divider.label",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "divider_color_scheme",
+      "default": "scheme_1",
+      "label": "t:sections.all.top_divider_color_scheme.label",
+      "info": "t:sections.all.top_divider_color_scheme.info",
+      "visible_if": "{{ section.settings.show_top_divider }}"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme_1",
+      "label": "t:sections.all.color_scheme.label"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,278 @@
+{%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
+  {{ 'facets.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{%- liquid
+  assign show_top_divider = section.settings.show_top_divider
+  assign title = section.settings.title | escape
+  assign grid_class = 'grid--' | append: section.settings.columns_desktop
+  assign sort_by = search.sort_by | default: search.default_sort_by
+  assign terms = search.terms | escape
+  assign search_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
+-%}
+
+{%- style -%}
+  {% if section.settings.enable_filtering %}
+    .desktop__sort {
+      position: absolute;
+    }
+  {% endif %}
+{%- endstyle -%}
+
+{%- if show_top_divider -%}
+  <div class="top-divider color-{{ section.settings.divider_color_scheme }}"></div>
+{%- endif -%}
+
+<div class="section-outer{% if show_top_divider %} has-divider{% endif %}">
+  <div class="section-standard main--search section-content bg-default color-{{ section.settings.color_scheme }}">
+    <div class="contained-section">
+      <h2>{{ title }}</h2>
+      <div class="main-search{% unless search.performed and search.results_count > 0 %} main-search--empty{% endunless %}">
+        <div class="main-search__header">
+          <div class="main-search__search">
+            {%- if settings.predictive_search_enabled -%}
+              <predictive-search data-loading-text="{{ 'accessibility.loading' | t }}">
+            {%- endif -%}
+            <form action="{{ routes.search_url }}" method="get" role="search" class="search">
+              <div class="field">
+                <input
+                  class="search__input field__input"
+                  id="Search-In-Template"
+                  type="search"
+                  name="q"
+                  value="{{ search.terms | escape }}"
+                  placeholder="{{ 'general.search.search' | t }}"
+                  {%- if settings.predictive_search_enabled -%}
+                    role="combobox"
+                    aria-expanded="false"
+                    aria-owns="predictive-search-results-list"
+                    aria-controls="predictive-search-results-list"
+                    aria-haspopup="listbox"
+                    aria-autocomplete="list"
+                    autocorrect="off"
+                    autocomplete="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                  {%- endif -%}
+                >
+                <label class="field__label" for="Search-In-Template">{{ 'general.search.search' | t }}</label>
+                <input name="options[prefix]" type="hidden" value="last">
+
+                {%- if settings.predictive_search_enabled -%}
+                  <div
+                    class="predictive-search predictive-search--search-template"
+                    tabindex="-1"
+                    data-predictive-search
+                  >
+                    <div class="predictive-search__loading-state">
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        role="presentation"
+                        class="spinner"
+                        viewBox="0 0 66 66"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+                {%- endif -%}
+
+                <button
+                  type="submit"
+                  class="search__button field__button"
+                  aria-label="{{ 'general.search.search' | t }}"
+                >
+                  <svg class="icon icon-search">
+                    <use xlink:href="#icon-search">
+                  </svg>
+                </button>
+              </div>
+            </form>
+            {%- if settings.predictive_search_enabled -%}
+              </predictive-search>
+            {%- endif -%}
+          </div>
+          {%- if search.performed -%}
+            {%- unless section.settings.enable_filtering or section.settings.enable_sorting -%}
+              {%- if search.results_count > 0 -%}
+                <p role="status">
+                  {{
+                    'templates.search.results_with_count_and_term'
+                    | t: terms: search.terms, count: search.results_count
+                  }}
+                </p>
+              {%- endif -%}
+            {%- endunless -%}
+            {%- if search.results_count == 0 and search.filters == empty -%}
+              <p role="status">{{ 'templates.search.no_results' | t: terms: search.terms }}</p>
+            {%- endif -%}
+          {%- endif -%}
+        </div>
+        {%- if search.performed -%}
+          {%- if search.filters != empty -%}
+            {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
+              <div class="main-search__filters">
+                {% render 'facets',
+                  results: search,
+                  enable_filtering: section.settings.enable_filtering,
+                  enable_sorting: section.settings.enable_sorting,
+                  collapse_on_larger_devices: section.settings.collapse_on_larger_devices
+                %}
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+          <div id="ProductGridContainer">
+            {%- if search.results.size == 0 and search.filters != empty -%}
+              <div
+                class="main-search__results collection collection--empty"
+                id="product-grid"
+                data-id="{{ section.id }}"
+              >
+                <h2 class="center">
+                  {{ 'sections.collection_template.empty' | t -}}
+                  <br>
+                  {{
+                    'sections.collection_template.use_fewer_filters_html'
+                    | t: link: search_url, class: 'link-reduce'
+                  }}
+                </h2>
+              </div>
+            {%- else -%}
+              {% paginate search.results by section.settings.products_per_page %}
+                <div class="collection">
+                  <div class="loading-overlay"></div>
+                  <div
+                    id="product-grid"
+                    data-id="{{ section.id }}"
+                    class="grid product-grid {{ grid_class }}"
+                    role="list"
+                  >
+                    {%- for item in search.results -%}
+                      <div class="main-search__item">
+                        {%- case item.object_type -%}
+                          {%- when 'product' -%}
+                            {%- capture product_settings -%}{%- if section.settings.product_show_vendor -%}vendor,{%- endif -%}title,price{%- endcapture -%}
+                            {% render 'card-product', card_product: item %}
+                          {%- when 'article' -%}
+                            {% render 'card-article', article: item %}
+                          {%- when 'page' -%}
+                            <a href="{{ item.url }}" class="card__page-link link-reduce">
+                              <div class="card__page">
+                                <h3>{{ item.title | truncate: 50 | escape }}</h3>
+                              </div>
+                            </a>
+                        {%- endcase -%}
+                      </div>
+                    {%- endfor -%}
+                  </div>
+                  {%- if paginate.pages > 1 -%}
+                    {% render 'pagination', paginate: paginate %}
+                  {%- endif -%}
+                </div>
+              {% endpaginate %}
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% assign potential_action_target = request.origin | append: routes.search_url | append: '?q={search_term_string}' %}
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": {{ shop.name | json }},
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {{ potential_action_target | json }},
+      "query-input": "required name=search_term_string"
+    },
+    "url": {{ request.origin | append: page.url | json }}
+  }
+</script>
+
+{% schema %}
+{
+  "name": "t:sections.main-search.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.section_content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "default": "What are you looking for?",
+      "label": "t:sections.all.header.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-search.settings.grid.content"
+    },
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 24,
+      "step": 4,
+      "default": 16,
+      "label": "t:sections.main-search.settings.products_per_page.label"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "label": "t:sections.all.columns_desktop.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_filtering",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.enable_filtering.label",
+      "info": "t:sections.main-collection-product-grid.settings.enable_filtering.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sorting",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.enable_sorting.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.section_styling"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_top_divider",
+      "label": "t:sections.all.show_top_divider.label",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "divider_color_scheme",
+      "default": "scheme_1",
+      "label": "t:sections.all.top_divider_color_scheme.label",
+      "info": "t:sections.all.top_divider_color_scheme.info",
+      "visible_if": "{{ section.settings.show_top_divider }}"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme_1",
+      "label": "t:sections.all.color_scheme.label"
+    }
+  ]
+}
+{% endschema %}

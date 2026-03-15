@@ -1,0 +1,474 @@
+{%- liquid
+  assign show_top_divider = section.settings.show_top_divider
+  assign show_sidebar = section.settings.show_sidebar
+  assign block_count = section.blocks | size
+  assign header = section.settings.header | escape
+
+-%}
+{%- if block_count > 0 -%}
+  {%- style -%}
+    {% if section.settings.show_accent_image and section.settings.accent_image %}
+      {% render 'styling-section',
+        section_id: section.id,
+        accent_image: section.settings.accent_image,
+        accent_vertical_anchor: section.settings.accent_vertical_anchor,
+        accent_horizontal_anchor: section.settings.accent_horizontal_anchor,
+        accent_size: section.settings.accent_size,
+        hide_accent_on_mobile: section.settings.hide_accent_on_mobile,
+        accent_cover: section.settings.accent_cover
+      %}
+    {% endif %}
+  {%- endstyle -%}
+
+  {%- if show_top_divider -%}
+    <div class="top-divider color-{{ section.settings.divider_color_scheme }}"></div>
+  {%- endif -%}
+
+  <div class="section-outer{% if show_top_divider %} has-divider{% endif %}">
+    <div class="section-{{ section.id }} section-standard section--faq bg-default color-{{ section.settings.color_scheme }}"{% if section.settings.override_default_styles %} style="--override-padding-top: {{ section.settings.override_space_above }}px; --override-padding-bottom: {{ section.settings.override_space_below }}px;"{% endif %}>
+      <div class="contained-section in-front-of-accent-image">
+        <div class="section-intro">
+          {%- if header != blank -%}
+            <{{ section.settings.header_tag }} class="alignment"{% if section.settings.override_default_styles %} style="--override-font-size: {{ section.settings.override_header_font_size }}px;"{% endif %}>{{ header }}</{{ section.settings.header_tag }}>
+          {%- endif -%}
+          {%- if section.settings.text != blank -%}
+            <div class="rte alignment"{% if section.settings.override_default_styles %} style="--override-font-size: {{ section.settings.override_text_font_size }}px;"{% endif %}>{{ section.settings.text }}</div>
+          {%- endif -%}
+        </div>
+
+        {%- if show_sidebar -%}
+          <div class="sticky-sidebar--wrapper">
+            <div class="sticky-sidebar small-hide">
+              <ol class="faq--details-link-list">
+                {%- for block in section.blocks -%}
+                  {%- case block.type -%}
+                    {%- when 'group-heading' -%}
+                      {% assign custom_id = section.id | append: '-' | append: block.id %}
+                      <li class="faq--group-heading">
+                        <a class="faq--details-link-list_link" href="#Details-{{ custom_id }}">
+                          {{- block.settings.heading -}}
+                        </a>
+                      </li>
+                  {%- endcase -%}
+                {%- endfor -%}
+              </ol>
+            </div>
+            <div class="faq-content">
+        {%- endif -%}
+
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'group-heading' -%}
+              {% assign custom_id = section.id | append: '-' | append: block.id %}
+              <h3 id="Details-{{ custom_id }}" class="faq--group-heading"{% if section.settings.override_default_styles %} style="--override-font-size: {{ section.settings.override_group_heading_font_size }}px;"{% endif %} {{ block.shopify_attributes }}>
+                {{ block.settings.heading }}
+              </h3>
+            {%- when 'collapsible-row' -%}
+              {% assign custom_id = section.id | append: '-' | append: block.id %}
+              <div class="block accordion" {{ block.shopify_attributes }}>
+                {%- liquid
+                  if section.settings.override_default_styles
+                    assign question_font_size = section.settings.override_question_font_size
+                    assign answer_font_size = section.settings.override_answer_font_size
+                  else
+                    assign question_font_size = 0
+                    assign answer_font_size = 0
+                  endif
+                -%}
+                {% render 'block-accordion',
+                  heading: block.settings.heading,
+                  row_content: block.settings.row_content,
+                  page_content: block.settings.page.content,
+                  open_tab: block.settings.open_tab,
+                  question_font_size: question_font_size,
+                  answer_font_size: answer_font_size
+                %}
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+
+        {%- if show_sidebar -%}
+          </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function initializeStickySidebar() {
+      const stickyHeader = document.querySelector('sticky-header');
+      const sidebar = document.querySelector('.section-{{ section.id }} .sticky-sidebar');
+
+      if (!stickyHeader || !sidebar) return;
+
+      const topProperty = `calc(${stickyHeader.offsetHeight}px + 1rem)`;
+      sidebar.style.setProperty('top', topProperty, 'important');
+
+      sidebar.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            yHeaderOffset = stickyHeader.offsetHeight;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - yHeaderOffset;
+
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+          }
+        });
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', initializeStickySidebar);
+
+    if (Shopify.designMode) {
+      document.addEventListener('shopify:section:load', initializeStickySidebar);
+    }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'collapsible-row' -%}
+              {
+                "@type": "Question",
+                "name": "{{ block.settings.heading }}",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "{{ block.settings.row_content }} {{ block.settings.page_content }}"
+                }
+              }{%- unless forloop.last -%},{%- endunless -%}
+          {%- endcase -%}
+        {%- endfor -%}
+      ]
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.faq.name",
+  "tag": "section",
+  "class": "section section-faq",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.section_content"
+    },
+    {
+      "type": "text",
+      "id": "header",
+      "label": "t:sections.all.header.label",
+      "default": "Frequently asked questions"
+    },
+    {
+      "type": "select",
+      "id": "header_tag",
+      "label": "t:sections.all.header.header_tag.label",
+      "options": [
+        {
+          "value": "h1",
+          "label": "t:sections.all.header.header_tag.h1.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.all.header.header_tag.h2.label"
+        },
+        {
+          "value": "h3",
+          "label": "t:sections.all.header.header_tag.h3.label"
+        },
+        {
+          "value": "h4",
+          "label": "t:sections.all.header.header_tag.h4.label"
+        },
+        {
+          "value": "h5",
+          "label": "t:sections.all.header.header_tag.h5.label"
+        },
+        {
+          "value": "h6",
+          "label": "t:sections.all.header.header_tag.h6.label"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:sections.all.text.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sidebar",
+      "label": "t:sections.faq.settings.show_sidebar.label",
+      "info": "t:sections.faq.settings.show_sidebar.info",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.section_styling"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_top_divider",
+      "label": "t:sections.all.show_top_divider.label",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "divider_color_scheme",
+      "default": "scheme-1",
+      "label": "t:sections.all.top_divider_color_scheme.label",
+      "info": "t:sections.all.top_divider_color_scheme.info",
+      "visible_if": "{{ section.settings.show_top_divider }}"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme-4",
+      "label": "t:sections.all.color_scheme.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.accent_image.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_accent_image",
+      "label": "t:sections.all.accent_image.show_image.label",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "accent_image",
+      "label": "t:sections.all.image.label",
+      "info": "t:sections.all.image.info",
+      "visible_if": "{{ section.settings.show_accent_image }}"
+    },
+    {
+      "type": "range",
+      "id": "accent_horizontal_anchor",
+      "label": "t:sections.all.accent_image.horizontal_anchor.label",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 0,
+      "visible_if": "{{ section.settings.show_accent_image }}"
+    },
+    {
+      "type": "range",
+      "id": "accent_vertical_anchor",
+      "label": "t:sections.all.accent_image.vertical_anchor.label",
+      "info": "t:sections.all.accent_image.vertical_anchor.info",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 0,
+      "visible_if": "{{ section.settings.show_accent_image }}"
+    },
+    {
+      "type": "range",
+      "id": "accent_size",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "t:sections.all.accent_image.image_size.label",
+      "info": "t:sections.all.accent_image.image_size.info",
+      "default": 30,
+      "visible_if": "{{ section.settings.show_accent_image }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_accent_on_mobile",
+      "label": "t:sections.all.accent_image.hide_on_mobile.label",
+      "default": true,
+      "visible_if": "{{ section.settings.show_accent_image }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "accent_cover",
+      "label": "t:sections.all.accent_image.image_cover.label",
+      "info": "t:sections.all.accent_image.image_cover.info",
+      "default": false,
+      "visible_if": "{{ section.settings.show_accent_image }}"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.overrides.header"
+    },
+    {
+      "type": "checkbox",
+      "id": "override_default_styles",
+      "label": "t:sections.all.overrides.override_default_styles.label",
+      "info": "t:sections.all.overrides.override_default_styles.info",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.overrides.header_section.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "range",
+      "id": "override_space_above",
+      "min": -50,
+      "max": 100,
+      "step": 10,
+      "default": 0,
+      "label": "t:sections.all.overrides.override_space_above.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "range",
+      "id": "override_space_below",
+      "min": -50,
+      "max": 100,
+      "step": 10,
+      "default": 0,
+      "label": "t:sections.all.overrides.override_space_below.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.overrides.header_intro.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "range",
+      "id": "override_header_font_size",
+      "min": -10,
+      "max": 30,
+      "step": 2,
+      "default": 0,
+      "label": "t:sections.all.overrides.override_header_font_size.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "range",
+      "id": "override_text_font_size",
+      "min": -6,
+      "max": 20,
+      "step": 2,
+      "default": 0,
+      "label": "t:sections.all.overrides.override_text_font_size.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.overrides.header_content.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "range",
+      "id": "override_group_heading_font_size",
+      "min": -6,
+      "max": 20,
+      "step": 2,
+      "default": 0,
+      "label": "t:sections.faq.overrides.group_heading_font_size.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "range",
+      "id": "override_question_font_size",
+      "min": -6,
+      "max": 20,
+      "step": 2,
+      "default": 0,
+      "label": "t:sections.faq.overrides.question_font_size.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "range",
+      "id": "override_answer_font_size",
+      "min": -6,
+      "max": 20,
+      "step": 2,
+      "default": 0,
+      "label": "t:sections.faq.overrides.answer_font_size.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "group-heading",
+      "name": "t:sections.faq.blocks.group_heading.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Group heading",
+          "label": "t:sections.all.header.label"
+        }
+      ]
+    },
+    {
+      "type": "collapsible-row",
+      "name": "t:sections.all.collapsible_row.name",
+      "limit": 25,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "What is your question?",
+          "label": "t:sections.all.collapsible_row.heading.label"
+        },
+        {
+          "type": "richtext",
+          "id": "row_content",
+          "default": "<p>Provide the answer to the question here.</p>",
+          "label": "t:sections.all.collapsible_row.content.label"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "t:sections.all.collapsible_row.page.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_tab",
+          "label": "t:sections.all.collapsible_row.open_tab.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.faq.presets.name",
+      "category": "t:settings_schema.groups.specialized",
+      "blocks": [
+        {
+          "type": "group-heading"
+        },
+        {
+          "type": "collapsible-row"
+        },
+        {
+          "type": "collapsible-row"
+        },
+        {
+          "type": "group-heading"
+        },
+        {
+          "type": "collapsible-row"
+        },
+        {
+          "type": "collapsible-row"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

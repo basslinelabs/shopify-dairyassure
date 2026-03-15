@@ -1,0 +1,480 @@
+{%- liquid
+  assign show_top_divider = section.settings.show_top_divider
+  assign highlight_column = section.settings.highlight_column | plus: 0
+  assign highlight_column_color = section.settings.highlight_column_color
+
+-%}
+
+{%- style -%}
+  {% if section.settings.show_accent_image and section.settings.accent_image %}
+    {% render 'styling-section',
+      section_id: section.id,
+      accent_image: section.settings.accent_image,
+      accent_vertical_anchor: section.settings.accent_vertical_anchor,
+      accent_horizontal_anchor: section.settings.accent_horizontal_anchor,
+      accent_size: section.settings.accent_size,
+      hide_accent_on_mobile: section.settings.hide_accent_on_mobile,
+      accent_cover: section.settings.accent_cover
+    %}
+  {% endif %}
+{%- endstyle -%}
+
+{%- if show_top_divider -%}
+  <div class="top-divider color-{{ section.settings.divider_color_scheme }}"></div>
+{%- endif -%}
+
+<div class="section-outer{% if show_top_divider %} has-divider{% endif %}">
+  <div class="section-standard--narrow section--comparison-table section-content bg-default color-{{ section.settings.color_scheme }}"{% if section.settings.override_default_styles %} style="--override-padding-top: {{ section.settings.override_space_above }}px; --override-padding-bottom: {{ section.settings.override_space_below }}px;"{% endif %}>
+    <div class="contained-section alignment in-front-of-accent-image">
+      <div class="section-intro">
+        {%- if section.settings.header != blank -%}
+          <{{ section.settings.header_tag }}{% if section.settings.override_default_styles %} style="--override-font-size: {{ section.settings.override_header_font_size }}px;"{% endif %}>
+            {{ section.settings.header | escape }}
+          </{{ section.settings.header_tag }}>
+        {%- endif -%}
+        
+        {%- if section.settings.text != blank -%}
+          <div class="rte"{% if section.settings.override_default_styles %} style="--override-font-size: {{ section.settings.override_text_font_size }}px;"{% endif %}>{{ section.settings.text }}</div>
+        {%- endif -%}
+      </div>
+
+      {%- if section.blocks.size > 0 -%}
+        <div class="comparison-table__table">
+          <table role="table">
+            <thead role="rowgroup">
+              <tr role="row">
+                <th role="columnheader">
+                </th>
+                {% for i in (1..3) %}
+                  {% assign col_header_key = 'column_' | append: i | append: '_header' %}
+                  {% assign col_image_key = 'column_' | append: i | append: '_image' %}
+                  {% if section.settings[col_header_key] != blank or section.settings[col_image_key] != blank %}
+                    <th role="columnheader" class="{% if highlight_column == i %}bg-{{ highlight_column_color }}{% endif %}">
+                      {% if section.settings[col_image_key] != blank %}
+                        {{ section.settings[col_image_key] | image_url: width: 300 | image_tag: class: 'comparison-table__header-image' }}
+                      {% endif %}
+                      {{ section.settings[col_header_key] }}
+                    </th>
+                  {% endif %}
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody role="rowgroup">
+              {% for block in section.blocks %}
+                <tr role="row" class="border-top-{{ highlight_column_color }}-fade" {{ block.shopify_attributes }}>
+                  <td role="cell">
+                    <h4>{{ block.settings.header | escape }}</h4>
+                    {%- if block.settings.text != blank -%}
+                      <div class="rte{% if block.settings.hide_text_on_mobile %} small-hide{% endif %}">
+                        {{ block.settings.text }}
+                      </div>
+                    {%- endif -%}
+                  </td>
+                  {% for i in (1..3) %}
+                    {% assign col_state_key = 'column_' | append: i | append: '_state' %}
+                    {% assign col_header_key = 'column_' | append: i | append: '_header' %}
+                    {% assign col_image_key = 'column_' | append: i | append: '_image' %}
+                    {% if section.settings[col_header_key] != blank or section.settings[col_image_key] != blank %}
+                      <td role="cell" class="{% if highlight_column == i %}bg-{{ highlight_column_color }}{% endif %}">
+                        {% render 'icons-main', icon: block.settings[col_state_key] %}
+                      </td>
+                    {% endif %}
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.comparison-table.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.section_content"
+    },
+    {
+      "type": "text",
+      "id": "header",
+      "label": "t:sections.all.header.label"
+    },
+    {
+      "type": "select",
+      "id": "header_tag",
+      "label": "t:sections.all.header.header_tag.label",
+      "options": [
+        {
+          "value": "h1",
+          "label": "t:sections.all.header.header_tag.h1.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.all.header.header_tag.h2.label"
+        },
+        {
+          "value": "h3",
+          "label": "t:sections.all.header.header_tag.h3.label"
+        },
+        {
+          "value": "h4",
+          "label": "t:sections.all.header.header_tag.h4.label"
+        },
+        {
+          "value": "h5",
+          "label": "t:sections.all.header.header_tag.h5.label"
+        },
+        {
+          "value": "h6",
+          "label": "t:sections.all.header.header_tag.h6.label"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:sections.all.text.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.comparison-table.settings.header.content"
+    },
+    {
+      "type": "text",
+      "id": "column_1_header",
+      "default": "Column 1",
+      "label": "t:sections.comparison-table.settings.column_1_header.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "column_1_image",
+      "label": "t:sections.comparison-table.settings.column_1_image.label"
+    },
+    {
+      "type": "text",
+      "id": "column_2_header",
+      "default": "Column 2",
+      "label": "t:sections.comparison-table.settings.column_2_header.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "column_2_image",
+      "label": "t:sections.comparison-table.settings.column_2_image.label"
+    },
+    {
+      "type": "text",
+      "id": "column_3_header",
+      "default": "Column 3",
+      "label": "t:sections.comparison-table.settings.column_3_header.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "column_3_image",
+      "label": "t:sections.comparison-table.settings.column_3_image.label"
+    },
+    {
+      "type": "select",
+      "id": "highlight_column",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.comparison-table.settings.highlight_column.options__1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.comparison-table.settings.highlight_column.options__2.label"
+        },
+        {
+          "value": "3",
+          "label": "t:sections.comparison-table.settings.highlight_column.options__3.label"
+        }
+      ],
+      "default": "1",
+      "label": "t:sections.comparison-table.settings.highlight_column.label"
+    },
+    {
+      "type": "select",
+      "id": "highlight_column_color",
+      "label": "t:sections.comparison-table.settings.highlight_column_color.label",
+      "options": [
+        {
+          "value": "accent",
+          "label": "t:sections.all.colors.accent.label"
+        },
+        {
+          "value": "contrast",
+          "label": "t:sections.all.colors.contrast.label"
+        }
+      ],
+      "default": "contrast"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.section_styling"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_top_divider",
+      "label": "t:sections.all.show_top_divider.label",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "divider_color_scheme",
+      "default": "scheme-2",
+      "label": "t:sections.all.top_divider_color_scheme.label",
+      "info": "t:sections.all.top_divider_color_scheme.info",
+      "visible_if": "{{ section.settings.show_top_divider }}"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme-1",
+      "label": "t:sections.all.color_scheme.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.accent_image.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_accent_image",
+      "label": "t:sections.all.accent_image.show_image.label",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "accent_image",
+      "label": "t:sections.all.image.label",
+      "info": "t:sections.all.image.info",
+      "visible_if": "{{ section.settings.show_accent_image }}"
+    },
+    {
+      "type": "range",
+      "id": "accent_horizontal_anchor",
+      "label": "t:sections.all.accent_image.horizontal_anchor.label",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 0,
+      "visible_if": "{{ section.settings.show_accent_image }}"
+    },
+    {
+      "type": "range",
+      "id": "accent_vertical_anchor",
+      "label": "t:sections.all.accent_image.vertical_anchor.label",
+      "info": "t:sections.all.accent_image.vertical_anchor.info",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 0,
+      "visible_if": "{{ section.settings.show_accent_image }}"
+    },
+    {
+      "type": "range",
+      "id": "accent_size",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "t:sections.all.accent_image.image_size.label",
+      "info": "t:sections.all.accent_image.image_size.info",
+      "default": 30,
+      "visible_if": "{{ section.settings.show_accent_image }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_accent_on_mobile",
+      "label": "t:sections.all.accent_image.hide_on_mobile.label",
+      "default": true,
+      "visible_if": "{{ section.settings.show_accent_image }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "accent_cover",
+      "label": "t:sections.all.accent_image.image_cover.label",
+      "info": "t:sections.all.accent_image.image_cover.info",
+      "default": false,
+      "visible_if": "{{ section.settings.show_accent_image }}"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.overrides.header"
+    },
+    {
+      "type": "checkbox",
+      "id": "override_default_styles",
+      "label": "t:sections.all.overrides.override_default_styles.label",
+      "info": "t:sections.all.overrides.override_default_styles.info",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.overrides.header_section.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "range",
+      "id": "override_space_above",
+      "min": -50,
+      "max": 100,
+      "step": 10,
+      "default": 0,
+      "label": "t:sections.all.overrides.override_space_above.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "range",
+      "id": "override_space_below",
+      "min": -50,
+      "max": 100,
+      "step": 10,
+      "default": 0,
+      "label": "t:sections.all.overrides.override_space_below.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.overrides.header_intro.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "range",
+      "id": "override_header_font_size",
+      "min": -10,
+      "max": 30,
+      "step": 2,
+      "default": 0,
+      "label": "t:sections.all.overrides.override_header_font_size.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "range",
+      "id": "override_text_font_size",
+      "min": -6,
+      "max": 20,
+      "step": 2,
+      "default": 0,
+      "label": "t:sections.all.overrides.override_text_font_size.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.overrides.header_content.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    }
+  ],
+  "max_blocks": 10,
+  "blocks": [
+    {
+      "type": "table-row",
+      "name": "t:sections.comparison-table.blocks.table-row.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "header",
+          "label": "t:sections.all.header.label"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:sections.all.text.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_text_on_mobile",
+          "label": "t:sections.comparison-table.blocks.table-row.settings.hide_text_on_mobile.label",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "t:sections.comparison-table.blocks.table-row.settings.header.content"
+        },
+        {
+          "type": "select",
+          "id": "column_1_state",
+          "visible_if": "{{ section.settings.column_1_header != blank or section.settings.column_1_image != blank }}",
+          "options": [
+            {
+              "value": "tick",
+              "label": "t:sections.comparison-table.blocks.table-row.settings.column_state_options.options__1.label"
+            },
+            {
+              "value": "cross",
+              "label": "t:sections.comparison-table.blocks.table-row.settings.column_state_options.options__2.label"
+            }
+          ],
+          "default": "tick",
+          "label": "t:sections.comparison-table.blocks.table-row.settings.column_1_state.label"
+        },
+        {
+          "type": "select",
+          "id": "column_2_state",
+          "visible_if": "{{ section.settings.column_2_header != blank or section.settings.column_2_image != blank }}",
+          "options": [
+            {
+              "value": "tick",
+              "label": "t:sections.comparison-table.blocks.table-row.settings.column_state_options.options__1.label"
+            },
+            {
+              "value": "cross",
+              "label": "t:sections.comparison-table.blocks.table-row.settings.column_state_options.options__2.label"
+            }
+          ],
+          "default": "tick",
+          "label": "t:sections.comparison-table.blocks.table-row.settings.column_2_state.label"
+        },
+        {
+          "type": "select",
+          "id": "column_3_state",
+          "visible_if": "{{ section.settings.column_3_header != blank or section.settings.column_3_image != blank }}",
+          "options": [
+            {
+              "value": "tick",
+              "label": "t:sections.comparison-table.blocks.table-row.settings.column_state_options.options__1.label"
+            },
+            {
+              "value": "cross",
+              "label": "t:sections.comparison-table.blocks.table-row.settings.column_state_options.options__2.label"
+            }
+          ],
+          "default": "tick",
+          "label": "t:sections.comparison-table.blocks.table-row.settings.column_3_state.label"
+        }
+      ]
+    },
+  ],
+  "presets": [
+    {
+      "name": "t:sections.comparison-table.presets.name",
+      "category": "t:settings_schema.groups.specialized",
+      "blocks": [
+        {
+          "type": "table-row"
+        },
+        {
+          "type": "table-row"
+        },
+        {
+          "type": "table-row"
+        },
+        {
+          "type": "table-row"
+        },
+        {
+          "type": "table-row"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

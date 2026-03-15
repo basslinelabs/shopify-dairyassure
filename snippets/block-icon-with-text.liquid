@@ -1,0 +1,47 @@
+{% comment %}
+    Renders an icon with text block.
+
+    Accepts:
+    - icon: {Object} Icon to display.
+    - header: {String} Header (optional).
+    - text {String} Text (optional).
+    - small {Boolean} makes the icon smaller (optional)
+
+    Usage:
+    {% render 'block-icon-with-text',
+        icon: block.settings.icon,
+        header: block.settings.header,
+        text: block.settings.text,
+        small: true
+    %}
+{% endcomment %}
+{% liquid
+    if small
+        assign width = 50
+    else
+        assign width = 75
+    endif
+%}
+
+{% if icon %}
+    <div class="block-icon-with-text__icon">
+        {{ icon | image_url: width: width | image_tag:
+            loading: 'lazy',
+            alt: icon.alt
+        }}
+    </div>
+{% endif %}
+{% if header != blank or text != blank %}
+    <div class="block-icon-with-text__content">
+        {% if header != blank %}
+            <div class="block-icon-with-text__header">
+                <h4{% if header_font_size %} style="--override-font-size: {{ header_font_size }}px;"{% endif %}>{{ header }}</h4>
+            </div>
+        {% endif %}
+        {% if text != blank %}
+            <div class="block-icon-with-text__text rte"{% if text_font_size %} style="--override-font-size: {{ text_font_size }}px;"{% endif %}>
+                {{ text }}
+            </div>
+        {% endif %}
+    </div>
+{% endif %}

@@ -1,0 +1,56 @@
+{% comment %}
+    Renders a cart item's price (regular, sale)
+    
+    Accepts:
+    - item: {Object} Cart line item object (required)
+    - price_class: {String} Adds a price class to the price element (optional)
+    - price_font_size: {Number} Override font size in pixels (optional)
+
+    Usage:
+    {% render 'price-cart', item: item %}
+    {% render 'price-cart', item: item, price_class: 'custom-class' %}
+{% endcomment %}
+
+{%- liquid
+  assign money_price = item.original_price | money
+  if settings.currency_code_enabled
+    assign money_price = item.original_price | money_with_currency
+  endif
+
+  assign final_money_price = item.final_price | money
+  if settings.currency_code_enabled
+    assign final_money_price = item.final_price | money_with_currency
+  endif
+
+  assign is_on_sale = false
+  if item.original_price != item.final_price
+    assign is_on_sale = true
+  endif
+-%}
+
+<div class="price
+  {%- if price_class %} {{ price_class }}{% endif -%}
+  {%- if is_on_sale %} price--on-sale{% endif -%}"
+  {%- if price_font_size and price_font_size != 0 %} style="--override-font-size: {{ price_font_size }}px;"{% endif -%}>
+  <div class="price__container">
+    {%- if is_on_sale -%}
+      <div class="price__sale">
+        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+        <s class="price-item price-item--regular">
+          {{ money_price }}
+        </s>
+        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
+        <span class="price-item price-item--sale price-item--last">
+          {{ final_money_price }}
+        </span>
+      </div>
+    {%- else -%}
+      <div class="price__regular">
+        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+        <span class="price-item price-item--regular">
+          {{ money_price }}
+        </span>
+      </div>
+    {%- endif -%}
+  </div>
+</div>

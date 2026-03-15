@@ -1,0 +1,127 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section-banner": {
+      "type": "section-banner",
+      "blocks": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "header": "Blog",
+            "header_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "header"
+      ],
+      "settings": {
+        "show_top_divider": false,
+        "divider_color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
+        "overlay_dt": "",
+        "height_dt": 25,
+        "horizontal_alignment_dt": "center",
+        "vertical_alignment_dt": "center",
+        "content_width_dt": 50,
+        "overlay_mob": "",
+        "height_mob": 40,
+        "horizontal_alignment_mob": "center",
+        "vertical_alignment_mob": "center"
+      }
+    },
+    "section-featured-article": {
+      "type": "section-featured-article",
+      "blocks": {
+        "date": {
+          "type": "date",
+          "settings": {
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "header_tag": "h2"
+          }
+        },
+        "post_content": {
+          "type": "post_content",
+          "settings": {
+            "excerpt_length": 50
+          }
+        },
+        "read_more_button": {
+          "type": "read_more_button",
+          "settings": {
+            "button_text": "Read more",
+            "button_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "date",
+        "title",
+        "post_content",
+        "read_more_button"
+      ],
+      "settings": {
+        "article": "",
+        "latest_blog_post": "news",
+        "image_position": "left",
+        "image_width": "50%",
+        "show_top_divider": true,
+        "divider_color_scheme": "scheme-2",
+        "color_scheme": "default",
+        "accent_horizontal_anchor": 0,
+        "accent_vertical_anchor": 0,
+        "accent_size": 30,
+        "hide_accent_on_mobile": true
+      }
+    },
+    "e4ec1d5b-6529-429b-a8f2-990e09fb01c4": {
+      "type": "section-featured-blog",
+      "settings": {
+        "title": "Staff picks",
+        "header_tag": "h2",
+        "blog": "news",
+        "tags": "show",
+        "show_excerpt": true,
+        "post_limit": 2,
+        "columns_desktop": 2,
+        "show_view_all": false,
+        "show_top_divider": true,
+        "divider_color_scheme": "",
+        "color_scheme": "scheme-3",
+        "accent_horizontal_anchor": 0,
+        "accent_vertical_anchor": 0,
+        "accent_size": 30,
+        "hide_accent_on_mobile": true,
+        "button_style": "outline"
+      }
+    },
+    "main": {
+      "type": "main-blog",
+      "settings": {
+        "post_limit": 12,
+        "columns_desktop": 4,
+        "show_top_divider": true,
+        "divider_color_scheme": "scheme-3",
+        "color_scheme": ""
+      }
+    }
+  },
+  "order": [
+    "section-banner",
+    "section-featured-article",
+    "e4ec1d5b-6529-429b-a8f2-990e09fb01c4",
+    "main"
+  ]
+}

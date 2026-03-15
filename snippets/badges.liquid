@@ -1,0 +1,41 @@
+{% comment %}
+    Renders badges to add on top of an image.
+
+    Accepts:
+    - product: {Object} product to add badges for
+
+    Usage:
+    {% render 'badges',
+        product: product
+    %}
+{% endcomment %}
+
+{% if product.available == false %}
+  <span class="badge bg-{{ settings.badge_color }}">{{ 'products.product.sold_out' | t }}</span>
+{% elsif product.compare_at_price > product.price and product.available %}
+{% liquid
+  comment
+  Products with variants should only ever display the "Sale text"
+  endcomment
+  assign badge_type = settings.sale_badge_type
+  unless product.has_only_default_variant
+    assign badge_type = "text"
+  endunless
+%}
+  {% case badge_type %}
+    {% when 'text' %}
+      <span class="badge bg-{{ settings.badge_color }}">{{ 'products.product.badge.on_sale' | t }}</span>
+    {% when 'amount' %}
+      {% assign amount_discount = product.compare_at_price | minus: product.price | money %}
+      <span class="badge bg-{{ settings.badge_color }}">{{ 'products.product.badge.save' | t: value: amount_discount }}</span>
+    {% when 'percentage' %}
+      {% assign percentage_discount = product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price | append: '%' %}
+      <span class="badge bg-{{ settings.badge_color }}">{{ 'products.product.badge.save' | t: value: percentage_discount }}</span>
+  {% endcase %}
+{% endif %}
+{% assign custom_badges = product.metafields.squiggle_and_code.badges.value %}
+{% if custom_badges != blank %}
+  {% for badge in custom_badges %}
+    <span class="badge bg-{{ settings.badge_color }}">{{ badge }}</span>
+  {% endfor %}
+{% endif %}

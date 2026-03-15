@@ -1,0 +1,53 @@
+{% comment %}
+    Renders a countdown timer with settings to display a custom message if the countdown has been reached.
+
+    Accepts:
+    - end_date: {String} MM/DD/YYYY format
+    - end_time: {String} HH-MM 24 hr format
+    - show_after {Boolean} Should a custom message be displayed upon countdown time being reached.
+    - after_message {String} Message to display after timer expires.
+
+    Usage:
+    {% render 'block-countdown',
+        end_date: block.settings.end_date,
+        end_time: block.settings.end_time,
+        show_after: block.settings.show_after,
+        after_message: block.settings.after_message
+    %}
+{% endcomment %}
+<countdown-timer data-countdown-date="{{ end_date | strip }} {{ end_time | strip }}" data-countdown-complete="{{ show_after }}" data-countdown-complete-message="{{ after_message }}" data-label-days="{{ 'sections.countdown.days' | t }}" data-label-hours="{{ 'sections.countdown.hours' | t }}" data-label-minutes="{{ 'sections.countdown.minutes' | t }}" data-label-seconds="{{ 'sections.countdown.seconds' | t }}">
+    <div class="countdown__clock grid grid--4">
+        <div id="countdownDays">
+            <div class="countdown__clock-timer"{% if number_font_size %} style="--override-font-size: {{ number_font_size }}px;"{% endif %}>
+                &nbsp;
+            </div>
+            <div class="countdown__clock-text"{% if text_font_size %} style="--override-font-size: {{ text_font_size }}px;"{% endif %}>
+                {{ 'sections.countdown.days' | t }}
+            </div>
+        </div>
+        <div id="countdownHours">
+            <div class="countdown__clock-timer"{% if number_font_size %} style="--override-font-size: {{ number_font_size }}px;"{% endif %}>
+                &nbsp;
+            </div>
+            <div class="countdown__clock-text"{% if text_font_size %} style="--override-font-size: {{ text_font_size }}px;"{% endif %}>
+                {{ 'sections.countdown.hours' | t }}
+            </div>
+        </div>
+        <div id="countdownMinutes">
+            <div class="countdown__clock-timer"{% if number_font_size %} style="--override-font-size: {{ number_font_size }}px;"{% endif %}>
+                &nbsp;
+            </div>
+            <div class="countdown__clock-text"{% if text_font_size %} style="--override-font-size: {{ text_font_size }}px;"{% endif %}>
+                {{ 'sections.countdown.minutes' | t }}
+            </div>
+        </div>
+        <div id="countdownSeconds">
+            <div class="countdown__clock-timer"{% if number_font_size %} style="--override-font-size: {{ number_font_size }}px;"{% endif %}>
+                &nbsp;
+            </div>
+            <div class="countdown__clock-text"{% if text_font_size %} style="--override-font-size: {{ text_font_size }}px;"{% endif %}>
+                {{ 'sections.countdown.seconds' | t }}
+            </div>
+        </div>
+    </div>
+</countdown-timer>

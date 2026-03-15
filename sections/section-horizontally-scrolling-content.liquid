@@ -1,0 +1,263 @@
+{%- if section.blocks.size > 0 -%}
+  {%- liquid
+    case section.settings.scroll_speed
+      when 'slow'
+        assign scroll_speed = 70
+      when 'medium'
+        assign scroll_speed = 30
+      when 'fast'
+        assign scroll_speed = 15
+    endcase
+
+    if section.settings.font_style == "body"
+      assign text_block_tag = 'p'
+    else
+      assign text_block_tag = 'h4'
+    endif
+  -%}
+
+  {% style %}
+    #shopify-section-{{ section.id }} .horizontally-scrolling-content--wrapper {
+      --horizontally-scrolling-content-gap: {{ section.settings.gap }}rem;
+      gap: var(--horizontally-scrolling-content-gap);
+    }
+
+    #shopify-section-{{ section.id }} .horizontally-scrolling-content--wrapper .horizontally-scrolling-content {
+      gap: var(--horizontally-scrolling-content-gap);
+      {% unless section.settings.animation_style == "play_on_scroll" %}
+      animation: scroll {{ scroll_speed }}s linear infinite {{ section.settings.scroll_direction }};
+      {% endunless %}
+    }
+
+    #shopify-section-{{ section.id }} .horizontally-scrolling-content-block__text-content {
+      font-size: {{ section.settings.font_size }}%;
+    }
+  {% endstyle %}
+
+  {%- capture horizontally_scrolling_content -%}
+    {%- for block in section.blocks -%}
+      <div class="horizontally-scrolling-content-block" {{ block.shopify_attributes }}>
+        {%- case block.type -%}
+          {%- when 'text' -%}
+            {%- if block.settings.text -%}
+              <div class="horizontally-scrolling-content-block__text">
+                {%- if block.settings.link -%}<a href="{{ block.settings.link }}" class="link-reduce">{%- endif -%}
+                <{{ text_block_tag }} class="horizontally-scrolling-content-block__text-content">{{ block.settings.text }}</{{ text_block_tag }}>
+                {%- if block.settings.link -%}</a>{%- endif -%}
+              </div>
+            {%- endif -%}
+          {%- when 'image' -%}
+            {%- if block.settings.image -%}
+              <div class="horizontally-scrolling-content-block__image">
+                {%- if block.settings.link -%}<a href="{{ block.settings.link }}" class="link-reduce">{%- endif -%}
+                {{ block.settings.image | image_url: width: 100 | image_tag:
+                  loading: 'lazy',
+                  alt: block.settings.image.alt
+                }}
+                {%- if block.settings.link -%}</a>{%- endif -%}
+              </div>
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+        {%- endcase -%}
+      </div>
+    {%- endfor -%}
+  {%- endcapture -%}
+
+  {%- if section.blocks.size < 5 -%}
+    {%- assign num = 5 | divided_by: section.blocks.size | round -%}
+
+    {%- capture horizontally_scrolling_content -%}
+      {{ horizontally_scrolling_content }}
+      {%- for i in (1..num) -%}
+        {{ horizontally_scrolling_content }}
+      {%- endfor -%}
+    {%- endcapture -%}
+  {%- endif -%}
+
+  <div class="section-horizontally-scrolling-content bg-default color-{{ section.settings.color_scheme }}">
+    {% if section.settings.animation_style == "play_on_scroll" %}
+      <scrolling-content data-direction="{{ section.settings.scroll_direction }}" data-speed="10" class="horizontally-scrolling-content--wrapper {{ section.settings.scroll_direction }}{% if section.settings.animation_style == "pause_on_hover" %} hover-pause{% endif %} contained-section">
+    {% else %}
+      <div class="horizontally-scrolling-content--wrapper{% if section.settings.animation_style == "pause_on_hover" %} hover-pause{% endif %} contained-section">
+    {% endif %}
+      <div class="horizontally-scrolling-content">
+        {{ horizontally_scrolling_content }}
+      </div>
+      <div class="horizontally-scrolling-content" aria-hidden="true">
+        {{ horizontally_scrolling_content }}
+      </div>
+    {% if section.settings.animation_style == "play_on_scroll" %}
+      </scrolling-content>
+    {% else %}
+      </div>
+    {% endif %}
+  </div>
+{%- endif -%}
+
+{% if section.settings.animation_style == "play_on_scroll" %}
+  <script src="{{ 'scrolling-content.js' | asset_url }}" defer="defer"></script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "t:sections.horizontally_scrolling_content.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.section_styling"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme_1",
+      "label": "t:sections.all.color_scheme.label"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "rem",
+      "label": "t:sections.horizontally_scrolling_content.settings.gap.label",
+      "default": 1
+    },
+    {
+      "type": "select",
+      "id": "scroll_direction",
+      "label": "t:sections.all.horizontally_scrolling_content.scroll_direction.label",
+      "options": [
+        {
+          "value": "reverse",
+          "label": "t:sections.all.horizontally_scrolling_content.scroll_direction.options__1.label"
+        },
+        {
+          "value": "normal",
+          "label": "t:sections.all.horizontally_scrolling_content.scroll_direction.options__2.label"
+        }
+      ],
+      "default": "reverse"
+    },
+    {
+      "type": "select",
+      "id": "scroll_speed",
+      "label": "t:sections.all.horizontally_scrolling_content.scroll_speed.label",
+      "info": "t:sections.all.horizontally_scrolling_content.scroll_speed.info",
+      "options": [
+        {
+          "value": "slow",
+          "label": "t:sections.all.animations.animation_speed.options__1.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.all.animations.animation_speed.options__2.label"
+        },
+        {
+          "value": "fast",
+          "label": "t:sections.all.animations.animation_speed.options__3.label"
+        }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "select",
+      "id": "animation_style",
+      "label": "t:sections.all.horizontally_scrolling_content.animation_style.label",
+      "options": [
+        {
+          "value": "constant",
+          "label": "t:sections.all.horizontally_scrolling_content.animation_style.options__1.label"
+        },
+        {
+          "value": "pause_on_hover",
+          "label": "t:sections.all.horizontally_scrolling_content.animation_style.options__2.label"
+        },
+        {
+          "value": "play_on_scroll",
+          "label": "t:sections.all.horizontally_scrolling_content.animation_style.options__3.label"
+        }
+      ],
+      "default": "constant"
+    },
+    {
+      "type": "select",
+      "id": "font_style",
+      "label": "t:sections.all.horizontally_scrolling_content.font_style.label",
+      "options": [
+        {
+          "value": "header",
+          "label": "t:sections.all.horizontally_scrolling_content.font_style.options__1.label"
+        },
+        {
+          "value": "body",
+          "label": "t:sections.all.horizontally_scrolling_content.font_style.options__2.label"
+        }
+      ],
+      "default": "header"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 80,
+      "max": 200,
+      "step": 5,
+      "unit": "%",
+      "label": "t:sections.all.horizontally_scrolling_content.font_size.label",
+      "default": 100
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "t:sections.all.text.label",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "About the brand",
+          "label": "t:sections.all.text.label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.all.link_optional.label"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "t:sections.horizontally_scrolling_content.blocks.image.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.all.image.label",
+          "info": "t:sections.horizontally_scrolling_content.blocks.image.settings.image.info"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.all.link_optional.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.horizontally_scrolling_content.presets.name",
+      "category": "t:settings_schema.groups.content",
+      "blocks": [
+        {
+          "type": "text"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    },
+  ]
+}
+{% endschema %}

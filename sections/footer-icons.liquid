@@ -1,0 +1,105 @@
+{%- liquid
+  assign number_of_icons = section.blocks | size
+  assign grid_class = "grid--" | append: number_of_icons 
+
+  assign image_width = section.settings.image_size
+
+-%}
+
+{%- if number_of_icons > 0 -%}
+  <div class="section-footer-icons bg-default color-{{ section.settings.color_scheme }}">
+    <div class="footer-icons contained-section grid {{ grid_class }} grid--1-mobile">
+      {%- for block in section.blocks -%}
+        <div class="footer-icons-block__icon" {{ block.shopify_attributes }}>
+          {%- if block.settings.image -%}
+            <div class="footer-icons-block__image">
+              {{ block.settings.image | image_url: width: image_width | image_tag:
+                loading: 'lazy',
+                alt: block.settings.image.alt
+              }}
+            </div>
+          {%- endif -%}
+          {%- if block.settings.text -%}
+            <div class="footer-icons-block__text">
+              {%- if block.settings.link -%}<a href="{{ block.settings.link }}" class="link-reduce">{%- endif -%}
+                <h4>{{ block.settings.text }}</h4>
+              {%- if block.settings.link -%}</a>{%- endif -%}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.footer-icons.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.section_styling"
+    },
+    {
+      "type": "range",
+      "id": "image_size",
+      "min": 50,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.footer-icons.settings.image_size.label",
+      "default": 75
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme_1",
+      "label": "t:sections.all.color_scheme.label"
+    }
+  ],
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "icon",
+      "name": "t:sections.footer-icons.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.footer-icons.blocks.icon.settings.image.label",
+          "info": "t:sections.footer-icons.blocks.icon.settings.image.info"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Support local",
+          "label": "t:sections.footer-icons.blocks.icon.settings.text.label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.footer-icons.blocks.icon.settings.link.label"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "icon"
+      },
+      {
+        "type": "icon"
+      },
+      {
+        "type": "icon"
+      },
+      {
+        "type": "icon"
+      }
+    ]
+  }
+}
+{% endschema %}

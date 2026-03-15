@@ -1,0 +1,273 @@
+{% comment %}
+  Renders a product card
+
+  Accepts:
+  - card_product: {Object} Product Liquid object
+  - hide_badges {Boolean} Flag to specify if the badges should be hidden
+
+  Usage:
+  {% render 'card-product', card_product: 'product' %}
+{% endcomment %}
+
+{%- liquid
+  assign media_aspect_ratio = settings.image_ratio
+  assign show_secondary_image = settings.show_secondary_image
+  assign show_vendor = settings.show_vendor
+-%}
+
+{%- if card_product and card_product != empty -%}
+  {%- liquid
+    assign ratio = 1
+    if card_product.featured_media and media_aspect_ratio == 'portrait'
+      assign ratio = 0.8
+    elsif card_product.featured_media and media_aspect_ratio == 'adapt'
+      assign ratio = card_product.featured_media.aspect_ratio
+    endif
+    if ratio == 0 or ratio == null
+      assign ratio = 1
+    endif
+  -%}
+
+  <a href="{{ card_product.url }}" class="link-reduce card__link">
+    <div class="card-wrapper ">
+      <div
+        class="
+          card
+          card--standard
+          {% if card_product.featured_media %} card--media{% else %} card--text{% endif %}
+          {% if extend_height %} card--extend-height{% endif %}
+        "
+        style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+      >
+        <div class="card__inner ratio" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
+          {%- if card_product.featured_media -%}
+            <div class="card__media">
+              <div class="media media--transparent media--hover-effect">
+                <img
+                  srcset="
+                    {%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
+                    {%- if card_product.featured_media.width >= 360 -%}{{ card_product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
+                    {%- if card_product.featured_media.width >= 533 -%}{{ card_product.featured_media | image_url: width: 533 }} 533w,{%- endif -%}
+                    {%- if card_product.featured_media.width >= 720 -%}{{ card_product.featured_media | image_url: width: 720 }} 720w,{%- endif -%}
+                    {%- if card_product.featured_media.width >= 940 -%}{{ card_product.featured_media | image_url: width: 940 }} 940w,{%- endif -%}
+                    {%- if card_product.featured_media.width >= 1066 -%}{{ card_product.featured_media | image_url: width: 1066 }} 1066w,{%- endif -%}
+                    {{ card_product.featured_media | image_url }} {% if card_product.featured_media.width and card_product.featured_media.width > 0 %}{{ card_product.featured_media.width }}w{% else %}533w{% endif %}
+                  "
+                  src="{{ card_product.featured_media | image_url: width: 533 }}"
+                  sizes="(min-width: 1400px) 500px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                  alt="{{ card_product.featured_media.alt | escape }}"
+                  class="motion-reduce"
+                  loading="lazy"
+                  width="{{ card_product.featured_media.width }}"
+                  height="{{ card_product.featured_media.height }}"
+                >
+
+                {%- if card_product.media[1] != null and show_secondary_image -%}
+                  <img
+                    srcset="
+                      {%- if card_product.media[1].width >= 165 -%}{{ card_product.media[1] | image_url: width: 165 }} 165w,{%- endif -%}
+                      {%- if card_product.media[1].width >= 360 -%}{{ card_product.media[1] | image_url: width: 360 }} 360w,{%- endif -%}
+                      {%- if card_product.media[1].width >= 533 -%}{{ card_product.media[1] | image_url: width: 533 }} 533w,{%- endif -%}
+                      {%- if card_product.media[1].width >= 720 -%}{{ card_product.media[1] | image_url: width: 720 }} 720w,{%- endif -%}
+                      {%- if card_product.media[1].width >= 940 -%}{{ card_product.media[1] | image_url: width: 940 }} 940w,{%- endif -%}
+                      {%- if card_product.media[1].width >= 1066 -%}{{ card_product.media[1] | image_url: width: 1066 }} 1066w,{%- endif -%}
+                      {{ card_product.media[1] | image_url }} {% if card_product.media[1].width and card_product.media[1].width > 0 %}{{ card_product.media[1].width }}w{% else %}533w{% endif %}
+                    "
+                    src="{{ card_product.media[1] | image_url: width: 533 }}"
+                    sizes="(min-width: 1400px) 500px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                    alt="{{ card_product.media[1].alt | escape }}"
+                    class="motion-reduce"
+                    loading="lazy"
+                    width="{{ card_product.media[1].width }}"
+                    height="{{ card_product.media[1].height }}"
+                  >
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endif -%}
+          <div class="card__content">
+            <div class="card__information">
+              <h3 class="card__heading">
+                {{ card_product.title | escape }}
+              </h3>
+            </div>
+            {%- unless hide_badges -%}
+              <div class="card__badge">
+                {% render 'badges', product: card_product %}
+              </div>
+            {%- endunless -%}
+          </div>
+        </div>
+        <div class="card__content card__content--auto-margins">
+          {%- if settings.enable_quick_add_to_cart
+            and card_product.has_only_default_variant
+            and card_product.selected_or_first_available_variant.available == true
+          -%}
+            <product-form class="product-form">
+              <div class="product-form__error-message-wrapper" role="alert" hidden>
+                {% render 'icons-main', icon: 'cross'%}
+                <span class="product-form__error-message"></span>
+              </div>
+          {%- endif -%}
+          <div class="card__information card__information--product{% if settings.enable_quick_add_to_cart and settings.quick_add_style == 'icon' %} quick-add-icon{% endif %}">
+            <div class="card-information">
+              <h3 class="card__heading{% if card_product.featured_media %} h4{% endif %}"{% if product_title_font_size and product_title_font_size != 0 %} style="--override-font-size: {{ product_title_font_size }}px;"{% endif %}>
+                {{ card_product.title | escape }}
+              </h3>
+              {%- if show_vendor -%}
+                <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
+                <div class="caption-large"{% if product_vendor_font_size and product_vendor_font_size != 0 %} style="--override-font-size: {{ product_vendor_font_size }}px;"{% endif %}>{{ card_product.vendor }}</div>
+              {%- endif -%}
+              {% render 'price', product: card_product, price_class: '', price_font_size: product_price_font_size %}
+            </div>
+            {% if settings.enable_quick_add_to_cart and settings.quick_add_style == 'button' %}
+              <div class="card__product-button">
+                {%- if card_product.has_only_default_variant -%}
+                  {%- if card_product.selected_or_first_available_variant.available == true -%}
+                    {%- form 'product',
+                      card_product,
+                      id: product_form_id,
+                      class: 'form',
+                      novalidate: 'novalidate',
+                      data-type: 'add-to-cart-form'
+                    -%}
+                      <input type="hidden" name="id" value="{{ card_product.selected_or_first_available_variant.id }}">
+                      <input type="hidden" name="quantity" value="1">
+                      <button
+                        type="submit"
+                        name="add"
+                        class="button outline button--full-width"
+                      >
+                        {{ 'products.product.add_to_cart' | t }}
+                        <div class="loading-overlay__spinner hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="spinner" role="presentation" aria-hidden="true" focusable="false">
+                          <g fill="currentColor">
+                            <circle cx="24" cy="5" r="5" fill="currentColor"></circle>
+                            <circle cx="37.435" cy="10.565" r="4.5" fill="currentColor"></circle>
+                            <circle cx="43" cy="24" r="4" fill="currentColor"></circle>
+                            <circle cx="37.435" cy="37.435" r="3.5" fill="currentColor"></circle>
+                            <circle cx="24" cy="43" r="3" fill="currentColor"></circle>
+                            <circle cx="10.565" cy="37.435" r="2.5" fill="currentColor"></circle>
+                            <circle cx="5" cy="24" r="2" fill="currentColor"></circle>
+                            <circle cx="10.565" cy="10.565" r="1.5" fill="currentColor"></circle>
+                          </g>
+                        </svg>
+                      </div>
+                      </button>
+                    {%- endform -%}
+                  {%- else -%}
+                    <a href="{{ card_product.url }}" class="button outline button--full-width">
+                      {{ 'products.product.sold_out' | t }}
+                    </a>
+                  {%- endif -%}
+                {%- else -%}
+                  <a href="{{ card_product.url }}" class="button outline button--full-width">
+                    {{ 'products.product.view_options' | t }}
+                  </a>
+                {%- endif -%}
+              </div>
+            {% endif %}
+            {% if settings.enable_quick_add_to_cart and settings.quick_add_style == 'icon' %}
+              <div class="card__product-link">
+                {%- if card_product.has_only_default_variant
+                  and card_product.selected_or_first_available_variant.available == true
+                -%}
+
+                  {%- form 'product',
+                    card_product,
+                    id: product_form_id,
+                    class: 'form',
+                    novalidate: 'novalidate',
+                    data-type: 'add-to-cart-form'
+                  -%}
+                    <input type="hidden" name="id" value="{{ card_product.selected_or_first_available_variant.id }}">
+                    <input type="hidden" name="quantity" value="1">
+                    <div class="collection-form__buttons">
+                      <button
+                        type="submit"
+                        name="add"
+                        class="collection-form__submit"
+                      >
+                        <span class="link-reduce">
+                          {% render 'icons-main', icon: 'plus' %}
+                        </span>
+                      </button>
+                    </div>
+                    <div class="loading-overlay__spinner hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="spinner" role="presentation" aria-hidden="true" focusable="false">
+                        <g fill="currentColor">
+                          <circle cx="24" cy="5" r="5" fill="currentColor"></circle>
+                          <circle cx="37.435" cy="10.565" r="4.5" fill="currentColor"></circle>
+                          <circle cx="43" cy="24" r="4" fill="currentColor"></circle>
+                          <circle cx="37.435" cy="37.435" r="3.5" fill="currentColor"></circle>
+                          <circle cx="24" cy="43" r="3" fill="currentColor"></circle>
+                          <circle cx="10.565" cy="37.435" r="2.5" fill="currentColor"></circle>
+                          <circle cx="5" cy="24" r="2" fill="currentColor"></circle>
+                          <circle cx="10.565" cy="10.565" r="1.5" fill="currentColor"></circle>
+                        </g>
+                      </svg>
+                    </div>
+                  {%- endform -%}
+                {%- else -%}
+                  <span class="link-reduce">{% render 'icons-main', icon: 'diagonal-arrow' %}</span>
+                {%- endif -%}
+              </div>
+            {% endif %}
+          </div>
+          {%- if settings.enable_quick_add_to_cart
+            and card_product.has_only_default_variant
+            and card_product.selected_or_first_available_variant.available == true
+          -%}
+          </product-form>
+        {%- endif -%}
+        </div>
+      </div>
+    </div>
+    {% if settings.show_bottom_divider %}
+      <hr class="card__product--divider">
+    {% endif %}
+  </a>
+{%- else -%}
+  <div class="card-wrapper">
+    <div
+      class="
+        card
+        card--standard
+        card--text
+        {% if extend_height %} card--extend-height{% endif %}
+      "
+      style="--ratio-percent: 100%;"
+    >
+      <div class="card__inner ratio" style="--ratio-percent: 100%;">
+        <div class="card__content">
+          <div class="card__information">
+            <h3 class="card__heading">
+              <a role="link" aria-disabled="true" class="full-unstyled-link">
+                {{ 'onboarding.product_title' | t }}
+              </a>
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="card__content">
+        <div class="card__information">
+          <h3 class="card__heading h4">
+            <a role="link" aria-disabled="true" class="full-unstyled-link">
+              {{ 'onboarding.product_title' | t }}
+            </a>
+          </h3>
+          <div class="card-information">
+            {%- if show_vendor -%}
+              <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
+              <div class="light">{{ 'products.product.vendor' | t }}</div>
+            {%- endif -%}
+            {% render 'price' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if settings.show_bottom_divider %}
+    <hr class="card__product--divider">
+  {% endif %}
+{%- endif -%}

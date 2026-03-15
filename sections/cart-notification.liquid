@@ -1,0 +1,639 @@
+{%- if section.settings.cart_style == 'minimal' -%}
+  <cart-notification>
+    <div class="cart-notification-wrapper">
+      <div id="cart-notification" class="cart-notification focus-inset bg-default border-accent color-{{ section.settings.color_scheme }}{% if section.settings.show_preview %} active{% endif %}" aria-modal="true" aria-label="{{ 'general.cart.item_added' | t }}" role="dialog" tabindex="-1">
+        <button type="button" class="cart-notification__close modal__close-button link-reduce primary" aria-label="{{ 'accessibility.close' | t }}">
+          {% render 'icons-main', icon: 'cross' %}
+        </button>
+        <div class="cart-notification__header">
+          <h4 class="cart-notification__heading">{{ 'general.cart.item_added' | t }}</h4>
+        </div>
+        <div id="cart-notification-product" class="cart-notification-product"></div>
+        <div class="cart-notification__links">
+          {%- case section.settings.secondary_button -%}
+            {%- when 'continue_shopping' -%}
+              <button
+                type="button"
+                id="cart-notification-button"
+                class="button outline button--full-width"
+                aria-label="{{ 'accessibility.close' | t }}"
+              >
+                {{ 'general.continue_shopping' | t }}
+              </button>
+            {%- when 'view_cart' -%}
+              <a
+                href="{{ routes.cart_url }}"
+                id="cart-notification-button"
+                class="button outline button--full-width"
+              >
+                {{ 'general.view_cart' | t }}
+              </a>
+            {%- when 'hidden' -%}
+          {%- endcase -%}
+          {%- case section.settings.primary_button -%}
+            {%- when 'checkout' -%}
+              <form action="{{ routes.cart_url }}" method="post" id="cart-notification-form">
+                <button class="button solid button--full-width button--styled" name="checkout">{{ 'sections.cart.checkout' | t }}</button>
+              </form>
+            {%- when 'view_cart' -%}
+              <a
+                href="{{ routes.cart_url }}"
+                id="cart-notification-button"
+                class="button solid button--full-width"
+              >
+                {{ 'general.cart.view_cart_and_checkout' | t }}
+              </a>
+            {%- when 'hidden' -%}
+          {%- endcase -%}
+        </div>
+      </div>
+    </div>
+  </cart-notification>
+  {% style %}
+    .cart-notification {
+      display: none;
+    }
+  {% endstyle %}
+{%- elsif section.settings.cart_style == 'extended' -%}
+  <div class="cart-notification--modal color-{{ section.settings.color_scheme }}">
+    <cart-notification>
+      <div class="cart-notification-wrapper">
+        <div id="cart-notification" class="cart-modal contained-section--narrow focus-inset bg-default border-accent{% if section.settings.show_preview %} active{% endif %}" aria-modal="true" aria-label="{{ 'general.cart.item_added' | t }}" role="dialog" tabindex="-1">
+          <button type="button" class="cart-notification__close modal__close-button link-reduce primary" aria-label="{{ 'accessibility.close' | t }}">
+            {% render 'icons-main', icon: 'cross' %}
+          </button>
+          <div class="cart-modal--content-wrapper cart-modal--notification-main">
+            <div class="cart-notification__header">
+              <h4 class="cart-notification__heading">{{ 'general.cart.item_added' | t }}</h4>
+            </div>
+            <div id="cart-notification-product" class="cart-notification-product"></div>
+          </div>
+          <div class="cart-modal--content-wrapper cart-modal--notification-secondary">
+            <div class="cart-modal--notification-secondary-content">
+              {%- for block in section.blocks -%}
+                {%- case block.type -%}
+                  {%- when 'product_benefits' -%}
+                    <div class="cart-modal--product-benefits" {{ block.shopify_attributes }}>
+                      {%- if block.settings.header != blank -%}
+                        <{{ block.settings.header_tag }} class="cart-modal--notification-secondary-content__heading">
+                          {{ block.settings.header | escape }}
+                        </{{ block.settings.header_tag }}>
+                      {%- endif -%}
+                      {% liquid
+                        assign benefit_one_icon = product.metafields.squiggle_and_code.cart_benefits_one_icon
+                        if benefit_one_icon == blank
+                          assign benefit_one_icon = block.settings.benefit_1_icon
+                        endif
+                        assign benefit_one_text = product.metafields.squiggle_and_code.cart_benefits_one_text
+                        if benefit_one_text == blank
+                          assign benefit_one_text = block.settings.benefit_1_text
+                        endif
+                       %}
+                      {%- if benefit_one_text != blank -%}
+                        <div class="block icon-with-text">
+                          {% render 'block-icon-with-text',
+                            icon: benefit_one_icon,
+                            text: benefit_one_text,
+                            small: true
+                          %}
+                        </div>
+                      {%- endif -%}
+                      {% liquid
+                        assign benefit_two_icon = product.metafields.squiggle_and_code.cart_benefits_two_icon
+                        if benefit_two_icon == blank
+                          assign benefit_two_icon = block.settings.benefit_2_icon
+                        endif
+                        assign benefit_two_text = product.metafields.squiggle_and_code.cart_benefits_two_text
+                        if benefit_two_text == blank
+                          assign benefit_two_text = block.settings.benefit_2_text
+                        endif
+                      %}
+                      {%- if benefit_two_text != blank -%}
+                        <div class="block icon-with-text">
+                          {% render 'block-icon-with-text', icon: benefit_two_icon, text: benefit_two_text, small: true %}
+                        </div>
+                      {%- endif -%}
+                      {% liquid
+                        assign benefit_three_icon = product.metafields.squiggle_and_code.cart_benefits_three_icon
+                        if benefit_three_icon == blank
+                          assign benefit_three_icon = block.settings.benefit_3_icon
+                        endif
+                        assign benefit_three_text = product.metafields.squiggle_and_code.cart_benefits_three_text
+                        if benefit_three_text == blank
+                          assign benefit_three_text = block.settings.benefit_3_text
+                        endif
+                      %}
+                      {%- if benefit_three_text != blank -%}
+                        <div class="block icon-with-text">
+                          {% render 'block-icon-with-text', icon: benefit_three_icon, text: benefit_three_text, small: true %}
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  {%- when 'upsells' -%}
+                    <div class="cart-modal--upsells" {{ block.shopify_attributes }}>
+                      {%- if block.settings.header != blank -%}
+                        <{{ block.settings.header_tag }} class="cart-modal--notification-secondary-content__heading">
+                          {{ block.settings.header | escape }}
+                        </{{ block.settings.header_tag }}>
+                      {%- endif -%}
+                      {% liquid
+                        assign product_one = product.metafields.squiggle_and_code.cart_upsells_one.value
+                        if product_one == blank
+                          assign product_one = block.settings.product_1
+                        endif
+                        assign product_two = product.metafields.squiggle_and_code.cart_upsells_two.value
+                        if product_two == blank
+                          assign product_two = block.settings.product_2
+                        endif
+                      %}
+                      {%- if product_one != blank or product_two != blank -%}
+                        <div class="cart-modal--upsells-products grid grid--2" role="list">
+                          {%- if product_one != blank -%}
+                            <div class="">
+                              {% render 'card-product',
+                                card_product: product_one,
+                                hide_badges: true
+                              %}
+                            </div>
+                          {%- endif -%}
+                          {%- if product_two != blank -%}
+                            <div class="">
+                              {% render 'card-product',
+                                card_product: product_two,
+                                hide_badges: true
+                              %}
+                            </div>
+                          {%- endif -%}
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  {%- when 'reviews' -%}
+                    <div class="cart-modal--reviews" {{ block.shopify_attributes }}>
+                      {%- if block.settings.header != blank -%}
+                        <{{ block.settings.header_tag }} class="cart-modal--notification-secondary-content__heading">
+                          {{ block.settings.header | escape }}
+                        </{{ block.settings.header_tag }}>
+                      {%- endif -%}
+                      {% liquid
+                        assign quote = product.metafields.squiggle_and_code.cart_reviews_quote | metafield_tag
+                        assign name = product.metafields.squiggle_and_code.cart_reviews_name
+                        if quote == blank
+                          assign quote = block.settings.quote
+                          assign name = block.settings.reviewer_name
+                        endif
+                        assign stars = product.metafields.squiggle_and_code.cart_reviews_stars
+                        if stars == blank or stars > 5 or stars < 1
+                          assign stars = block.settings.stars
+                        endif
+                      %}
+                      {%- if quote != blank -%}
+                        {%- style -%}
+                          #shopify-section-{{ section.id }} .cart-modal--reviews .stars {
+                            color: {{ block.settings.star_color }};
+                          }
+                        {%- endstyle -%}
+                        <div class="reviews__column">
+                          <div class="stars">
+                            {%- for i in (1..stars) -%}
+                              &#9733;
+                            {%- endfor -%}
+                            {%- if stars != 5 -%}
+                              {%- for i in (stars..4) -%}
+                                &#9734;
+                              {%- endfor -%}
+                            {%- endif -%}
+                          </div>
+                          <div class="quote rte">
+                            {{ quote }}
+                          </div>
+                          {%- if name != blank -%}
+                            <div class="name">{{ name }}</div>
+                          {%- endif -%}
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  {%- when 'content' -%}
+                    <div class="cart-modal--content" {{ block.shopify_attributes }}>
+                      {%- if block.settings.header != blank -%}
+                        <{{ block.settings.header_tag }} class="cart-modal--notification-secondary-content__heading">
+                          {{ block.settings.header | escape }}
+                        </{{ block.settings.header_tag }}>
+                      {%- endif -%}
+                      {% liquid
+                        assign text = product.metafields.squiggle_and_code.cart_content_text | metafield_tag
+                        if text == blank
+                          assign text = block.settings.text
+                        endif
+                        assign image = product.metafields.squiggle_and_code.cart_content_image
+                        if image == blank
+                          assign image = block.settings.image
+                        endif
+                      %}
+                      {%- if text != blank -%}
+                        <div class="rte">{{ text }}</div>
+                      {%- endif -%}
+                      {%- if image != blank -%}
+                        <div class="cart-modal--content-image">
+                          {% assign width = 550 %}
+                          {{ image | image_url: width: width | image_tag:
+                            loading: 'lazy',
+                            alt: image.alt,
+                            class: 'no-border-radius'
+                          }}
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  {%- endcase -%}
+              {%- endfor -%}
+            </div>
+            <div class="cart-notification__links">
+              {%- case section.settings.secondary_button -%}
+                {%- when 'continue_shopping' -%}
+                  <button
+                    type="button"
+                    id="cart-notification-button"
+                    class="button outline button--full-width"
+                    aria-label="{{ 'accessibility.close' | t }}"
+                  >
+                    {{ 'general.continue_shopping' | t }}
+                  </button>
+                {%- when 'view_cart' -%}
+                  <a
+                    href="{{ routes.cart_url }}"
+                    id="cart-notification-button"
+                    class="button outline button--full-width"
+                  >
+                    {{ 'general.view_cart' | t }}
+                  </a>
+                {%- when 'hidden' -%}
+              {%- endcase -%}
+              {%- case section.settings.primary_button -%}
+                {%- when 'checkout' -%}
+                  <form action="{{ routes.cart_url }}" method="post" id="cart-notification-form">
+                    <button class="button solid button--full-width button--styled" name="checkout">{{ 'sections.cart.checkout' | t }}</button>
+                  </form>
+                {%- when 'view_cart' -%}
+                  <a
+                    href="{{ routes.cart_url }}"
+                    id="cart-notification-button"
+                    class="button solid button--full-width"
+                  >
+                    {{ 'general.cart.view_cart_and_checkout' | t }}
+                  </a>
+                {%- when 'hidden' -%}
+              {%- endcase -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </cart-notification>
+  </div>
+{%- endif -%}
+
+<script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "t:sections.cart_notification.name",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_preview",
+      "label": "t:sections.cart_notification.settings.show_preview.label",
+      "info": "t:sections.cart_notification.settings.show_preview.info",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "cart_style",
+      "label": "t:sections.cart_notification.settings.cart_style.label",
+      "info": "t:sections.cart_notification.settings.cart_style.info",
+      "options": [
+          {
+          "value": "minimal",
+          "label": "t:sections.cart_notification.settings.cart_style.options__1.label"
+          },
+          {
+          "value": "extended",
+          "label": "t:sections.cart_notification.settings.cart_style.options__2.label"
+          }
+      ],
+      "default": "minimal"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme_1",
+      "label": "t:sections.all.color_scheme.label"
+    },
+    {
+      "type": "select",
+      "id": "secondary_button",
+      "label": "t:sections.cart_notification.settings.secondary_button.label",
+      "options": [
+          {
+          "value": "continue_shopping",
+          "label": "t:sections.cart_notification.settings.secondary_button.options__1.label"
+          },
+          {
+          "value": "view_cart",
+          "label": "t:sections.cart_notification.settings.secondary_button.options__2.label"
+          },
+          {
+          "value": "hidden",
+          "label": "t:sections.cart_notification.settings.secondary_button.options__3.label"
+          }
+      ],
+      "default": "continue_shopping"
+    },
+    {
+      "type": "select",
+      "id": "primary_button",
+      "label": "t:sections.cart_notification.settings.primary_button.label",
+      "options": [
+          {
+          "value": "checkout",
+          "label": "t:sections.cart_notification.settings.primary_button.options__1.label"
+          },
+          {
+          "value": "view_cart",
+          "label": "t:sections.cart_notification.settings.primary_button.options__2.label"
+          }
+      ],
+      "default": "checkout"
+    }
+  ],
+  "max_blocks": 1,
+  "blocks": [
+    {
+      "type": "product_benefits",
+      "name": "t:sections.cart_notification.blocks.product_benefits.name",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.cart_notification.blocks.product_benefits.settings.paragraph.content"
+        },
+        {
+          "type": "text",
+          "id": "header",
+          "label": "t:sections.all.header.label",
+          "default": "Why you'll love it"
+        },
+        {
+          "type": "select",
+          "id": "header_tag",
+          "label": "t:sections.all.header.header_tag.label",
+          "options": [
+            {
+              "value": "h1",
+              "label": "t:sections.all.header.header_tag.h1.label"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.all.header.header_tag.h2.label"
+            },
+            {
+              "value": "h3",
+              "label": "t:sections.all.header.header_tag.h3.label"
+            },
+            {
+              "value": "h4",
+              "label": "t:sections.all.header.header_tag.h4.label"
+            },
+            {
+              "value": "h5",
+              "label": "t:sections.all.header.header_tag.h5.label"
+            },
+            {
+              "value": "h6",
+              "label": "t:sections.all.header.header_tag.h6.label"
+            }
+          ],
+          "default": "h3"
+        },
+        {
+          "type": "text",
+          "id": "benefit_1_text",
+          "label": "t:sections.cart_notification.blocks.product_benefits.settings.benefit_1_text.label",
+          "default": "Add your unique selling points here"
+        },
+        {
+          "type": "image_picker",
+          "id": "benefit_1_icon",
+          "label": "t:sections.cart_notification.blocks.product_benefits.settings.benefit_1_icon.label"
+        },
+        {
+          "type": "text",
+          "id": "benefit_2_text",
+          "label": "t:sections.cart_notification.blocks.product_benefits.settings.benefit_2_text.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "benefit_2_icon",
+          "label": "t:sections.cart_notification.blocks.product_benefits.settings.benefit_2_icon.label"
+        },
+        {
+          "type": "text",
+          "id": "benefit_3_text",
+          "label": "t:sections.cart_notification.blocks.product_benefits.settings.benefit_3_text.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "benefit_3_icon",
+          "label": "t:sections.cart_notification.blocks.product_benefits.settings.benefit_3_icon.label"
+        }
+      ]
+    },
+    {
+      "type": "upsells",
+      "name": "t:sections.cart_notification.blocks.upsells.name",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.cart_notification.blocks.upsells.settings.paragraph.content"
+        },
+        {
+          "type": "text",
+          "id": "header",
+          "label": "t:sections.all.header.label",
+          "default": "You might also like..."
+        },
+        {
+          "type": "select",
+          "id": "header_tag",
+          "label": "t:sections.all.header.header_tag.label",
+          "options": [
+            {
+              "value": "h1",
+              "label": "t:sections.all.header.header_tag.h1.label"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.all.header.header_tag.h2.label"
+            },
+            {
+              "value": "h3",
+              "label": "t:sections.all.header.header_tag.h3.label"
+            },
+            {
+              "value": "h4",
+              "label": "t:sections.all.header.header_tag.h4.label"
+            },
+            {
+              "value": "h5",
+              "label": "t:sections.all.header.header_tag.h5.label"
+            },
+            {
+              "value": "h6",
+              "label": "t:sections.all.header.header_tag.h6.label"
+            }
+          ],
+          "default": "h3"
+        },
+        {
+          "type": "product",
+          "id": "product_1",
+          "label": "t:sections.cart_notification.blocks.upsells.settings.product_1.label"
+        },
+        {
+          "type": "product",
+          "id": "product_2",
+          "label": "t:sections.cart_notification.blocks.upsells.settings.product_2.label"
+        }
+      ]
+    },
+    {
+      "type": "reviews",
+      "name": "t:sections.cart_notification.blocks.reviews.name",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.cart_notification.blocks.reviews.settings.paragraph.content"
+        },
+        {
+          "type": "text",
+          "id": "header",
+          "label": "t:sections.all.header.label",
+          "default": "What our customers say"
+        },
+        {
+          "type": "select",
+          "id": "header_tag",
+          "label": "t:sections.all.header.header_tag.label",
+          "options": [
+            {
+              "value": "h1",
+              "label": "t:sections.all.header.header_tag.h1.label"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.all.header.header_tag.h2.label"
+            },
+            {
+              "value": "h3",
+              "label": "t:sections.all.header.header_tag.h3.label"
+            },
+            {
+              "value": "h4",
+              "label": "t:sections.all.header.header_tag.h4.label"
+            },
+            {
+              "value": "h5",
+              "label": "t:sections.all.header.header_tag.h5.label"
+            },
+            {
+              "value": "h6",
+              "label": "t:sections.all.header.header_tag.h6.label"
+            }
+          ],
+          "default": "h3"
+        },
+        {
+          "type": "color",
+          "id": "star_color",
+          "default": "#edb334",
+          "label": "t:sections.cart_notification.blocks.reviews.settings.star_color.label"
+        },
+        {
+          "type": "range",
+          "id": "stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5,
+          "label": "t:sections.cart_notification.blocks.reviews.settings.stars.label"
+        },
+        {
+          "type": "richtext",
+          "id": "quote",
+          "default": "<p><em>Add a review to help build trust with your customers.</em></p>",
+          "label": "t:sections.cart_notification.blocks.reviews.settings.quote.label"
+        },
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "default": "~ Customer name",
+          "label": "t:sections.cart_notification.blocks.reviews.settings.reviewer_name.label"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "t:sections.cart_notification.blocks.content.name",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.cart_notification.blocks.content.settings.paragraph.content"
+        },
+        {
+          "type": "text",
+          "id": "header",
+          "label": "t:sections.all.header.label"
+        },
+        {
+          "type": "select",
+          "id": "header_tag",
+          "label": "t:sections.all.header.header_tag.label",
+          "options": [
+            {
+              "value": "h1",
+              "label": "t:sections.all.header.header_tag.h1.label"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.all.header.header_tag.h2.label"
+            },
+            {
+              "value": "h3",
+              "label": "t:sections.all.header.header_tag.h3.label"
+            },
+            {
+              "value": "h4",
+              "label": "t:sections.all.header.header_tag.h4.label"
+            },
+            {
+              "value": "h5",
+              "label": "t:sections.all.header.header_tag.h5.label"
+            },
+            {
+              "value": "h6",
+              "label": "t:sections.all.header.header_tag.h6.label"
+            }
+          ],
+          "default": "h3"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:sections.all.text.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.all.image.label"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,54 @@
+{% comment %}
+    Renders the global section styling including top divider and accent image.
+
+    Accepts:
+    - section_id: {String} Unique section id.
+    - accent_image {Object} Accent image object.
+    - accent_vertical_anchor {String} Value is either top or bottom.
+    - accent_horizontal_anchor {String} Value is either left, or right.
+    - accent_size {Integer} Reflects the size of the accent image.
+    - hide_accent_on_mobile {Boolean} If the accent image should display on mobile or not.
+
+    Usage:
+    {% render 'section-styling',
+        section_id: section.id,
+        accent_image: section.settings.accent_image,
+        accent_vertical_anchor: section.settings.accent_vertical_anchor,
+        accent_horizontal_anchor: section.settings.accent_horizontal_anchor,
+        accent_size: section.settings.accent_size,
+        hide_accent_on_mobile: section.settings.hide_accent_on_mobile,
+        accent_cover: section.settings.accent_cover
+    %}
+{% endcomment %}
+
+{% liquid 
+    if accent_cover
+        assign height = "100%"
+    else
+        assign height = accent_size | append: "%"
+    endif
+    assign top = accent_vertical_anchor | minus: accent_size
+    if top <= 0
+        assign top = 0
+    endif
+%}
+#shopify-section-{{ section_id }} .section-outer::before {
+    {% if accent_image %}
+        background-image: url({{ accent_image | image_url: width: accent_image.width }});
+    {% endif %}
+    height: {{ height }};
+    width: 100%;
+    {% if accent_cover %}
+        background-size: cover;
+    {% else %}
+        top: {% if top == 0 %}0{% else %}calc({{ accent_vertical_anchor }}% - {{ height }}){% endif %};
+        background-position-x: {{ accent_horizontal_anchor }}%;
+    {% endif %}
+}
+{% if hide_accent_on_mobile %}
+    @media screen and (max-width: 749px) {
+        #shopify-section-{{ section_id }} .section-outer::before {
+            content: none;
+        }
+    }
+{% endif %}

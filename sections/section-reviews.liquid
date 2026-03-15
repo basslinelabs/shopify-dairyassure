@@ -1,0 +1,461 @@
+{%- liquid
+  assign show_top_divider = section.settings.show_top_divider
+  assign grid_class = 'grid--' | append: section.settings.columns_desktop
+  assign grid_class = grid_class | append: ' grid--'
+  assign columns_mobile = section.settings.columns_mobile
+  if columns_mobile == 'default'
+    assign columns_mobile = settings.columns_mobile
+  endif
+  assign grid_class = grid_class | append: columns_mobile
+  assign grid_class = grid_class | append: '-mobile'
+  assign title = section.settings.title | escape
+  if section.settings.show_accent_image and section.settings.accent_image
+    assign show_accent_image = true
+  endif
+  if section.settings.layout_mobile == "slider" or section.settings.layout_desktop == "slider"
+    assign build_slider = true
+  endif
+
+-%}
+
+{% if build_slider %}
+  <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'slider.js' | asset_url }}" defer="defer"></script>
+  {{ 'slider.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
+{%- style -%}
+  {% if show_accent_image %}
+    {% render 'styling-section',
+      section_id: section.id,
+      accent_image: section.settings.accent_image,
+      accent_vertical_anchor: section.settings.accent_vertical_anchor,
+      accent_horizontal_anchor: section.settings.accent_horizontal_anchor,
+      accent_size: section.settings.accent_size,
+      hide_accent_on_mobile: section.settings.hide_accent_on_mobile,
+      accent_cover: section.settings.accent_cover
+    %}
+  {% endif %}
+  #shopify-section-{{ section.id }} .stars {
+    color: {{ section.settings.star_color }};
+  }
+{%- endstyle -%}
+
+{%- if show_top_divider -%}
+  <div class="top-divider color-{{ section.settings.divider_color_scheme }}"></div>
+{%- endif -%}
+
+<div class="section-outer{% if show_top_divider %} has-divider{% endif %}">
+  <div class="section-standard section--reviews section-content bg-default color-{{ section.settings.color_scheme }}"{% if section.settings.override_default_styles %} style="--override-padding-top: {{ section.settings.override_space_above }}px; --override-padding-bottom: {{ section.settings.override_space_below }}px;"{% endif %}>
+    <div class="contained-section alignment">
+      <div class="section-intro">
+        <{{ section.settings.header_tag }} class="in-front-of-accent-image"{% if section.settings.override_default_styles %} style="--override-font-size: {{ section.settings.override_header_font_size }}px;"{% endif %}>{{ title }}</{{ section.settings.header_tag }}>
+        {%- if section.settings.text != blank -%}
+          <div class="in-front-of-accent-image rte"{% if section.settings.override_default_styles %} style="--override-font-size: {{ section.settings.override_text_font_size }}px;"{% endif %}>{{ section.settings.text }}</div>
+        {%- endif -%}
+      </div>
+      {% if build_slider %}
+        <column-slider data-mobile-layout="{{ section.settings.layout_mobile }}" data-mobile-slides-per-view="{{ columns_mobile }}" data-desktop-layout="{{ section.settings.layout_desktop }}" data-desktop-slides-per-view="{{ section.settings.columns_desktop }}" id="column-slider-{{ section.id }}">
+          <div class="swiper swiper-column-slider" id="swiper-{{ section.id }}">
+            <div class="reviews-content swiper-wrapper grid {{ grid_class }}">
+      {% else %}
+        <div class="reviews-content grid {{ grid_class }}">
+      {% endif %}
+        {%- for block in section.blocks -%}
+          {%- if block.settings.quote != blank -%}
+            <div class="reviews__column{% if build_slider %} swiper-slide{% endif %}{% if show_accent_image and block.settings.show_in_front_of_accent_image %} in-front-of-accent-image{% endif %}" {{ block.shopify_attributes }}>
+              <div class="stars">
+                {%- for i in (1..block.settings.stars) -%}
+                  &#9733;
+                {%- endfor -%}
+                {%- if block.settings.stars != 5 -%}
+                  {%- for i in (block.settings.stars..4) -%}
+                    &#9734;
+                  {%- endfor -%}
+                {%- endif -%}
+              </div>
+              <div class="quote rte"{% if section.settings.override_default_styles %} style="--override-font-size: {{ section.settings.override_quote_font_size }}px;"{% endif %}>
+                {{ block.settings.quote }}
+              </div>
+              {%- if block.settings.reviewer_name != blank -%}
+                <div class="name rte"{% if section.settings.override_default_styles %} style="--override-font-size: {{ section.settings.override_name_font_size }}px;"{% endif %}>{{ block.settings.reviewer_name }}</div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      {% if build_slider %}
+              </div>
+            </div>
+            <div class="swiper-pagination column-slider--pagination"></div>
+            <div class="swiper-button-prev column-slider--navigation">{% render 'icons-main', icon: 'caret' %}</div>
+            <div class="swiper-button-next column-slider--navigation">{% render 'icons-main', icon: 'caret' %}</div>
+        </column-slider>
+      {% else %}
+        </div>
+      {% endif %}
+          
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.reviews.name",
+  "tag": "section",
+  "class": "section section-reviews",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.section_content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "default": "From our customers",
+      "label": "t:sections.all.header.label"
+    },
+    {
+      "type": "select",
+      "id": "header_tag",
+      "label": "t:sections.all.header.header_tag.label",
+      "options": [
+        {
+          "value": "h1",
+          "label": "t:sections.all.header.header_tag.h1.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.all.header.header_tag.h2.label"
+        },
+        {
+          "value": "h3",
+          "label": "t:sections.all.header.header_tag.h3.label"
+        },
+        {
+          "value": "h4",
+          "label": "t:sections.all.header.header_tag.h4.label"
+        },
+        {
+          "value": "h5",
+          "label": "t:sections.all.header.header_tag.h5.label"
+        },
+        {
+          "value": "h6",
+          "label": "t:sections.all.header.header_tag.h6.label"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:sections.all.text.label"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "default": "#edb334",
+      "label": "t:sections.reviews.settings.star_color.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.desktop.label"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 3,
+      "label": "t:sections.all.columns_number.label"
+    },
+    {
+      "type": "select",
+      "id": "layout_desktop",
+      "options": [
+        {
+          "value": "grid",
+          "label": "t:sections.all.layout.grid.label"
+        },
+        {
+          "value": "slider",
+          "label": "t:sections.all.layout.slider.label"
+        }
+      ],
+      "default": "grid",
+      "label": "t:sections.all.layout.label",
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.mobile.label"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "default": "default",
+      "label": "t:sections.all.columns_number.label",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:sections.all.default.label"
+        },
+        {
+          "value": "1",
+          "label": "t:settings_schema.layout.settings.columns_mobile.options__1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:settings_schema.layout.settings.columns_mobile.options__2.label"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "layout_mobile",
+      "options": [
+        {
+          "value": "grid",
+          "label": "t:sections.all.layout.grid.label"
+        },
+        {
+          "value": "slider",
+          "label": "t:sections.all.layout.slider.label"
+        }
+      ],
+      "default": "grid",
+      "label": "t:sections.all.layout.label",
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.section_styling"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_top_divider",
+      "label": "t:sections.all.show_top_divider.label",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "divider_color_scheme",
+      "default": "scheme-2",
+      "label": "t:sections.all.top_divider_color_scheme.label",
+      "info": "t:sections.all.top_divider_color_scheme.info",
+      "visible_if": "{{ section.settings.show_top_divider }}"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme-1",
+      "label": "t:sections.all.color_scheme.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.accent_image.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_accent_image",
+      "label": "t:sections.all.accent_image.show_image.label",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "accent_image",
+      "label": "t:sections.all.image.label",
+      "info": "t:sections.all.image.info",
+      "visible_if": "{{ section.settings.show_accent_image }}"
+    },
+    {
+      "type": "range",
+      "id": "accent_horizontal_anchor",
+      "label": "t:sections.all.accent_image.horizontal_anchor.label",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 0,
+      "visible_if": "{{ section.settings.show_accent_image }}"
+    },
+    {
+      "type": "range",
+      "id": "accent_vertical_anchor",
+      "label": "t:sections.all.accent_image.vertical_anchor.label",
+      "info": "t:sections.all.accent_image.vertical_anchor.info",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 0,
+      "visible_if": "{{ section.settings.show_accent_image }}"
+    },
+    {
+      "type": "range",
+      "id": "accent_size",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "t:sections.all.accent_image.image_size.label",
+      "info": "t:sections.all.accent_image.image_size.info",
+      "default": 30,
+      "visible_if": "{{ section.settings.show_accent_image }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_accent_on_mobile",
+      "label": "t:sections.all.accent_image.hide_on_mobile.label",
+      "default": true,
+      "visible_if": "{{ section.settings.show_accent_image }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "accent_cover",
+      "label": "t:sections.all.accent_image.image_cover.label",
+      "info": "t:sections.all.accent_image.image_cover.info",
+      "default": false,
+      "visible_if": "{{ section.settings.show_accent_image }}"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.overrides.header"
+    },
+    {
+      "type": "checkbox",
+      "id": "override_default_styles",
+      "label": "t:sections.all.overrides.override_default_styles.label",
+      "info": "t:sections.all.overrides.override_default_styles.info",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.overrides.header_section.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "range",
+      "id": "override_space_above",
+      "min": -50,
+      "max": 100,
+      "step": 10,
+      "default": 0,
+      "label": "t:sections.all.overrides.override_space_above.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "range",
+      "id": "override_space_below",
+      "min": -50,
+      "max": 100,
+      "step": 10,
+      "default": 0,
+      "label": "t:sections.all.overrides.override_space_below.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.overrides.header_intro.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "range",
+      "id": "override_header_font_size",
+      "min": -10,
+      "max": 30,
+      "step": 2,
+      "default": 0,
+      "label": "t:sections.all.overrides.override_header_font_size.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "range",
+      "id": "override_text_font_size",
+      "min": -6,
+      "max": 20,
+      "step": 2,
+      "default": 0,
+      "label": "t:sections.all.overrides.override_text_font_size.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.overrides.header_content.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "range",
+      "id": "override_quote_font_size",
+      "min": -6,
+      "max": 20,
+      "step": 2,
+      "default": 0,
+      "label": "t:sections.reviews.overrides.quote_font_size.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    },
+    {
+      "type": "range",
+      "id": "override_name_font_size",
+      "min": -6,
+      "max": 20,
+      "step": 2,
+      "default": 0,
+      "label": "t:sections.reviews.overrides.name_font_size.label",
+      "visible_if": "{{ section.settings.override_default_styles }}"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "t:sections.reviews.blocks.review.name",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "range",
+          "id": "stars",
+          "min": 1,
+          "max": 5,
+          "step": 2,
+          "default": 5,
+          "label": "t:sections.reviews.blocks.review.stars.label"
+        },
+        {
+          "type": "richtext",
+          "id": "quote",
+          "default": "<p><em>Add some reviews to help build trust with your customers.</em></p>",
+          "label": "t:sections.reviews.blocks.review.quote.label"
+        },
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "default": "~ Customer name",
+          "label": "t:sections.reviews.blocks.review.reviewer_name.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_in_front_of_accent_image",
+          "label": "t:sections.all.accent_image.show_in_front_of_image.label",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.reviews.presets.name",
+      "category": "t:settings_schema.groups.specialized",
+      "blocks": [
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

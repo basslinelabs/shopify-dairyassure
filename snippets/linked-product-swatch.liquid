@@ -1,0 +1,76 @@
+{% comment %}
+  Creates a swatch
+
+  Accepts:
+  - delimiter: {String} Separated the product title from the color
+  - product {Object} Product object to create the swatch for
+  - style: {String} Sets the swatch style. Either text_link, color_swatch, split_swatch, or image_swatch
+  - hide_oos: {Boolean} Flag to specify if the swatch for out of stock products should be hidden
+  - current_product: {Boolean} Is the swatch for the currently product page
+
+  Usage:
+  {% render 'linked-product-swatch', 
+    delimiter: block.settings.delimiter, 
+    product: linked_product, 
+    style: block.settings.swatch_style,
+    hide_oos: block.settings.hide_for_sold_out_products,
+    border: blcok.settings.border,
+    size: block.settings.swatch_size,
+    current_product: false
+  %}
+
+{% endcomment %}
+
+{% liquid
+    assign has_color = false
+    if product.title contains delimiter
+      assign color = product.title | split: delimiter 
+      assign color_name = color[1] | strip 
+      assign color = color_name | handleize
+      assign has_color = true
+    endif
+    assign class = "color-swatches__swatch--" | append: style
+    if hide_oos == false and product.available == false
+      assign class = class | append: " color-swatches__swatch--oos"
+    endif
+    if current_product 
+      assign class = class | append: " bg-accent color-swatches__swatch--active"
+    else
+      assign class = class | append: " border-default"
+    endif
+    assign hide_swatch = false
+    if current_product == false
+      if hide_oos == true and product.available == false
+        assign hide_swatch = true
+      endif
+    endif
+    assign bg_color = shop.metaobjects.squiggle_and_code_swatch[color]
+    if style == "image_swatch"
+      if bg_color.image == blank
+        assign style = "color_swatch"
+      endif
+    endif
+  %}
+  
+  {% if hide_swatch == false %}
+    {% if has_color %}
+      {% case style %}
+        {% when "color_swatch" %}
+          {% if bg_color.color_two.value == blank %}
+            {% capture color_style %}
+              background-color: {{ bg_color.color_one.value }}
+            {% endcapture %}
+          {% else %}
+            {% capture color_style %}
+              background: linear-gradient( -45deg, {{ bg_color.color_one.value }}, {{ bg_color.color_one.value }} 49%, #fff 49%, #fff 51%, {{ bg_color.color_two.value }} 51% );
+            {% endcapture %}
+          {% endif %}
+          <a role="link" aria-disabled="{% if product.available %}false{% else %}true{% endif %}" href="{{ product.url }}" class="color-swatches__swatch {{ class }}" title="{{ color_name }}" style="{{ color_style }}"></a>
+        {% when "image_swatch" %}
+          <a role="link" aria-disabled="{% if product.available %}false{% else %}true{% endif %}" href="{{ product.url }}" class="color-swatches__swatch {{ class }}" title="{{ color_name }}" style="background-image: url({{ bg_color.image | image_url }})"></a>
+        {% else %}
+          <a role="link" aria-disabled="{% if product.available %}false{% else %}true{% endif %}" href="{{ product.url }}" class="color-swatches__swatch {{ class }}" title="{{ color_name }}">{{ color_name }}</a>
+      {% endcase %}
+    {% endif %}
+  {% endif %}
+  

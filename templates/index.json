@@ -1,0 +1,754 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_banner_and_wave_yapQta": {
+      "type": "section-banner-and-wave",
+      "blocks": {
+        "custom_liquid_6N7b4k": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>\n  .da-hero-wrap {\n    display: flex;\n    justify-content: flex-start;     /* anchor left */\n    align-items: center;\n    padding: 60px 40px 140px;        /* bottom padding clears ribbon */\n    position: relative;\n    z-index: 2;\n  }\n\n  .da-hero {\n    width: 50%;                      /* half page width */\n    max-width: 720px;\n    min-width: 480px;\n    margin-left: 12%;                /* shift inward for left-third placement */\n    padding: 40px;\n    background: #fffaf1;\n    border-radius: 16px;\n    box-shadow: 0 4px 12px rgba(0,0,0,.06);\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    gap: 16px;\n    text-align: center;\n  }\n\n  .da-eyebrow {\n    font-size: 14px;\n    color: #5c5247;\n  }\n\n  .da-h1 {\n    font-size: clamp(28px, 4vw, 46px);\n    font-weight: 700;\n    line-height: 1.15;\n    color: #171a1f;\n    margin: 0;\n  }\n\n  .da-sub {\n    font-size: 16px;\n    line-height: 1.45;\n    color: #2d261d;\n    margin: 0;\n  }\n\n  .da-benefits {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    gap: 12px;\n    margin: 8px 0;\n  }\n\n  .da-pill {\n    display: flex;\n    align-items: center;\n    gap: 6px;\n    font-size: 14px;\n    font-weight: 500;\n    color: #171a1f;\n    background: #ffffff;\n    padding: 8px 14px;\n    border-radius: 999px;\n    box-shadow: 0 1px 3px rgba(0,0,0,.08);\n    white-space: nowrap;\n  }\n\n  .da-pill-icon {\n    font-size: 16px;\n  }\n\n  .da-cta {\n    background: #171a1f;\n    color: #ffffff;\n    font-size: 16px;\n    font-weight: 600;\n    padding: 14px 26px;\n    border-radius: 12px;\n    text-decoration: none;\n    box-shadow: 0 4px 0 rgba(0,0,0,.12);\n    transition: transform .15s ease;\n    width: fit-content;\n    margin: 12px auto 0;\n    display: block;\n  }\n  .da-cta:hover { transform: translateY(-2px); }\n\n  /* Mobile adjustments */\n  @media (max-width: 768px) {\n    .da-hero-wrap {\n      padding: 24px 16px 100px;\n      justify-content: center;      /* recenter for mobile */\n    }\n\n    .da-hero {\n      width: 100%;\n      max-width: 100%;\n      min-width: auto;\n      margin-left: 0;               /* reset left offset */\n      padding: 22px 16px;\n      border-radius: 14px;\n      gap: 12px;\n    }\n\n    .da-h1 {\n      font-size: 22px;\n      line-height: 1.25;\n    }\n\n    .da-sub {\n      font-size: 14px;\n      line-height: 1.45;\n    }\n\n    .da-benefits {\n      flex-wrap: wrap;\n      justify-content: center;\n      gap: 8px;\n      margin: 6px 0;\n    }\n\n    .da-pill {\n      padding: 6px 10px;\n      font-size: 12.5px;\n    }\n\n    .da-cta {\n      width: auto;\n      text-align: center;\n      padding: 13px 20px;\n      font-size: 15px;\n      border-radius: 9px;\n    }\n  }\n</style>\n\n<div class=\"da-hero-wrap\">\n  <div class=\"da-hero\">\n    <div class=\"da-eyebrow\"> ⭐⭐⭐⭐⭐ <br><b>Doctor recommended, dessert approved</b></div>\n    <h1 class=\"da-h1\">Enjoy Dairy <br>Without the Drama</h1>\n    <div class=\"da-benefits\">\n      <div class=\"da-pill\"><span class=\"da-pill-icon\">⏱</span> Fast Relief</div>\n      <div class=\"da-pill\"><span class=\"da-pill-icon\">🥛</span> 90+ Mins </div>\n      <div class=\"da-pill\"><span class=\"da-pill-icon\">🌱</span> Grab & Go</div>\n    </div>\n    <a href=\"/products/dairyassure-lactase-powder-sticks\" class=\"da-cta\">Try It &amp; Feel the Difference</a>\n  </div>\n</div>"
+          }
+        },
+        "button_Mdn73t": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_text": "Shop Now",
+            "button_link": "shopify://products/dairyassure-lactase-powder-sticks",
+            "button_style": "solid",
+            "link_image": false,
+            "button_two_text": "",
+            "button_two_link": "",
+            "button_two_style": "outline"
+          }
+        },
+        "wave_text_jNFnWf": {
+          "type": "wave_text",
+          "settings": {
+            "text": "Works in Seconds",
+            "link": ""
+          }
+        },
+        "wave_text_giA9Vk": {
+          "type": "wave_text",
+          "settings": {
+            "text": "Less Bloat",
+            "link": ""
+          }
+        },
+        "wave_text_YpKgK4": {
+          "type": "wave_text",
+          "settings": {
+            "text": "More Ice Cream Floats",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "custom_liquid_6N7b4k",
+        "button_Mdn73t",
+        "wave_text_jNFnWf",
+        "wave_text_giA9Vk",
+        "wave_text_YpKgK4"
+      ],
+      "custom_css": [
+        "/* Wavy banner fix */.banner-with-content-and-wave {padding-bottom: 80px; /* gives extra space so wave isn’t cut off */ position: relative;}",
+        ".banner-with-content-and-wave .wavy-banner {position: absolute; bottom: 0; width: 100%; height: auto;}"
+      ],
+      "name": "t:sections.banner-and-wave.presets.name",
+      "settings": {
+        "show_top_divider": false,
+        "divider_color_scheme": "scheme-2",
+        "color_scheme": "scheme-3",
+        "image_dt": "shopify://shop_images/Untitled_design_27.png",
+        "overlay_dt": "",
+        "height_dt": 60,
+        "horizontal_alignment_dt": "left",
+        "content_width_dt": 40,
+        "image_mob": "shopify://shop_images/2.png",
+        "overlay_mob": "",
+        "height_mob": 40,
+        "horizontal_alignment_mob": "center",
+        "scroll_direction": "normal",
+        "scroll_speed": "medium",
+        "wave_animation_style": "constant",
+        "wave_text_separator": "vertical_line",
+        "wave_custom_text_separator": "☼",
+        "wave_position": "bottom",
+        "font_style": "body",
+        "font_size": 120,
+        "color": "accent"
+      }
+    },
+    "section_content_tcEjFQ": {
+      "type": "section-content",
+      "blocks": {
+        "heading_YE9HjC": {
+          "type": "heading",
+          "settings": {
+            "heading": "Portable sticks that fit right into your routine, from breakfast to dessert.",
+            "header_tag": "h3",
+            "contain_width": true,
+            "show_in_front_of_accent_image": true,
+            "override_default_styles": false,
+            "override_font_size": 0
+          }
+        }
+      },
+      "block_order": [
+        "heading_YE9HjC"
+      ],
+      "name": "t:sections.content.presets.name",
+      "settings": {
+        "show_top_divider": false,
+        "divider_color_scheme": "",
+        "color_scheme": "scheme-3",
+        "button_style": "link",
+        "show_accent_image": false,
+        "accent_vertical_anchor": 0,
+        "accent_horizontal_anchor": 0,
+        "accent_size": 30,
+        "hide_accent_on_mobile": true,
+        "accent_cover": false
+      }
+    },
+    "section_featured_product_zDCEbA": {
+      "type": "section-featured-product",
+      "blocks": {
+        "title_anLCpQ": {
+          "type": "title",
+          "settings": {
+            "header_tag": "h3"
+          }
+        },
+        "divider_KD4UTj": {
+          "type": "divider",
+          "settings": {
+            "color": "contrast",
+            "contain_width": false
+          }
+        },
+        "price_BRQKhR": {
+          "type": "price",
+          "settings": {}
+        },
+        "divider_WCUxp4": {
+          "type": "divider",
+          "settings": {
+            "color": "contrast",
+            "contain_width": false
+          }
+        },
+        "variant_picker_qHBzLW": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "option_names": "color, colour",
+            "swatch_style": "color_swatch"
+          }
+        },
+        "buy_buttons_gqbfWE": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_dynamic_checkout": true
+          }
+        },
+        "description_nTzy7J": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title_anLCpQ",
+        "divider_KD4UTj",
+        "price_BRQKhR",
+        "divider_WCUxp4",
+        "variant_picker_qHBzLW",
+        "buy_buttons_gqbfWE",
+        "description_nTzy7J"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "dairyassure-lactase-powder-sticks",
+        "media_size": "small",
+        "desktop_media_layout": "slider",
+        "mobile_show_arrows": true,
+        "mobile_pagination": "thumbnails",
+        "show_top_divider": false,
+        "divider_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "section_alignment": "center",
+        "show_accent_image": false,
+        "accent_image": "shopify://shop_images/Gemini_Generated_Image_rbm52nrbm52nrbm5.png",
+        "accent_horizontal_anchor": 0,
+        "accent_vertical_anchor": 30,
+        "accent_size": 20,
+        "hide_accent_on_mobile": true,
+        "accent_cover": false
+      }
+    },
+    "section_image_WmTWeB": {
+      "type": "section-image",
+      "disabled": true,
+      "name": "t:sections.all.image.label",
+      "settings": {
+        "title": "",
+        "header_tag": "h2",
+        "text": "",
+        "full_width_layout": true,
+        "show_top_divider": false,
+        "divider_color_scheme": "",
+        "color_scheme": "",
+        "show_accent_image": false,
+        "accent_horizontal_anchor": 0,
+        "accent_vertical_anchor": 0,
+        "accent_size": 30,
+        "hide_accent_on_mobile": true,
+        "accent_cover": false,
+        "override_default_styles": false,
+        "override_header_font_size": 0,
+        "override_text_font_size": 0,
+        "override_space_above": 0,
+        "override_space_below": 0
+      }
+    },
+    "section_product_features_G4wjqr": {
+      "type": "section-product-features",
+      "blocks": {
+        "product_feature_PUYVXR": {
+          "type": "product_feature",
+          "settings": {
+            "header": "Fast Relief",
+            "text": "<p>Starts working right away and keeps you covered for up to 90 minutes.</p>",
+            "show_in_front_of_accent_image": true
+          }
+        },
+        "product_feature_Kf9tVt": {
+          "type": "product_feature",
+          "settings": {
+            "header": "On-the-Go Convenience",
+            "text": "<p>Pocket-sized sticks you can take<br/>anywhere you go.</p>",
+            "show_in_front_of_accent_image": true
+          }
+        },
+        "product_feature_aN6JxE": {
+          "type": "product_feature",
+          "settings": {
+            "header": "Flavorless Freedom",
+            "text": "<p>Dissolves instantly without changing the taste of your pizza or ice cream.</p>",
+            "show_in_front_of_accent_image": true
+          }
+        },
+        "product_feature_nABRzJ": {
+          "type": "product_feature",
+          "settings": {
+            "header": "Made for Everyone",
+            "text": "<p>Kosher, Non-GMO, and made in the USA.</p>",
+            "show_in_front_of_accent_image": true
+          }
+        }
+      },
+      "block_order": [
+        "product_feature_PUYVXR",
+        "product_feature_Kf9tVt",
+        "product_feature_aN6JxE",
+        "product_feature_nABRzJ"
+      ],
+      "name": "t:sections.product-features.presets.name",
+      "settings": {
+        "heading": "All the Cheese, None of the Chaos.",
+        "header_tag": "h2",
+        "text": "",
+        "image": "shopify://shop_images/upscalemedia-transformed.png",
+        "show_background_shape": false,
+        "background_shape_color": "contrast",
+        "background_shape_style": "solid",
+        "background_shape_top": 30,
+        "background_shape_right": 50,
+        "background_shape_bottom": 60,
+        "background_shape_left": 60,
+        "show_top_divider": false,
+        "divider_color_scheme": "",
+        "color_scheme": "",
+        "show_accent_image": false,
+        "accent_horizontal_anchor": 0,
+        "accent_vertical_anchor": 0,
+        "accent_size": 30,
+        "hide_accent_on_mobile": true,
+        "accent_cover": false,
+        "override_default_styles": false,
+        "override_space_above": 0,
+        "override_space_below": 0,
+        "override_header_font_size": 0,
+        "override_text_font_size": 0,
+        "override_heading_font_size": 0,
+        "override_feature_text_font_size": 0
+      }
+    },
+    "section_horizontally_scrolling_content_Up4cdG": {
+      "type": "section-horizontally-scrolling-content",
+      "blocks": {
+        "text_aPy3W3": {
+          "type": "text",
+          "settings": {
+            "text": "Non-GMO",
+            "link": ""
+          }
+        },
+        "image_XUNg8Q": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "text_D9wxqp": {
+          "type": "text",
+          "settings": {
+            "text": "Made in the USA",
+            "link": ""
+          }
+        },
+        "text_8W49cc": {
+          "type": "text",
+          "settings": {
+            "text": "Kosher",
+            "link": ""
+          }
+        },
+        "text_r8dWU6": {
+          "type": "text",
+          "settings": {
+            "text": "No Fillers",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_aPy3W3",
+        "image_XUNg8Q",
+        "text_D9wxqp",
+        "text_8W49cc",
+        "text_r8dWU6"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "gap": 1,
+        "scroll_direction": "reverse",
+        "scroll_speed": "slow",
+        "animation_style": "play_on_scroll",
+        "font_style": "body",
+        "font_size": 100
+      }
+    },
+    "section_comparison_table_iPG73G": {
+      "type": "section-comparison-table",
+      "blocks": {
+        "table_row_GVW9DA": {
+          "type": "table-row",
+          "settings": {
+            "header": "",
+            "text": "<p>Fast Acting Relief</p>",
+            "hide_text_on_mobile": false,
+            "column_1_state": "tick",
+            "column_2_state": "tick",
+            "column_3_state": "tick"
+          }
+        },
+        "table_row_TDM8pz": {
+          "type": "table-row",
+          "settings": {
+            "header": "",
+            "text": "<p>Mix-In Friendly</p>",
+            "hide_text_on_mobile": false,
+            "column_1_state": "tick",
+            "column_2_state": "cross",
+            "column_3_state": "cross"
+          }
+        },
+        "table_row_gCgVL9": {
+          "type": "table-row",
+          "settings": {
+            "header": "",
+            "text": "<p>Portable Servings</p>",
+            "hide_text_on_mobile": false,
+            "column_1_state": "tick",
+            "column_2_state": "tick",
+            "column_3_state": "tick"
+          }
+        },
+        "table_row_aCN8zp": {
+          "type": "table-row",
+          "settings": {
+            "header": "",
+            "text": "<p>Single Ingredient</p>",
+            "hide_text_on_mobile": false,
+            "column_1_state": "tick",
+            "column_2_state": "cross",
+            "column_3_state": "cross"
+          }
+        },
+        "table_row_V78CGx": {
+          "type": "table-row",
+          "disabled": true,
+          "settings": {
+            "header": "",
+            "text": "<p>Lactase Enzyme</p>",
+            "hide_text_on_mobile": false,
+            "column_1_state": "tick",
+            "column_2_state": "cross",
+            "column_3_state": "tick"
+          }
+        },
+        "table_row_AEmAfj": {
+          "type": "table-row",
+          "disabled": true,
+          "settings": {
+            "header": "",
+            "text": "<p>No white cast</p>",
+            "hide_text_on_mobile": false,
+            "column_1_state": "tick",
+            "column_2_state": "tick",
+            "column_3_state": "tick"
+          }
+        },
+        "table_row_YTgP9m": {
+          "type": "table-row",
+          "disabled": true,
+          "settings": {
+            "header": "",
+            "text": "<p>Reef-safe ingredients</p>",
+            "hide_text_on_mobile": false,
+            "column_1_state": "tick",
+            "column_2_state": "tick",
+            "column_3_state": "tick"
+          }
+        }
+      },
+      "block_order": [
+        "table_row_GVW9DA",
+        "table_row_TDM8pz",
+        "table_row_gCgVL9",
+        "table_row_aCN8zp",
+        "table_row_V78CGx",
+        "table_row_AEmAfj",
+        "table_row_YTgP9m"
+      ],
+      "custom_css": [],
+      "name": "t:sections.comparison-table.presets.name",
+      "settings": {
+        "header": "Not All Lactose Relief Is Created Equal",
+        "header_tag": "h2",
+        "text": "<p>We designed DairyAssure to be simple, pure, and convenient. </p>",
+        "column_1_header": "DairyAssure",
+        "column_2_header": "LACTAID Caplets",
+        "column_3_header": "",
+        "highlight_column": "1",
+        "highlight_column_color": "accent",
+        "show_top_divider": true,
+        "divider_color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
+        "show_accent_image": false,
+        "accent_horizontal_anchor": 0,
+        "accent_vertical_anchor": 0,
+        "accent_size": 30,
+        "hide_accent_on_mobile": true,
+        "accent_cover": false,
+        "override_default_styles": false,
+        "override_space_above": 0,
+        "override_space_below": 0,
+        "override_header_font_size": 0,
+        "override_text_font_size": 0
+      }
+    },
+    "bd8cd58a-2797-483b-bd1e-fecaa7270ce7": {
+      "type": "section-media-with-content",
+      "blocks": {
+        "template--15551676481715__bd8cd58a-2797-483b-bd1e-fecaa7270ce7-1678136035025cb481-0": {
+          "type": "header",
+          "settings": {
+            "header": "Why Choose Daily Defence",
+            "header_tag": "h2",
+            "show_in_front_of_accent_image": true,
+            "override_default_styles": false,
+            "override_font_size": 0
+          }
+        },
+        "collapsible_row_KcrJTx": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "Australian Heritage",
+            "row_content": "<p>Born from Australia's harsh sun and uncompromising standards. We understand what real protection means because we've lived it.</p>",
+            "page": "",
+            "open_tab": true,
+            "show_in_front_of_accent_image": true,
+            "override_default_styles": false,
+            "override_header_font_size": 0,
+            "override_content_font_size": 0
+          }
+        },
+        "collapsible_row_X4wE6b": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "Science-Backed Formula",
+            "row_content": "<p>SPF50+ broad-spectrum protection with advanced UV filters. Water-resistant for 4 hours. Suitable for all skin types, including sensitive skin.</p>",
+            "page": "",
+            "open_tab": false,
+            "show_in_front_of_accent_image": true,
+            "override_default_styles": false,
+            "override_header_font_size": 0,
+            "override_content_font_size": 0
+          }
+        },
+        "collapsible_row_WzJ9eP": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "Effortless Application",
+            "row_content": "<p>Lightweight texture that absorbs quickly without white residue or sticky feeling. Perfect for daily wear, alone or under makeup.</p>",
+            "page": "",
+            "open_tab": false,
+            "show_in_front_of_accent_image": true,
+            "override_default_styles": false,
+            "override_header_font_size": 0,
+            "override_content_font_size": 0
+          }
+        },
+        "template--15551676481715__bd8cd58a-2797-483b-bd1e-fecaa7270ce7-1678136035025cb481-2": {
+          "type": "button",
+          "settings": {
+            "button_text": "Shop now",
+            "button_link": "shopify://products/daily-defence-spf50",
+            "button_style": "solid",
+            "button_two_text": "",
+            "button_two_link": "",
+            "button_two_style": "outline"
+          }
+        }
+      },
+      "block_order": [
+        "template--15551676481715__bd8cd58a-2797-483b-bd1e-fecaa7270ce7-1678136035025cb481-0",
+        "collapsible_row_KcrJTx",
+        "collapsible_row_X4wE6b",
+        "collapsible_row_WzJ9eP",
+        "template--15551676481715__bd8cd58a-2797-483b-bd1e-fecaa7270ce7-1678136035025cb481-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "autoplay_video": true,
+        "image_position": "right",
+        "image_width": "50%",
+        "show_background_shape": false,
+        "background_shape_color": "accent",
+        "background_shape_style": "solid",
+        "background_shape_top": 100,
+        "background_shape_right": 50,
+        "background_shape_bottom": 60,
+        "background_shape_left": 60,
+        "full_width_layout": false,
+        "show_top_divider": false,
+        "divider_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "show_accent_image": false,
+        "accent_horizontal_anchor": 0,
+        "accent_vertical_anchor": 0,
+        "accent_size": 30,
+        "hide_accent_on_mobile": true,
+        "accent_cover": false
+      }
+    },
+    "section_image_CbPAzn": {
+      "type": "section-image",
+      "disabled": true,
+      "name": "t:sections.all.image.label",
+      "settings": {
+        "title": "",
+        "header_tag": "h2",
+        "text": "",
+        "full_width_layout": true,
+        "show_top_divider": false,
+        "divider_color_scheme": "",
+        "color_scheme": "",
+        "show_accent_image": false,
+        "accent_horizontal_anchor": 0,
+        "accent_vertical_anchor": 0,
+        "accent_size": 30,
+        "hide_accent_on_mobile": true,
+        "accent_cover": false,
+        "override_default_styles": false,
+        "override_header_font_size": 0,
+        "override_text_font_size": 0,
+        "override_space_above": 0,
+        "override_space_below": 0
+      }
+    },
+    "e888c031-5adb-4ec1-a682-604672a8da7c": {
+      "type": "section-reviews",
+      "blocks": {
+        "template--15551676481715__e888c031-5adb-4ec1-a682-604672a8da7c-16781417510a66e548-0": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "<p>\"Finally found something that actually works! My digestion feels smoother and lighter every day.\"</p>",
+            "reviewer_name": "- Daniel S. from Irvine, CA",
+            "show_in_front_of_accent_image": true
+          }
+        },
+        "template--15551676481715__e888c031-5adb-4ec1-a682-604672a8da7c-16781417510a66e548-2": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "<p>\"Let's just say my stomach stopped throwing tantrums. Five stars for peace and quiet!\"</p>",
+            "reviewer_name": "- Priya K. from Chicago, IL",
+            "show_in_front_of_accent_image": true
+          }
+        },
+        "a432354b-7a5e-4853-ab52-0af736d4d4d1": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "<p>\"My jeans actually button without a fight now. Worth every penny.\"</p>",
+            "reviewer_name": "- Marco G. from Atlanta, GA",
+            "show_in_front_of_accent_image": true
+          }
+        },
+        "review_gKfjVR": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "<p><em>\"</em>My significant other can really tell the difference when I use it on date night….so can my cleaning lady.<em>\"</em></p>",
+            "reviewer_name": "- Adam A. from Austin, TX",
+            "show_in_front_of_accent_image": true
+          }
+        },
+        "review_dVfLzA": {
+          "type": "review",
+          "disabled": true,
+          "settings": {
+            "stars": 5,
+            "quote": "<p><em>\"As someone who burns in 10 minutes, this has been a lifesaver. Wore it all day at the pool and came home with zero redness.\"</em></p>",
+            "reviewer_name": "~ Jessica L., Gold Coast",
+            "show_in_front_of_accent_image": true
+          }
+        }
+      },
+      "block_order": [
+        "template--15551676481715__e888c031-5adb-4ec1-a682-604672a8da7c-16781417510a66e548-0",
+        "template--15551676481715__e888c031-5adb-4ec1-a682-604672a8da7c-16781417510a66e548-2",
+        "a432354b-7a5e-4853-ab52-0af736d4d4d1",
+        "review_gKfjVR",
+        "review_dVfLzA"
+      ],
+      "settings": {
+        "title": "The Scoop from Dairy Lovers Like You",
+        "header_tag": "h2",
+        "text": "",
+        "star_color": "#d6a468",
+        "columns_desktop": 3,
+        "layout_desktop": "slider",
+        "columns_mobile": "default",
+        "layout_mobile": "grid",
+        "show_top_divider": false,
+        "divider_color_scheme": "scheme-6",
+        "color_scheme": "scheme-1",
+        "show_accent_image": false,
+        "accent_horizontal_anchor": 0,
+        "accent_vertical_anchor": 0,
+        "accent_size": 30,
+        "hide_accent_on_mobile": true,
+        "accent_cover": false,
+        "override_default_styles": false,
+        "override_space_above": 0,
+        "override_space_below": 0,
+        "override_header_font_size": 0,
+        "override_text_font_size": 0,
+        "override_quote_font_size": 0,
+        "override_name_font_size": 0
+      }
+    },
+    "section_content_tHmjXb": {
+      "type": "section-content",
+      "blocks": {
+        "sticker_BzkzMy": {
+          "type": "sticker",
+          "settings": {
+            "size": 100,
+            "image": "shopify://shop_images/IMG_0680.png",
+            "animation_style": "rotate_clockwise",
+            "animation_speed": "slow"
+          }
+        },
+        "heading_JjApYD": {
+          "type": "heading",
+          "settings": {
+            "heading": "About DairyAssure",
+            "header_tag": "h2",
+            "contain_width": true,
+            "show_in_front_of_accent_image": true,
+            "override_default_styles": false,
+            "override_font_size": 0
+          }
+        },
+        "text_AxRxUP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We created this for people who love dairy but hate the bloating, gas, or discomfort that comes with it. </p><p>Each lightweight stick contains only one ingredient: pure lactase. No fillers, additives, or preservatives. <br/></p>",
+            "contain_width": true,
+            "show_in_front_of_accent_image": true,
+            "override_default_styles": false,
+            "override_font_size": 0
+          }
+        },
+        "button_MENACj": {
+          "type": "button",
+          "settings": {
+            "button_text": "Shop Now",
+            "button_link": "shopify://products/dairyassure-lactase-powder-sticks",
+            "show_in_front_of_accent_image": true
+          }
+        }
+      },
+      "block_order": [
+        "sticker_BzkzMy",
+        "heading_JjApYD",
+        "text_AxRxUP",
+        "button_MENACj"
+      ],
+      "settings": {
+        "show_top_divider": false,
+        "divider_color_scheme": "scheme-1",
+        "color_scheme": "scheme-3",
+        "button_style": "solid",
+        "show_accent_image": false,
+        "accent_vertical_anchor": 0,
+        "accent_horizontal_anchor": 0,
+        "accent_size": 30,
+        "hide_accent_on_mobile": true,
+        "accent_cover": false
+      }
+    }
+  },
+  "order": [
+    "section_banner_and_wave_yapQta",
+    "section_content_tcEjFQ",
+    "section_featured_product_zDCEbA",
+    "section_image_WmTWeB",
+    "section_product_features_G4wjqr",
+    "section_horizontally_scrolling_content_Up4cdG",
+    "section_comparison_table_iPG73G",
+    "bd8cd58a-2797-483b-bd1e-fecaa7270ce7",
+    "section_image_CbPAzn",
+    "e888c031-5adb-4ec1-a682-604672a8da7c",
+    "section_content_tHmjXb"
+  ]
+}
