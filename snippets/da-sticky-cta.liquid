@@ -1,0 +1,123 @@
+{% comment %}
+  Sticky mobile CTA bar — appears after scrolling past the hero section.
+  Shows product name, price, star rating, and buy button.
+{% endcomment %}
+
+<div class="da-sticky-cta" id="da-sticky-cta" aria-label="Quick purchase">
+  <div class="da-sticky-cta__inner">
+    <div class="da-sticky-cta__info">
+      <div class="da-sticky-cta__stars">
+        {%- render 'da-star-rating', rating: 5, size: 'small' -%}
+        <span class="da-sticky-cta__review-count">127</span>
+      </div>
+      <p class="da-sticky-cta__price">From $17.50</p>
+    </div>
+    <a href="/products/dairyassure-lactase-powder-sticks" class="da-sticky-cta__btn">
+      TRY DAIRYASSURE
+    </a>
+  </div>
+</div>
+
+<style>
+  .da-sticky-cta {
+    position: fixed;
+    bottom: -80px;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background-color: var(--da-color-white);
+    border-top: 1px solid var(--da-color-subtle);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    padding: 10px 16px;
+    transition: bottom 300ms ease-out;
+  }
+
+  .da-sticky-cta--visible {
+    bottom: 0;
+  }
+
+  .da-sticky-cta__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .da-sticky-cta__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .da-sticky-cta__stars {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .da-sticky-cta__review-count {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--da-color-muted-text);
+  }
+
+  .da-sticky-cta__price {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--da-color-text);
+    margin: 0;
+  }
+
+  .da-sticky-cta__btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: var(--da-color-accent);
+    color: var(--da-color-white);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    border-radius: 8px;
+    white-space: nowrap;
+    transition: opacity 200ms ease;
+  }
+
+  .da-sticky-cta__btn:hover {
+    opacity: 0.9;
+  }
+
+  /* Hide on desktop — only show on mobile/tablet */
+  @media screen and (min-width: 990px) {
+    .da-sticky-cta {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    var bar = document.getElementById('da-sticky-cta');
+    if (!bar) return;
+
+    var heroSection = document.querySelector('.section--hero');
+    if (!heroSection) return;
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          bar.classList.remove('da-sticky-cta--visible');
+        } else {
+          bar.classList.add('da-sticky-cta--visible');
+        }
+      });
+    }, { threshold: 0 });
+
+    observer.observe(heroSection);
+  })();
+</script>

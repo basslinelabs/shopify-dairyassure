@@ -1,0 +1,1310 @@
+uid=3_0 RootWebArea "Lactose-Free Dairy Products | LACTAID®" url="https://www.lactaid.com/"
+  uid=3_1 ignored
+    uid=6_0 ignored
+      uid=6_1 link "Skip to main content" url="https://www.lactaid.com/#accessibilitySkipLink"
+        uid=6_2 StaticText "SKIP TO MAIN CONTENT"
+          uid=6_3 InlineTextBox "S"
+          uid=6_3 InlineTextBox "K"
+          uid=6_3 InlineTextBox "I"
+          uid=6_3 InlineTextBox "P "
+          uid=6_3 InlineTextBox "T"
+          uid=6_3 InlineTextBox "O "
+          uid=6_3 InlineTextBox "M"
+          uid=6_3 InlineTextBox "A"
+          uid=6_3 InlineTextBox "I"
+          uid=6_3 InlineTextBox "N "
+          uid=6_3 InlineTextBox "C"
+          uid=6_3 InlineTextBox "O"
+          uid=6_3 InlineTextBox "N"
+          uid=6_3 InlineTextBox "T"
+          uid=6_3 InlineTextBox "E"
+          uid=6_3 InlineTextBox "N"
+          uid=6_3 InlineTextBox "T"
+      uid=6_4 generic
+        uid=6_5 banner
+          uid=6_6 ignored
+            uid=6_7 ignored
+              uid=6_8 ignored
+                uid=6_9 ignored
+                uid=6_10 ignored
+                  uid=6_11 link "Coupons & Offers" url="https://www.lactaid.com/coupons"
+                    uid=6_12 ignored
+                      uid=6_13 StaticText "Coupons & Offers"
+                        uid=6_3 InlineTextBox "Coupons & Offers"
+                  uid=6_14 link "Español" url="https://www.lactaidenespanol.com/"
+                    uid=6_15 ignored
+                      uid=6_16 StaticText "Español"
+                        uid=6_3 InlineTextBox "Español"
+          uid=6_17 ignored
+          uid=6_18 ignored
+            uid=6_19 ignored
+              uid=6_20 ignored
+                uid=6_21 ignored
+                  uid=6_22 ignored
+                    uid=3_2 ignored
+                    uid=6_23 ignored
+                      uid=6_24 link url="https://www.lactaid.com/"
+                        uid=6_25 image
+                    uid=6_26 ignored
+                      uid=3_3 ignored
+                        uid=3_4 ignored
+                          uid=3_5 ignored
+                            uid=6_27 ignored
+                              uid=6_28 ignored
+                                uid=6_29 ignored
+                                  uid=6_30 ignored
+                        uid=3_9 ignored
+                          uid=3_10 ignored
+                            uid=3_11 ignored
+                              uid=3_12 ignored
+                              uid=3_13 ignored
+                          uid=3_14 ignored
+                            uid=3_15 ignored
+                              uid=3_16 ignored
+                              uid=3_17 ignored
+                      uid=3_18 ignored
+                        uid=3_19 ignored
+                          uid=3_20 ignored
+                            uid=6_31 ignored
+                              uid=6_32 ignored
+                                uid=6_33 ignored
+                                  uid=6_34 ignored
+                        uid=3_24 ignored
+                          uid=3_25 ignored
+                            uid=3_26 ignored
+                              uid=3_27 ignored
+                              uid=3_28 ignored
+                          uid=3_29 ignored
+                            uid=3_30 ignored
+                              uid=3_31 ignored
+                              uid=3_32 ignored
+                      uid=3_33 ignored
+                        uid=3_34 ignored
+                          uid=3_35 ignored
+                            uid=3_36 ignored
+                              uid=3_37 ignored
+                                uid=6_35 ignored
+                        uid=3_39 ignored
+                          uid=3_40 ignored
+                            uid=3_41 ignored
+                              uid=3_42 ignored
+                              uid=3_43 ignored
+                          uid=3_44 ignored
+                            uid=3_45 ignored
+                              uid=3_46 ignored
+                              uid=3_47 ignored
+                      uid=3_48 ignored
+                        uid=3_49 ignored
+                          uid=3_50 ignored
+                            uid=6_36 ignored
+                              uid=6_37 ignored
+                                uid=6_38 ignored
+                                  uid=6_39 ignored
+                        uid=3_54 ignored
+                          uid=3_55 ignored
+                            uid=3_56 ignored
+                              uid=3_57 ignored
+                              uid=3_58 ignored
+                          uid=3_59 ignored
+                            uid=3_60 ignored
+                              uid=3_61 ignored
+                              uid=3_62 ignored
+                      uid=3_63 ignored
+                        uid=3_64 ignored
+                          uid=3_65 ignored
+                            uid=3_66 ignored
+                              uid=3_67 ignored
+                                uid=6_40 ignored
+                        uid=3_69 ignored
+                          uid=3_70 ignored
+                            uid=3_71 ignored
+                              uid=3_72 ignored
+                              uid=3_73 ignored
+                          uid=3_74 ignored
+                            uid=3_75 ignored
+                              uid=3_76 ignored
+                              uid=3_77 ignored
+                      uid=3_78 ignored
+                        uid=3_79 ignored
+                          uid=3_80 ignored
+                            uid=3_81 ignored
+                              uid=3_82 ignored
+                                uid=6_41 ignored
+                        uid=3_84 ignored
+                          uid=3_85 ignored
+                            uid=3_86 ignored
+                              uid=3_87 ignored
+                              uid=3_88 ignored
+                          uid=3_89 ignored
+                            uid=3_90 ignored
+                              uid=3_91 ignored
+                              uid=3_92 ignored
+                      uid=6_42 navigation "Main"
+                        uid=6_43 generic
+                          uid=6_44 list
+                            uid=6_45 listitem level="1"
+                              uid=6_46 ignored
+                                uid=6_47 button "PRODUCTS" expandable
+                                  uid=6_48 ignored
+                                    uid=6_49 link "PRODUCTS" url="https://www.lactaid.com/products"
+                                      uid=6_50 ignored
+                                        uid=6_51 ignored
+                                          uid=6_52 StaticText "PRODUCTS"
+                                            uid=6_3 InlineTextBox "PRODUCTS"
+                            uid=6_53 listitem level="1"
+                              uid=6_54 ignored
+                                uid=6_55 button "RECIPES" expandable
+                                  uid=6_56 ignored
+                                    uid=6_57 link "RECIPES" url="https://www.lactaid.com/recipes"
+                                      uid=6_58 ignored
+                                        uid=6_59 ignored
+                                          uid=6_60 StaticText "RECIPES"
+                                            uid=6_3 InlineTextBox "RECIPES"
+                            uid=6_61 listitem level="1"
+                              uid=6_62 ignored
+                                uid=6_63 button "LACTOSE SENSITIVITY" expandable
+                                  uid=6_64 ignored
+                                    uid=6_65 link "LACTOSE SENSITIVITY" url="https://www.lactaid.com/lactose-sensitivity"
+                                      uid=6_66 ignored
+                                        uid=6_67 ignored
+                                          uid=6_68 StaticText "LACTOSE SENSITIVITY"
+                                            uid=6_3 InlineTextBox "LACTOSE SENSITIVITY"
+                            uid=6_69 listitem level="1"
+                              uid=6_70 ignored
+                                uid=6_71 button "ABOUT US" expandable
+                                  uid=6_72 ignored
+                                    uid=6_73 link "ABOUT US" url="https://www.lactaid.com/about-us"
+                                      uid=6_74 ignored
+                                        uid=6_75 ignored
+                                          uid=6_76 StaticText "ABOUT US"
+                                            uid=6_3 InlineTextBox "ABOUT US"
+                            uid=6_77 listitem level="1"
+                              uid=6_78 ignored
+                                uid=6_79 button "FAQS" expandable
+                                  uid=6_80 ignored
+                                    uid=6_81 link "FAQS" url="https://www.lactaid.com/frequently-asked-questions"
+                                      uid=6_82 ignored
+                                        uid=6_83 ignored
+                                          uid=6_84 StaticText "FAQS"
+                                            uid=6_3 InlineTextBox "FAQS"
+                    uid=6_85 ignored
+                  uid=6_86 ignored
+                    uid=6_87 ignored
+                      uid=6_88 link "WHERE TO BUY" url="https://www.lactaid.com/where-to-buy"
+                        uid=6_89 ignored
+                          uid=6_90 StaticText "WHERE TO BUY"
+                            uid=6_3 InlineTextBox "WHERE TO BUY"
+          uid=6_91 ignored
+        uid=6_92 generic
+        uid=6_93 main
+          uid=6_94 ignored
+            uid=6_95 ignored
+              uid=6_96 ignored
+                uid=6_97 ignored
+                  uid=6_98 heading "More than Just Milk" level="1"
+                    uid=6_99 ignored
+                      uid=6_100 StaticText "More than Just Milk"
+                        uid=6_3 InlineTextBox "More than Just Milk"
+                  uid=6_101 ignored
+                    uid=6_102 ignored
+                      uid=6_103 ignored
+                        uid=6_104 paragraph
+                          uid=6_105 StaticText "We've got a line of lactose-free dairy products so you can enjoy all of the goodness of real milk and dairy, just without the discomfort!"
+                            uid=6_3 InlineTextBox "We've got a line of lactose-free dairy products so you can enjoy all of the goodness of real milk and "
+                            uid=6_3 InlineTextBox "dairy, just without the discomfort!"
+                uid=6_106 ignored
+                  uid=6_107 link "EXPLORE OUR PRODUCTS" url="https://www.lactaid.com/products"
+                    uid=6_108 ignored
+                      uid=6_109 StaticText "EXPLORE OUR PRODUCTS"
+                        uid=6_3 InlineTextBox "EXPLORE OUR PRODUCTS"
+              uid=6_110 ignored
+                uid=6_111 ignored
+                  uid=6_112 link "LACTAID® is 100% real milk, just without the lactose." url="https://www.lactaid.com/products"
+                    uid=6_113 image "LACTAID® is 100% real milk, just without the lactose." url="https://images.ctfassets.net/naglem4vigsd/4CU8H0NujSUGiJxwvl1cpE/fd6023ae3915b561d75e7e20348cf6f2/Lactaid_LongPourCoffee_06_1920x1080.webp?fm=webp&w=1920"
+          uid=6_114 ignored
+            uid=6_115 ignored
+          uid=6_116 ignored
+            uid=6_117 generic
+              uid=6_118 ignored
+                uid=6_119 ignored
+                  uid=6_120 ignored
+                    uid=6_121 ignored
+                      uid=6_122 ignored
+                        uid=6_123 heading "Our Products" level="2"
+                          uid=6_124 StaticText "Our Products"
+                            uid=6_3 InlineTextBox "Our Products"
+                      uid=6_125 generic
+                        uid=6_126 link "SEE ALL PRODUCTS" url="https://www.lactaid.com/products"
+                          uid=6_127 ignored
+                            uid=6_128 StaticText "SEE ALL PRODUCTS"
+                              uid=6_3 InlineTextBox "SEE ALL PRODUCTS"
+                    uid=6_129 ignored
+                      uid=6_130 ignored
+                        uid=6_131 ignored
+                          uid=6_132 generic live="polite" relevant="additions text"
+                            uid=6_133 tabpanel "1 of 10"
+                              uid=6_134 generic
+                                uid=6_135 link "Lactaid 2% Reduced Fat Milk Front of Package" description="MILK" url="https://www.lactaid.com/products/lactaid-milk-products"
+                                  uid=6_136 image "Lactaid 2% Reduced Fat Milk Front of Package" url="https://images.ctfassets.net/naglem4vigsd/5evste12s3X3YAZmpCRHcB/81a0a0d794f784b5aba7116dc0cf8295/product_2-en-us-Lactaid?fm=webp&w=1024"
+                                uid=6_137 ignored
+                                  uid=6_138 ignored
+                                    uid=6_139 ignored
+                                  uid=6_140 ignored
+                                    uid=6_141 link "MILK" url="https://www.lactaid.com/products/lactaid-milk-products"
+                                      uid=6_142 ignored
+                                        uid=6_143 StaticText "MILK"
+                                          uid=6_3 InlineTextBox "MILK"
+                            uid=6_144 tabpanel "2 of 10"
+                              uid=6_145 generic
+                                uid=6_146 link "Carton of Lactaid calcium-enriched milk, highlighting its lactose-free formula and nutritional benefits, placed on a kitchen countertop" description="CALCIUM-ENRICHED MILK" url="https://www.lactaid.com/products/lactaid-calcium-enriched-milk-products"
+                                  uid=6_147 image "Carton of Lactaid calcium-enriched milk, highlighting its lactose-free formula and nutritional benefits, placed on a kitchen countertop" url="https://images.ctfassets.net/naglem4vigsd/7cN2Z4XBIv9FWPzgDbL24S/6f9ca5f4d58db345f1e849932e2ed9cd/calcium-enriched-milk-en-us-Lactaid?fm=webp&w=1024"
+                                uid=6_148 ignored
+                                  uid=6_149 ignored
+                                    uid=6_150 ignored
+                                  uid=6_151 ignored
+                                    uid=6_152 link "CALCIUM-ENRICHED MILK" url="https://www.lactaid.com/products/lactaid-calcium-enriched-milk-products"
+                                      uid=6_153 ignored
+                                        uid=6_154 StaticText "CALCIUM-ENRICHED MILK"
+                                          uid=6_3 InlineTextBox "CALCIUM-ENRICHED MILK"
+                            uid=6_155 tabpanel "3 of 10"
+                              uid=6_156 generic
+                                uid=6_157 link "Lactaid High Protein Whole Milk Front of Package" description="PROTEIN MILK" url="https://www.lactaid.com/products/lactaid-protein-milk"
+                                  uid=6_158 image "Lactaid High Protein Whole Milk Front of Package" url="https://images.ctfassets.net/naglem4vigsd/5Ac9rDMtwmC7YsQlIriI2p/e868ad9825c1a1c90851fcc44fb8f635/product_6-en-us-Lactaid?fm=webp&w=1024"
+                                uid=6_159 ignored
+                                  uid=6_160 ignored
+                                    uid=6_161 ignored
+                                  uid=6_162 ignored
+                                    uid=6_163 link "PROTEIN MILK" url="https://www.lactaid.com/products/lactaid-protein-milk"
+                                      uid=6_164 ignored
+                                        uid=6_165 StaticText "PROTEIN MILK"
+                                          uid=6_3 InlineTextBox "PROTEIN MILK"
+                            uid=6_166 tabpanel "4 of 10"
+                              uid=6_167 generic
+                                uid=6_168 link "Lactaid Chocolate Milk Front of Package" description="CHOCOLATE MILK" url="https://www.lactaid.com/products/lactaid-chocolate-milk"
+                                  uid=6_169 image "Lactaid Chocolate Milk Front of Package" url="https://images.ctfassets.net/naglem4vigsd/FzeY4AcwZvPpNMqoOwKjL/bf61373badf60748dd62e80f481ec947/hg_chocolate_front_0-en-us?fm=webp&w=1024"
+                                uid=6_170 ignored
+                                  uid=6_171 ignored
+                                    uid=6_172 ignored
+                                  uid=6_173 ignored
+                                    uid=6_174 link "CHOCOLATE MILK" url="https://www.lactaid.com/products/lactaid-chocolate-milk"
+                                      uid=6_175 ignored
+                                        uid=6_176 StaticText "CHOCOLATE MILK"
+                                          uid=6_3 InlineTextBox "CHOCOLATE MILK"
+                            uid=6_177 tabpanel "5 of 10"
+                              uid=6_178 generic
+                                uid=6_179 link "Creamers" description="Creamers" url="https://www.lactaid.com/products/lactaid-creamers"
+                                  uid=6_180 image "Creamers" url="https://images.ctfassets.net/naglem4vigsd/6P1MCFWvcoqvLnmGfkFtMO/6c36b5d52320e720aac13e200a9d4ffd/creamer-card-en-us-Lactaid.webp?fm=webp&w=1024"
+                                uid=6_181 ignored
+                                  uid=6_182 ignored
+                                    uid=6_183 ignored
+                                  uid=6_184 ignored
+                                    uid=6_185 link "CREAMERS" url="https://www.lactaid.com/products/lactaid-creamers"
+                                      uid=6_186 ignored
+                                        uid=6_187 StaticText "CREAMERS"
+                                          uid=6_3 InlineTextBox "CREAMERS"
+                            uid=6_188 tabpanel "6 of 10"
+                              uid=6_189 generic
+                                uid=6_190 link "Lactaid Cookies and Cream Lactose-Free Ice Cream" description="ICE CREAM" url="https://www.lactaid.com/products/lactaid-ice-cream"
+                                  uid=6_191 image "Lactaid Cookies and Cream Lactose-Free Ice Cream" url="https://images.ctfassets.net/naglem4vigsd/37wLROSlZnCpCZuPYBIH4U/73a6f5f9082bc1f26a9992dd6a61144b/lactaid_hg_whole_front_0-en-us-Lactaid?fm=webp&w=1024"
+                                uid=6_192 ignored
+                                  uid=6_193 ignored
+                                    uid=6_194 ignored
+                                  uid=6_195 ignored
+                                    uid=6_196 link "ICE CREAM" url="https://www.lactaid.com/products/lactaid-ice-cream"
+                                      uid=6_197 ignored
+                                        uid=6_198 StaticText "ICE CREAM"
+                                          uid=6_3 InlineTextBox "ICE CREAM"
+                            uid=6_199 tabpanel "7 of 10"
+                              uid=6_200 generic
+                                uid=6_201 link " Lactaid Cottage Cheese front of Package" description="COTTAGE CHEESE" url="https://www.lactaid.com/products/lactaid-cottage-cheese-products"
+                                  uid=6_202 image " Lactaid Cottage Cheese front of Package" url="https://images.ctfassets.net/naglem4vigsd/5EOQbs0tJMXjVBEIhRtcMV/32a86c28292e9873de81aa6ca9e55ecc/lactaid_hg_whole_front_1_1-en-us-Lactaid?fm=webp&w=1024"
+                                uid=6_203 ignored
+                                  uid=6_204 ignored
+                                    uid=6_205 ignored
+                                  uid=6_206 ignored
+                                    uid=6_207 link "COTTAGE CHEESE" url="https://www.lactaid.com/products/lactaid-cottage-cheese-products"
+                                      uid=6_208 ignored
+                                        uid=6_209 StaticText "COTTAGE CHEESE"
+                                          uid=6_3 InlineTextBox "COTTAGE CHEESE"
+                            uid=6_210 tabpanel "8 of 10"
+                              uid=6_211 generic
+                                uid=6_212 link "Lactaid Lactose-Free Sour Cream Front of Package" description="SOUR CREAM" url="https://www.lactaid.com/products/lactaid-sour-cream"
+                                  uid=6_213 image "Lactaid Lactose-Free Sour Cream Front of Package" url="https://images.ctfassets.net/naglem4vigsd/54O7hJPIybIb4x3lcEvOTp/53549266aa80433e5ee85eb7fab46b71/sc_front-en-us?fm=webp&w=1024"
+                                uid=6_214 ignored
+                                  uid=6_215 ignored
+                                    uid=6_216 ignored
+                                  uid=6_217 ignored
+                                    uid=6_218 link "SOUR CREAM" url="https://www.lactaid.com/products/lactaid-sour-cream"
+                                      uid=6_219 ignored
+                                        uid=6_220 StaticText "SOUR CREAM"
+                                          uid=6_3 InlineTextBox "SOUR CREAM"
+                            uid=6_221 tabpanel "9 of 10"
+                              uid=6_222 generic
+                                uid=6_223 link "Lactaid Lactose-Free Eggnog Front of Package" description="EGGNOG" url="https://www.lactaid.com/products/lactaid-eggnog"
+                                  uid=6_224 image "Lactaid Lactose-Free Eggnog Front of Package" url="https://images.ctfassets.net/naglem4vigsd/14ipRBCrwP7h5pnQHfp110/8b294679f62fbd313e1cd59166baca94/eggnog_front-en-us?fm=webp&w=1024"
+                                uid=6_225 ignored
+                                  uid=6_226 ignored
+                                    uid=6_227 ignored
+                                  uid=6_228 ignored
+                                    uid=6_229 link "EGGNOG" url="https://www.lactaid.com/products/lactaid-eggnog"
+                                      uid=6_230 ignored
+                                        uid=6_231 StaticText "EGGNOG"
+                                          uid=6_3 InlineTextBox "EGGNOG"
+                            uid=6_232 tabpanel "10 of 10"
+                              uid=6_233 generic
+                                uid=6_234 link "Lactaid Fast Act lactase enzyme supplement caplets front of pack" description="DIETARY SUPPLEMENTS" url="https://www.lactaid.com/products/lactaid-dietary-supplements"
+                                  uid=6_235 image "Lactaid Fast Act lactase enzyme supplement caplets front of pack" url="https://images.ctfassets.net/naglem4vigsd/Hz6cUsN8YXX3uGNpi8jtG/7733ad988bf9bf6df1a0fb661f2eb454/lactaid_hg_whole_front_1_1_0-en-us-Lactaid?fm=webp&w=1024"
+                                uid=6_236 ignored
+                                  uid=6_237 ignored
+                                    uid=6_238 ignored
+                                  uid=6_239 ignored
+                                    uid=6_240 link "DIETARY SUPPLEMENTS" url="https://www.lactaid.com/products/lactaid-dietary-supplements"
+                                      uid=6_241 ignored
+                                        uid=6_242 StaticText "DIETARY SUPPLEMENTS"
+                                          uid=6_3 InlineTextBox "DIETARY SUPPLEMENTS"
+            uid=6_243 ignored
+              uid=6_244 ignored
+            uid=6_245 generic
+              uid=6_246 ignored
+                uid=6_247 ignored
+                  uid=6_248 ignored
+                    uid=6_249 ignored
+                      uid=6_250 link "Farmer Dave with a cow and a glass of Lactaid Milk" url="https://www.lactaid.com/about-us"
+                        uid=6_251 image "Farmer Dave with a cow and a glass of Lactaid Milk" url="https://images.ctfassets.net/naglem4vigsd/3OdZ96gKlCJG5iG88YT0Y1/da53a043eda089dc5927ff1b68b14955/farmer_dave-en-us.webp?fm=webp&w=1920"
+                    uid=6_252 ignored
+                      uid=6_253 ignored
+                      uid=6_254 ignored
+                        uid=6_255 heading "Real Milk. Real Delicious. Lactose-Free." level="2"
+                          uid=6_256 StaticText "Real Milk."
+                            uid=6_3 InlineTextBox "Real Milk."
+                          uid=6_257 LineBreak "
+"
+                            uid=6_3 InlineTextBox "
+"
+                          uid=6_258 StaticText "Real Delicious."
+                            uid=6_3 InlineTextBox "Real Delicious."
+                          uid=6_259 LineBreak "
+"
+                            uid=6_3 InlineTextBox "
+"
+                          uid=6_260 StaticText "Lactose-Free."
+                            uid=6_3 InlineTextBox "Lactose-Free."
+                        uid=6_261 ignored
+                          uid=6_262 ignored
+                            uid=6_263 ignored
+                              uid=6_264 paragraph
+                                uid=6_265 StaticText "When it comes to LACTAID® Milk, we’ve got high standards. Our milk comes from cows that are never treated with artificial growth hormones*. Plus it’s lactose-free, so you can enjoy that great dairy taste without the real dairy side effects."
+                                  uid=6_3 InlineTextBox "When it comes to LACTAID® Milk, we’ve got high standards. Our milk comes from "
+                                  uid=6_3 InlineTextBox "cows that are never treated with artificial growth hormones*. Plus it’s lactose-free, "
+                                  uid=6_3 InlineTextBox "so you can enjoy that great dairy taste without the real dairy side effects."
+                            uid=6_266 ignored
+                              uid=6_267 paragraph
+                                uid=6_268 StaticText "*No significant difference has been shown between milk derived from rbST-treated and non-rbST-treated cows."
+                                  uid=6_3 InlineTextBox "*No significant difference has been shown between milk derived from rbST-treated and non-rbST-"
+                                  uid=6_3 InlineTextBox "treated cows."
+                      uid=6_269 ignored
+                        uid=6_270 link "LEARN ABOUT THE LACTAID® DIFFERENCE" url="https://www.lactaid.com/about-us"
+                          uid=6_271 ignored
+                            uid=6_272 StaticText "LEARN ABOUT THE LACTAID"
+                              uid=6_3 InlineTextBox "LEARN ABOUT THE LACTAID"
+                            uid=6_273 superscript
+                              uid=6_274 StaticText "®"
+                                uid=6_3 InlineTextBox "®"
+                            uid=6_275 StaticText " DIFFERENCE"
+                              uid=6_3 InlineTextBox " DIFFERENCE"
+            uid=6_276 generic
+              uid=6_277 ignored
+                uid=6_278 ignored
+                  uid=6_279 ignored
+                    uid=6_280 ignored
+                      uid=6_281 ignored
+                      uid=6_282 ignored
+                        uid=6_283 heading "New Limited Edition Ice Cream! Strawberry Cheesecake" level="2"
+                          uid=6_284 StaticText "New Limited Edition Ice Cream! Strawberry Cheesecake"
+                            uid=6_3 InlineTextBox "New Limited Edition Ice Cream! "
+                            uid=6_3 InlineTextBox "Strawberry Cheesecake"
+                        uid=6_285 ignored
+                          uid=6_286 ignored
+                            uid=6_287 ignored
+                              uid=6_288 paragraph
+                                uid=6_289 StaticText "Introducing our latest extra creamy and wonderfully rich premium ice cream in Strawberry Cheesecake—made with 100% real milk and cream, just without the lactose."
+                                  uid=6_3 InlineTextBox "Introducing our latest extra creamy and wonderfully rich premium ice cream in "
+                                  uid=6_3 InlineTextBox "Strawberry Cheesecake—made with 100% real milk and cream, just without the "
+                                  uid=6_3 InlineTextBox "lactose."
+                      uid=6_290 ignored
+                        uid=6_291 link "SHOP LACTAID® ICE CREAM" url="https://www.lactaid.com/products/lactaid-ice-cream"
+                          uid=6_292 ignored
+                            uid=6_293 StaticText "SHOP LACTAID"
+                              uid=6_3 InlineTextBox "SHOP LACTAID"
+                            uid=6_294 superscript
+                              uid=6_295 StaticText "®"
+                                uid=6_3 InlineTextBox "®"
+                            uid=6_296 StaticText " ICE CREAM"
+                              uid=6_3 InlineTextBox " ICE CREAM"
+                    uid=6_297 ignored
+                      uid=6_298 link "A bowl of Lactaid Strawberry Cheesecake Ice Cream" url="https://www.lactaid.com/products/lactaid-ice-cream"
+                        uid=6_299 image "A bowl of Lactaid Strawberry Cheesecake Ice Cream" url="https://images.ctfassets.net/naglem4vigsd/5XQvDvZuqkLfQUseFNQlOD/187c4adc51b0f0088a6bf634f25de733/strawberry_cheesecake_ice_cream_0-en-us.webp?fm=webp&w=1920"
+            uid=6_300 generic
+              uid=6_301 ignored
+                uid=6_302 ignored
+                  uid=6_303 ignored
+                    uid=6_304 ignored
+                      uid=6_305 link "Lactaid Pineapple Cottage Cheese, served in pineapple halves" url="https://www.lactaid.com/products/lactaid-cottage-cheese-products"
+                        uid=6_306 image "Lactaid Pineapple Cottage Cheese, served in pineapple halves" url="https://images.ctfassets.net/naglem4vigsd/77lnqfek84RZfOLvY2qacN/181861658c36bbd5b04f363c7e4b64fc/pineapple_cottage_cheese_0-en-us.webp?fm=webp&w=1920"
+                    uid=6_307 ignored
+                      uid=6_308 ignored
+                      uid=6_309 ignored
+                        uid=6_310 heading "Try Our Cottage Cheese, Now with Pineapple!" level="2"
+                          uid=6_311 StaticText "Try Our Cottage Cheese, Now with Pineapple!"
+                            uid=6_3 InlineTextBox "Try Our Cottage Cheese, Now with "
+                            uid=6_3 InlineTextBox "Pineapple!"
+                        uid=6_312 ignored
+                          uid=6_313 ignored
+                            uid=6_314 ignored
+                              uid=6_315 paragraph
+                                uid=6_316 StaticText "Reclaim snack time with this easy-to-digest cottage cheese. With 10g of protein per serving, this creamy and delicious cottage cheese is an excellent source of protein."
+                                  uid=6_3 InlineTextBox "Reclaim snack time with this easy-to-digest cottage cheese. With 10g of protein "
+                                  uid=6_3 InlineTextBox "per serving, this creamy and delicious cottage cheese is an excellent source of "
+                                  uid=6_3 InlineTextBox "protein."
+                      uid=6_317 ignored
+                        uid=6_318 link "SHOP LACTAID® COTTAGE CHEESE" url="https://www.lactaid.com/products/lactaid-cottage-cheese-products"
+                          uid=6_319 ignored
+                            uid=6_320 StaticText "SHOP LACTAID"
+                              uid=6_3 InlineTextBox "SHOP LACTAID"
+                            uid=6_321 superscript
+                              uid=6_322 StaticText "®"
+                                uid=6_3 InlineTextBox "®"
+                            uid=6_323 StaticText " COTTAGE CHEESE"
+                              uid=6_3 InlineTextBox " COTTAGE CHEESE"
+          uid=6_324 ignored
+            uid=6_325 ignored
+          uid=6_326 ignored
+            uid=6_327 generic
+              uid=6_328 ignored
+                uid=6_329 ignored
+                  uid=6_330 ignored
+                    uid=6_331 ignored
+                      uid=6_332 ignored
+                        uid=6_333 heading "Discover Our Latest and Tastiest Recipes" level="2"
+                          uid=6_334 StaticText "Discover Our Latest and Tastiest Recipes"
+                            uid=6_3 InlineTextBox "Discover Our Latest and Tastiest Recipes"
+                      uid=6_335 generic
+                        uid=6_336 link "SEE ALL RECIPES" url="https://www.lactaid.com/recipes"
+                          uid=6_337 ignored
+                            uid=6_338 StaticText "SEE ALL RECIPES"
+                              uid=6_3 InlineTextBox "SEE ALL RECIPES"
+                    uid=6_339 ignored
+                      uid=6_340 ignored
+                        uid=6_341 ignored
+                          uid=6_342 generic live="polite" relevant="additions text"
+                            uid=6_343 tabpanel "1 of 5"
+                              uid=6_344 link "Roasted Berry Sheet Cake" url="https://www.lactaid.com/recipes/desserts/roasted-berry-sheet-cake"
+                                uid=6_345 ignored
+                                  uid=6_346 image "Delicious roasted berry sheet cake topped with fresh berries and a dusting of powdered sugar, served on a wooden cutting board." url="https://images.ctfassets.net/naglem4vigsd/xNL7fp1KOLrvyzvZfcHgt/e33eeef265df6309cdd3233bf17053f5/roasted_berry_sheet_cake-en-us?fm=webp&w=1024"
+                                uid=6_347 ignored
+                                  uid=6_348 ignored
+                                    uid=6_349 ignored
+                                      uid=6_350 paragraph
+                                        uid=6_351 StaticText "DESSERTS"
+                                          uid=6_3 InlineTextBox "DESSERTS"
+                                      uid=6_352 heading "Roasted Berry Sheet Cake" level="4"
+                                        uid=6_353 StaticText "Roasted Berry Sheet Cake"
+                                          uid=6_3 InlineTextBox "Roasted Berry Sheet "
+                                          uid=6_3 InlineTextBox "Cake"
+                                      uid=6_354 ignored
+                                        uid=6_355 paragraph
+                                          uid=6_356 StaticText "Total Time: 2 hr"
+                                            uid=6_3 InlineTextBox "Total Time: 2 hr"
+                                  uid=6_357 ignored
+                                    uid=6_358 ignored
+                                      uid=6_359 StaticText "SEE RECIPE"
+                                        uid=6_3 InlineTextBox "SEE RECIPE"
+                            uid=6_360 tabpanel "2 of 5"
+                              uid=6_361 link "Chocolate Chip Scones" url="https://www.lactaid.com/recipes/breakfast/chocolate-chip-scones"
+                                uid=6_362 ignored
+                                  uid=6_363 image "Chocolate chip scones with chocolate drizzle on top" url="https://images.ctfassets.net/naglem4vigsd/5bha3Tpw99gahgsEAFvWJx/24ef090247d04b7c3d1c8e35e3886869/chocolate_chip_scones-en-us.webp?fm=webp&w=1024"
+                                uid=6_364 ignored
+                                  uid=6_365 ignored
+                                    uid=6_366 ignored
+                                      uid=6_367 paragraph
+                                        uid=6_368 StaticText "BREAKFAST"
+                                          uid=6_3 InlineTextBox "BREAKFAST"
+                                      uid=6_369 heading "Chocolate Chip Scones" level="4"
+                                        uid=6_370 StaticText "Chocolate Chip Scones"
+                                          uid=6_3 InlineTextBox "Chocolate Chip Scones"
+                                      uid=6_371 ignored
+                                        uid=6_372 paragraph
+                                          uid=6_373 StaticText "Total Time: 38 min"
+                                            uid=6_3 InlineTextBox "Total Time: 38 min"
+                                  uid=6_374 ignored
+                                    uid=6_375 ignored
+                                      uid=6_376 StaticText "SEE RECIPE"
+                                        uid=6_3 InlineTextBox "SEE RECIPE"
+                            uid=6_377 tabpanel "3 of 5"
+                              uid=6_378 link "Dark Chocolate Pudding Pops" url="https://www.lactaid.com/recipes/breakfast/dark-chocolate-pudding-pops"
+                                uid=6_379 ignored
+                                  uid=6_380 image "Dark Chocolate Pudding Pops, made with Lactaid!" url="https://images.ctfassets.net/naglem4vigsd/128DUqJG6YWAuHOOxuH3ry/64185833ab79a3885fe9ff32b9624e0f/recipe_dark_chocolate-en-us-Lactaid?fm=webp&w=1024"
+                                uid=6_381 ignored
+                                  uid=6_382 ignored
+                                    uid=6_383 ignored
+                                      uid=6_384 paragraph
+                                        uid=6_385 StaticText "BREAKFAST"
+                                          uid=6_3 InlineTextBox "BREAKFAST"
+                                      uid=6_386 heading "Dark Chocolate Pudding Pops" level="4"
+                                        uid=6_387 StaticText "Dark Chocolate Pudding Pops"
+                                          uid=6_3 InlineTextBox "Dark Chocolate Pudding "
+                                          uid=6_3 InlineTextBox "Pops"
+                                      uid=6_388 ignored
+                                        uid=6_389 paragraph
+                                          uid=6_390 StaticText "Total Time: 8 hr 18 min"
+                                            uid=6_3 InlineTextBox "Total Time: 8 hr 18 min"
+                                  uid=6_391 ignored
+                                    uid=6_392 ignored
+                                      uid=6_393 StaticText "SEE RECIPE"
+                                        uid=6_3 InlineTextBox "SEE RECIPE"
+                            uid=6_394 tabpanel "4 of 5"
+                              uid=6_395 link "Pumpkin Spice Cupcakes With Maple Buttercream" url="https://www.lactaid.com/recipes/desserts/pumpkin-spice-cupcakes"
+                                uid=6_396 ignored
+                                  uid=6_397 image "Pumpkin Spice Cupcakes with Maple Buttercream, made with Lactaid!" url="https://images.ctfassets.net/naglem4vigsd/4uL1aIGOzL4q2VL9mVwSkG/aec959c63e7b26221e68822f9a1fbe71/recipe_pumpkin_spice_cupcakes-en-us-Lactaid?fm=webp&w=1024"
+                                uid=6_398 ignored
+                                  uid=6_399 ignored
+                                    uid=6_400 ignored
+                                      uid=6_401 paragraph
+                                        uid=6_402 StaticText "DESSERTS"
+                                          uid=6_3 InlineTextBox "DESSERTS"
+                                      uid=6_403 heading "Pumpkin Spice Cupcakes With Maple Buttercream" level="4"
+                                        uid=6_404 StaticText "Pumpkin Spice Cupcakes With Maple Buttercream"
+                                          uid=6_3 InlineTextBox "Pumpkin Spice Cupcakes "
+                                          uid=6_3 InlineTextBox "With Maple Buttercream"
+                                      uid=6_405 ignored
+                                        uid=6_406 paragraph
+                                          uid=6_407 StaticText "Total Time: 35 min"
+                                            uid=6_3 InlineTextBox "Total Time: 35 min"
+                                  uid=6_408 ignored
+                                    uid=6_409 ignored
+                                      uid=6_410 StaticText "SEE RECIPE"
+                                        uid=6_3 InlineTextBox "SEE RECIPE"
+                            uid=6_411 tabpanel "5 of 5"
+                              uid=6_412 link "Strawberry Glazed French Crullers" url="https://www.lactaid.com/recipes/breakfast/strawberry-glazed-french-crullers"
+                                uid=6_413 ignored
+                                  uid=6_414 image "Strawberry Glazed French Crullers, made with Lactaid!" url="https://images.ctfassets.net/naglem4vigsd/4Lm2ELFlVkqTOLOyLT12id/7c43d64560fe9f0582e825da89eaf9d2/recipe_strawberry_glazed_french_crullers-en-us-Lactaid?fm=webp&w=1024"
+                                uid=6_415 ignored
+                                  uid=6_416 ignored
+                                    uid=6_417 ignored
+                                      uid=6_418 paragraph
+                                        uid=6_419 StaticText "BREAKFAST"
+                                          uid=6_3 InlineTextBox "BREAKFAST"
+                                      uid=6_420 heading "Strawberry Glazed French Crullers" level="4"
+                                        uid=6_421 StaticText "Strawberry Glazed French Crullers"
+                                          uid=6_3 InlineTextBox "Strawberry Glazed "
+                                          uid=6_3 InlineTextBox "French Crullers"
+                                      uid=6_422 ignored
+                                        uid=6_423 paragraph
+                                          uid=6_424 StaticText "Total Time: 54 min"
+                                            uid=6_3 InlineTextBox "Total Time: 54 min"
+                                  uid=6_425 ignored
+                                    uid=6_426 ignored
+                                      uid=6_427 StaticText "SEE RECIPE"
+                                        uid=6_3 InlineTextBox "SEE RECIPE"
+            uid=6_428 ignored
+              uid=6_429 ignored
+            uid=6_430 ignored
+              uid=6_431 ignored
+                uid=6_432 ignored
+                  uid=6_433 ignored
+                    uid=6_434 heading "Looking for More Recipe Inspiration?" level="2"
+                      uid=6_435 StaticText "Looking for More Recipe Inspiration?"
+                        uid=6_3 InlineTextBox "Looking for More Recipe Inspiration?"
+                    uid=6_436 generic
+                      uid=6_437 link "FOLLOW @LACTAID ON INSTAGRAM" url="https://www.instagram.com/lactaid"
+                        uid=6_438 ignored
+                          uid=6_439 StaticText "FOLLOW @LACTAID ON INSTAGRAM"
+                            uid=6_3 InlineTextBox "FOLLOW @LACTAID ON INSTAGRAM"
+                        uid=3_93 ignored
+                  uid=6_440 ignored
+                    uid=6_441 ignored
+                      uid=6_442 link "Lactose-free, fresh green bean casserole recipe, made with Lactaid" url="https://www.instagram.com/lactaid/p/ClRT-iVuJ0s/"
+                        uid=6_443 image "Lactose-free, fresh green bean casserole recipe, made with Lactaid" url="https://images.ctfassets.net/naglem4vigsd/3cQ0aMbOtYODnni1j1NP4U/93cc877150308812a075ae1adcf512e7/mob_recipe_instagram_1-en-us?fm=webp&w=1024"
+                      uid=6_444 ignored
+                    uid=6_445 ignored
+                      uid=6_446 link "Lactose-free creamed spinach recipe made to look like a monster face" url="https://www.instagram.com/lactaid/p/ClHiM17vZso/"
+                        uid=6_447 image "Lactose-free creamed spinach recipe made to look like a monster face" url="https://images.ctfassets.net/naglem4vigsd/6MZgmOhiwIDi2XRbqjpm5u/b2f1fdecd2f3dd919404a6803220779a/mob_recipe_instagram_2-en-us?fm=webp&w=1024"
+                      uid=6_448 ignored
+                    uid=6_449 ignored
+                      uid=6_450 link "Lactose-free, mini ghost pumpkin pies" url="https://www.instagram.com/lactaid/p/CkYaXh8MUgP/"
+                        uid=6_451 image "Lactose-free, mini ghost pumpkin pies" url="https://images.ctfassets.net/naglem4vigsd/3o3dznplWSIjIbCUQcw0AF/ec0fa21a47aadc18463e6cd87670a83f/mob_recipe_instagram_3-en-us?fm=webp&w=1024"
+                      uid=6_452 ignored
+                    uid=6_453 ignored
+                      uid=6_454 link "Lactose-free, cookie butter baked oats recipe, made with Lactaid" url="https://www.instagram.com/lactaid/p/CkLmts7MVee/"
+                        uid=6_455 image "Lactose-free, cookie butter baked oats recipe, made with Lactaid" url="https://images.ctfassets.net/naglem4vigsd/5tGYltBPjChaywkTBqV2oY/d994a3568bd072390e6582a25fcbefb8/mob_recipe_instagram_4-en-us?fm=webp&w=1024"
+                      uid=6_456 ignored
+                  uid=3_94 ignored
+            uid=6_457 generic
+              uid=6_458 ignored
+                uid=6_459 ignored
+                  uid=6_460 ignored
+                    uid=6_461 ignored
+                      uid=6_462 ignored
+                      uid=6_463 ignored
+                        uid=6_464 heading "Enjoy the Food You Love" level="2"
+                          uid=6_465 StaticText "Enjoy the Food You Love"
+                            uid=6_3 InlineTextBox "Enjoy the Food You Love"
+                        uid=6_466 ignored
+                          uid=6_467 ignored
+                            uid=6_468 ignored
+                              uid=6_469 paragraph
+                                uid=6_470 StaticText "From milk to ice cream to cottage cheese, LACTAID® products can help satisfy all your dairy cravings. If we don’t make it, we’ll show you how to substitute a similar ingredient in your favorite recipe!"
+                                  uid=6_3 InlineTextBox "From milk to ice cream to cottage cheese, LACTAID® products can help satisfy all "
+                                  uid=6_3 InlineTextBox "your dairy cravings. If we don’t make it, we’ll show you how to substitute a similar "
+                                  uid=6_3 InlineTextBox "ingredient in your favorite recipe!"
+                      uid=6_471 ignored
+                        uid=6_472 link "DISCOVER INGREDIENT SUBSTITUTIONS" url="https://www.lactaid.com/recipes/lactose-free-substitutions"
+                          uid=6_473 ignored
+                            uid=6_474 StaticText "DISCOVER INGREDIENT SUBSTITUTIONS"
+                              uid=6_3 InlineTextBox "DISCOVER INGREDIENT SUBSTITUTIONS"
+                    uid=6_475 ignored
+                      uid=6_476 link "Table with flour and dairy ingredients and a pan with a pancake mixture" url="https://www.lactaid.com/recipes/lactose-free-substitutions"
+                        uid=6_477 image "Table with flour and dairy ingredients and a pan with a pancake mixture" url="https://images.ctfassets.net/naglem4vigsd/2dM6Y8z4jfkgowyBHz1urQ/b8149b2260504f9dc0d104dfa27a9f9c/recipes_menu_cooking_lactaid-en-us?fm=webp&w=1920"
+            uid=6_478 generic
+              uid=6_479 ignored
+                uid=6_480 ignored
+                  uid=6_481 ignored
+                    uid=6_482 ignored
+                      uid=6_483 ignored
+                        uid=6_484 heading "Learn About Lactose Sensitivity" level="2"
+                          uid=6_485 StaticText "Learn About Lactose Sensitivity"
+                            uid=6_3 InlineTextBox "Learn About Lactose Sensitivity"
+                      uid=6_486 generic
+                        uid=6_487 link "SEE ALL ARTICLES" url="https://www.lactaid.com/lactose-sensitivity"
+                          uid=6_488 ignored
+                            uid=6_489 StaticText "SEE ALL ARTICLES"
+                              uid=6_3 InlineTextBox "SEE ALL ARTICLES"
+                    uid=6_490 ignored
+                      uid=6_491 ignored
+                        uid=6_492 ignored
+                          uid=6_493 generic live="polite" relevant="additions text"
+                            uid=6_494 tabpanel "1 of 7"
+                              uid=6_495 generic
+                                uid=6_496 link "A man smiling as he makes breakfast" description="LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/what-is-lactose-intolerance"
+                                  uid=6_497 image "A man smiling as he makes breakfast" url="https://images.ctfassets.net/naglem4vigsd/1oRMOPzm1hAhENQeutZB3X/c0c87a385e127378f867fea706274ec1/shutterstock_751845142_1-en-us-Lactaid?fm=webp&w=1024"
+                                uid=6_498 ignored
+                                  uid=6_499 ignored
+                                    uid=6_500 ignored
+                                      uid=6_501 paragraph
+                                        uid=6_502 StaticText "LACTOSE SENSITIVITY SYMPTOMS"
+                                          uid=6_3 InlineTextBox "LACTOSE SENSITIVITY SYMPTOMS"
+                                      uid=6_503 heading "What Is Lactose Intolerance?" level="4"
+                                        uid=6_504 link "What Is Lactose Intolerance?" description="LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/what-is-lactose-intolerance"
+                                          uid=6_505 StaticText "What Is Lactose Intolerance?"
+                                            uid=6_3 InlineTextBox "What Is Lactose "
+                                            uid=6_3 InlineTextBox "Intolerance?"
+                                  uid=6_506 ignored
+                                    uid=6_507 link "LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/what-is-lactose-intolerance"
+                                      uid=6_508 ignored
+                                        uid=6_509 StaticText "LEARN MORE"
+                                          uid=6_3 InlineTextBox "LEARN MORE"
+                            uid=6_510 tabpanel "2 of 7"
+                              uid=6_511 generic
+                                uid=6_512 link "A woman looking at her tablet" description="LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/symptoms-of-lactose-intolerance"
+                                  uid=6_513 image "A woman looking at her tablet" url="https://images.ctfassets.net/naglem4vigsd/7ow8lM9TiFvjNSmDd5ffj9/2d054c4353b1bcc28784d2675d6d555d/gettyimages-464723139_2-en-us-Lactaid?fm=webp&w=1024"
+                                uid=6_514 ignored
+                                  uid=6_515 ignored
+                                    uid=6_516 ignored
+                                      uid=6_517 paragraph
+                                        uid=6_518 StaticText "LACTOSE SENSITIVITY SYMPTOMS"
+                                          uid=6_3 InlineTextBox "LACTOSE SENSITIVITY SYMPTOMS"
+                                      uid=6_519 heading "Lactose Intolerance Symptoms" level="4"
+                                        uid=6_520 link "Lactose Intolerance Symptoms" description="LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/symptoms-of-lactose-intolerance"
+                                          uid=6_521 StaticText "Lactose Intolerance Symptoms"
+                                            uid=6_3 InlineTextBox "Lactose Intolerance "
+                                            uid=6_3 InlineTextBox "Symptoms"
+                                  uid=6_522 ignored
+                                    uid=6_523 link "LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/symptoms-of-lactose-intolerance"
+                                      uid=6_524 ignored
+                                        uid=6_525 StaticText "LEARN MORE"
+                                          uid=6_3 InlineTextBox "LEARN MORE"
+                            uid=6_526 tabpanel "3 of 7"
+                              uid=6_527 generic
+                                uid=6_528 link "A black woman taking the lactose intolerance test on her phone." description="LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/lactose-intolerance-test"
+                                  uid=6_529 image "A black woman taking the lactose intolerance test on her phone." url="https://images.ctfassets.net/naglem4vigsd/6f8UXaX10N7478YsQCwL9g/77f42e5cd45709361e96677a375aff3d/lactose-intolerance-at-home-banner-en-us-Lactaid.webp?fm=webp&w=1024"
+                                uid=6_530 ignored
+                                  uid=6_531 ignored
+                                    uid=6_532 ignored
+                                      uid=6_533 paragraph
+                                        uid=6_534 StaticText "LACTOSE SENSITIVITY SYMPTOMS"
+                                          uid=6_3 InlineTextBox "LACTOSE SENSITIVITY SYMPTOMS"
+                                      uid=6_535 heading "Lactose Intolerance At-Home Test" level="4"
+                                        uid=6_536 link "Lactose Intolerance At-Home Test" description="LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/lactose-intolerance-test"
+                                          uid=6_537 StaticText "Lactose Intolerance At-Home Test"
+                                            uid=6_3 InlineTextBox "Lactose Intolerance At-"
+                                            uid=6_3 InlineTextBox "Home Test"
+                                  uid=6_538 ignored
+                                    uid=6_539 link "LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/lactose-intolerance-test"
+                                      uid=6_540 ignored
+                                        uid=6_541 StaticText "LEARN MORE"
+                                          uid=6_3 InlineTextBox "LEARN MORE"
+                            uid=6_542 tabpanel "4 of 7"
+                              uid=6_543 generic
+                                uid=6_544 link "Two little girls eating pizza" description="LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/dairy-sensitivity-in-kids"
+                                  uid=6_545 image "Two little girls eating pizza" url="https://images.ctfassets.net/naglem4vigsd/1toVSHHqwUJDRH30mCtLkE/2bfaa19be2bb3dff30d321ade74538a6/lactose-intolerance-in-kids-card-en-us-Lactaid?fm=webp&w=1024"
+                                uid=6_546 ignored
+                                  uid=6_547 ignored
+                                    uid=6_548 ignored
+                                      uid=6_549 paragraph
+                                        uid=6_550 StaticText "LACTOSE SENSITIVITY SYMPTOMS"
+                                          uid=6_3 InlineTextBox "LACTOSE SENSITIVITY SYMPTOMS"
+                                      uid=6_551 heading "Lactose Sensitivity in Kids" level="4"
+                                        uid=6_552 link "Lactose Sensitivity in Kids" description="LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/dairy-sensitivity-in-kids"
+                                          uid=6_553 StaticText "Lactose Sensitivity in Kids"
+                                            uid=6_3 InlineTextBox "Lactose Sensitivity in "
+                                            uid=6_3 InlineTextBox "Kids"
+                                  uid=6_554 ignored
+                                    uid=6_555 link "LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/dairy-sensitivity-in-kids"
+                                      uid=6_556 ignored
+                                        uid=6_557 StaticText "LEARN MORE"
+                                          uid=6_3 InlineTextBox "LEARN MORE"
+                            uid=6_558 tabpanel "5 of 7"
+                              uid=6_559 generic
+                                uid=6_560 link "A Woman Relaxing" description="LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/lactose-intolerance-diet-tips"
+                                  uid=6_561 image "A Woman Relaxing" url="https://images.ctfassets.net/naglem4vigsd/10gXwfeooV60MDKTqmv9b3/8d795df5b962dd69fcf5ec2c9c6136b2/lactose-intolerance-diet-tips-mob-en-us-Lactaid.webp?fm=webp&w=1024"
+                                uid=6_562 ignored
+                                  uid=6_563 ignored
+                                    uid=6_564 ignored
+                                      uid=6_565 paragraph
+                                        uid=6_566 StaticText "LIVING WITH LACTOSE SENSITIVITY"
+                                          uid=6_3 InlineTextBox "LIVING WITH LACTOSE SENSITIVITY"
+                                      uid=6_567 heading "Lactose Intolerance Diet Tips" level="4"
+                                        uid=6_568 link "Lactose Intolerance Diet Tips" description="LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/lactose-intolerance-diet-tips"
+                                          uid=6_569 StaticText "Lactose Intolerance Diet Tips"
+                                            uid=6_3 InlineTextBox "Lactose Intolerance Diet "
+                                            uid=6_3 InlineTextBox "Tips"
+                                  uid=6_570 ignored
+                                    uid=6_571 link "LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/lactose-intolerance-diet-tips"
+                                      uid=6_572 ignored
+                                        uid=6_573 StaticText "LEARN MORE"
+                                          uid=6_3 InlineTextBox "LEARN MORE"
+                            uid=6_574 tabpanel "6 of 7"
+                              uid=6_575 generic
+                                uid=6_576 link "The process behind Lactose Free Milk." description="LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/what-is-lactose-free-milk"
+                                  uid=6_577 image "The process behind Lactose Free Milk." url="https://images.ctfassets.net/naglem4vigsd/6jkbI0piRbrK9ailZOJ0IG/436e9d7e65ba3b9f3d7026259ecd3617/what-is-lactose-banner-desktop-en-us-Lactaid.svg?fm=webp&w=1024"
+                                uid=6_578 ignored
+                                  uid=6_579 ignored
+                                    uid=6_580 ignored
+                                      uid=6_581 paragraph
+                                        uid=6_582 StaticText "LIVING WITH LACTOSE SENSITIVITY"
+                                          uid=6_3 InlineTextBox "LIVING WITH LACTOSE SENSITIVITY"
+                                      uid=6_583 heading "What Is Lactose-Free Milk?" level="4"
+                                        uid=6_584 link "What Is Lactose-Free Milk?" description="LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/what-is-lactose-free-milk"
+                                          uid=6_585 StaticText "What Is Lactose-Free Milk?"
+                                            uid=6_3 InlineTextBox "What Is Lactose-Free "
+                                            uid=6_3 InlineTextBox "Milk?"
+                                  uid=6_586 ignored
+                                    uid=6_587 link "LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/what-is-lactose-free-milk"
+                                      uid=6_588 ignored
+                                        uid=6_589 StaticText "LEARN MORE"
+                                          uid=6_3 InlineTextBox "LEARN MORE"
+                            uid=6_590 tabpanel "7 of 7"
+                              uid=6_591 generic
+                                uid=6_592 link "Woman smiling as she eats a bowl of cereal" description="LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/lactose-free-vs-dairy-free"
+                                  uid=6_593 image "Woman smiling as she eats a bowl of cereal" url="https://images.ctfassets.net/naglem4vigsd/3CcgddKPoBapgUDXu08YGe/cc3818cb61474832bafeff82352d92ed/lactose-free-vs-dairy-free-milk-card-en-us-Lactaid?fm=webp&w=1024"
+                                uid=6_594 ignored
+                                  uid=6_595 ignored
+                                    uid=6_596 ignored
+                                      uid=6_597 paragraph
+                                        uid=6_598 StaticText "LIVING WITH LACTOSE SENSITIVITY"
+                                          uid=6_3 InlineTextBox "LIVING WITH LACTOSE SENSITIVITY"
+                                      uid=6_599 heading "Lactose-Free vs. Dairy-Free Milk" level="4"
+                                        uid=6_600 link "Lactose-Free vs. Dairy-Free Milk" description="LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/lactose-free-vs-dairy-free"
+                                          uid=6_601 StaticText "Lactose-Free vs. Dairy-Free Milk"
+                                            uid=6_3 InlineTextBox "Lactose-Free vs. Dairy-"
+                                            uid=6_3 InlineTextBox "Free Milk"
+                                  uid=6_602 ignored
+                                    uid=6_603 link "LEARN MORE" url="https://www.lactaid.com/lactose-sensitivity/lactose-free-vs-dairy-free"
+                                      uid=6_604 ignored
+                                        uid=6_605 StaticText "LEARN MORE"
+                                          uid=6_3 InlineTextBox "LEARN MORE"
+            uid=6_606 ignored
+              uid=6_607 ignored
+            uid=6_608 ignored
+              uid=6_609 ignored
+                uid=6_610 ignored
+                  uid=6_611 ignored
+                    uid=6_612 heading "Get Your Favorite LACTAID® Products" level="2"
+                      uid=6_613 StaticText "Get Your Favorite LACTAID"
+                        uid=6_3 InlineTextBox "Get Your Favorite LACTAID"
+                      uid=6_614 superscript
+                        uid=6_615 StaticText "®"
+                          uid=6_3 InlineTextBox "®"
+                      uid=6_616 StaticText " Products"
+                        uid=6_3 InlineTextBox " Products"
+                uid=6_617 ignored
+                  uid=6_618 ignored
+                    uid=6_619 generic live="polite" relevant="additions text"
+                      uid=6_620 tabpanel "1 of 8"
+                        uid=6_621 link "LACTAID® Lactose-Free Whole Milk"
+                          uid=6_622 generic
+                            uid=6_623 link "Lactaid Whole Milk Front Package" url="https://www.lactaid.com/products/lactaid-whole-milk"
+                              uid=6_624 image "Lactaid Whole Milk Front Package" url="https://images.ctfassets.net/naglem4vigsd/5ev1dKhRtjV7z8HLdNsmcA/2daaa10cab89d67ae5832624dc3588b8/lactose_free_whole_milk-en-us?fm=webp&w=384"
+                          uid=6_625 ignored
+                            uid=6_626 ignored
+                              uid=6_627 ignored
+                                uid=6_628 link "LACTAID® Lactose-Free Whole Milk" url="https://www.lactaid.com/products/lactaid-whole-milk"
+                                  uid=6_629 heading "LACTAID® Lactose-Free Whole Milk" level="3"
+                                    uid=6_630 ignored
+                                      uid=6_631 ignored
+                                        uid=6_632 StaticText "LACTAID® Lactose-Free Whole Milk"
+                                          uid=6_3 InlineTextBox "LACTAID® Lactose-Free "
+                                          uid=6_3 InlineTextBox "Whole Milk"
+                              uid=6_633 ignored
+                                uid=6_634 generic
+                                  uid=6_635 link "4.8 out of 5 stars. 1769 reviews " url="https://www.lactaid.com/products/lactaid-whole-milk"
+                                    uid=6_636 ignored
+                            uid=6_637 ignored
+                              uid=6_638 button "Find where to buy this product"
+                                uid=6_639 StaticText "BUY NOW"
+                                  uid=6_3 InlineTextBox "BUY NOW"
+                      uid=6_640 tabpanel "2 of 8"
+                        uid=6_641 link "LACTAID® Reduced Fat 2% Lactose-Free Milk"
+                          uid=6_642 generic
+                            uid=6_643 link "Lactaid 2% Reduced Fat Milk Front of Package" url="https://www.lactaid.com/products/lactaid-milk/lactaid-reduced-fat-2-milk"
+                              uid=6_644 image "Lactaid 2% Reduced Fat Milk Front of Package" url="https://images.ctfassets.net/naglem4vigsd/27u3H36yVtgMMW3H4wyYEh/0dfcbc592eac8f04e9f110272aacb1a1/reduced_fat_2_lactose_free_milk-en-us?fm=webp&w=384"
+                          uid=6_645 ignored
+                            uid=6_646 ignored
+                              uid=6_647 ignored
+                                uid=6_648 link "LACTAID® Reduced Fat 2% Lactose-Free Milk" url="https://www.lactaid.com/products/lactaid-milk/lactaid-reduced-fat-2-milk"
+                                  uid=6_649 heading "LACTAID® Reduced Fat 2% Lactose-Free Milk" level="3"
+                                    uid=6_650 ignored
+                                      uid=6_651 ignored
+                                        uid=6_652 StaticText "LACTAID® Reduced Fat 2% Lactose-Free Milk"
+                                          uid=6_3 InlineTextBox "LACTAID® Reduced Fat 2% "
+                                          uid=6_3 InlineTextBox "Lactose-Free Milk"
+                              uid=6_653 ignored
+                                uid=6_654 generic
+                                  uid=6_655 link "4.7 out of 5 stars. 2229 reviews " url="https://www.lactaid.com/products/lactaid-milk/lactaid-reduced-fat-2-milk"
+                                    uid=6_656 ignored
+                            uid=6_657 ignored
+                              uid=6_658 button "Find where to buy this product"
+                                uid=6_659 StaticText "BUY NOW"
+                                  uid=6_3 InlineTextBox "BUY NOW"
+                      uid=6_660 tabpanel "3 of 8"
+                        uid=6_661 link "LACTAID® Lactose-Free Cookies & Cream Ice Cream"
+                          uid=6_662 generic
+                            uid=6_663 link "Lactaid cookies and cream lactose-free ice cream" url="https://www.lactaid.com/products/lactaid-cookies-and-cream-ice-cream"
+                              uid=6_664 image "Lactaid cookies and cream lactose-free ice cream" url="https://images.ctfassets.net/naglem4vigsd/4qVXp0Zb0SRBmouOOTybCo/3f4af0dae0d7dd3fc03c17b37cfd174c/lactaid_icecream-cookie-header-en-us?fm=webp&w=384"
+                          uid=6_665 ignored
+                            uid=6_666 ignored
+                              uid=6_667 ignored
+                                uid=6_668 link "LACTAID® Lactose-Free Cookies & Cream Ice Cream" url="https://www.lactaid.com/products/lactaid-cookies-and-cream-ice-cream"
+                                  uid=6_669 heading "LACTAID® Lactose-Free Cookies & Cream Ice Cream" level="3"
+                                    uid=6_670 ignored
+                                      uid=6_671 ignored
+                                        uid=6_672 StaticText "LACTAID® Lactose-Free Cookies & Cream Ice Cream"
+                                          uid=6_3 InlineTextBox "LACTAID® Lactose-Free "
+                                          uid=6_3 InlineTextBox "Cookies & Cream Ice Cream"
+                              uid=6_673 ignored
+                                uid=6_674 generic
+                                  uid=6_675 link "4.6 out of 5 stars. 194 reviews " url="https://www.lactaid.com/products/lactaid-cookies-and-cream-ice-cream"
+                                    uid=6_676 ignored
+                            uid=6_677 ignored
+                              uid=6_678 button "Find where to buy this product"
+                                uid=6_679 StaticText "BUY NOW"
+                                  uid=6_3 InlineTextBox "BUY NOW"
+                      uid=6_680 tabpanel "4 of 8"
+                        uid=6_681 link "LACTAID® Lactose-Free 2% Reduced Fat Protein Milk"
+                          uid=6_682 generic
+                            uid=6_683 link "Comparison chart of Lactaid whole milk highlighting its protein content versus regular milk, showcasing nutritional benefits for lactose-intolerant individuals." url="https://www.lactaid.com/products/lactaid-protein-2-percent-milk"
+                              uid=6_684 image "Comparison chart of Lactaid whole milk highlighting its protein content versus regular milk, showcasing nutritional benefits for lactose-intolerant individuals." url="https://images.ctfassets.net/naglem4vigsd/6fpelMXRAMsrXquesnxmie/bd82c16d019384dd76a83c686e238ee2/rf_protein_front_1-en-us?fm=webp&w=384"
+                          uid=6_685 ignored
+                            uid=6_686 ignored
+                              uid=6_687 ignored
+                                uid=6_688 link "LACTAID® Lactose-Free 2% Reduced Fat Protein Milk" url="https://www.lactaid.com/products/lactaid-protein-2-percent-milk"
+                                  uid=6_689 heading "LACTAID® Lactose-Free 2% Reduced Fat Protein Milk" level="3"
+                                    uid=6_690 ignored
+                                      uid=6_691 ignored
+                                        uid=6_692 StaticText "LACTAID® Lactose-Free 2% Reduced Fat Protein Milk"
+                                          uid=6_3 InlineTextBox "LACTAID® Lactose-Free 2% "
+                                          uid=6_3 InlineTextBox "Reduced Fat Protein Milk"
+                              uid=6_693 ignored
+                                uid=6_694 generic
+                                  uid=6_695 link "4.8 out of 5 stars. 76 reviews " url="https://www.lactaid.com/products/lactaid-protein-2-percent-milk"
+                                    uid=6_696 ignored
+                            uid=6_697 ignored
+                              uid=6_698 button "Find where to buy this product"
+                                uid=6_699 StaticText "BUY NOW"
+                                  uid=6_3 InlineTextBox "BUY NOW"
+                      uid=6_700 tabpanel "5 of 8"
+                        uid=6_701 link "LACTAID® Fat-Free Lactose-Free Milk"
+                          uid=6_702 generic
+                            uid=6_703 link "Lactaid Fat Free Milk Front of Package" url="https://www.lactaid.com/products/lactaid-fat-free-milk"
+                              uid=6_704 image "Lactaid Fat Free Milk Front of Package" url="https://images.ctfassets.net/naglem4vigsd/5zJh71rIEfJ00jj5a4jLIm/a2180c3adc1b3d9d31facb36543d5711/hg_ff_front-en-us?fm=webp&w=384"
+                          uid=6_705 ignored
+                            uid=6_706 ignored
+                              uid=6_707 ignored
+                                uid=6_708 link "LACTAID® Fat-Free Lactose-Free Milk" url="https://www.lactaid.com/products/lactaid-fat-free-milk"
+                                  uid=6_709 heading "LACTAID® Fat-Free Lactose-Free Milk" level="3"
+                                    uid=6_710 ignored
+                                      uid=6_711 ignored
+                                        uid=6_712 StaticText "LACTAID® Fat-Free Lactose-Free Milk"
+                                          uid=6_3 InlineTextBox "LACTAID® Fat-Free Lactose-"
+                                          uid=6_3 InlineTextBox "Free Milk"
+                              uid=6_713 ignored
+                                uid=6_714 generic
+                                  uid=6_715 link "4.8 out of 5 stars. 467 reviews " url="https://www.lactaid.com/products/lactaid-fat-free-milk"
+                                    uid=6_716 ignored
+                            uid=6_717 ignored
+                              uid=6_718 button "Find where to buy this product"
+                                uid=6_719 StaticText "BUY NOW"
+                                  uid=6_3 InlineTextBox "BUY NOW"
+                      uid=6_720 tabpanel "6 of 8"
+                        uid=6_721 link "LACTAID® Calcium-Enriched Reduced Fat 2% Lactose-Free Milk"
+                          uid=6_722 generic
+                            uid=6_723 link "Carton of Lactaid calcium-enriched milk, highlighting its lactose-free formula and nutritional benefits, placed on a kitchen countertop" url="https://www.lactaid.com/products/lactaid-calcium-enriched-2-percent-milk"
+                              uid=6_724 image "Carton of Lactaid calcium-enriched milk, highlighting its lactose-free formula and nutritional benefits, placed on a kitchen countertop" url="https://images.ctfassets.net/naglem4vigsd/1fUFccuYmrV4KRDcBBqpL7/6ae7700a38ee2c697cc38f14ce68fad3/calcium-milk-reduced-front-new-en-us?fm=webp&w=384"
+                          uid=6_725 ignored
+                            uid=6_726 ignored
+                              uid=6_727 ignored
+                                uid=6_728 link "LACTAID® Calcium-Enriched Reduced Fat 2% Lactose-Free Milk" url="https://www.lactaid.com/products/lactaid-calcium-enriched-2-percent-milk"
+                                  uid=6_729 heading "LACTAID® Calcium-Enriched Reduced Fat 2% Lactose-Free Milk" level="3"
+                                    uid=6_730 ignored
+                                      uid=6_731 ignored
+                                        uid=6_732 StaticText "LACTAID® Calcium-Enriched Reduced Fat 2% Lactose-Free Milk"
+                                          uid=6_3 InlineTextBox "LACTAID® Calcium-Enriched "
+                                          uid=6_3 InlineTextBox "Reduced Fat 2% Lactose-Free "
+                                          uid=6_3 InlineTextBox "Milk"
+                              uid=6_733 ignored
+                                uid=6_734 generic
+                                  uid=6_735 link "4.8 out of 5 stars. 404 reviews " url="https://www.lactaid.com/products/lactaid-calcium-enriched-2-percent-milk"
+                                    uid=6_736 ignored
+                            uid=6_737 ignored
+                              uid=6_738 button "Find where to buy this product"
+                                uid=6_739 StaticText "BUY NOW"
+                                  uid=6_3 InlineTextBox "BUY NOW"
+                      uid=6_740 tabpanel "7 of 8"
+                        uid=6_741 link "LACTAID® Cottage Cheese"
+                          uid=6_742 generic
+                            uid=6_743 link "Lactaid Cottage Cheese front of Package" url="https://www.lactaid.com/products/lactaid-cottage-cheese"
+                              uid=6_744 image "Lactaid Cottage Cheese front of Package" url="https://images.ctfassets.net/naglem4vigsd/7rpy4UTMd8A30WXG6m03mW/e9da5f11608dc72a10e86b4c6d912538/lactaid_cottagecheese-en-us?fm=webp&w=384"
+                          uid=6_745 ignored
+                            uid=6_746 ignored
+                              uid=6_747 ignored
+                                uid=6_748 link "LACTAID® Cottage Cheese" url="https://www.lactaid.com/products/lactaid-cottage-cheese"
+                                  uid=6_749 heading "LACTAID® Cottage Cheese" level="3"
+                                    uid=6_750 ignored
+                                      uid=6_751 ignored
+                                        uid=6_752 StaticText "LACTAID® Cottage Cheese"
+                                          uid=6_3 InlineTextBox "LACTAID® Cottage Cheese"
+                              uid=6_753 ignored
+                                uid=6_754 generic
+                                  uid=6_755 link "3.3 out of 5 stars. 624 reviews " url="https://www.lactaid.com/products/lactaid-cottage-cheese"
+                                    uid=6_756 ignored
+                            uid=6_757 ignored
+                              uid=6_758 button "Find where to buy this product"
+                                uid=6_759 StaticText "BUY NOW"
+                                  uid=6_3 InlineTextBox "BUY NOW"
+                      uid=6_760 tabpanel "8 of 8"
+                        uid=6_761 link "LACTAID® Lactose-Free Vanilla Ice Cream"
+                          uid=6_762 generic
+                            uid=6_763 link "Lactaid vanilla lactose-free ice cream" url="https://www.lactaid.com/products/lactaid-vanilla-ice-cream"
+                              uid=6_764 image "Lactaid vanilla lactose-free ice cream" url="https://images.ctfassets.net/naglem4vigsd/396Mxgu53zzjfhL0S0qIx3/5420c32fe17c94cc10e6cf329500c371/lactaid_icecream-vanilla_header-en-us?fm=webp&w=384"
+                          uid=6_765 ignored
+                            uid=6_766 ignored
+                              uid=6_767 ignored
+                                uid=6_768 link "LACTAID® Lactose-Free Vanilla Ice Cream" url="https://www.lactaid.com/products/lactaid-vanilla-ice-cream"
+                                  uid=6_769 heading "LACTAID® Lactose-Free Vanilla Ice Cream" level="3"
+                                    uid=6_770 ignored
+                                      uid=6_771 ignored
+                                        uid=6_772 StaticText "LACTAID® Lactose-Free Vanilla Ice Cream"
+                                          uid=6_3 InlineTextBox "LACTAID® Lactose-Free "
+                                          uid=6_3 InlineTextBox "Vanilla Ice Cream"
+                              uid=6_773 ignored
+                                uid=6_774 generic
+                                  uid=6_775 link "4.4 out of 5 stars. 238 reviews " url="https://www.lactaid.com/products/lactaid-vanilla-ice-cream"
+                                    uid=6_776 ignored
+                            uid=6_777 ignored
+                              uid=6_778 button "Find where to buy this product"
+                                uid=6_779 StaticText "BUY NOW"
+                                  uid=6_3 InlineTextBox "BUY NOW"
+        uid=6_780 ignored
+          uid=6_781 generic
+        uid=6_782 generic
+          uid=6_783 sectionfooter
+            uid=6_784 generic
+              uid=6_785 ignored
+                uid=6_786 image
+                uid=6_787 ignored
+                  uid=6_788 generic
+                    uid=6_789 ignored
+                      uid=6_790 heading "Get the Scoop" level="2"
+                        uid=6_791 StaticText "Get the Scoop"
+                          uid=6_3 InlineTextBox "Get the Scoop"
+                      uid=6_792 ignored
+                        uid=6_793 paragraph
+                          uid=6_794 StaticText "Want to receive delicious recipes, new product updates, and exclusive offers from LACTAID®? Sign up for our emails today!"
+                            uid=6_3 InlineTextBox "Want to receive delicious recipes, new product "
+                            uid=6_3 InlineTextBox "updates, and exclusive offers from LACTAID®? Sign "
+                            uid=6_3 InlineTextBox "up for our emails today!"
+                    uid=6_795 ignored
+                      uid=6_796 ignored
+                        uid=6_797 ignored
+                          uid=6_798 textbox "First Name" required
+                            uid=6_799 ignored
+                            uid=6_800 generic
+                        uid=6_801 ignored
+                          uid=6_802 textbox "Email Address" required
+                            uid=6_803 ignored
+                            uid=6_804 generic
+                      uid=6_805 ignored
+                        uid=6_806 ignored
+                          uid=6_807 checkbox "I am a resident of Nevada or Washington state"
+                          uid=6_808 ignored
+                          uid=6_809 LabelText
+                            uid=6_810 ignored
+                              uid=6_811 paragraph
+                                uid=6_812 StaticText "I am a resident of Nevada or Washington state"
+                                  uid=6_3 InlineTextBox "I am a resident of Nevada or Washington state"
+                      uid=6_813 ignored
+                        uid=6_814 ignored
+                          uid=6_815 paragraph
+                            uid=6_816 StaticText "The information you submit will be governed by our "
+                              uid=6_3 InlineTextBox "The information you submit will be governed by our "
+                            uid=6_817 link "Privacy Notice" url="https://www.kenvuebrands.com/us/privacy-notice"
+                              uid=6_818 StaticText "Privacy Notice"
+                                uid=6_3 InlineTextBox "Privacy "
+                                uid=6_3 InlineTextBox "Notice"
+                            uid=6_819 StaticText " and you agree to the "
+                              uid=6_3 InlineTextBox " and you agree to the "
+                            uid=6_820 link "Financial Incentive Notice" url="https://www.kenvuebrands.com/us/privacy-notice#financial-incentives-california"
+                              uid=6_821 StaticText "Financial Incentive Notice"
+                                uid=6_3 InlineTextBox "Financial Incentive Notice"
+                            uid=6_822 StaticText "."
+                              uid=6_3 InlineTextBox "."
+                    uid=6_823 button "SIGN UP"
+                      uid=6_824 StaticText "SIGN UP"
+                        uid=6_3 InlineTextBox "SIGN UP"
+            uid=6_825 ignored
+              uid=6_826 ignored
+                uid=6_827 ignored
+                  uid=6_828 navigation "Social Media Links"
+                    uid=6_829 list
+                      uid=6_830 listitem level="1"
+                        uid=6_831 link url="https://www.facebook.com/Lactaid"
+                          uid=6_832 image
+                            uid=3_102 ignored
+                      uid=6_833 listitem level="1"
+                        uid=6_834 link url="https://twitter.com/lactaid"
+                          uid=6_835 image
+                            uid=3_103 ignored
+                      uid=6_836 listitem level="1"
+                        uid=6_837 link url="https://www.instagram.com/lactaid/"
+                          uid=6_838 image
+                            uid=3_104 ignored
+                      uid=6_839 listitem level="1"
+                        uid=6_840 link url="https://www.youtube.com/lactaid"
+                          uid=6_841 image
+                            uid=3_105 ignored
+                      uid=6_842 listitem level="1"
+                        uid=6_843 link url="https://www.pinterest.com/lactaid"
+                          uid=6_844 image
+                            uid=3_106 ignored
+                uid=6_845 ignored
+                  uid=6_846 ignored
+                    uid=6_847 navigation "LACTAID<sup>®</sup> Products"
+                      uid=6_848 heading "LACTAID® Products" level="2"
+                        uid=6_849 StaticText "LACTAID"
+                          uid=6_3 InlineTextBox "LACTAID"
+                        uid=6_850 superscript
+                          uid=6_851 StaticText "®"
+                            uid=6_3 InlineTextBox "®"
+                        uid=6_852 StaticText " Products"
+                          uid=6_3 InlineTextBox "Products"
+                      uid=6_853 list
+                        uid=6_854 listitem level="1"
+                          uid=6_855 link "All Products" url="https://www.lactaid.com/products"
+                            uid=6_856 ignored
+                              uid=6_857 ignored
+                                uid=6_858 StaticText "All Products"
+                                  uid=6_3 InlineTextBox "All Products"
+                        uid=6_859 listitem level="1"
+                          uid=6_860 link "Where to Buy" url="https://www.lactaid.com/where-to-buy"
+                            uid=6_861 ignored
+                              uid=6_862 ignored
+                                uid=6_863 StaticText "Where to Buy"
+                                  uid=6_3 InlineTextBox "Where to Buy"
+                        uid=6_864 listitem level="1"
+                          uid=6_865 link "Coupons & Offers" url="https://www.lactaid.com/coupons"
+                            uid=6_866 ignored
+                              uid=6_867 ignored
+                                uid=6_868 StaticText "Coupons & Offers"
+                                  uid=6_3 InlineTextBox "Coupons & Offers"
+                        uid=6_869 listitem level="1"
+                          uid=6_870 link "FAQs" url="https://www.lactaid.com/frequently-asked-questions"
+                            uid=6_871 ignored
+                              uid=6_872 ignored
+                                uid=6_873 StaticText "FAQs"
+                                  uid=6_3 InlineTextBox "FAQs"
+                  uid=6_874 ignored
+                    uid=6_875 navigation "Cook & Learn with LACTAID<sup>®</sup>"
+                      uid=6_876 heading "Cook & Learn with LACTAID®" level="2"
+                        uid=6_877 StaticText "Cook & Learn with LACTAID"
+                          uid=6_3 InlineTextBox "Cook & Learn "
+                          uid=6_3 InlineTextBox "with LACTAID"
+                        uid=6_878 superscript
+                          uid=6_879 StaticText "®"
+                            uid=6_3 InlineTextBox "®"
+                      uid=6_880 list
+                        uid=6_881 listitem level="1"
+                          uid=6_882 link "Lactose-Free Recipes" url="https://www.lactaid.com/recipes"
+                            uid=6_883 ignored
+                              uid=6_884 ignored
+                                uid=6_885 StaticText "Lactose-Free Recipes"
+                                  uid=6_3 InlineTextBox "Lactose-Free Recipes"
+                        uid=6_886 listitem level="1"
+                          uid=6_887 link "Lactose Sensitivity" url="https://www.lactaid.com/lactose-sensitivity"
+                            uid=6_888 ignored
+                              uid=6_889 ignored
+                                uid=6_890 StaticText "Lactose Sensitivity"
+                                  uid=6_3 InlineTextBox "Lactose Sensitivity"
+                  uid=6_891 ignored
+                    uid=6_892 navigation "About LACTAID<sup>®</sup>"
+                      uid=6_893 heading "About LACTAID®" level="2"
+                        uid=6_894 StaticText "About LACTAID"
+                          uid=6_3 InlineTextBox "About LACTAID"
+                        uid=6_895 superscript
+                          uid=6_896 StaticText "®"
+                            uid=6_3 InlineTextBox "®"
+                      uid=6_897 list
+                        uid=6_898 listitem level="1"
+                          uid=6_899 link "About Us" url="https://www.lactaid.com/about-us"
+                            uid=6_900 ignored
+                              uid=6_901 ignored
+                                uid=6_902 StaticText "About Us"
+                                  uid=6_3 InlineTextBox "About Us"
+                        uid=6_903 listitem level="1"
+                          uid=6_904 link "Contact Us" url="https://www.lactaid.com/contact-us"
+                            uid=6_905 ignored
+                              uid=6_906 ignored
+                                uid=6_907 StaticText "Contact Us"
+                                  uid=6_3 InlineTextBox "Contact Us"
+                        uid=6_908 listitem level="1"
+                          uid=6_909 link "Sitemap" url="https://www.lactaid.com/sitemap"
+                            uid=6_910 ignored
+                              uid=6_911 ignored
+                                uid=6_912 StaticText "Sitemap"
+                                  uid=6_3 InlineTextBox "Sitemap"
+                  uid=6_913 ignored
+                    uid=6_914 navigation "Legal Information"
+                      uid=6_915 heading "Legal Information" level="2"
+                        uid=6_916 StaticText "Legal Information"
+                          uid=6_3 InlineTextBox "Legal Information"
+                      uid=6_917 list
+                        uid=6_918 listitem level="1"
+                          uid=6_919 link "Legal Notice" url="https://www.lactaid.com/legal-notice"
+                            uid=6_920 ignored
+                              uid=6_921 ignored
+                                uid=6_922 StaticText "Legal Notice"
+                                  uid=6_3 InlineTextBox "Legal Notice"
+                        uid=6_923 listitem level="1"
+                          uid=6_924 link "Privacy Notice" url="https://www.kenvuebrands.com/us/privacy-notice"
+                            uid=6_925 ignored
+                              uid=6_926 ignored
+                                uid=6_927 StaticText "Privacy Notice"
+                                  uid=6_3 InlineTextBox "Privacy Notice"
+                        uid=6_928 listitem level="1"
+                          uid=6_929 link "Do Not Sell or Share My Personal Information" url="https://privacyportal.onetrust.com/webform/82718966-5f5b-4890-b678-92f1798255c7/7d2d6d0e-787c-40c2-b035-7d40a43f57a7?digitalassetname=lactaid.com"
+                            uid=6_930 ignored
+                              uid=6_931 ignored
+                                uid=6_932 StaticText "Do Not Sell or Share My Personal Information"
+                                  uid=6_3 InlineTextBox "Do Not Sell or Share My "
+                                  uid=6_3 InlineTextBox "Personal Information"
+                        uid=6_933 listitem level="1"
+                          uid=6_934 link "Limit the Use of My Sensitive Personal Information" url="https://privacyportal.onetrust.com/webform/82718966-5f5b-4890-b678-92f1798255c7/7d2d6d0e-787c-40c2-b035-7d40a43f57a7?digitalassetname=lactaid.com"
+                            uid=6_935 ignored
+                              uid=6_936 ignored
+                                uid=6_937 StaticText "Limit the Use of My Sensitive Personal Information"
+                                  uid=6_3 InlineTextBox "Limit the Use of My "
+                                  uid=6_3 InlineTextBox "Sensitive Personal "
+                                  uid=6_3 InlineTextBox "Information"
+                        uid=6_938 listitem level="1"
+                          uid=6_939 link "Consumer Health Data Privacy Notice" url="https://www.kenvuebrands.com/us/privacy-notice#consumer-health-data"
+                            uid=6_940 ignored
+                              uid=6_941 ignored
+                                uid=6_942 StaticText "Consumer Health Data Privacy Notice"
+                                  uid=6_3 InlineTextBox "Consumer Health Data "
+                                  uid=6_3 InlineTextBox "Privacy Notice"
+                        uid=6_943 listitem level="1"
+                          uid=6_944 link "AdChoices" url="https://www.kenvuebrands.com/us/privacy-notice#use-of-your-personal-information"
+                            uid=6_945 ignored
+                              uid=6_946 ignored
+                                uid=6_947 StaticText "AdChoices"
+                                  uid=6_3 InlineTextBox "AdChoices"
+                        uid=6_948 listitem level="1"
+                          uid=3_107 button "Cookies Settings"
+                            uid=3_108 generic
+                            uid=6_949 StaticText "Cookies Settings"
+                              uid=6_3 InlineTextBox "Cookies Settings"
+                uid=6_950 ignored
+                  uid=6_951 ignored
+                  uid=6_952 ignored
+                    uid=6_953 ignored
+                      uid=6_954 paragraph
+                        uid=6_955 superscript
+                          uid=6_956 StaticText "©"
+                            uid=6_3 InlineTextBox "©"
+                        uid=6_957 StaticText "Kenvue Brands LLC. 2026 | Ft. Washington, PA USA. All rights reserved. This website is published by Kenvue Brands LLC which is solely responsible for its contents. This website is intended for visitors from the United States. The third-party trademarks used herein are trademarks of their respective owners."
+                          uid=6_3 InlineTextBox "Kenvue Brands LLC. 2026 | Ft. Washington, PA USA. All rights reserved. This website is published by Kenvue "
+                          uid=6_3 InlineTextBox "Brands LLC which is solely responsible for its contents. This website is intended for visitors from the United "
+                          uid=6_3 InlineTextBox "States. The third-party trademarks used herein are trademarks of their respective owners."
+        uid=3_109 ignored
+      uid=6_958 generic
+        uid=3_110 alert atomic live="assertive" relevant="additions text"
+      uid=6_959 generic
+        uid=3_156 ignored
+          uid=3_157 ignored
+            uid=3_158 ignored
+          uid=3_159 ignored
+            uid=3_160 ignored
+          uid=3_161 ignored
+            uid=3_162 ignored
+          uid=3_163 ignored
+            uid=3_164 ignored
+            uid=3_165 ignored
+              uid=3_166 ignored
+          uid=3_167 ignored
+            uid=3_168 ignored
+          uid=3_169 ignored
+            uid=3_170 ignored
+            uid=3_171 ignored
+              uid=3_172 ignored
+          uid=3_173 ignored
+            uid=3_174 ignored
+          uid=3_175 ignored
+            uid=3_176 ignored
+            uid=3_177 ignored
+              uid=3_178 ignored
+          uid=3_179 ignored
+            uid=3_180 ignored
+          uid=3_181 ignored
+            uid=3_182 ignored
+            uid=3_183 ignored
+              uid=3_184 ignored
+          uid=3_185 ignored
+          uid=3_186 ignored
+          uid=3_187 ignored
+          uid=3_188 ignored
+            uid=3_189 ignored
+              uid=3_190 ignored
+          uid=3_191 ignored
+            uid=3_192 ignored
+              uid=3_193 ignored
+          uid=3_194 ignored
+            uid=3_195 ignored
+              uid=3_196 ignored
+          uid=3_197 ignored
+            uid=3_198 ignored
+              uid=3_199 ignored
+      uid=6_960 ignored
+        uid=6_961 generic
+          uid=6_962 ignored
+            uid=6_963 IframePresentational "reCAPTCHA"
+          uid=6_964 ignored
+          uid=6_965 ignored
