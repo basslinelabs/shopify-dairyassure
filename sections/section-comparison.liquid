@@ -17,116 +17,119 @@
   class="da-comp da-bg-dark section-{{ section.id }}-padding{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
 >
   <div class="page-width">
-    <div class="da-comp__container">
-      <div class="da-comp__text">
-        <h2 class="da-comp__heading">{{ section.settings.heading }}</h2>
-        {%- if section.settings.subheading != blank -%}
-          <p class="da-comp__subheading">{{ section.settings.subheading }}</p>
-        {%- endif -%}
-        {%- if section.settings.product_image != blank -%}
-          <div class="da-comp__product-image">
-            {{
-              section.settings.product_image
-              | image_url: width: 400
-              | image_tag:
-                loading: 'lazy',
-                sizes: '(min-width: 750px) 280px, 200px',
-                widths: '200, 280, 400',
-                alt: 'DairyAssure stick pack'
-            }}
-          </div>
-        {%- else -%}
-          <div class="da-comp__product-image">
-            <img
-              src="{{ 'da-ref-stick-flat.png' | asset_url }}"
-              loading="lazy"
-              width="400"
-              height="400"
-              alt="DairyAssure stick pack"
-            >
-          </div>
-        {%- endif -%}
-        {%- if section.settings.button_label != blank -%}
-          <div class="da-comp__cta">
-            {%- render 'da-button', label: section.settings.button_label, url: section.settings.button_link -%}
-          </div>
-        {%- endif -%}
-      </div>
-
-      <div class="da-comp__chart">
-        <p class="da-comp__chart-label">
-          {{ section.settings.chart_label }}
-          <span>{{ section.settings.chart_max }}</span>
-        </p>
-
-        {%- for block in section.blocks -%}
-          <div class="da-comp__bar-row" {{ block.shopify_attributes }}>
-            <p class="da-comp__bar-label">{{ block.settings.label }}</p>
-            <div
-              class="da-comp__bar-track{% if block.settings.is_hero %} da-comp__bar-track--hero{% else %} da-comp__bar-track--default{% endif %}"
-              style="--score: {{ block.settings.score }};"
-              role="meter"
-              aria-valuenow="{{ block.settings.score }}"
-              aria-valuemin="0"
-              aria-valuemax="100"
-              aria-label="{{ block.settings.label }} relief convenience score"
-            >
-              <p class="da-comp__bar-score">{{ block.settings.score }}</p>
-            </div>
-            {%- if block.settings.subtitle != blank -%}
-              <p class="da-comp__bar-subtitle">{{ block.settings.subtitle }}</p>
-            {%- endif -%}
-          </div>
-        {%- endfor -%}
-
-        {%- if section.settings.disclaimer != blank -%}
-          <p class="da-comp__disclaimer">{{ section.settings.disclaimer }}</p>
-        {%- endif -%}
-      </div>
+    <div class="da-comp__header">
+      <h2 class="da-comp__heading">{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p class="da-comp__subheading">{{ section.settings.subheading }}</p>
+      {%- endif -%}
     </div>
+
+    <div class="da-comp__table-wrapper">
+      <table class="da-comp__table" role="table">
+        <thead>
+          <tr>
+            <th class="da-comp__th da-comp__th--feature" scope="col">Feature</th>
+            <th class="da-comp__th da-comp__th--hero" scope="col">
+              <span class="da-comp__th-brand">DairyAssure</span>
+            </th>
+            <th class="da-comp__th" scope="col">Lactase Pills</th>
+            <th class="da-comp__th" scope="col">Dairy Alternatives</th>
+            <th class="da-comp__th da-comp__th--last" scope="col">Avoiding Dairy</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for block in section.blocks -%}
+            <tr class="da-comp__row" {{ block.shopify_attributes }}>
+              <td class="da-comp__td da-comp__td--feature">{{ block.settings.feature }}</td>
+              <td class="da-comp__td da-comp__td--hero">
+                {%- if block.settings.da_value == 'yes' -%}
+                  <span class="da-comp__check" aria-label="Yes">✓</span>
+                {%- elsif block.settings.da_value == 'no' -%}
+                  <span class="da-comp__x" aria-label="No">✗</span>
+                {%- else -%}
+                  <span class="da-comp__text-val">{{ block.settings.da_value }}</span>
+                {%- endif -%}
+              </td>
+              <td class="da-comp__td">
+                {%- if block.settings.pills_value == 'yes' -%}
+                  <span class="da-comp__check da-comp__check--muted" aria-label="Yes">✓</span>
+                {%- elsif block.settings.pills_value == 'no' -%}
+                  <span class="da-comp__x" aria-label="No">✗</span>
+                {%- else -%}
+                  <span class="da-comp__text-val da-comp__text-val--muted">{{ block.settings.pills_value }}</span>
+                {%- endif -%}
+              </td>
+              <td class="da-comp__td">
+                {%- if block.settings.alts_value == 'yes' -%}
+                  <span class="da-comp__check da-comp__check--muted" aria-label="Yes">✓</span>
+                {%- elsif block.settings.alts_value == 'no' -%}
+                  <span class="da-comp__x" aria-label="No">✗</span>
+                {%- else -%}
+                  <span class="da-comp__text-val da-comp__text-val--muted">{{ block.settings.alts_value }}</span>
+                {%- endif -%}
+              </td>
+              <td class="da-comp__td da-comp__td--last">
+                {%- if block.settings.avoid_value == 'yes' -%}
+                  <span class="da-comp__check da-comp__check--muted" aria-label="Yes">✓</span>
+                {%- elsif block.settings.avoid_value == 'no' -%}
+                  <span class="da-comp__x" aria-label="No">✗</span>
+                {%- else -%}
+                  <span class="da-comp__text-val da-comp__text-val--muted">{{ block.settings.avoid_value }}</span>
+                {%- endif -%}
+              </td>
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+
+    {%- if section.settings.button_label != blank -%}
+      <div class="da-comp__cta">
+        {%- render 'da-button', label: section.settings.button_label, url: section.settings.button_link -%}
+      </div>
+    {%- endif -%}
   </div>
 </div>
 
 {% schema %}
 {
-  "name": "DA Comparison Chart",
+  "name": "DA Comparison Table",
   "tag": "section",
   "class": "section section--comparison",
   "settings": [
     { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "One Ingredient. Zero Compromise." },
     { "type": "textarea", "id": "subheading", "label": "Subheading" },
-    { "type": "image_picker", "id": "product_image", "label": "Product image (left column)" },
     { "type": "text", "id": "button_label", "label": "CTA button label" },
     { "type": "url", "id": "button_link", "label": "CTA button link" },
-    { "type": "text", "id": "chart_label", "label": "Chart title", "default": "RELIEF CONVENIENCE SCORE" },
-    { "type": "text", "id": "chart_max", "label": "Max score label", "default": "/ 100" },
-    { "type": "text", "id": "disclaimer", "label": "Disclaimer", "default": "Based on convenience, purity, and user experience factors." },
     { "type": "header", "content": "Section padding" },
     { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding top", "default": 64 },
     { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding bottom", "default": 64 }
   ],
   "blocks": [
     {
-      "type": "bar",
-      "name": "Comparison Bar",
-      "limit": 6,
+      "type": "row",
+      "name": "Comparison Row",
+      "limit": 10,
       "settings": [
-        { "type": "text", "id": "label", "label": "Product name", "default": "DairyAssure" },
-        { "type": "range", "id": "score", "min": 0, "max": 100, "step": 1, "label": "Score", "default": 95 },
-        { "type": "text", "id": "subtitle", "label": "Subtitle tags", "default": "PURE · SIMPLE · EFFORTLESS" },
-        { "type": "checkbox", "id": "is_hero", "label": "Highlight as hero bar", "default": true }
+        { "type": "text", "id": "feature", "label": "Feature name", "default": "Ingredients" },
+        { "type": "text", "id": "da_value", "label": "DairyAssure", "default": "yes", "info": "Use 'yes', 'no', or custom text" },
+        { "type": "text", "id": "pills_value", "label": "Lactase Pills", "default": "no" },
+        { "type": "text", "id": "alts_value", "label": "Dairy Alternatives", "default": "no" },
+        { "type": "text", "id": "avoid_value", "label": "Avoiding Dairy", "default": "no" }
       ]
     }
   ],
   "presets": [
     {
-      "name": "DA Comparison Chart",
+      "name": "DA Comparison Table",
       "blocks": [
-        { "type": "bar", "settings": { "label": "DairyAssure", "score": 95, "subtitle": "PURE · SIMPLE · EFFORTLESS", "is_hero": true } },
-        { "type": "bar", "settings": { "label": "Lactase Pills", "score": 52, "subtitle": "FILLERS · PLAN AHEAD", "is_hero": false } },
-        { "type": "bar", "settings": { "label": "Dairy Alternatives", "score": 38, "subtitle": "TASTE CHANGE · EXPENSIVE", "is_hero": false } },
-        { "type": "bar", "settings": { "label": "Lactase Drops", "score": 45, "subtitle": "MESSY · INCONVENIENT", "is_hero": false } },
-        { "type": "bar", "settings": { "label": "Just Avoiding Dairy", "score": 15, "subtitle": "MISSING OUT · NO JOY", "is_hero": false } }
+        { "type": "row", "settings": { "feature": "Single ingredient", "da_value": "yes", "pills_value": "no", "alts_value": "no", "avoid_value": "no" } },
+        { "type": "row", "settings": { "feature": "No planning required", "da_value": "yes", "pills_value": "no", "alts_value": "yes", "avoid_value": "yes" } },
+        { "type": "row", "settings": { "feature": "Works with real dairy", "da_value": "yes", "pills_value": "yes", "alts_value": "no", "avoid_value": "no" } },
+        { "type": "row", "settings": { "feature": "Flavorless", "da_value": "yes", "pills_value": "yes", "alts_value": "no", "avoid_value": "no" } },
+        { "type": "row", "settings": { "feature": "Portable", "da_value": "yes", "pills_value": "no", "alts_value": "no", "avoid_value": "yes" } },
+        { "type": "row", "settings": { "feature": "90+ min relief", "da_value": "yes", "pills_value": "30-45 min", "alts_value": "N/A", "avoid_value": "N/A" } },
+        { "type": "row", "settings": { "feature": "Zero fillers", "da_value": "yes", "pills_value": "no", "alts_value": "yes", "avoid_value": "yes" } }
       ]
     }
   ],
