@@ -331,8 +331,8 @@
       "settings": {
         "heading": "One Ingredient. Zero Compromise.",
         "subheading": "See how DairyAssure stacks up against the alternatives.",
-        "button_label": "TRY DAIRYASSURE",
-        "button_link": "shopify://products/dairyassure-lactase-powder-sticks",
+        "button_label": "",
+        "button_link": "",
         "padding_top": 64,
         "padding_bottom": 64
       }
