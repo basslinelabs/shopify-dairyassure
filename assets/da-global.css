@@ -171,6 +171,14 @@
   white-space: nowrap;
 }
 
+@media screen and (max-width: 749px) {
+  .da-pill {
+    font-size: 12px;
+    padding: 5px 12px;
+    white-space: normal;
+  }
+}
+
 .da-pill__emoji {
   font-style: normal;
 }
@@ -247,6 +255,13 @@
 .da-trust--stacked {
   flex-direction: column;
   align-items: flex-start;
+}
+
+@media screen and (max-width: 749px) {
+  .da-trust {
+    font-size: 11px;
+    letter-spacing: 0.2px;
+  }
 }
 
 /* --------------------------------------------------------------------------

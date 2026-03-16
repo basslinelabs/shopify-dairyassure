@@ -192,3 +192,15 @@
   gap: 16px;
   margin-top: 8px;
 }
+
+@media screen and (max-width: 749px) {
+  .da-pi__cta-row {
+    flex-direction: column;
+  }
+
+  .da-pi__cta-row .da-btn,
+  .da-pi__cta-row .da-btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}

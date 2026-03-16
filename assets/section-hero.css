@@ -75,6 +75,14 @@
   margin-top: 8px;
 }
 
+@media screen and (max-width: 749px) {
+  .da-hero__cta .da-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
 /* Image column */
 .da-hero__media {
   flex: 1;
