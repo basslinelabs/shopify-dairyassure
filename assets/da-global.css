@@ -530,3 +530,78 @@
 .newsletter .newsletter__wrapper .field__label {
   color: rgba(255, 255, 255, 0.7);
 }
+
+/* --------------------------------------------------------------------------
+   13. Footer Brand Override
+   -------------------------------------------------------------------------- */
+
+.shopify-section-group-footer-group .footer {
+  background-color: var(--da-color-dark-bg);
+  border-top: none;
+}
+
+.shopify-section-group-footer-group .footer h2,
+.shopify-section-group-footer-group .footer .footer__heading {
+  color: var(--da-color-white);
+  font-family: "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.shopify-section-group-footer-group .footer a,
+.shopify-section-group-footer-group .footer .list-menu__item {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 200ms ease;
+}
+
+.shopify-section-group-footer-group .footer a:hover,
+.shopify-section-group-footer-group .footer .list-menu__item:hover {
+  color: var(--da-color-white);
+}
+
+.shopify-section-group-footer-group .footer p,
+.shopify-section-group-footer-group .footer .rte {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Footer email signup — higher contrast field */
+.shopify-section-group-footer-group .footer .field__input {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: var(--da-color-white);
+  border-radius: 8px;
+}
+
+.shopify-section-group-footer-group .footer .field__input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.shopify-section-group-footer-group .footer .field__button {
+  color: var(--da-color-white);
+}
+
+.shopify-section-group-footer-group .footer .field__label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Footer bottom bar */
+.shopify-section-group-footer-group .footer__content-bottom {
+  border-top-color: rgba(255, 255, 255, 0.15);
+}
+
+.shopify-section-group-footer-group .footer__copyright,
+.shopify-section-group-footer-group .footer__content-bottom a {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Also fix newsletter email field contrast */
+.newsletter .field__input {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.newsletter .field__button {
+  color: var(--da-color-white);
+}

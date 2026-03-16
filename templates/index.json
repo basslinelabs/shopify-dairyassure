@@ -13,7 +13,7 @@
       "type": "section-hero",
       "settings": {
         "star_text": "5.0 Stars from 127 Reviews",
-        "heading": "Enjoy Dairy Without the Drama.",
+        "heading": "Taste Joy Without the Drama.",
         "subheading": "A single-ingredient lactase powder you sprinkle on any food or drink. No pills. No planning. No compromise.",
         "button_label": "TRY DAIRYASSURE TODAY",
         "button_link": "shopify://products/dairyassure-lactase-powder-sticks",
@@ -199,8 +199,8 @@
         "relief_author": "— Mike R., Verified",
         "button_label": "TRY DAIRYASSURE →",
         "button_link": "shopify://products/dairyassure-lactase-powder-sticks",
-        "secondary_label": "SEE HOW IT WORKS",
-        "secondary_link": "shopify://products/dairyassure-lactase-powder-sticks",
+        "secondary_label": "",
+        "secondary_link": "",
         "padding_top": 64,
         "padding_bottom": 64
       }
@@ -303,6 +303,9 @@
       ],
       "settings": {
         "heading": "One Ingredient. Zero Compromise.",
+        "subheading": "While others load up on fillers and preservatives, we kept it simple. Just pure lactase enzyme — the way it should be.",
+        "button_label": "TRY DAIRYASSURE",
+        "button_link": "shopify://products/dairyassure-lactase-powder-sticks",
         "chart_label": "RELIEF CONVENIENCE SCORE",
         "chart_max": "/ 100",
         "disclaimer": "Based on convenience, purity, and user experience factors.",
@@ -403,7 +406,7 @@
         "bb_buy": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true
+            "show_dynamic_checkout": false
           }
         },
         "bb_desc": {
@@ -448,7 +451,7 @@
         "body_text": "Try DairyAssure with your next meal. If you don't feel the difference, we'll refund every penny. No questions.",
         "subtext": "That's how confident we are in what one ingredient can do.",
         "padding_top": 64,
-        "padding_bottom": 0
+        "padding_bottom": 64
       }
     },
     "origin_story": {

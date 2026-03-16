@@ -20,6 +20,37 @@
     <div class="da-comp__container">
       <div class="da-comp__text">
         <h2 class="da-comp__heading">{{ section.settings.heading }}</h2>
+        {%- if section.settings.subheading != blank -%}
+          <p class="da-comp__subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+        {%- if section.settings.product_image != blank -%}
+          <div class="da-comp__product-image">
+            {{
+              section.settings.product_image
+              | image_url: width: 400
+              | image_tag:
+                loading: 'lazy',
+                sizes: '(min-width: 750px) 280px, 200px',
+                widths: '200, 280, 400',
+                alt: 'DairyAssure stick pack'
+            }}
+          </div>
+        {%- else -%}
+          <div class="da-comp__product-image">
+            <img
+              src="{{ 'da-ref-stick-flat.png' | asset_url }}"
+              loading="lazy"
+              width="400"
+              height="400"
+              alt="DairyAssure stick pack"
+            >
+          </div>
+        {%- endif -%}
+        {%- if section.settings.button_label != blank -%}
+          <div class="da-comp__cta">
+            {%- render 'da-button', label: section.settings.button_label, url: section.settings.button_link -%}
+          </div>
+        {%- endif -%}
       </div>
 
       <div class="da-comp__chart">
@@ -63,6 +94,10 @@
   "class": "section section--comparison",
   "settings": [
     { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "One Ingredient. Zero Compromise." },
+    { "type": "textarea", "id": "subheading", "label": "Subheading" },
+    { "type": "image_picker", "id": "product_image", "label": "Product image (left column)" },
+    { "type": "text", "id": "button_label", "label": "CTA button label" },
+    { "type": "url", "id": "button_link", "label": "CTA button link" },
     { "type": "text", "id": "chart_label", "label": "Chart title", "default": "RELIEF CONVENIENCE SCORE" },
     { "type": "text", "id": "chart_max", "label": "Max score label", "default": "/ 100" },
     { "type": "text", "id": "disclaimer", "label": "Disclaimer", "default": "Based on convenience, purity, and user experience factors." },
