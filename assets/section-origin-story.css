@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .da-origin {
-  background-color: var(--da-color-cream);
+  /* Background set by da-bg-* utility class in Liquid */
 }
 
 .da-origin__container {

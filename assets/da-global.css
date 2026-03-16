@@ -358,6 +358,46 @@
 }
 
 /* --------------------------------------------------------------------------
+   10b. Section Background Rhythm
+   Visual rhythm: alternating backgrounds to prevent monotony.
+   Pattern: cream → dark marquee → white → cream → white → indigo → white → cream → indigo → white → gray → white → indigo
+   -------------------------------------------------------------------------- */
+
+.da-bg-white {
+  background-color: var(--da-color-white);
+}
+
+.da-bg-cream {
+  background-color: var(--da-color-cream);
+}
+
+.da-bg-lavender {
+  background-color: var(--da-color-primary-bg);
+}
+
+.da-bg-gray {
+  background-color: #F5F5F5;
+}
+
+.da-bg-dark {
+  background-color: var(--da-color-dark-bg);
+  color: var(--da-color-white);
+}
+
+.da-bg-dark h2,
+.da-bg-dark h3,
+.da-bg-dark p,
+.da-bg-dark span,
+.da-bg-dark label {
+  color: var(--da-color-white);
+}
+
+.da-bg-dark .da-pill {
+  border-color: var(--da-color-white);
+  color: var(--da-color-white);
+}
+
+/* --------------------------------------------------------------------------
    11. Global Chrome Overrides — Announcement Bar
    -------------------------------------------------------------------------- */
 
@@ -373,6 +413,13 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+@media screen and (max-width: 749px) {
+  .shopify-section-group-header-group .announcement-bar__message {
+    font-size: 11px;
+    letter-spacing: 0.3px;
+  }
 }
 
 .shopify-section-group-header-group .announcement-bar__link {
@@ -424,4 +471,62 @@
 /* Header line separator override */
 .shopify-section-group-header-group .header-wrapper--border-bottom {
   border-bottom-color: var(--da-color-subtle);
+}
+
+/* --------------------------------------------------------------------------
+   12. Newsletter Section Brand Override
+   -------------------------------------------------------------------------- */
+
+.newsletter .newsletter__wrapper {
+  background-color: var(--da-color-dark-bg);
+}
+
+.newsletter h2,
+.newsletter .h1 {
+  color: var(--da-color-white);
+  font-family: "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.newsletter .rte,
+.newsletter p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.newsletter .newsletter-form__field-wrapper {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.newsletter .field__input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--da-color-white);
+  border-radius: 8px;
+}
+
+.newsletter .field__input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.newsletter .newsletter-form__button {
+  background-color: var(--da-color-accent);
+  color: var(--da-color-white);
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.newsletter .newsletter-form__button:hover {
+  background-color: #4DAFC3;
+}
+
+.newsletter .newsletter__wrapper,
+.newsletter .newsletter__wrapper * {
+  color: var(--da-color-white);
+}
+
+.newsletter .newsletter__wrapper .field__label {
+  color: rgba(255, 255, 255, 0.7);
 }

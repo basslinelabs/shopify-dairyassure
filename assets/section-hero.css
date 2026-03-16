@@ -27,7 +27,13 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
+}
+
+@media screen and (min-width: 750px) {
+  .da-hero__text {
+    gap: 24px;
+  }
 }
 
 .da-hero__star-line {
@@ -58,7 +64,15 @@
 
 @media screen and (min-width: 750px) {
   .da-hero__heading {
-    font-size: 40px;
+    font-size: 52px;
+    letter-spacing: -0.5px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .da-hero__heading {
+    font-size: 56px;
+    letter-spacing: -0.6px;
   }
 }
 

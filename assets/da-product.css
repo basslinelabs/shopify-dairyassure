@@ -71,6 +71,43 @@
   color: var(--da-color-text);
 }
 
+/* Trust badges near buy button — styled checkmark bullets */
+.product__text.da-trust-bullet {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--da-color-text);
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.product__text.da-trust-bullet::before {
+  content: '\2713';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: var(--da-color-accent);
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Price framing — per-unit cost below price */
+.da-price-frame {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--da-color-accent);
+  margin-top: 6px;
+  letter-spacing: 0.2px;
+}
+
 /* --------------------------------------------------------------------------
    Variant Picker
    -------------------------------------------------------------------------- */

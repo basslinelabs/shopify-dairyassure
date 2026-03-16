@@ -90,11 +90,21 @@
               {%- when '@app' -%}
                 {% render block %}
               {%- when 'text' -%}
+                {%- liquid
+                  assign is_trust_bullet = false
+                  if block.settings.text contains '✔'
+                    assign is_trust_bullet = true
+                  endif
+                -%}
                 <p
-                  class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
+                  class="product__text inline-richtext{% if is_trust_bullet %} da-trust-bullet{% endif %}{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                   {{ block.shopify_attributes }}
                 >
-                  {{- block.settings.text -}}
+                  {%- if is_trust_bullet -%}
+                    {{- block.settings.text | remove: '✔ ' | remove: '✔' -}}
+                  {%- else -%}
+                    {{- block.settings.text -}}
+                  {%- endif -%}
                 </p>
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
@@ -113,6 +123,7 @@
                     show_badges: true,
                     price_class: 'price--large'
                   -%}
+                  <div class="da-price-frame">As low as $0.35/stick</div>
                 </div>
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">

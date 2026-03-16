@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .da-stats {
-  background-color: var(--da-color-primary-bg);
+  /* Background set by da-bg-* utility class in Liquid */
 }
 
 .da-stats__header {

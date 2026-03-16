@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .da-faq {
-  background-color: var(--da-color-primary-bg);
+  /* Background set by da-bg-* utility class in Liquid */
   position: relative;
   overflow: visible;
 }
