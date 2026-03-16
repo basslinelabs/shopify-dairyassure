@@ -1,0 +1,129 @@
+{{ 'section-b2b-form.css' | asset_url | stylesheet_tag }}
+
+<div class="da-b2b page-width section-{{ section.id }}-padding">
+  <div class="da-b2b__container">
+    <div class="da-b2b__header">
+      <h2 class="da-b2b__heading">{{ section.settings.title }}</h2>
+      {%- if section.settings.text != blank -%}
+        <div class="da-b2b__text rte">{{ section.settings.text }}</div>
+      {%- endif -%}
+    </div>
+
+    {%- form 'contact', id: 'B2BForm' -%}
+      {%- if form.posted_successfully? -%}
+        <div class="da-b2b__success" tabindex="-1" autofocus>
+          <p>Thank you for your interest. We'll be in touch within 2 business days.</p>
+        </div>
+      {%- elsif form.errors -%}
+        <div class="da-b2b__error" role="alert" tabindex="-1" autofocus>
+          <p>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</p>
+        </div>
+      {%- endif -%}
+
+      <div class="da-b2b__fields">
+        <div class="da-b2b__row">
+          <div class="da-b2b__field da-b2b__field--half">
+            <label class="da-b2b__label" for="B2BForm-name">Name <span>*</span></label>
+            <input required class="da-b2b__input" type="text" id="B2BForm-name" name="contact[Name]" placeholder="Your full name">
+          </div>
+          <div class="da-b2b__field da-b2b__field--half">
+            <label class="da-b2b__label" for="B2BForm-email">Email <span>*</span></label>
+            <input required autocomplete="email" type="email" id="B2BForm-email" class="da-b2b__input" name="contact[email]" placeholder="you@company.com" value="{% if form.email %}{{ form.email }}{% endif %}">
+          </div>
+        </div>
+
+        <div class="da-b2b__row">
+          <div class="da-b2b__field da-b2b__field--half">
+            <label class="da-b2b__label" for="B2BForm-phone">Phone <span>*</span></label>
+            <input required type="tel" id="B2BForm-phone" class="da-b2b__input" name="contact[Phone]" placeholder="(555) 123-4567" autocomplete="tel">
+          </div>
+          <div class="da-b2b__field da-b2b__field--half">
+            <label class="da-b2b__label" for="B2BForm-website">Website</label>
+            <input type="text" id="B2BForm-website" class="da-b2b__input" name="contact[Website]" placeholder="www.yourcompany.com">
+          </div>
+        </div>
+
+        <div class="da-b2b__field">
+          <label class="da-b2b__label" for="B2BForm-company">Company Name <span>*</span></label>
+          <input required class="da-b2b__input" type="text" id="B2BForm-company" name="contact[Company Name]" placeholder="Company name">
+        </div>
+
+        <div class="da-b2b__field">
+          <label class="da-b2b__label" for="B2BForm-address1">Company Street Address <span>*</span></label>
+          <input required class="da-b2b__input" type="text" id="B2BForm-address1" name="contact[Street Address]" placeholder="123 Main St">
+        </div>
+
+        <div class="da-b2b__field">
+          <label class="da-b2b__label" for="B2BForm-address2">Address Line 2</label>
+          <input class="da-b2b__input" type="text" id="B2BForm-address2" name="contact[Address Line 2]" placeholder="Suite, unit, floor (optional)">
+        </div>
+
+        <div class="da-b2b__row">
+          <div class="da-b2b__field da-b2b__field--third">
+            <label class="da-b2b__label" for="B2BForm-city">City <span>*</span></label>
+            <input required class="da-b2b__input" type="text" id="B2BForm-city" name="contact[City]" placeholder="City">
+          </div>
+          <div class="da-b2b__field da-b2b__field--third">
+            <label class="da-b2b__label" for="B2BForm-state">State <span>*</span></label>
+            <input required class="da-b2b__input" type="text" id="B2BForm-state" name="contact[State]" placeholder="State">
+          </div>
+          <div class="da-b2b__field da-b2b__field--third">
+            <label class="da-b2b__label" for="B2BForm-zip">Zip <span>*</span></label>
+            <input required class="da-b2b__input" type="text" id="B2BForm-zip" name="contact[Zip]" placeholder="Zip code">
+          </div>
+        </div>
+
+        <div class="da-b2b__field">
+          <label class="da-b2b__label" for="B2BForm-type">Business Type</label>
+          <select id="B2BForm-type" class="da-b2b__select" name="contact[Business Type]">
+            <option value="">Select your business type</option>
+            <option value="Retail Store / Grocery">Retail Store / Grocery</option>
+            <option value="Cafe / Restaurant">Cafe / Restaurant</option>
+            <option value="Hospitality">Hospitality</option>
+            <option value="Distributor">Distributor</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="da-b2b__field">
+          <label class="da-b2b__label" for="B2BForm-message">Message</label>
+          <textarea id="B2BForm-message" class="da-b2b__textarea" name="contact[Message]" rows="5" placeholder="Tell us about your business and how you'd like to carry DairyAssure">{{ form.body }}</textarea>
+        </div>
+
+        <div class="da-b2b__field">
+          <label class="da-b2b__label" for="B2BForm-source">How did you hear about us?</label>
+          <select id="B2BForm-source" class="da-b2b__select" name="contact[How did you hear about us]">
+            <option value="">Select one</option>
+            <option value="A friend">A friend</option>
+            <option value="Social media">Social media</option>
+            <option value="Google search">Google search</option>
+            <option value="Event">Event</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="da-b2b__submit">
+        <button type="submit" class="da-btn">Send Inquiry</button>
+      </div>
+    {%- endform -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "DA B2B Form",
+  "tag": "section",
+  "class": "section section--b2b-form",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Heading", "default": "Wholesale with DairyAssure" },
+    { "type": "richtext", "id": "text", "label": "Description" },
+    { "type": "header", "content": "Section padding" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding top", "default": 48 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding bottom", "default": 48 }
+  ],
+  "presets": [
+    { "name": "DA B2B Form" }
+  ]
+}
+{% endschema %}
