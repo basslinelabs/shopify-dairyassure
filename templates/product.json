@@ -23,14 +23,14 @@
         "desc": {
           "type": "text",
           "settings": {
-            "text": "Pure, single-ingredient lactase enzyme powder. Sprinkle on any dairy food or drink — no pills, no planning, no compromise.",
+            "text": "Pure, single-ingredient lactase enzyme powder. Sprinkle it on any dairy food or drink and eat. That's the whole routine.",
             "text_style": "body"
           }
         },
         "trust_1": {
           "type": "text",
           "settings": {
-            "text": "✔ Single ingredient — just lactase enzyme",
+            "text": "✔ Single ingredient: lactase enzyme",
             "text_style": "body"
           }
         },
@@ -51,7 +51,7 @@
         "trust_4": {
           "type": "text",
           "settings": {
-            "text": "✔ No preservatives, no fillers, no additives",
+            "text": "✔ Nothing added. Zero fillers or preservatives.",
             "text_style": "body"
           }
         },
@@ -86,7 +86,7 @@
           "settings": {
             "heading": "How is it different from pills?",
             "icon": "question_mark",
-            "content": "<p>Pills contain fillers and preservatives that can cause their own stomach issues. DairyAssure is just the enzyme in powder form — you add it directly to food with no planning ahead.</p>",
+            "content": "<p>Pills contain fillers and preservatives that can cause their own discomfort. DairyAssure is just the enzyme in powder form, you add it directly to food with no planning ahead.</p>",
             "page": ""
           }
         },
@@ -95,7 +95,7 @@
           "settings": {
             "heading": "How long does it last?",
             "icon": "question_mark",
-            "content": "<p>DairyAssure provides 90+ minutes of effectiveness — enough to last through your entire meal and beyond.</p>",
+            "content": "<p>90+ minutes per dose. That's enough to get through your entire meal and then some.</p>",
             "page": ""
           }
         },
@@ -104,7 +104,7 @@
           "settings": {
             "heading": "Can I use it with any dairy?",
             "icon": "question_mark",
-            "content": "<p>Yes. Coffee, pizza, ice cream, cheese, yogurt, protein shakes — it works with all dairy and is completely flavorless.</p>",
+            "content": "<p>Yes. Coffee, pizza, ice cream, cheese, yogurt, protein shakes. It works with all dairy and is completely flavorless.</p>",
             "page": ""
           }
         },
@@ -113,7 +113,7 @@
           "settings": {
             "heading": "Ingredients & Nutrition",
             "icon": "clipboard",
-            "content": "<p><strong>Ingredient:</strong> Lactase enzyme<br><br>That's it. Nothing else. No preservatives, no fillers, no additives, no artificial flavors.<br><br>Kosher certified. Non-GMO. Made in USA.</p>",
+            "content": "<p><strong>Ingredient:</strong> Lactase enzyme.<br><br>That's the full list. Nothing else added.<br><br>Kosher certified. Non-GMO. Made in USA.</p>",
             "page": ""
           }
         },
