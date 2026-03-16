@@ -149,35 +149,35 @@
           "type": "badge",
           "settings": {
             "emoji": "🧬",
-            "text": "Single Ingredient — 100% lactase enzyme"
+            "text": "Single Ingredient"
           }
         },
         "badge_2": {
           "type": "badge",
           "settings": {
             "emoji": "🍽️",
-            "text": "Flavorless — won't change your food"
+            "text": "Flavorless"
           }
         },
         "badge_3": {
           "type": "badge",
           "settings": {
             "emoji": "⏱️",
-            "text": "No Planning — works as you eat"
+            "text": "No Planning Required"
           }
         },
         "badge_4": {
           "type": "badge",
           "settings": {
             "emoji": "🎒",
-            "text": "Portable Stick Packs — fits anywhere"
+            "text": "Portable Stick Packs"
           }
         },
         "badge_5": {
           "type": "badge",
           "settings": {
             "emoji": "🚫",
-            "text": "Zero Fillers — nothing your body doesn't need"
+            "text": "Zero Fillers"
           }
         }
       },
