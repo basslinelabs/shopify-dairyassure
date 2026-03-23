@@ -123,6 +123,11 @@
           "settings": {
             "share_label": "Share"
           }
+        },
+        "judge_me_reviews_preview_badge_eH68f8": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
         }
       },
       "block_order": [
@@ -141,7 +146,8 @@
         "faq_3",
         "faq_4",
         "faq_5",
-        "share"
+        "share",
+        "judge_me_reviews_preview_badge_eH68f8"
       ],
       "settings": {
         "enable_sticky_info": true,
