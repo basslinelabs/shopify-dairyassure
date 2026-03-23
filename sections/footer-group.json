@@ -32,7 +32,7 @@
           "type": "text",
           "settings": {
             "heading": "Our Mission",
-            "subtext": "<p>Restoring the joy of eating without limits — one stick pack at a time.<\/p>"
+            "subtext": "<p>Restoring the joy of eating without limits, one stick pack at a time.</p>"
           }
         }
       },
@@ -45,6 +45,7 @@
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
         "newsletter_heading": "Get 10% Off Your First Order",
+        "enable_follow_on_shop": true,
         "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false,
