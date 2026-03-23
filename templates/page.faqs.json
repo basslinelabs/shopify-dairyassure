@@ -27,7 +27,7 @@
         "faq_15": { "type": "faq_item", "settings": { "question": "What's the difference between Single Strength and Extra Strength?", "answer": "<p>Single Strength (10,000 FCC) is ideal for mild to moderate lactose sensitivity. Extra Strength (20,000 FCC) provides double the lactase enzyme for those with higher sensitivity or dairy-heavy meals.</p>" } },
         "faq_16": { "type": "faq_item", "settings": { "question": "Do you offer subscriptions?", "answer": "<p>We're working on a subscribe-and-save option. Sign up for our newsletter to be the first to know when it launches.</p>" } },
         "faq_17": { "type": "faq_item", "settings": { "question": "What's your return policy?", "answer": "<p>We offer a 100% money-back guarantee. If DairyAssure doesn't work for you, contact us and we'll refund every penny. No questions asked.</p>" } },
-        "faq_18": { "type": "faq_item", "settings": { "question": "Where is DairyAssure made?", "answer": "<p>DairyAssure is made in the USA in an FDA-registered, GMP-certified facility.</p>" } }
+        "faq_18": { "type": "faq_item", "settings": { "question": "Where is DairyAssure packaged?", "answer": "<p>DairyAssure is packaged in the USA in an FDA-registered, GMP-certified facility.</p>" } }
       },
       "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5", "faq_6", "faq_7", "faq_8", "faq_9", "faq_10", "faq_11", "faq_12", "faq_13", "faq_14", "faq_15", "faq_16", "faq_17", "faq_18"],
       "settings": {

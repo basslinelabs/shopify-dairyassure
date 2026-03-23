@@ -14,7 +14,7 @@
 {%- endstyle -%}
 
 <div
-  class="da-hero da-cow-print section-{{ section.id }}-padding{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+  class="da-hero da-cow-print section-{{ section.id }}-padding"
 >
   <div class="page-width da-hero__container">
     <div class="da-hero__text">
@@ -31,10 +31,12 @@
         {%- render 'da-button', label: section.settings.button_label, url: section.settings.button_link -%}
       </div>
 
-      {%- render 'da-trust-badges', text: section.settings.trust_text -%}
+      <div class="da-hero__trust-wrap">
+        {%- render 'da-trust-badges', text: section.settings.trust_text -%}
+      </div>
     </div>
 
-    <div class="da-hero__media">
+    <div class="da-hero__media" id="da-hero-media">
       {%- if section.settings.image != blank -%}
         {%- if section.settings.image_mobile != blank -%}
           <div class="da-hero__media-mobile">
@@ -98,6 +100,92 @@
     </div>
   </div>
 </div>
+
+<script>
+  (function() {
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducedMotion) return;
+
+    var media = document.getElementById('da-hero-media');
+    if (!media) return;
+
+    /* Start breathing float after entrance animation finishes */
+    media.addEventListener('animationend', function handler() {
+      media.removeEventListener('animationend', handler);
+      /* Only add breathing on mobile/tablet — desktop gets mouse parallax */
+      if (window.innerWidth < 990) {
+        media.classList.add('da-hero__media--breathing');
+      }
+    });
+
+    /* Mouse parallax: desktop only */
+    if (window.innerWidth < 990) return;
+
+    media.classList.add('da-hero__media--parallax');
+
+    var rect, cx, cy;
+    var tiltX = 0, tiltY = 0, targetX = 0, targetY = 0;
+    var floating = true;
+    var raf;
+
+    function updateRect() {
+      rect = media.getBoundingClientRect();
+      cx = rect.left + rect.width / 2;
+      cy = rect.top + rect.height / 2;
+    }
+
+    function lerp(a, b, t) { return a + (b - a) * t; }
+
+    function animate() {
+      tiltX = lerp(tiltX, targetX, 0.08);
+      tiltY = lerp(tiltY, targetY, 0.08);
+
+      if (Math.abs(tiltX - targetX) > 0.01 || Math.abs(tiltY - targetY) > 0.01) {
+        media.style.transform = 'perspective(800px) rotateY(' + tiltX + 'deg) rotateX(' + tiltY + 'deg)';
+        raf = requestAnimationFrame(animate);
+      } else {
+        media.style.transform = 'perspective(800px) rotateY(' + targetX + 'deg) rotateX(' + targetY + 'deg)';
+      }
+    }
+
+    /* Wait for entrance animation, then enable parallax */
+    media.addEventListener('animationend', function handler2() {
+      media.removeEventListener('animationend', handler2);
+      updateRect();
+
+      document.addEventListener('mousemove', function(e) {
+        /* Stop breathing if it was added, parallax takes over */
+        if (floating) {
+          floating = false;
+          media.classList.remove('da-hero__media--breathing');
+        }
+        if (!rect) updateRect();
+        var dx = (e.clientX - cx) / (rect.width / 2);
+        var dy = (e.clientY - cy) / (rect.height / 2);
+        targetX = dx * 3;   /* max 3 degrees */
+        targetY = dy * -2;  /* max 2 degrees, inverted */
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(animate);
+      });
+
+      /* Reset on mouse leave */
+      document.addEventListener('mouseleave', function() {
+        targetX = 0;
+        targetY = 0;
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(animate);
+      });
+
+      /* Recalculate position on scroll/resize */
+      var debounce;
+      window.addEventListener('scroll', function() {
+        clearTimeout(debounce);
+        debounce = setTimeout(updateRect, 100);
+      }, { passive: true });
+      window.addEventListener('resize', updateRect, { passive: true });
+    });
+  })();
+</script>
 
 {% schema %}
 {

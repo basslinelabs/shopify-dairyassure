@@ -18,21 +18,21 @@
           "type": "announcement",
           "settings": {
             "text": "Free Shipping on $50+ | Doctor Recommended, Dessert Approved",
-            "link": ""
+            "link": "shopify:\/\/products\/dairyassure-lactase-powder-sticks"
           }
         },
         "announcement-bar-1": {
           "type": "announcement",
           "settings": {
             "text": "One Ingredient. Zero Fillers. Pure Lactase Enzyme Powder.",
-            "link": ""
+            "link": "shopify:\/\/products\/dairyassure-lactase-powder-sticks"
           }
         },
         "announcement-bar-2": {
           "type": "announcement",
           "settings": {
             "text": "New to DairyAssure? Try It Risk-Free with Our Money-Back Guarantee.",
-            "link": ""
+            "link": "shopify:\/\/products\/dairyassure-lactase-powder-sticks"
           }
         }
       },

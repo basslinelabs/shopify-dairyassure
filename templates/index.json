@@ -31,11 +31,9 @@
         "usp_4": { "type": "usp_item", "settings": { "emoji": "⚡", "text": "Fast Relief" } },
         "usp_5": { "type": "usp_item", "settings": { "emoji": "⏱️", "text": "90+ Minutes" } },
         "usp_6": { "type": "usp_item", "settings": { "emoji": "🎒", "text": "Grab & Go" } },
-        "usp_7": { "type": "usp_item", "settings": { "emoji": "✡️", "text": "Kosher" } },
-        "usp_8": { "type": "usp_item", "settings": { "emoji": "🌱", "text": "Non-GMO" } },
-        "usp_9": { "type": "usp_item", "settings": { "emoji": "🇺🇸", "text": "Made in USA" } }
+        "usp_9": { "type": "usp_item", "settings": { "emoji": "🇺🇸", "text": "Packaged in the USA" } }
       },
-      "block_order": ["usp_1", "usp_2", "usp_3", "usp_4", "usp_5", "usp_6", "usp_7", "usp_8", "usp_9"],
+      "block_order": ["usp_1", "usp_2", "usp_3", "usp_4", "usp_5", "usp_6", "usp_9"],
       "settings": {
         "speed": 25
       }
@@ -235,41 +233,11 @@
         "padding_bottom": 64
       }
     },
-    "reviews": {
-      "type": "section-reviews",
-      "blocks": {
-        "review_1": { "type": "review", "settings": { "stars": 5, "text": "I brought DairyAssure to Italy. Gelato every day. Zero issues. This is hands-down the best lactose solution I've tried.", "author": "Maria L.", "verified": true, "variant": "extra" } },
-        "review_2": { "type": "review", "settings": { "stars": 5, "text": "No more declining dessert at dinner parties. I just sprinkle it on and enjoy. Total freedom.", "author": "James T.", "verified": true, "variant": "single" } },
-        "review_3": { "type": "review", "settings": { "stars": 5, "text": "My kids can have ice cream at birthday parties again. As a parent, that means everything.", "author": "Rachel S.", "verified": true, "variant": "single" } },
-        "review_4": { "type": "review", "settings": { "stars": 5, "text": "I've tried every pill on the market. DairyAssure is the first thing that actually works without side effects.", "author": "David M.", "verified": true, "variant": "extra" } },
-        "review_5": { "type": "review", "settings": { "stars": 5, "text": "Pizza night is back on the menu. My wife and I can finally share a real pizza again.", "author": "Chris P.", "verified": true, "variant": "extra" } }
-      },
-      "block_order": ["review_1", "review_2", "review_3", "review_4", "review_5"],
-      "settings": {
-        "heading": "What Real Customers Are Saying.",
-        "average_rating": "5.00",
-        "total_reviews": "127",
-        "tab_1_label": "Single Strength",
-        "tab_2_label": "Extra Strength",
-        "padding_top": 64,
-        "padding_bottom": 64
-      }
-    },
     "cta_after_comparison": {
       "type": "section-inline-cta",
       "settings": {
         "text": "Ready to enjoy dairy again?",
         "button_label": "TRY DAIRYASSURE TODAY",
-        "button_link": "shopify:\/\/products\/dairyassure-lactase-powder-sticks",
-        "padding_top": 32,
-        "padding_bottom": 32
-      }
-    },
-    "cta_after_reviews": {
-      "type": "section-inline-cta",
-      "settings": {
-        "text": "Trust your gut.",
-        "button_label": "GET MY STICKS",
         "button_link": "shopify:\/\/products\/dairyassure-lactase-powder-sticks",
         "padding_top": 32,
         "padding_bottom": 32
@@ -317,8 +285,6 @@
     "guarantee",
     "origin_story",
     "faq",
-    "reviews",
-    "cta_after_reviews",
     "newsletter_signup"
   ]
 }

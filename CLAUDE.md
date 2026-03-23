@@ -66,7 +66,7 @@ Plain JS/CSS. Key files:
 - **Fonts**: Mechta (logotype/wordmark only), Helvetica Neue (headings, body, buttons, UI)
 - **Product**: DairyAssure Lactase Powder Sticks (Single Strength 10K FCC, Extra Strength 20K FCC)
 - **Key copy**: "Enjoy Dairy Without the Drama", "Doctor recommended, dessert approved"
-- **USPs**: Fast Relief, 90+ Mins, Grab & Go, Flavorless, Single Ingredient, Kosher, Non-GMO, Made in USA
+- **USPs**: Fast Relief, 90+ Mins, Grab & Go, Flavorless, Single Ingredient, Packaged in the USA
 - **Free shipping threshold**: $50
 - **Social**: X, Facebook, Instagram, TikTok, LinkedIn, YouTube
 

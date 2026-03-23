@@ -1,12 +1,15 @@
 /* ==========================================================================
-   Section: DA Hero — The Quiet Confidence
+   Section: DA Hero — Overdrive
+   Choreographed spring entrance + floating product + mouse parallax
+   + scroll-driven cinematic exit
    ========================================================================== */
 
 .da-hero {
   background-color: var(--da-color-cream);
+  overflow: hidden;
 }
 
-/* Dark text on light bg — high contrast model */
+/* ── Layout ────────────────────────────────────────────────────────────── */
 
 .da-hero__container {
   display: flex;
@@ -22,7 +25,8 @@
   }
 }
 
-/* Text column */
+/* ── Text column ───────────────────────────────────────────────────────── */
+
 .da-hero__text {
   flex: 1;
   display: flex;
@@ -97,7 +101,8 @@
   }
 }
 
-/* Image column */
+/* ── Image column ──────────────────────────────────────────────────────── */
+
 .da-hero__media {
   flex: 1;
   background-color: var(--da-color-primary-bg);
@@ -132,26 +137,154 @@
   }
 }
 
-/* Entrance animation */
-.da-hero.scroll-trigger.animate--slide-in {
-  animation: da-hero-entrance 600ms cubic-bezier(0, 0, 0.3, 1) forwards;
+/* ==========================================================================
+   ENTRANCE: Staggered spring choreography
+   Each element fades up with a spring-like overshoot curve
+   ========================================================================== */
+
+.da-hero__star-line,
+.da-hero__heading,
+.da-hero__subheading,
+.da-hero__cta,
+.da-hero__trust-wrap {
+  opacity: 0;
+  transform: translateY(28px);
+  animation: da-hero-spring-in 700ms cubic-bezier(0.34, 1.4, 0.64, 1) forwards;
 }
 
-@keyframes da-hero-entrance {
-  from {
+.da-hero__media {
+  opacity: 0;
+  transform: translateY(40px) scale(0.97);
+  animation: da-hero-media-in 800ms cubic-bezier(0.34, 1.4, 0.64, 1) forwards;
+}
+
+/* Staggered delays — the choreography */
+.da-hero__star-line   { animation-delay: 100ms; }
+.da-hero__heading     { animation-delay: 200ms; }
+.da-hero__subheading  { animation-delay: 320ms; }
+.da-hero__cta         { animation-delay: 440ms; }
+.da-hero__trust-wrap  { animation-delay: 540ms; }
+.da-hero__media       { animation-delay: 150ms; }
+
+@keyframes da-hero-spring-in {
+  0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(28px);
   }
-  to {
+  60% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+  80% {
+    transform: translateY(2px);
+  }
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .da-hero.scroll-trigger.animate--slide-in {
-    animation: none;
+@keyframes da-hero-media-in {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.97);
+  }
+  60% {
     opacity: 1;
-    transform: none;
+    transform: translateY(-3px) scale(1.005);
+  }
+  80% {
+    transform: translateY(1px) scale(0.999);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==========================================================================
+   FLOATING: Gentle breathing on the product image
+   Starts after the entrance completes (1.2s delay)
+   ========================================================================== */
+
+.da-hero__media--breathing {
+  opacity: 1;
+  animation: da-hero-float 4s ease-in-out infinite;
+}
+
+@keyframes da-hero-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ==========================================================================
+   PARALLAX: Mouse-driven tilt on product image (desktop only)
+   Transform applied via JS — transition smooths the movement
+   ========================================================================== */
+
+@media screen and (min-width: 990px) {
+  .da-hero__media--parallax {
+    opacity: 1;
+    transition: transform 0.15s ease-out;
+  }
+}
+
+/* ==========================================================================
+   SCROLL-DRIVEN: Cinematic exit as user scrolls past
+   Applied to the whole hero to avoid transform conflicts with float/parallax
+   Uses CSS scroll-driven animations (Chrome/Edge/Safari, fallback: static)
+   ========================================================================== */
+
+/* Desktop only — on mobile the stacked hero is too tall for early fading */
+@supports (animation-timeline: scroll()) {
+  @media screen and (min-width: 750px) {
+    .da-hero {
+      animation: da-hero-scroll-exit linear both;
+      animation-timeline: scroll();
+      animation-range: 0px 700px;
+    }
+  }
+
+  @keyframes da-hero-scroll-exit {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.15;
+    }
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY: Respect reduced-motion preference
+   Everything renders instantly — still beautiful, just no motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .da-hero__star-line,
+  .da-hero__heading,
+  .da-hero__subheading,
+  .da-hero__cta,
+  .da-hero__trust-wrap,
+  .da-hero__media {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .da-hero {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  .da-hero__media--breathing,
+  .da-hero__media--parallax {
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
