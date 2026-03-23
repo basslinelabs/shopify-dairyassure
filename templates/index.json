@@ -16,7 +16,7 @@
         "heading": "Taste Joy Without the Drama.",
         "subheading": "A single-ingredient lactase powder you sprinkle on any food or drink. Just the enzyme your body needs, in a stick pack that fits in your pocket.",
         "button_label": "TRY DAIRYASSURE TODAY",
-        "button_link": "shopify:\/\/products\/dairyassure-lactase-powder-sticks",
+        "button_link": "shopify://products/dairyassure-lactase-powder-sticks",
         "trust_text": "Money-Back Guarantee | Free Shipping on $50+ | Doctor Recommended",
         "padding_top": 64,
         "padding_bottom": 64
@@ -25,15 +25,65 @@
     "usp_marquee": {
       "type": "section-usp-marquee",
       "blocks": {
-        "usp_1": { "type": "usp_item", "settings": { "emoji": "✨", "text": "Single Ingredient" } },
-        "usp_2": { "type": "usp_item", "settings": { "emoji": "🍽️", "text": "Flavorless" } },
-        "usp_3": { "type": "usp_item", "settings": { "emoji": "🚫", "text": "No Preservatives" } },
-        "usp_4": { "type": "usp_item", "settings": { "emoji": "⚡", "text": "Fast Relief" } },
-        "usp_5": { "type": "usp_item", "settings": { "emoji": "⏱️", "text": "90+ Minutes" } },
-        "usp_6": { "type": "usp_item", "settings": { "emoji": "🎒", "text": "Grab & Go" } },
-        "usp_9": { "type": "usp_item", "settings": { "emoji": "🇺🇸", "text": "Packaged in the USA" } }
+        "usp_1": {
+          "type": "usp_item",
+          "settings": {
+            "emoji": "✨",
+            "text": "Single Ingredient"
+          }
+        },
+        "usp_2": {
+          "type": "usp_item",
+          "settings": {
+            "emoji": "🍽️",
+            "text": "Flavorless"
+          }
+        },
+        "usp_3": {
+          "type": "usp_item",
+          "settings": {
+            "emoji": "🚫",
+            "text": "No Preservatives"
+          }
+        },
+        "usp_4": {
+          "type": "usp_item",
+          "settings": {
+            "emoji": "⚡",
+            "text": "Fast Relief"
+          }
+        },
+        "usp_5": {
+          "type": "usp_item",
+          "settings": {
+            "emoji": "⏱️",
+            "text": "90+ Minutes"
+          }
+        },
+        "usp_6": {
+          "type": "usp_item",
+          "settings": {
+            "emoji": "🎒",
+            "text": "Grab & Go"
+          }
+        },
+        "usp_9": {
+          "type": "usp_item",
+          "settings": {
+            "emoji": "🇺🇸",
+            "text": "Packaged in the USA"
+          }
+        }
       },
-      "block_order": ["usp_1", "usp_2", "usp_3", "usp_4", "usp_5", "usp_6", "usp_9"],
+      "block_order": [
+        "usp_1",
+        "usp_2",
+        "usp_3",
+        "usp_4",
+        "usp_5",
+        "usp_6",
+        "usp_9"
+      ],
       "settings": {
         "speed": 25
       }
@@ -41,11 +91,33 @@
     "empathy_anchor": {
       "type": "section-empathy-anchor",
       "blocks": {
-        "stat_1": { "type": "stat", "settings": { "number": "30-50M", "description": "Americans affected by lactose sensitivity" } },
-        "stat_2": { "type": "stat", "settings": { "number": "68%", "description": "have skipped meals they wanted to enjoy" } },
-        "stat_3": { "type": "stat", "settings": { "number": "79%", "description": "say current solutions are too inconvenient" } }
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "number": "30-50M",
+            "description": "Americans affected by lactose sensitivity"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "number": "68%",
+            "description": "have skipped meals they wanted to enjoy"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "number": "79%",
+            "description": "say current solutions are too inconvenient"
+          }
+        }
       },
-      "block_order": ["stat_1", "stat_2", "stat_3"],
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3"
+      ],
       "settings": {
         "heading": "Life's Best Moments Happen Around Dairy.",
         "subheading": "But for millions of Americans, those moments come with anxiety about what happens next.",
@@ -57,13 +129,49 @@
     "product_intro": {
       "type": "section-product-intro",
       "blocks": {
-        "badge_1": { "type": "badge", "settings": { "emoji": "🧬", "text": "Single Ingredient" } },
-        "badge_2": { "type": "badge", "settings": { "emoji": "🍽️", "text": "Flavorless" } },
-        "badge_3": { "type": "badge", "settings": { "emoji": "⏱️", "text": "No Planning Required" } },
-        "badge_4": { "type": "badge", "settings": { "emoji": "🎒", "text": "Portable Stick Packs" } },
-        "badge_5": { "type": "badge", "settings": { "emoji": "🚫", "text": "Zero Fillers" } }
+        "badge_1": {
+          "type": "badge",
+          "settings": {
+            "emoji": "🧬",
+            "text": "Single Ingredient"
+          }
+        },
+        "badge_2": {
+          "type": "badge",
+          "settings": {
+            "emoji": "🍽️",
+            "text": "Flavorless"
+          }
+        },
+        "badge_3": {
+          "type": "badge",
+          "settings": {
+            "emoji": "⏱️",
+            "text": "No Planning Required"
+          }
+        },
+        "badge_4": {
+          "type": "badge",
+          "settings": {
+            "emoji": "🎒",
+            "text": "Portable Stick Packs"
+          }
+        },
+        "badge_5": {
+          "type": "badge",
+          "settings": {
+            "emoji": "🚫",
+            "text": "Zero Fillers"
+          }
+        }
       },
-      "block_order": ["badge_1", "badge_2", "badge_3", "badge_4", "badge_5"],
+      "block_order": [
+        "badge_1",
+        "badge_2",
+        "badge_3",
+        "badge_4",
+        "badge_5"
+      ],
       "settings": {
         "heading": "Meet the Simplest Lactose Relief Ever Made.",
         "body_text": "Pure lactase enzyme powder that works with your food, not before it. Sprinkle it on pizza, ice cream, coffee, cheese. Flavorless. You'll just notice that dinner went a lot better than usual.",
@@ -74,7 +182,7 @@
         "relief_quote": "The peace of mind alone is worth it.",
         "relief_author": "Mike R., Verified",
         "button_label": "TRY DAIRYASSURE →",
-        "button_link": "shopify:\/\/products\/dairyassure-lactase-powder-sticks",
+        "button_link": "shopify://products/dairyassure-lactase-powder-sticks",
         "secondary_label": "",
         "secondary_link": "",
         "padding_top": 64,
@@ -84,11 +192,36 @@
     "three_pillars": {
       "type": "section-three-pillars",
       "blocks": {
-        "step_1": { "type": "step", "settings": { "number": "1", "title": "Sprinkle", "description": "Tear open a stick pack. Add to any dairy food or drink." } },
-        "step_2": { "type": "step", "settings": { "number": "2", "title": "Eat", "description": "Eat your meal as you normally would. No waiting required." } },
-        "step_3": { "type": "step", "settings": { "number": "3", "title": "Enjoy", "description": "That's it. The meal you actually wanted, the way you actually wanted it." } }
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "number": "1",
+            "title": "Sprinkle",
+            "description": "Tear open a stick pack. Add to any dairy food or drink."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "number": "2",
+            "title": "Eat",
+            "description": "Eat your meal as you normally would. No waiting required."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "number": "3",
+            "title": "Enjoy",
+            "description": "That's it. The meal you actually wanted, the way you actually wanted it."
+          }
+        }
       },
-      "block_order": ["step_1", "step_2", "step_3"],
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
       "settings": {
         "heading": "How It Works",
         "subheading": "Three steps. Zero effort.",
@@ -99,15 +232,86 @@
     "comparison": {
       "type": "section-comparison",
       "blocks": {
-        "row_1": { "type": "row", "settings": { "feature": "Single ingredient", "da_value": "yes", "pills_value": "no", "alts_value": "no", "avoid_value": "no" } },
-        "row_2": { "type": "row", "settings": { "feature": "No planning required", "da_value": "yes", "pills_value": "no", "alts_value": "yes", "avoid_value": "yes" } },
-        "row_3": { "type": "row", "settings": { "feature": "Works with real dairy", "da_value": "yes", "pills_value": "yes", "alts_value": "no", "avoid_value": "no" } },
-        "row_4": { "type": "row", "settings": { "feature": "Flavorless", "da_value": "yes", "pills_value": "yes", "alts_value": "no", "avoid_value": "no" } },
-        "row_5": { "type": "row", "settings": { "feature": "Portable", "da_value": "yes", "pills_value": "no", "alts_value": "no", "avoid_value": "yes" } },
-        "row_6": { "type": "row", "settings": { "feature": "90+ min relief", "da_value": "yes", "pills_value": "30-45 min", "alts_value": "N/A", "avoid_value": "N/A" } },
-        "row_7": { "type": "row", "settings": { "feature": "Zero fillers", "da_value": "yes", "pills_value": "no", "alts_value": "yes", "avoid_value": "yes" } }
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "feature": "Single ingredient",
+            "da_value": "yes",
+            "pills_value": "no",
+            "alts_value": "no",
+            "avoid_value": "no"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "feature": "No planning required",
+            "da_value": "yes",
+            "pills_value": "no",
+            "alts_value": "yes",
+            "avoid_value": "yes"
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "feature": "Works with real dairy",
+            "da_value": "yes",
+            "pills_value": "yes",
+            "alts_value": "no",
+            "avoid_value": "no"
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "feature": "Flavorless",
+            "da_value": "yes",
+            "pills_value": "yes",
+            "alts_value": "no",
+            "avoid_value": "no"
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "feature": "Portable",
+            "da_value": "yes",
+            "pills_value": "no",
+            "alts_value": "no",
+            "avoid_value": "yes"
+          }
+        },
+        "row_6": {
+          "type": "row",
+          "settings": {
+            "feature": "90+ min relief",
+            "da_value": "yes",
+            "pills_value": "30-45 min",
+            "alts_value": "N/A",
+            "avoid_value": "N/A"
+          }
+        },
+        "row_7": {
+          "type": "row",
+          "settings": {
+            "feature": "Zero fillers",
+            "da_value": "yes",
+            "pills_value": "no",
+            "alts_value": "yes",
+            "avoid_value": "yes"
+          }
+        }
       },
-      "block_order": ["row_1", "row_2", "row_3", "row_4", "row_5", "row_6", "row_7"],
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6",
+        "row_7"
+      ],
       "settings": {
         "heading": "One Ingredient. Zero Compromise.",
         "subheading": "See how DairyAssure stacks up against the alternatives.",
@@ -120,15 +324,64 @@
     "trust_chorus": {
       "type": "section-trust-chorus",
       "blocks": {
-        "quote_1": { "type": "quote", "settings": { "quote": "I brought DairyAssure to Italy. Gelato every day. Zero issues.", "author": "Maria L.", "verified": true } },
-        "quote_2": { "type": "quote", "settings": { "quote": "No more declining dessert at dinner parties. Freedom.", "author": "James T.", "verified": true } },
-        "quote_3": { "type": "quote", "settings": { "quote": "My kids can have ice cream at birthday parties again.", "author": "Rachel S.", "verified": true } },
-        "photo_1": { "type": "photo", "settings": { "alt": "Gelato in Italy, travel without limits" } },
-        "photo_2": { "type": "photo", "settings": { "alt": "Saying yes to tiramisu at a dinner party" } },
-        "photo_3": { "type": "photo", "settings": { "alt": "Kids enjoying ice cream at a birthday party" } },
-        "photo_4": { "type": "photo", "settings": { "alt": "Pizza night is back, couple sharing real pizza" } }
+        "quote_1": {
+          "type": "quote",
+          "settings": {
+            "quote": "I brought DairyAssure to Italy. Gelato every day. Zero issues.",
+            "author": "Maria L.",
+            "verified": true
+          }
+        },
+        "quote_2": {
+          "type": "quote",
+          "settings": {
+            "quote": "No more declining dessert at dinner parties. Freedom.",
+            "author": "James T.",
+            "verified": true
+          }
+        },
+        "quote_3": {
+          "type": "quote",
+          "settings": {
+            "quote": "My kids can have ice cream at birthday parties again.",
+            "author": "Rachel S.",
+            "verified": true
+          }
+        },
+        "photo_1": {
+          "type": "photo",
+          "settings": {
+            "alt": "Gelato in Italy, travel without limits"
+          }
+        },
+        "photo_2": {
+          "type": "photo",
+          "settings": {
+            "alt": "Saying yes to tiramisu at a dinner party"
+          }
+        },
+        "photo_3": {
+          "type": "photo",
+          "settings": {
+            "alt": "Kids enjoying ice cream at a birthday party"
+          }
+        },
+        "photo_4": {
+          "type": "photo",
+          "settings": {
+            "alt": "Pizza night is back, couple sharing real pizza"
+          }
+        }
       },
-      "block_order": ["quote_1", "quote_2", "quote_3", "photo_1", "photo_2", "photo_3", "photo_4"],
+      "block_order": [
+        "quote_1",
+        "quote_2",
+        "quote_3",
+        "photo_1",
+        "photo_2",
+        "photo_3",
+        "photo_4"
+      ],
       "settings": {
         "heading": "Trusted by 127+ Verified Customers.",
         "padding_top": 64,
@@ -176,7 +429,15 @@
           "settings": {}
         }
       },
-      "block_order": ["bb_title", "bb_price", "bb_variant", "bb_quantity", "bb_buy", "bb_desc", "bb_share"],
+      "block_order": [
+        "bb_title",
+        "bb_price",
+        "bb_variant",
+        "bb_quantity",
+        "bb_buy",
+        "bb_desc",
+        "bb_share"
+      ],
       "settings": {
         "product": "dairyassure-lactase-powder-sticks",
         "secondary_background": false,
@@ -215,18 +476,89 @@
     "faq": {
       "type": "section-faq",
       "blocks": {
-        "faq_1": { "type": "faq_item", "settings": { "question": "What exactly is DairyAssure?", "answer": "<p>Pure lactase enzyme powder in portable stick packs. Lactase is the enzyme your body needs to digest dairy, and we just give you more of it. One ingredient, nothing else added. Sprinkle it on your food or mix it into your drink.</p>" } },
-        "faq_2": { "type": "faq_item", "settings": { "question": "How is this different from lactase pills?", "answer": "<p>Pills are loaded with fillers, binders, and coatings your body doesn't need. DairyAssure is just the enzyme, nothing else. And because it's a powder you add directly to food there's no timing to worry about, you don't have to swallow anything 30 minutes before eating. Sprinkle it on and eat.</p>" } },
-        "faq_3": { "type": "faq_item", "settings": { "question": "How do I use it?", "answer": "<p>Tear open a stick pack and sprinkle the powder on your food or mix it into your drink right before you eat. That's it. No water needed, no pills to swallow, no planning ahead.</p>" } },
-        "faq_4": { "type": "faq_item", "settings": { "question": "Is DairyAssure safe for children?", "answer": "<p>Yes. It's a single-ingredient powder suitable for children, adults, and seniors. It supplements the lactase enzyme your body doesn't produce enough of. Sprinkle it on their food, it's flavorless so they won't even notice it's there.</p>" } },
-        "faq_5": { "type": "faq_item", "settings": { "question": "How long does it last?", "answer": "<p>90+ minutes per dose. That's enough to get through your entire meal and then some.</p>" } },
-        "faq_6": { "type": "faq_item", "settings": { "question": "Can I use it with any dairy product?", "answer": "<p>Yes. Coffee, pizza, ice cream, cheese, yogurt, protein shakes. It works with all dairy and it's completely flavorless so it won't change the taste of your food.</p>" } },
-        "faq_7": { "type": "faq_item", "settings": { "question": "Is it really just one ingredient?", "answer": "<p>Yes. Lactase enzyme. That's the full ingredient list, you can read it in about two seconds. We think one problem needs one solution and the rest is just unnecessary filler that can actually make things worse.</p>" } },
-        "faq_8": { "type": "faq_item", "settings": { "question": "Some brands have multiple enzymes. Why does DairyAssure only have one?", "answer": "<p>Lactose causes the discomfort and lactase breaks it down. That's the whole equation. Other brands add extra enzymes to justify a higher price but your body only needs one thing here, pure lactase at the right dose.</p>" } },
-        "faq_9": { "type": "faq_item", "settings": { "question": "Is it worth the cost compared to generic pills?", "answer": "<p>About the price of a coffee per meal. Generic pills are cheaper because they're packed with binders and additives your body doesn't need, so you're comparing a pure enzyme to a cocktail of filler ingredients and hoping for the best.</p>" } },
-        "faq_10": { "type": "faq_item", "settings": { "question": "What does 'doctor recommended' mean?", "answer": "<p>Gastroenterologists recommend lactase enzyme supplements to patients with lactose intolerance. That's not us saying it, that's standard medical guidance. We just made the cleanest version possible so there's nothing in it a doctor would raise an eyebrow at.</p>" } }
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What exactly is DairyAssure?",
+            "answer": "<p>Pure lactase enzyme powder in portable stick packs. Lactase is the enzyme your body needs to digest dairy, and we just give you more of it. One ingredient, nothing else added. Sprinkle it on your food or mix it into your drink.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How is this different from lactase pills?",
+            "answer": "<p>Pills are loaded with fillers, binders, and coatings your body doesn't need. DairyAssure is just the enzyme, nothing else. And because it's a powder you add directly to food there's no timing to worry about, you don't have to swallow anything 30 minutes before eating. Sprinkle it on and eat.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I use it?",
+            "answer": "<p>Tear open a stick pack and sprinkle the powder on your food or mix it into your drink right before you eat. That's it. No water needed, no pills to swallow, no planning ahead.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is DairyAssure safe for children?",
+            "answer": "<p>Yes. It's a single-ingredient powder suitable for children, adults, and seniors. It supplements the lactase enzyme your body doesn't produce enough of. Sprinkle it on their food, it's flavorless so they won't even notice it's there.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does it last?",
+            "answer": "<p>90+ minutes per dose. That's enough to get through your entire meal and then some.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I use it with any dairy product?",
+            "answer": "<p>Yes. Coffee, pizza, ice cream, cheese, yogurt, protein shakes. It works with all dairy and it's completely flavorless so it won't change the taste of your food.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it really just one ingredient?",
+            "answer": "<p>Yes. Lactase enzyme. That's the full ingredient list, you can read it in about two seconds. We think one problem needs one solution and the rest is just unnecessary filler that can actually make things worse.</p>"
+          }
+        },
+        "faq_8": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Some brands have multiple enzymes. Why does DairyAssure only have one?",
+            "answer": "<p>Lactose causes the discomfort and lactase breaks it down. That's the whole equation. Other brands add extra enzymes to justify a higher price but your body only needs one thing here, pure lactase at the right dose.</p>"
+          }
+        },
+        "faq_9": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it worth the cost compared to generic pills?",
+            "answer": "<p>About the price of a coffee per meal. Generic pills are cheaper because they're packed with binders and additives your body doesn't need, so you're comparing a pure enzyme to a cocktail of filler ingredients and hoping for the best.</p>"
+          }
+        },
+        "faq_10": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What does 'doctor recommended' mean?",
+            "answer": "<p>Gastroenterologists recommend lactase enzyme supplements to patients with lactose intolerance. That's not us saying it, that's standard medical guidance. We just made the cleanest version possible so there's nothing in it a doctor would raise an eyebrow at.</p>"
+          }
+        }
       },
-      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5", "faq_6", "faq_7", "faq_8", "faq_9", "faq_10"],
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "faq_10"
+      ],
       "settings": {
         "heading": "Questions? We've Got Answers.",
         "padding_top": 64,
@@ -238,7 +570,7 @@
       "settings": {
         "text": "Ready to enjoy dairy again?",
         "button_label": "TRY DAIRYASSURE TODAY",
-        "button_link": "shopify:\/\/products\/dairyassure-lactase-powder-sticks",
+        "button_link": "shopify://products/dairyassure-lactase-powder-sticks",
         "padding_top": 32,
         "padding_bottom": 32
       }
@@ -260,10 +592,15 @@
           }
         },
         "email_form": {
-          "type": "email_form"
+          "type": "email_form",
+          "settings": {}
         }
       },
-      "block_order": ["heading", "paragraph", "email_form"],
+      "block_order": [
+        "heading",
+        "paragraph",
+        "email_form"
+      ],
       "settings": {
         "color_scheme": "",
         "full_width": true,
